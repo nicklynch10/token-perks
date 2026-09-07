@@ -28,6 +28,7 @@ export async function GET() {
       caveats: r.caveats,
       notes: r.notes,
       evidence: r.label,
+      accessed: r.accessed,
       sourceUrl: r.sourceUrl,
       trackedOffer: r.offer,
     };

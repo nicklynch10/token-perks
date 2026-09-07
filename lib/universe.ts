@@ -16,6 +16,8 @@ export interface UniverseRow {
   notes: string;
   caveats: string[];
   sourceUrl: string;
+  /** Date this row was read from its source (per-row; rows may predate the snapshot). */
+  accessed: string;
   label: RowLabel;
   offer: string | null;
   modelId: string | null;

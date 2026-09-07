@@ -174,15 +174,44 @@ export default async function ProviderPage({ params }: { params: Promise<{ slug:
         data={[
           {
             "@context": "https://schema.org",
+            "@type": "Dataset",
+            name: `${g.name} — tracked access routes and list prices (${g.rows.length} routes, 2026-09-07)`,
+            description: `First-party snapshot of ${g.rows.length} ${g.name} access routes across subscriptions, API per-token pricing, credits, coding-tool plans, and free tiers. Each row carries its list price, caveats, evidence label (DIRECT / EXCERPT / UNCERTAIN), source URL, and access date.`,
+            creator: { "@type": "Organization", name: "Token Perks", url: SITE_URL },
+            license: "https://creativecommons.org/licenses/by/4.0/",
+            citation: `Token Perks. ${g.name} route snapshot, accessed 2026-09-06/07. Re-verify at official terms before paying.`,
+            temporalCoverage: "2026-09-06/2026-09-07",
+            datePublished: "2026-09-07",
+            dateModified: "2026-09-07",
+            url,
+            variableMeasured: ["listPrice", "apiInPerM", "apiOutPerM", "blendedPerM", "evidence label", "accessed"],
+            distribution: [
+              {
+                "@type": "DataDownload",
+                contentUrl: `${SITE_URL}/api/leaderboard.json`,
+                encodingFormat: "application/json",
+              },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
             "@type": "ItemList",
             name: `${g.name} — tracked access routes`,
             numberOfItems: g.rows.length,
-            itemListElement: g.rows.map((r, i) => ({
-              "@type": "ListItem",
-              position: i + 1,
-              name: `${g.name} ${r.plan} (${CATEGORY_LABELS[r.category]}, ${r.listPrice})`,
-              item: r.offer ? canonical(r.offer) : url,
-            })),
+            itemListElement: g.rows.map((r, i) =>
+              r.offer
+                ? {
+                    "@type": "ListItem",
+                    position: i + 1,
+                    name: `${g.name} ${r.plan} (${CATEGORY_LABELS[r.category]}, ${r.listPrice})`,
+                    item: canonical(r.offer),
+                  }
+                : {
+                    "@type": "ListItem",
+                    position: i + 1,
+                    name: `${g.name} ${r.plan} (${CATEGORY_LABELS[r.category]}, ${r.listPrice})`,
+                  },
+            ),
           },
           {
             "@context": "https://schema.org",

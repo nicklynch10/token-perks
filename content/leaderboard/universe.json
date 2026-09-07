@@ -30,7 +30,8 @@
    "sourceUrl": "https://claude.com/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "anthropic--sub--claude-pro",
@@ -50,7 +51,8 @@
    "sourceUrl": "https://claude.com/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "anthropic--sub--max-5x",
@@ -70,7 +72,8 @@
    "sourceUrl": "https://claude.com/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "anthropic--sub--max-20x",
@@ -89,7 +92,8 @@
    "sourceUrl": "https://claude.com/pricing",
    "label": "UNCERTAIN",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "anthropic--sub--team-standard",
@@ -108,7 +112,8 @@
    "sourceUrl": "https://claude.com/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "anthropic--sub--team-premium",
@@ -125,7 +130,8 @@
    "sourceUrl": "https://claude.com/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "anthropic--sub--enterprise",
@@ -144,7 +150,8 @@
    "sourceUrl": "https://claude.com/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "openai--sub--chatgpt-ladder",
@@ -163,7 +170,8 @@
    "sourceUrl": "https://openai.com/chatgpt/pricing/",
    "label": "UNCERTAIN",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "google--sub--ai-plus",
@@ -180,7 +188,8 @@
    "sourceUrl": "https://one.google.com/intl/en_us/about/google-ai-plans/",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "google--sub--ai-pro",
@@ -197,7 +206,8 @@
    "sourceUrl": "https://one.google.com/intl/en_us/about/google-ai-plans/",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "google--sub--ai-ultra",
@@ -214,7 +224,8 @@
    "sourceUrl": "https://one.google.com/intl/en_us/about/google-ai-plans/",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "xai--sub--grok-free",
@@ -233,7 +244,8 @@
    "sourceUrl": "https://x.ai/grok",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "xai--sub--supergrok",
@@ -252,7 +264,8 @@
    "sourceUrl": "https://x.ai/pricing",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "xai--sub--supergrok-plus",
@@ -271,7 +284,8 @@
    "sourceUrl": "https://x.ai/pricing",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "xai--sub--supergrok-lite",
@@ -290,7 +304,8 @@
    "sourceUrl": "https://x.ai/pricing",
    "label": "UNCERTAIN",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "xai--sub--supergrok-heavy",
@@ -309,7 +324,8 @@
    "sourceUrl": "https://x.ai/pricing",
    "label": "UNCERTAIN",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "mistral--sub--vibe-free",
@@ -326,7 +342,8 @@
    "sourceUrl": "https://mistral.ai/pricing",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "mistral--sub--vibe-pro",
@@ -343,7 +360,8 @@
    "sourceUrl": "https://mistral.ai/pricing",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "mistral--sub--vibe-team",
@@ -360,7 +378,8 @@
    "sourceUrl": "https://mistral.ai/pricing",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "mistral--sub--vibe-enterprise",
@@ -379,7 +398,8 @@
    "sourceUrl": "https://mistral.ai/pricing",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "moonshot--sub--kimi-k3-moderato",
@@ -399,7 +419,8 @@
    "sourceUrl": "https://www.kimi.ai/membership/pricing",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-06"
   },
   {
    "id": "moonshot--sub--kimi-k3-allegretto",
@@ -419,7 +440,8 @@
    "sourceUrl": "https://www.kimi.ai/membership/pricing",
    "label": "EXCERPT",
    "offer": "/best/kimi-k3-core/",
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-06"
   },
   {
    "id": "moonshot--sub--kimi-k3-allegro",
@@ -439,7 +461,8 @@
    "sourceUrl": "https://www.kimi.ai/membership/pricing",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-06"
   },
   {
    "id": "moonshot--sub--kimi-k3-vivace",
@@ -459,7 +482,8 @@
    "sourceUrl": "https://www.kimi.ai/membership/pricing",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-06"
   },
   {
    "id": "zai--tool--glm-coding-lite",
@@ -478,7 +502,8 @@
    "sourceUrl": "https://docs.z.ai/devpack/overview",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "zai--tool--glm-coding-pro",
@@ -497,7 +522,8 @@
    "sourceUrl": "https://docs.z.ai/devpack/overview",
    "label": "UNCERTAIN",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "zai--tool--glm-coding-max",
@@ -516,7 +542,8 @@
    "sourceUrl": "https://docs.z.ai/devpack/overview",
    "label": "UNCERTAIN",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "minimax--sub--token-plan-plus",
@@ -535,7 +562,8 @@
    "sourceUrl": "https://platform.minimax.io/docs/guides/pricing-token-plan",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "minimax--sub--token-plan-max",
@@ -554,7 +582,8 @@
    "sourceUrl": "https://platform.minimax.io/docs/guides/pricing-token-plan",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "minimax--sub--token-plan-ultra",
@@ -573,7 +602,8 @@
    "sourceUrl": "https://platform.minimax.io/docs/guides/pricing-token-plan",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "deepseek--sub--none",
@@ -590,7 +620,8 @@
    "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "perplexity--sub--pro",
@@ -607,7 +638,8 @@
    "sourceUrl": "https://www.perplexity.ai/pro",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "perplexity--sub--max",
@@ -626,7 +658,8 @@
    "sourceUrl": "https://www.perplexity.ai/hub/pricing",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "perplexity--sub--education-pro",
@@ -645,7 +678,8 @@
    "sourceUrl": "https://www.perplexity.ai/hub/pricing",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "meta--sub--none",
@@ -664,7 +698,8 @@
    "sourceUrl": "https://www.together.ai/pricing",
    "label": "UNCERTAIN",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "anthropic--api--fable-5-1",
@@ -683,7 +718,8 @@
    "sourceUrl": "https://claude.com/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "claude-fable-5-1"
+   "modelId": "claude-fable-5-1",
+   "accessed": "2026-09-07"
   },
   {
    "id": "anthropic--api--opus-5",
@@ -700,7 +736,8 @@
    "sourceUrl": "https://claude.com/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "claude-opus-5"
+   "modelId": "claude-opus-5",
+   "accessed": "2026-09-07"
   },
   {
    "id": "anthropic--api--sonnet-5",
@@ -717,7 +754,8 @@
    "sourceUrl": "https://claude.com/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "claude-sonnet-5"
+   "modelId": "claude-sonnet-5",
+   "accessed": "2026-09-07"
   },
   {
    "id": "anthropic--api--haiku-4-5",
@@ -734,7 +772,8 @@
    "sourceUrl": "https://claude.com/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "claude-4-5-haiku"
+   "modelId": "claude-4-5-haiku",
+   "accessed": "2026-09-07"
   },
   {
    "id": "anthropic--api--legacy-ladder",
@@ -753,7 +792,8 @@
    "sourceUrl": "https://claude.com/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "openai--api--gpt-5-6-sol",
@@ -772,7 +812,8 @@
    "sourceUrl": "https://developers.openai.com/api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "gpt-5-6-sol"
+   "modelId": "gpt-5-6-sol",
+   "accessed": "2026-09-07"
   },
   {
    "id": "openai--api--gpt-5-6-terra",
@@ -789,7 +830,8 @@
    "sourceUrl": "https://developers.openai.com/api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "gpt-5-6-terra"
+   "modelId": "gpt-5-6-terra",
+   "accessed": "2026-09-07"
   },
   {
    "id": "openai--api--gpt-5-6-luna",
@@ -806,7 +848,8 @@
    "sourceUrl": "https://developers.openai.com/api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "gpt-5-6-luna"
+   "modelId": "gpt-5-6-luna",
+   "accessed": "2026-09-07"
   },
   {
    "id": "openai--api--gpt-6-astra",
@@ -825,7 +868,8 @@
    "sourceUrl": "https://developers.openai.com/api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "gpt-6-astra"
+   "modelId": "gpt-6-astra",
+   "accessed": "2026-09-07"
   },
   {
    "id": "openai--api--gpt-5-5",
@@ -844,7 +888,8 @@
    "sourceUrl": "https://developers.openai.com/api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "gpt-5-5-instant"
+   "modelId": "gpt-5-5-instant",
+   "accessed": "2026-09-07"
   },
   {
    "id": "openai--api--gpt-5-2",
@@ -863,7 +908,8 @@
    "sourceUrl": "https://developers.openai.com/api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "openai--api--gpt-5-mini",
@@ -882,7 +928,8 @@
    "sourceUrl": "https://developers.openai.com/api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "gpt-5-mini"
+   "modelId": "gpt-5-mini",
+   "accessed": "2026-09-07"
   },
   {
    "id": "openai--api--gpt-5-pro",
@@ -901,7 +948,8 @@
    "sourceUrl": "https://developers.openai.com/api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "openai--api--o3",
@@ -920,7 +968,8 @@
    "sourceUrl": "https://developers.openai.com/api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "o3"
+   "modelId": "o3",
+   "accessed": "2026-09-07"
   },
   {
    "id": "openai--api--gpt-4-1",
@@ -939,7 +988,8 @@
    "sourceUrl": "https://developers.openai.com/api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "openai--api--embeddings",
@@ -958,7 +1008,8 @@
    "sourceUrl": "https://developers.openai.com/api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "openai--api--batch-fast",
@@ -977,7 +1028,8 @@
    "sourceUrl": "https://developers.openai.com/api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "google--api--gemini-3-8-flash",
@@ -996,7 +1048,8 @@
    "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "gemini-3-8-flash"
+   "modelId": "gemini-3-8-flash",
+   "accessed": "2026-09-07"
   },
   {
    "id": "google--api--gemini-3-5-flash",
@@ -1015,7 +1068,8 @@
    "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "gemini-3-5-flash"
+   "modelId": "gemini-3-5-flash",
+   "accessed": "2026-09-07"
   },
   {
    "id": "google--api--gemini-3-1-flash-lite",
@@ -1032,7 +1086,8 @@
    "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "google--api--gemini-3-1-pro-preview",
@@ -1052,7 +1107,8 @@
    "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "gemini-3-1-pro-preview"
+   "modelId": "gemini-3-1-pro-preview",
+   "accessed": "2026-09-07"
   },
   {
    "id": "google--api--gemini-3-flash-preview",
@@ -1071,7 +1127,8 @@
    "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "google--api--gemini-2-5-pro",
@@ -1090,7 +1147,8 @@
    "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "gemini-2-5-pro"
+   "modelId": "gemini-2-5-pro",
+   "accessed": "2026-09-07"
   },
   {
    "id": "google--api--gemini-2-5-flash",
@@ -1109,7 +1167,8 @@
    "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "xai--api--grok-4-6",
@@ -1128,7 +1187,8 @@
    "sourceUrl": "https://docs.x.ai/docs/models",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "grok-4-6"
+   "modelId": "grok-4-6",
+   "accessed": "2026-09-07"
   },
   {
    "id": "xai--api--grok-4-5",
@@ -1147,7 +1207,8 @@
    "sourceUrl": "https://docs.x.ai/docs/models",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "xai--api--grok-4-3",
@@ -1166,7 +1227,8 @@
    "sourceUrl": "https://docs.x.ai/docs/models",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "xai--api--grok-4-20",
@@ -1185,7 +1247,8 @@
    "sourceUrl": "https://docs.x.ai/docs/models",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "xai--api--grok-build-0-1",
@@ -1204,7 +1267,8 @@
    "sourceUrl": "https://docs.x.ai/docs/models",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "xai--api--imagine",
@@ -1223,7 +1287,8 @@
    "sourceUrl": "https://docs.x.ai/docs/models",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "deepseek--api--v4-flash",
@@ -1243,7 +1308,8 @@
    "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": "deepseek-v4-flash"
+   "modelId": "deepseek-v4-flash",
+   "accessed": "2026-09-07"
   },
   {
    "id": "deepseek--api--v4-pro",
@@ -1263,7 +1329,8 @@
    "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": "deepseek-v4-pro"
+   "modelId": "deepseek-v4-pro",
+   "accessed": "2026-09-07"
   },
   {
    "id": "moonshot--api--kimi-k3",
@@ -1282,7 +1349,8 @@
    "sourceUrl": "https://platform.kimi.ai/docs/pricing/chat-k3",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "kimi-k3"
+   "modelId": "kimi-k3",
+   "accessed": "2026-09-07"
   },
   {
    "id": "moonshot--api--kimi-k2-7",
@@ -1301,7 +1369,8 @@
    "sourceUrl": "https://platform.kimi.ai/docs/pricing",
    "label": "UNCERTAIN",
    "offer": null,
-   "modelId": "kimi-k2-7-code"
+   "modelId": "kimi-k2-7-code",
+   "accessed": "2026-09-07"
   },
   {
    "id": "zai--api--glm-5-3",
@@ -1320,7 +1389,8 @@
    "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "glm-5-3"
+   "modelId": "glm-5-3",
+   "accessed": "2026-09-07"
   },
   {
    "id": "zai--api--glm-5-3-flash",
@@ -1339,7 +1409,8 @@
    "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "glm-5-3-flash"
+   "modelId": "glm-5-3-flash",
+   "accessed": "2026-09-07"
   },
   {
    "id": "zai--api--glm-5-ladder",
@@ -1358,7 +1429,8 @@
    "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "zai--api--glm-flash-free",
@@ -1377,7 +1449,8 @@
    "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "glm-4-6"
+   "modelId": "glm-4-6",
+   "accessed": "2026-09-07"
   },
   {
    "id": "zai--api--glm-vision",
@@ -1396,7 +1469,8 @@
    "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "alibaba--api--qwen-official",
@@ -1415,7 +1489,8 @@
    "sourceUrl": "https://www.alibabacloud.com/help/en/model-studio/models",
    "label": "UNCERTAIN",
    "offer": null,
-   "modelId": "qwen3-8-max"
+   "modelId": "qwen3-8-max",
+   "accessed": "2026-09-07"
   },
   {
    "id": "together--api--qwen-resale",
@@ -1434,7 +1509,8 @@
    "sourceUrl": "https://www.together.ai/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "qwen3-8-2-4t"
+   "modelId": "qwen3-8-2-4t",
+   "accessed": "2026-09-07"
   },
   {
    "id": "together--api--qwen-value",
@@ -1453,7 +1529,8 @@
    "sourceUrl": "https://www.together.ai/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "together--api--llama-resale",
@@ -1472,7 +1549,8 @@
    "sourceUrl": "https://www.together.ai/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "llama-4-maverick"
+   "modelId": "llama-4-maverick",
+   "accessed": "2026-09-07"
   },
   {
    "id": "mistral--api--mistral-large",
@@ -1491,7 +1569,8 @@
    "sourceUrl": "https://mistral.ai/pricing",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": "mistral-large-3"
+   "modelId": "mistral-large-3",
+   "accessed": "2026-09-07"
   },
   {
    "id": "minimax--api--m2-7",
@@ -1508,7 +1587,8 @@
    "sourceUrl": "https://platform.minimax.io/docs/guides/pricing-paygo",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": "minimax-m3"
+   "modelId": "minimax-m3",
+   "accessed": "2026-09-07"
   },
   {
    "id": "minimax--api--m2-7-highspeed",
@@ -1527,7 +1607,8 @@
    "sourceUrl": "https://platform.minimax.io/docs/guides/pricing-paygo",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "openrouter--credits--payg",
@@ -1547,7 +1628,8 @@
    "sourceUrl": "https://openrouter.ai/docs/faq",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "openrouter--credits--free-tier",
@@ -1566,7 +1648,8 @@
    "sourceUrl": "https://openrouter.ai/docs/faq",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "nvidia-build--credits--kimi-k3-dev",
@@ -1586,7 +1669,8 @@
    "sourceUrl": "https://build.nvidia.com",
    "label": "EXCERPT",
    "offer": "/best/nvidia-k3-free/",
-   "modelId": "kimi-k3"
+   "modelId": "kimi-k3",
+   "accessed": "2026-09-06"
   },
   {
    "id": "fireworks--credits--payg",
@@ -1605,7 +1689,8 @@
    "sourceUrl": "https://fireworks.ai/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "fireworks--credits--fire-pass",
@@ -1626,7 +1711,8 @@
    "sourceUrl": "https://docs.fireworks.ai/firepass",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "kimi-k3"
+   "modelId": "kimi-k3",
+   "accessed": "2026-09-07"
   },
   {
    "id": "fireworks--credits--training-gpu",
@@ -1645,7 +1731,8 @@
    "sourceUrl": "https://fireworks.ai/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "together--credits--payg",
@@ -1662,7 +1749,8 @@
    "sourceUrl": "https://www.together.ai/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "cerebras--credits--developer",
@@ -1681,7 +1769,8 @@
    "sourceUrl": "https://www.cerebras.ai/pricing",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "groq--credits--payg",
@@ -1700,7 +1789,8 @@
    "sourceUrl": "https://groq.com/pricing",
    "label": "UNCERTAIN",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "deepinfra--credits--observed",
@@ -1719,7 +1809,8 @@
    "sourceUrl": "https://www.deepinfra.com/",
    "label": "UNCERTAIN",
    "offer": null,
-   "modelId": "deepseek-v4-pro"
+   "modelId": "deepseek-v4-pro",
+   "accessed": "2026-09-07"
   },
   {
    "id": "cursor--tool--hobby",
@@ -1736,7 +1827,8 @@
    "sourceUrl": "https://cursor.com/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "cursor--tool--pro",
@@ -1755,7 +1847,8 @@
    "sourceUrl": "https://cursor.com/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "cursor--tool--pro-plus-ultra",
@@ -1774,7 +1867,8 @@
    "sourceUrl": "https://cursor.com/pricing",
    "label": "UNCERTAIN",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "cursor--tool--teams",
@@ -1793,7 +1887,8 @@
    "sourceUrl": "https://cursor.com/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "github--tool--copilot-free",
@@ -1812,7 +1907,8 @@
    "sourceUrl": "https://github.com/features/copilot/plans",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "claude-4-5-haiku"
+   "modelId": "claude-4-5-haiku",
+   "accessed": "2026-09-07"
   },
   {
    "id": "github--tool--copilot-pro",
@@ -1831,7 +1927,8 @@
    "sourceUrl": "https://github.com/features/copilot/plans",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "github--tool--copilot-pro-plus",
@@ -1850,7 +1947,8 @@
    "sourceUrl": "https://github.com/features/copilot/plans",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "claude-opus-5"
+   "modelId": "claude-opus-5",
+   "accessed": "2026-09-07"
   },
   {
    "id": "github--tool--copilot-max",
@@ -1869,7 +1967,8 @@
    "sourceUrl": "https://github.com/features/copilot/plans",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "github--tool--copilot-business-enterprise",
@@ -1888,7 +1987,8 @@
    "sourceUrl": "https://github.com/features/copilot/plans",
    "label": "UNCERTAIN",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "github--tool--ai-credits-unit",
@@ -1907,7 +2007,8 @@
    "sourceUrl": "https://github.com/features/copilot/plans",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "devin--tool--devin-pricing",
@@ -1926,7 +2027,8 @@
    "sourceUrl": "https://windsurf.com/pricing",
    "label": "UNCERTAIN",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "antigravity--tool--developer-access",
@@ -1945,7 +2047,8 @@
    "sourceUrl": "https://antigravity.google",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "gemini-3-8-flash"
+   "modelId": "gemini-3-8-flash",
+   "accessed": "2026-09-07"
   },
   {
    "id": "google--tool--jules",
@@ -1964,7 +2067,8 @@
    "sourceUrl": "https://jules.google",
    "label": "UNCERTAIN",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "openai--tool--codex-via-chatgpt",
@@ -1983,7 +2087,8 @@
    "sourceUrl": "https://openai.com/chatgpt/pricing/",
    "label": "UNCERTAIN",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "moonshot--tool--kimi-coding-endpoint",
@@ -2002,7 +2107,8 @@
    "sourceUrl": "https://www.kimi.ai/membership/pricing",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-06"
   },
   {
    "id": "zai--tool--glm-coding-plan",
@@ -2021,7 +2127,8 @@
    "sourceUrl": "https://docs.z.ai/devpack/overview",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "glm-5-3"
+   "modelId": "glm-5-3",
+   "accessed": "2026-09-07"
   },
   {
    "id": "google--promo--gemini-api-free-tier",
@@ -2040,7 +2147,8 @@
    "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "gemini-3-8-flash"
+   "modelId": "gemini-3-8-flash",
+   "accessed": "2026-09-07"
   },
   {
    "id": "nvidia-build--promo--kimi-k3-dev",
@@ -2059,7 +2167,8 @@
    "sourceUrl": "https://build.nvidia.com",
    "label": "EXCERPT",
    "offer": "/best/nvidia-k3-free/",
-   "modelId": "kimi-k3"
+   "modelId": "kimi-k3",
+   "accessed": "2026-09-06"
   },
   {
    "id": "muse-spark--promo--contributor-free",
@@ -2079,7 +2188,8 @@
    "sourceUrl": "https://zen.baidu.com/",
    "label": "EXCERPT",
    "offer": "/best/muse-spark-zen-free/",
-   "modelId": "muse-spark-1-3"
+   "modelId": "muse-spark-1-3",
+   "accessed": "2026-09-06"
   },
   {
    "id": "mistral--promo--vibe-free",
@@ -2096,7 +2206,8 @@
    "sourceUrl": "https://mistral.ai/pricing",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "mistral--promo--student-pro",
@@ -2115,7 +2226,8 @@
    "sourceUrl": "https://mistral.ai/pricing",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "openrouter--promo--new-user-free",
@@ -2134,7 +2246,8 @@
    "sourceUrl": "https://openrouter.ai/docs/faq",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "cerebras--promo--free-trial",
@@ -2153,7 +2266,8 @@
    "sourceUrl": "https://www.cerebras.ai/pricing",
    "label": "EXCERPT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "fireworks--promo--starter-credit",
@@ -2172,7 +2286,8 @@
    "sourceUrl": "https://fireworks.ai/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "fireworks--promo--fire-pass",
@@ -2192,7 +2307,8 @@
    "sourceUrl": "https://docs.fireworks.ai/firepass",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "kimi-k3"
+   "modelId": "kimi-k3",
+   "accessed": "2026-09-07"
   },
   {
    "id": "xai--promo--grok-free",
@@ -2211,7 +2327,8 @@
    "sourceUrl": "https://x.ai/grok",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "anthropic--promo--claude-free",
@@ -2230,7 +2347,8 @@
    "sourceUrl": "https://claude.com/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   },
   {
    "id": "zai--promo--free-api-models",
@@ -2249,7 +2367,8 @@
    "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "glm-4-6"
+   "modelId": "glm-4-6",
+   "accessed": "2026-09-07"
   },
   {
    "id": "zai--promo--night-owl",
@@ -2269,7 +2388,8 @@
    "sourceUrl": "https://docs.z.ai/devpack/overview",
    "label": "DIRECT",
    "offer": null,
-   "modelId": "glm-5-3-flash"
+   "modelId": "glm-5-3-flash",
+   "accessed": "2026-09-07"
   },
   {
    "id": "antigravity--promo--developer-access",
@@ -2288,7 +2408,8 @@
    "sourceUrl": "https://antigravity.google",
    "label": "DIRECT",
    "offer": null,
-   "modelId": null
+   "modelId": null,
+   "accessed": "2026-09-07"
   }
  ]
 }

@@ -4,10 +4,21 @@ rows = []
 for part in "abcde":
     rows += json.load(io.open(f'content/leaderboard/rows-{part}.json', encoding='utf-8'))
 
+# Per-row access date: rows captured from the Sep 6 offer snapshot vs the Sep 7 pass.
+SEP6 = {
+    "moonshot--sub--kimi-k3-moderato", "moonshot--sub--kimi-k3-allegretto",
+    "moonshot--sub--kimi-k3-allegro", "moonshot--sub--kimi-k3-vivace",
+    "moonshot--tool--kimi-coding-endpoint",
+    "nvidia-build--credits--kimi-k3-dev", "nvidia-build--promo--kimi-k3-dev",
+    "muse-spark--promo--contributor-free",
+}
+for r in rows:
+    r["accessed"] = "2026-09-06" if r["id"] in SEP6 else "2026-09-07"
+
 ids = [r["id"] for r in rows]
 dupes = [i for i, n in collections.Counter(ids).items() if n > 1]
 assert not dupes, f"dupe ids: {dupes}"
-assert all(r["sourceUrl"] and r["label"] for r in rows), "every row needs sourceUrl + label"
+assert all(r["sourceUrl"] and r["label"] and r["accessed"] for r in rows), "every row needs sourceUrl + label + accessed"
 
 universe = {
     "snapshot": "2026-09-07",
