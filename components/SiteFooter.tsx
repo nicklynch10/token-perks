@@ -4,27 +4,27 @@ import { AFFILIATE_NOTICE, AFFILIATE_V0_STATE, SNAPSHOT_LINE } from "@/lib/site"
 export default function SiteFooter() {
   return (
     <footer className="border-t border-line bg-card">
-      <div className="mx-auto max-w-5xl space-y-4 px-4 py-8 text-sm text-ink-soft sm:px-6">
+      <div className="mx-auto max-w-6xl space-y-4 px-4 py-8 text-sm text-ink-soft sm:px-6">
         <nav aria-label="Footer" className="flex flex-wrap gap-x-5 gap-y-2 font-semibold">
-          <Link className="min-h-[44px] content-center hover:underline" href="/">
+          <Link className="inline-flex min-h-[44px] items-center hover:underline" href="/">
             Home
           </Link>
-          <Link className="min-h-[44px] content-center hover:underline" href="/best/">
+          <Link className="inline-flex min-h-[44px] items-center hover:underline" href="/best/">
             Offers
           </Link>
-          <Link className="min-h-[44px] content-center hover:underline" href="/providers/">
+          <Link className="inline-flex min-h-[44px] items-center hover:underline" href="/providers/">
             Providers
           </Link>
-          <Link className="min-h-[44px] content-center hover:underline" href="/guides/">
+          <Link className="inline-flex min-h-[44px] items-center hover:underline" href="/guides/">
             Guides
           </Link>
-          <Link className="min-h-[44px] content-center hover:underline" href="/methodology/">
+          <Link className="inline-flex min-h-[44px] items-center hover:underline" href="/methodology/">
             Methodology v2
           </Link>
-          <Link className="min-h-[44px] content-center hover:underline" href="/changes/">
+          <Link className="inline-flex min-h-[44px] items-center hover:underline" href="/changes/">
             Verification log
           </Link>
-          <Link className="min-h-[44px] content-center hover:underline" href="/how-we-make-money/">
+          <Link className="inline-flex min-h-[44px] items-center hover:underline" href="/how-we-make-money/">
             How we make money
           </Link>
         </nav>

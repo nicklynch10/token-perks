@@ -19,7 +19,7 @@ export default function Breadcrumbs({ trail }: { trail: Crumb[] }) {
             {c.href && i < trail.length - 1 ? (
               <Link
                 href={c.href}
-                className="min-h-[44px] content-center underline decoration-line hover:text-ink"
+                className="inline-flex min-h-[44px] items-center underline decoration-line-strong hover:text-ink"
               >
                 {c.label}
               </Link>

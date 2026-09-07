@@ -26,7 +26,7 @@ export default function CiteBlock({ citation }: { citation: string }) {
       <button
         type="button"
         onClick={copy}
-        className="btn mt-3 inline-flex min-h-[40px] items-center rounded-lg bg-ink px-4 text-xs font-semibold uppercase tracking-[0.1em] text-white hover:bg-teal-deep"
+        className="btn mt-3 inline-flex min-h-[44px] items-center rounded-lg bg-ink px-4 text-xs font-semibold uppercase tracking-[0.1em] text-white hover:bg-teal-deep"
       >
         {copied ? "Copied" : "Copy citation"}
       </button>

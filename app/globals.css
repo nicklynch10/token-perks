@@ -7,7 +7,7 @@
   --color-card: #ffffff;
   --color-ink: #1c1c1a;
   --color-ink-soft: #494943;
-  --color-ink-mute: #71716a;
+  --color-ink-mute: #6b6b64; /* darkest neutral that still reads "mute"; hits 4.5:1 even on paper-deep */
   --color-line: #e5e5e0;
   --color-line-strong: #cfcfc7;
   /* Single accent for data emphasis */
@@ -19,6 +19,10 @@
   --color-up: #b91c1c;
   --color-expired: #b91c1c;
   --color-expired-wash: #fdeaea;
+  /* ── Radius ramp: one step per surface — no one-off radii elsewhere ── */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
   /* ── Fonts (variables injected by app/fonts.ts via next/font/local) ── */
   --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif; /* wordmark only */
@@ -30,12 +34,34 @@
   color-scheme: light;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-weight: 420;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-teal-wash);
+}
+
+/* Balanced headings, pretty paragraphs: no widows/orphans, static-safe
+   (progressive enhancement — unsupported browsers ignore it). */
+.display-xl,
+.display-lg,
+.display-md,
+.display-sm {
+  text-wrap: balance;
+}
+.lede,
+.verdict-line {
+  text-wrap: pretty;
 }
 
 /* ── Type scale: sans throughout; mono for all numerals ──────────── */
@@ -128,7 +154,7 @@ body {
 /* ── Surfaces: flat cards, hairline dividers, no lift theatrics ──── */
 .card {
   border: 1px solid var(--color-line-strong);
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   background: var(--color-card);
 }
 @media (hover: hover) {
@@ -144,7 +170,7 @@ body {
 :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
   outline: 2px solid var(--color-teal-deep);
   outline-offset: 2px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
 }
 .u-draw {
   text-decoration: none;
@@ -181,6 +207,7 @@ body {
 .ledger .num {
   text-align: right;
   font: 500 0.875rem/1.4 var(--font-mono);
+  font-variant-numeric: tabular-nums;
 }
 .ledger tfoot td {
   font-style: italic;
@@ -253,12 +280,24 @@ body {
 .caveat-panel {
   background: var(--color-paper-deep);
   border-left: 2px solid var(--color-line-strong);
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
 .colophon {
   border-top: 1px solid var(--color-line-strong);
   font: 400 12px/1.7 var(--font-mono);
   color: var(--color-ink-mute);
+}
+.colophon blockquote {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* FAQ disclosures: teal marker, roomy tap target, calm open state */
+details > summary::marker {
+  color: var(--color-teal-deep);
+}
+details[open] > summary {
+  color: var(--color-teal-deep);
 }
 
 /* Numerals are mono everywhere numbers compare */
