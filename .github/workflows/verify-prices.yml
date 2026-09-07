@@ -1,0 +1,56 @@
+name: Verify prices
+
+# Weekly re-verification tripwire for the editorial cadence claim.
+# Mondays 13:23 UTC — the odd minute is intentional (avoid the :00/:30 cron crush).
+# DRIFT/ERROR keeps this job GREEN by design: the alert surfaces are the job
+# summary and the "[verify] ..." issue the script files. Add --strict below if
+# you ever prefer red builds on drift (docs/verify-prices.md).
+
+on:
+  schedule:
+    - cron: "23 13 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write # append + commit docs/verification-log.md
+  issues: write # file the single "[verify] N source(s) drifted" issue
+
+concurrency:
+  group: verify-prices
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Run price verification
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/verify-prices.mjs --write-log --summary verify-prices-report.md
+
+      - name: Upload report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verify-prices-report
+          path: verify-prices-report.md
+          if-no-files-found: ignore
+
+      - name: Commit verification log
+        if: always()
+        run: |
+          git config user.name "token-perks-verifier"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/verification-log.md
+          if git diff --cached --quiet; then
+            echo "No log changes to commit."
+          else
+            git commit -m "chore(verify): price verification log $(date -u +%F)"
+            git push
+          fi

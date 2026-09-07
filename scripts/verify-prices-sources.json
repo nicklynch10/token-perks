@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "checked_on": "2026-09-06",
+  "user_agent": "token-perks-verifier/0.1",
+  "policy": {
+    "min_delay_ms": 1000,
+    "timeout_ms": 20000,
+    "max_retries": 1,
+    "retry_backoff_ms": 4000
+  },
+  "_legend": {
+    "expect": "Hard strings. The fetched page's visible text must contain at least `min_hits` of these, or the source reports DRIFT (page reachable, expected content absent — human must look).",
+    "soft": "Price figures we WANT to see but which today render client-side on that page. Found/absent is reported but never flips the status.",
+    "manual": "No fetchable official URL exists. The bot reports MANUAL every run so a human does the in-product check.",
+    "provenance": "All URLs are official provider properties (no affiliates, no mirrors, no third-party trackers), mapped 1-3 per offer in content/offers/."
+  },
+  "sources": [
+    {
+      "id": "kimi-code-product",
+      "offer_id": "kimi-k3-core",
+      "provider": "Moonshot AI",
+      "label": "Kimi Code membership product page",
+      "url": "https://www.kimi.com/coding",
+      "kind": "product-page",
+      "expect": ["kimi code", "kimi k3"],
+      "min_hits": 2,
+      "soft": ["$19", "$39", "$99", "$199", "moderato", "allegretto", "allegro", "vivace", "annual"],
+      "added_on": "2026-09-06",
+      "notes": "Next.js server-rendered shell. Static visible text carries the product identity ('Kimi Code', 'kimi k3', 'Kimi Code Plan', install one-liner). Tier prices and the Latin tier names (Moderato/Allegretto/Allegro/Vivace) load client-side and vary by region/currency, so the dollar strings are SOFT: their absence here is expected and is NOT drift. Probed 2026-09-06: both expect strings present."
+    },
+    {
+      "id": "kimi-coding-api",
+      "offer_id": "kimi-k3-core",
+      "provider": "Moonshot AI",
+      "label": "Kimi For Coding API endpoint (offer official_terms_url)",
+      "url": "https://api.kimi.com/coding/",
+      "kind": "api-endpoint",
+      "expect": ["kimi for coding"],
+      "min_hits": 1,
+      "soft": [],
+      "added_on": "2026-09-06",
+      "notes": "This is the official_terms_url in content/offers/kimi-k3-core.json. It returns a ~49-byte JSON body: {\"message\":\"Welcome to the Kimi For Coding API!\"} — an API base, not an HTML terms page. The check proves the membership route is still live and correctly named; it cannot show tier prices. Probed 2026-09-06: string present."
+    },
+    {
+      "id": "kimi-help-center",
+      "offer_id": "kimi-k3-core",
+      "provider": "Moonshot AI",
+      "label": "Kimi Help Center (membership & billing section)",
+      "url": "https://kimi.ai/help",
+      "kind": "help-center",
+      "expect": ["membership plans", "kimi code"],
+      "min_hits": 2,
+      "soft": [],
+      "added_on": "2026-09-06",
+      "notes": "Official Kimi help center (kimi.ai links to moonshot.ai and platform.kimi.ai; verified 2026-09-06). Home page lists sections 'membership plans, billing, credits, upgrades, invoices' and 'kimi code'. Presence proves a membership program is still advertised; article-level prices are not checked."
+    },
+    {
+      "id": "nvidia-kimi-k3-model-page",
+      "offer_id": "nvidia-k3-free",
+      "provider": "NVIDIA",
+      "label": "NVIDIA NIM Kimi K3 model page",
+      "url": "https://build.nvidia.com/moonshotai/kimi-k3",
+      "kind": "model-page",
+      "expect": ["kimi-k3", "free"],
+      "min_hits": 2,
+      "soft": ["$0"],
+      "added_on": "2026-09-06",
+      "notes": "Server-rendered NVIDIA NIM page; title is 'kimi-k3 Model by Moonshotai | NVIDIA NIM' and visible text says 'start building with a free api endpoint'. The free dev/prototyping offer is positioned, not priced: quotas are account-level and never published statically, so there is no dollar check here. Probed 2026-09-06: both expect strings present."
+    },
+    {
+      "id": "nvidia-build-catalog",
+      "offer_id": "nvidia-k3-free",
+      "provider": "NVIDIA",
+      "label": "NVIDIA Build catalog root",
+      "url": "https://build.nvidia.com/",
+      "kind": "model-catalog",
+      "expect": ["kimi-k3"],
+      "min_hits": 1,
+      "soft": ["free"],
+      "added_on": "2026-09-06",
+      "notes": "The snapshot in content/offers/nvidia-k3-free.json publishes no deep URL and sanctions navigation from the official catalog, so this checks the catalog root. The server-rendered 'more models' rail listed 'moonshotai kimi-k3' on 2026-09-06. Catalog rotates listings; a single-string check is intentional — losing the listing here is exactly the drift the offer's own 'catalog rotation' catch warns about."
+    },
+    {
+      "id": "muse-spark-promo-in-product",
+      "offer_id": "muse-spark-zen-free",
+      "provider": "Muse Spark (via Zen)",
+      "label": "Muse Spark 1.3 Contributor Free promo (in-product only)",
+      "url": null,
+      "kind": "in-product",
+      "manual": true,
+      "expect": [],
+      "min_hits": 0,
+      "soft": [],
+      "added_on": "2026-09-06",
+      "manual_reason": "No fetchable official URL exists: official_terms_url and official_links[].url are null in content/offers/muse-spark-zen-free.json, which states the promo is reachable only inside the product.",
+      "how_to_verify": "Open the official product, navigate /connect -> Zen -> /models, confirm the exact string 'Muse Spark 1.3 Contributor Free' is listed and shows $0 for input, cache, and output tokens. Screenshot the window/limits shown for your records.",
+      "notes": "The bot files this as MANUAL every run on purpose: it is the recurring reminder that this active promo needs a human in-product check (the editorial cadence promise says daily for active promos)."
+    }
+  ]
+}

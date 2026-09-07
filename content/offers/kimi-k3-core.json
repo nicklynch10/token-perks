@@ -1,0 +1,129 @@
+{
+  "id": "kimi-k3-core",
+  "status": "active",
+  "provider": "Moonshot AI",
+  "plan": "Kimi K3 Membership — Moderato / Allegretto / Allegro / Vivace",
+  "title": "Kimi K3 core membership",
+  "shortTitle": "Kimi K3 Membership",
+  "badge": "Best documented value",
+  "catchSummary": "Credits are shared across one pool with 5-hour and weekly controls — heavy sprint days can throttle before the month ends.",
+  "canonical_url": "/best/kimi-k3-core/",
+  "official_terms_url": "https://www.kimi.ai/membership/pricing",
+  "official_links": [
+    {
+      "label": "Kimi membership pricing and plan terms",
+      "url": "https://www.kimi.ai/membership/pricing",
+      "note": "Official pricing page, reached from the kimi.ai help center — link checked in the Sep 6 2026 pass. The coding API root (api.kimi.com/coding/) serves JSON, not terms; point tools there only after subscribing."
+    }
+  ],
+  "price": {
+    "now": "$19–$199/mo by tier (Moderato $19, Allegretto $39, Allegro $99, Vivace $199)",
+    "renewal": "Renews monthly at the same tier price; annual billing works out to about $15 / $31 / $79 / $159 per month of effective cost."
+  },
+  "renewal": "Monthly tiers renew at list price. Annual billing lowers the effective monthly cost (about $15 / $31 / $79 / $159 by tier) but is paid upfront — confirm the refund and cancellation terms on the official page before committing.",
+  "expiry": null,
+  "verified_at": "2026-09-06",
+  "eligibility": [
+    "Anyone who can create a Kimi account and add an accepted payment method",
+    "Coding-endpoint users should confirm their tooling targets https://api.kimi.com/coding/ rather than PAYG key billing",
+    "Annual effective pricing requires paying a full year upfront"
+  ],
+  "restrictions": [
+    "One shared credit pool across native membership usage — heavy features draw from the same balance",
+    "5-hour and weekly usage controls can gate burst usage even with credits remaining",
+    "Model served as k3-256k with high thinking-on behaviour; output style and verbosity affect consumption",
+    "Annual plan is upfront; confirm whether mid-cycle upgrades, downgrades, or refunds are offered"
+  ],
+  "verdict": "Pick Kimi K3 membership if you run steady agentic coding volume and want one predictable bill. At Allegretto ($39/mo, about $31/mo effective annually) it beats pay-as-you-go once you clear roughly 40–50 heavy tasks a month — below that, PAYG or a free route wins. Read the catch first: a single shared credit pool plus 5-hour and weekly controls means marathon sessions can stall mid-sprint.",
+  "catches": [
+    "One shared credit pool: membership usage draws from a single balance, so parallel projects and long agent runs drain it together",
+    "5-hour and weekly controls: burst caps can throttle you mid-day even when the monthly balance looks healthy",
+    "Tier jump is steep: Allegretto ($39) to Allegro ($99) is a 2.5x step — straddling the boundary is the worst seat in the house",
+    "Annual discount is upfront cash: the ~20% effective saving requires a full-year prepay with terms you must confirm first"
+  ],
+  "limits": [
+    "k3-256k context with high thinking-on: long sessions consume materially more than short completions",
+    "Coding endpoint (https://api.kimi.com/coding/) vs PAYG key billing are different routes — pick the wrong one and the membership may not apply",
+    "Weekly controls reset on the provider's schedule, not yours — confirm the reset window before planning sprints",
+    "Fair-use style gating can apply to extreme patterns; the weekly controls are the mechanism to watch"
+  ],
+  "access_route": "Subscribe to Kimi K3 membership on the official site, then point coding tools at the coding endpoint (https://api.kimi.com/coding/) — not a PAYG API key — so usage draws from the membership pool.",
+  "claim_steps": [
+    {
+      "step": "Open the official membership pricing page and compare the tiers against PAYG pricing.",
+      "url": "https://www.kimi.ai/membership/pricing"
+    },
+    {
+      "step": "Pick the tier that covers a normal week plus headroom — Moderato $19 for light use, Allegretto $39 for steady coding, Allegro $99 or Vivace $199 for heavy agent fleets."
+    },
+    {
+      "step": "Check renewal terms (monthly vs annual effective $15 / $31 / $79 / $159) and the cancellation path before entering payment details."
+    },
+    {
+      "step": "After subscribing, configure tools to use https://api.kimi.com/coding/ and verify the first session draws from membership, not PAYG billing.",
+      "url": "https://api.kimi.com/coding/"
+    }
+  ],
+  "economics_heading": "The economics: when membership beats PAYG",
+  "economics": [
+    "Think in effective cost per task: monthly price divided by tasks you actually complete. Allegretto at $39 over 120 tasks is about $0.33 per task — less than half the $0.80 illustrative PAYG reference for a 100k-token task.",
+    "The break-even against the $0.80/task reference is about 49 tasks a month on Allegretto ($39 ÷ $0.80) and about 24 tasks on Moderato ($19 ÷ $0.80). Below those lines, PAYG or a free tier is cheaper.",
+    "Annual billing drops Allegretto to about $31/mo effective (~$372 upfront), which moves break-even down to roughly 39 tasks a month — worth it only if your volume is stable year-round.",
+    "The shared-pool catch has a cost too: if 5-hour or weekly controls idle you for half a day each week, discount the membership's value by that lost throughput before comparing."
+  ],
+  "economics_rows": [
+    { "label": "Moderato monthly", "value": "$19/mo" },
+    { "label": "Allegretto monthly", "value": "$39/mo" },
+    { "label": "Allegro monthly", "value": "$99/mo" },
+    { "label": "Vivace monthly", "value": "$199/mo" },
+    { "label": "Annual effective (per month)", "value": "≈ $15 / $31 / $79 / $159" },
+    { "label": "Break-even vs $0.80/task PAYG (Allegretto)", "value": "≈ 49 tasks/mo" },
+    { "label": "Model served", "value": "k3-256k, high thinking-on" }
+  ],
+  "evidence": [
+    {
+      "point": "Tier prices ($19 / $39 / $99 / $199 monthly; ~$15 / $31 / $79 / $159 annual effective) and the coding endpoint URL come from the Sep 6 2026 research snapshot of official pages.",
+      "confidence": "high",
+      "source": "Official Kimi coding page, captured Sep 6 2026"
+    },
+    {
+      "point": "Membership shares one credit pool with 5-hour and weekly controls — documented gating behaviour, exact thresholds may vary by account and tier.",
+      "confidence": "medium",
+      "source": "Official terms snapshot Sep 6 2026; thresholds not independently load-tested"
+    },
+    {
+      "point": "Break-even figures are arithmetic on the $0.80/task illustrative reference, not measured per-user costs — your tokens-per-task will differ.",
+      "confidence": "low",
+      "source": "Token Perks calculation; re-run with your own usage"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does Kimi K3 membership cost right now?",
+      "a": "Moderato $19, Allegretto $39, Allegro $99, and Vivace $199 per month. Annual billing lowers the effective monthly cost to about $15 / $31 / $79 / $159, paid upfront. Prices verified in the Sep 6 2026 snapshot — re-check the official page before paying."
+    },
+    {
+      "q": "What is the catch with the shared credit pool?",
+      "a": "Membership usage draws from one shared credit pool, and 5-hour plus weekly controls can throttle burst usage even when monthly balance remains. Spread heavy agent runs across the week instead of one marathon day."
+    },
+    {
+      "q": "Coding endpoint or PAYG — which do I use?",
+      "a": "Use the coding endpoint at https://api.kimi.com/coding/ for membership billing. A PAYG API key bills separately, so pointing tools at the wrong route means the membership does not cover that usage."
+    },
+    {
+      "q": "When is annual billing worth it?",
+      "a": "When your monthly volume is stable and clears break-even (about 39 tasks/mo on Allegretto annual vs ~49 on monthly, against the $0.80/task reference). If your usage is seasonal, stay monthly until the pattern is proven."
+    },
+    {
+      "q": "Is API credit use cheaper than a $20 subscription, and at what usage?",
+      "a": "At the $0.80/task reference, $19 of pay-as-you-go buys about 24 tasks — below that, credits or a free route are cheaper; above it, the $19 Moderato month wins. The routes do not mix: a PAYG key bills separately from the coding-endpoint membership, so check which one your tools actually hit."
+    },
+    {
+      "q": "How current is this information?",
+      "a": "This is a research snapshot from Sep 6 2026, not a live checkout feed. Prices, pools, and controls can change — re-verify at the official terms before paying."
+    }
+  ],
+  "citation": "Token Perks. “Kimi K3 core membership.” Research snapshot Sep 6 2026. https://token-perks.com/best/kimi-k3-core/. Re-verify at official terms before paying.",
+  "slot": "top3",
+  "rank": 1
+}

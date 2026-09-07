@@ -1,0 +1,50 @@
+name: Traffic + uptime report
+
+on:
+  schedule:
+    # Mondays 14:17 UTC (offset minute, on purpose)
+    - cron: '17 14 * * 1'
+  workflow_dispatch:
+
+permissions:
+  id-token: write # OIDC assume of the AWS role (read-only use)
+  issues: write # create / comment on the rolling [monitor] issue
+  contents: read
+
+concurrency:
+  group: traffic-report
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      # Assumes the shared deploy role. That role cannot read CloudWatch yet
+      # (one-time IAM step documented in docs/traffic-monitor.md) — until it is
+      # added, the script degrades to uptime-only reporting and this step is
+      # still expected to succeed (role assumption itself is allowed).
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN || 'arn:aws:iam::897025262198:role/token-perks-deploy' }}
+          aws-region: us-east-1
+
+      # Report goes to stdout AND $GITHUB_STEP_SUMMARY; the script also
+      # upserts the rolling "[monitor] weekly traffic + uptime" issue via gh.
+      - name: Run traffic + uptime report
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CF_DISTRIBUTION_ID: ${{ vars.CF_DISTRIBUTION_ID || 'E35NUFJX0GCO4P' }}
+          # After DNS cutover, set the repo variable SITE_LAUNCHED=1
+          # (Settings > Secrets and variables > Actions > Variables) to drop
+          # the pre-launch banner from the report.
+          SITE_LAUNCHED: ${{ vars.SITE_LAUNCHED }}
+        run: |
+          set -eo pipefail
+          node scripts/traffic-report.mjs | tee "$GITHUB_STEP_SUMMARY"

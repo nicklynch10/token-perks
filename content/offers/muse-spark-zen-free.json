@@ -1,0 +1,121 @@
+{
+  "id": "muse-spark-zen-free",
+  "status": "active",
+  "provider": "Muse Spark (via Zen)",
+  "plan": "Muse Spark 1.3 Contributor Free — limited-time promo",
+  "title": "Zen Muse Spark 1.3 free promo",
+  "shortTitle": "Muse Spark 1.3 Free",
+  "badge": "Best free route",
+  "catchSummary": "$0 in, cache, and out — but it is a limited-time promo. When the window closes, the meter starts.",
+  "canonical_url": "/best/muse-spark-zen-free/",
+  "official_terms_url": null,
+  "official_links": [
+    {
+      "label": "Promo access path",
+      "url": null,
+      "note": "In-product route only: /connect → Zen → /models, then select the exact string “Muse Spark 1.3 Contributor Free”. No standalone checkout URL is published — navigate from the official product."
+    }
+  ],
+  "price": {
+    "now": "$0 for input, cache, and output tokens during the promo window",
+    "renewal": "No renewal — this is a limited-time promo, not a plan. When it ends, usage moves to whatever paid terms apply, so confirm before building on it."
+  },
+  "renewal": "There is no renewal because there is no paid plan here — it is a $0 limited-time promo on input, cache, and output. Treat anything you build on it as rented time: confirm the promo window and the post-promo price before depending on it.",
+  "expiry": "Limited-time promo — end date confirmed only inside the official product; re-verify before relying on it.",
+  "verified_at": "2026-09-06",
+  "eligibility": [
+    "Users who can reach the Zen section of the official product and see the promo model listed",
+    "Must select the exact string “Muse Spark 1.3 Contributor Free” — similarly named paid entries bill normally",
+    "Promo availability may vary by account, region, or app version"
+  ],
+  "restrictions": [
+    "Limited-time promo — the $0 rate can end without notice outside the official window",
+    "Only the exact “Muse Spark 1.3 Contributor Free” string is $0; nearby model names may be paid",
+    "Reasonable-use gating may apply even at $0; it is free, not unlimited",
+    "No renewal or price lock — post-promo terms are whatever the provider publishes next"
+  ],
+  "verdict": "If you can see the exact string “Muse Spark 1.3 Contributor Free” under /connect → Zen → /models, use it now and pay nothing for input, cache, and output while the promo lasts. Verdict in 30 seconds: great for evaluation, prototyping, and light tasks today; a bad foundation for anything you cannot migrate in a day, because the promo ends on the provider's schedule, not yours.",
+  "catches": [
+    "Limited-time promo: $0 today can become metered tomorrow, with the end date visible only in-product",
+    "Exact-string trap: only “Muse Spark 1.3 Contributor Free” is free — a near-identical paid entry may sit one row away",
+    "No price lock: there is nothing to renew and no grandfathering to assume",
+    "Route-dependent: the /connect → Zen → /models path is the documented access; if the UI changes, the promo may be unreachable"
+  ],
+  "limits": [
+    "$0 covers input, cache, and output tokens under the promo — the full meter, not a slice",
+    "Throughput and concurrency limits are unpublished in the snapshot; expect free-tier shaping at peak",
+    "Promo may differ by account, region, or app version — a friend seeing it does not guarantee you see it",
+    "Anything stateful you build (fine-tunes, cached pipelines) should be portable before the window closes"
+  ],
+  "access_route": "Inside the official product, navigate /connect → Zen → /models and select the exact string “Muse Spark 1.3 Contributor Free”. Do not guess at similarly named entries — only that exact string carries the $0 promo.",
+  "claim_steps": [
+    {
+      "step": "Open the official product and navigate the exact path: /connect → Zen → /models."
+    },
+    {
+      "step": "Find the entry spelled exactly “Muse Spark 1.3 Contributor Free” — character for character."
+    },
+    {
+      "step": "Confirm the $0 input / cache / output terms shown in-product and note any promo window dates before running real work."
+    },
+    {
+      "step": "Start with portable work (evals, prototypes) so a promo end does not strand anything load-bearing."
+    }
+  ],
+  "economics_heading": "The economics: free now, metered later",
+  "economics": [
+    "During the promo the effective cost per task is $0, which beats every paid route at any volume — including the $0.80/task PAYG reference and the $40/mo subscription (break-even: 50 tasks).",
+    "The honest comparison is against the promo's expected lifespan. If you expect 200 tasks before the window closes, that is ~$160 of avoided PAYG spend — real money, but one-time.",
+    "Do not annualize free: a $39/mo membership decision should be made on post-promo prices, with the promo treated as a free trial of arbitrary length.",
+    "Migration cost is the hidden line item. Keep prompts, evals, and outputs provider-portable so the end of the promo costs you an afternoon, not a rewrite."
+  ],
+  "economics_rows": [
+    { "label": "Promo price now", "value": "$0 in / cache / out" },
+    { "label": "Renewal", "value": "None — limited-time promo" },
+    { "label": "Equal-value PAYG avoided", "value": "~$0.80/task (illustrative)" },
+    { "label": "200 promo tasks ≈", "value": "~$160 avoided PAYG" },
+    { "label": "Post-promo price", "value": "Unpublished — confirm in-product" }
+  ],
+  "evidence": [
+    {
+      "point": "$0 input/cache/output and the /connect → Zen → /models access path with the exact promo string come from the Sep 6 2026 research snapshot.",
+      "confidence": "high",
+      "source": "Official in-product listing, captured Sep 6 2026"
+    },
+    {
+      "point": "The promo is limited-time, but the end date is confirmed only inside the official product — this page states the limit without inventing a date.",
+      "confidence": "medium",
+      "source": "Snapshot Sep 6 2026; window not published as a fixed date"
+    },
+    {
+      "point": "Avoided-spend figures use the illustrative $0.80/task reference, not the provider's post-promo price, which is unpublished.",
+      "confidence": "low",
+      "source": "Token Perks calculation; illustrative only"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is Muse Spark 1.3 really free?",
+      "a": "The Contributor Free promo is $0 for input, cache, and output tokens while it lasts. It is a limited-time promo, not a free-forever plan — confirm the window in-product before depending on it."
+    },
+    {
+      "q": "How do I find the free entry?",
+      "a": "Navigate /connect → Zen → /models inside the official product and select the exact string “Muse Spark 1.3 Contributor Free”. Similarly named entries may be paid, so match the string exactly."
+    },
+    {
+      "q": "What happens when the promo ends?",
+      "a": "Usage moves to whatever paid terms the provider publishes — this page does not guess at them. Keep your work portable so the transition costs an afternoon, not a rewrite."
+    },
+    {
+      "q": "Should I skip a paid plan and just use this?",
+      "a": "Use it for evaluation and portable work now, but make paid-plan decisions on post-promo prices. If your volume clears ~50 tasks/mo at $0.80/task, a $40-class subscription is the durable answer."
+    },
+    {
+      "q": "How current is this information?",
+      "a": "Research snapshot Sep 6 2026. Promo availability changes fast — re-verify in the official product before paying or planning around it."
+    }
+  ],
+  "citation": "Token Perks. “Zen Muse Spark 1.3 free promo.” Research snapshot Sep 6 2026. https://token-perks.com/best/muse-spark-zen-free/. Re-verify at official terms before paying.",
+  "slot": "top3",
+  "rank": 2
+}

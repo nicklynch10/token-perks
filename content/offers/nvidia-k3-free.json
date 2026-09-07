@@ -1,0 +1,125 @@
+{
+  "id": "nvidia-k3-free",
+  "status": "active",
+  "provider": "NVIDIA Build",
+  "plan": "Kimi K3 free for development and prototyping",
+  "title": "NVIDIA Build Kimi K3 free",
+  "shortTitle": "NVIDIA K3 Free",
+  "badge": "Best for prototyping",
+  "catchSummary": "Free for dev and prototyping with reasoning and tool calls preserved — but limits vary by account, so quota is a rumor until tested.",
+  "canonical_url": "/best/nvidia-k3-free/",
+  "official_terms_url": null,
+  "official_links": [
+    {
+      "label": "NVIDIA Build function / model page",
+      "url": null,
+      "note": "Navigate from the official NVIDIA Build catalog and search “Kimi K3”. No deep URL is published in this snapshot — use the official catalog only."
+    }
+  ],
+  "price": {
+    "now": "$0 for development and prototyping use within account limits",
+    "renewal": "No paid renewal in the snapshot — free dev/prototyping allocation governed by account-level limits, which vary. Confirm current quota in the official console."
+  },
+  "renewal": "Nothing renews because nothing is billed in this snapshot — the free allocation for development and prototyping is set by account-level limits that vary. If your prototype becomes production, expect to move to paid terms published in the official console.",
+  "expiry": null,
+  "verified_at": "2026-09-06",
+  "eligibility": [
+    "Developers with an NVIDIA Build account in good standing",
+    "Development and prototyping workloads — not a production serving commitment",
+    "Account-level access to the Kimi K3 listing in the official catalog"
+  ],
+  "restrictions": [
+    "Limits vary by account — rate limits, quotas, and availability differ and can change",
+    "Development/prototyping scope — production load belongs on paid terms",
+    "Catalog availability can shift without notice; listings rotate",
+    "Usage is subject to the platform's acceptable-use and rate-limit policies"
+  ],
+  "verdict": "Verdict in 30 seconds: the cheapest way to prototype on Kimi K3 with reasoning and tool calls intact. $0 for dev work within your account's limits, and the model behaviour you validate here — reasoning traces plus tool calls — carries over when you graduate to paid serving. The catch is quota opacity: limits vary by account, so measure your actual ceiling on day one instead of trusting any number on this page.",
+  "catches": [
+    "Limits vary by account: two developers can see two different ceilings, and both can change",
+    "Dev/prototyping scope only: this is a workbench, not a production SLA",
+    "No published quota table in the snapshot — your real limit is whatever the console enforces today",
+    "Catalog rotation: free listings can narrow or move, stranding hardcoded endpoints"
+  ],
+  "limits": [
+    "Reasoning and tool-call behaviour is preserved in the free route — that is the point of prototyping here",
+    "Rate limits and quotas are account-level and variable; test yours before demo day",
+    "Concurrency and context behaviour should be validated per account, not assumed from another team's numbers",
+    "Production traffic needs paid terms with explicit limits — confirm in the official console"
+  ],
+  "access_route": "From the official NVIDIA Build catalog, find the Kimi K3 listing, confirm the free development/prototyping terms on your account, then integrate against the endpoint the console gives you — keeping reasoning and tool-call parameters enabled.",
+  "claim_steps": [
+    {
+      "step": "Sign in to the official NVIDIA Build console and open the model catalog."
+    },
+    {
+      "step": "Search the catalog for “Kimi K3” and open its official listing."
+    },
+    {
+      "step": "Confirm the free development/prototyping terms and the limits shown for your account — screenshot them for your records."
+    },
+    {
+      "step": "Integrate with reasoning and tool calls enabled, then load-test to find your real ceiling before any demo or launch."
+    }
+  ],
+  "economics_heading": "The economics: free validation, paid graduation",
+  "economics": [
+    "Prototyping here costs $0 against the same illustrative $0.80/task PAYG reference — every 100 prototype tasks avoids ~$80 of paid inference while you validate reasoning and tool-call behaviour.",
+    "The value is information, not just savings: confirming that Kimi K3's reasoning traces drive your agent correctly is worth more than the avoided spend, because it de-risks the later paid commitment.",
+    "Budget the graduation: a prototype doing 120 tasks/mo that moves to a $40/mo subscription breaks even at 50 tasks against the $0.80 reference — plan that migration cost from day one.",
+    "Do not price production on free quota. Account-variable limits mean this page cannot promise a ceiling — your console's numbers are the only ones that count."
+  ],
+  "economics_rows": [
+    { "label": "Price now", "value": "$0 (dev / prototyping)" },
+    { "label": "Renewal", "value": "None — account limits govern" },
+    { "label": "Reasoning + tool calls", "value": "Preserved in free route" },
+    { "label": "100 prototype tasks ≈", "value": "~$80 avoided PAYG (illustrative)" },
+    { "label": "Quota", "value": "Varies by account — test yours" }
+  ],
+  "evidence": [
+    {
+      "point": "Free dev/prototyping positioning with reasoning and tool calls preserved comes from the Sep 6 2026 research snapshot of the official listing.",
+      "confidence": "high",
+      "source": "Official NVIDIA Build catalog listing, captured Sep 6 2026"
+    },
+    {
+      "point": "Limits vary by account — stated qualitatively because no single quota number applies to all readers.",
+      "confidence": "medium",
+      "source": "Snapshot Sep 6 2026; per-account enforcement observed"
+    },
+    {
+      "point": "Avoided-spend figures use the illustrative $0.80/task reference; actual savings depend on your tokens-per-task and post-prototype serving price.",
+      "confidence": "low",
+      "source": "Token Perks calculation; illustrative only"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is Kimi K3 on NVIDIA Build really free?",
+      "a": "For development and prototyping within your account's limits, yes — $0 in the Sep 6 2026 snapshot. Limits vary by account, so confirm your quota in the official console."
+    },
+    {
+      "q": "Do reasoning and tool calls work on the free route?",
+      "a": "Yes — reasoning and tool-call behaviour is preserved, which is what makes this route useful for validating agents before paying for serving."
+    },
+    {
+      "q": "Can I run production on it?",
+      "a": "No. This is a development/prototyping allocation with variable, unpublished-per-account limits and no production SLA. Move serving traffic to paid terms."
+    },
+    {
+      "q": "Why won't you quote the exact quota?",
+      "a": "Because limits vary by account and change over time — any single number here would mislead half our readers. Test your ceiling in the console on day one."
+    },
+    {
+      "q": "Which AI coding tools are actually free with no credit card, and what are the limits?",
+      "a": "Two routes are free at the point of use in our Sep 6 snapshot: this NVIDIA Build K3 dev access and the Zen Muse Spark $0 promo. Whether signup requires a card varies by account and region, so we do not promise card-free onboarding. Limits differ: account-variable quotas here, a promo window that can end there."
+    },
+    {
+      "q": "How current is this information?",
+      "a": "Research snapshot Sep 6 2026. Catalog listings and quotas rotate — re-verify in the official console before building plans on it."
+    }
+  ],
+  "citation": "Token Perks. “NVIDIA Build Kimi K3 free.” Research snapshot Sep 6 2026. https://token-perks.com/best/nvidia-k3-free/. Re-verify at official terms before paying.",
+  "slot": "top3",
+  "rank": 3
+}

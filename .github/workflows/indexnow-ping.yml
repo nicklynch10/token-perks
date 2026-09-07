@@ -1,0 +1,50 @@
+name: IndexNow ping
+
+# Pings IndexNow (Bing/Yandex/Seznam shared endpoint) after each deploy so new
+# and updated URLs are picked up quickly. The key is NOT a secret: IndexNow
+# keys are public ownership proofs, verified by the key file committed at
+# public/e40fa0ddc866b82299ed3424d3a1da41.txt and served at
+# https://token-perks.com/e40fa0ddc866b82299ed3424d3a1da41.txt
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping IndexNow with key URLs
+        run: |
+          KEY="e40fa0ddc866b82299ed3424d3a1da41"
+          HOST="token-perks.com"
+          KEY_LOCATION="https://${HOST}/${KEY}.txt"
+          BODY=$(cat <<JSON
+          {
+            "host": "${HOST}",
+            "key": "${KEY}",
+            "keyLocation": "${KEY_LOCATION}",
+            "urlList": [
+              "https://${HOST}/",
+              "https://${HOST}/best/",
+              "https://${HOST}/best/kimi-k3-core/",
+              "https://${HOST}/best/muse-spark-zen-free/",
+              "https://${HOST}/best/nvidia-k3-free/",
+              "https://${HOST}/guides/",
+              "https://${HOST}/guides/effective-cost-per-task-explained/",
+              "https://${HOST}/guides/monthly-vs-annual-ai/",
+              "https://${HOST}/methodology/",
+              "https://${HOST}/changes/",
+              "https://${HOST}/how-we-make-money/"
+            ]
+          }
+          JSON
+          )
+          CODE=$(curl -sS -o /tmp/indexnow-response.txt -w "%{http_code}" \
+            -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "$BODY")
+          echo "IndexNow responded: $CODE"
+          cat /tmp/indexnow-response.txt
+          test "$CODE" = "200" || test "$CODE" = "202"
