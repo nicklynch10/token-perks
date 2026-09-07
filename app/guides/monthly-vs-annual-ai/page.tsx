@@ -42,7 +42,7 @@ const FAQ = [
   },
   {
     q: "When does annual billing pay back vs monthly (break-even month)?",
-    a: "Annual is $372 upfront; monthly is $39 a month. If you cancel early with no refund, monthly wins until about month 10 (372 ÷ 39 ≈ 9.5). Stay past month 10 and annual has paid back, saving roughly $8/mo thereafter. A full-refund window would move break-even to month 1 — which is why the refund terms decide the answer.",
+    a: "Annual is $372 upfront; monthly is $39 a month. If you cancel early with no refund, monthly is cheaper until about month 10 (372 ÷ 39 ≈ 9.5). Stay past month 10 and annual reaches break-even, saving roughly $8/mo thereafter. A full-refund window would move break-even to month 1 — which is why the refund terms decide the answer.",
   },
   {
     q: "What happens on cancel — refunds, proration, keep-until-end-of-term?",
@@ -124,7 +124,7 @@ export default function GuidePage() {
         <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-ink-soft">
           <li>New team, new tool, unmeasured usage — measure quarterly first.</li>
           <li>Dependence on a limited-time promo (the Zen free route, or any similar provider promo window) that could end.</li>
-          <li>Cash-flow matters more than a 20% discount right now.</li>
+          <li>Cash-flow matters more than a 20% discount in the short run.</li>
         </ul>
       </section>
 

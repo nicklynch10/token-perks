@@ -12,9 +12,6 @@ function rfc822(date: string): string {
 }
 
 export async function GET() {
-  const buildDate = new Date(
-    Math.max(...ACTIVE_OFFERS.map((o) => Date.parse(`${o.verified_at}T00:00:00Z`))),
-  ).toUTCString();
   const items = [
     ...ACTIVE_OFFERS.map((o) => ({
       title: `${o.title} — ${o.price.now} (verified ${o.verified_at})`,
@@ -34,8 +31,16 @@ export async function GET() {
       desc: "Annual saves ~20% for stable volume only.",
       pubDate: rfc822(SNAPSHOT_ISO),
     },
+    {
+      title: "AI cost leaderboard — 121 access routes, ranked on blended $/M",
+      link: `${SITE_URL}/`,
+      desc: "Cost-side ranking of subscriptions, API pricing, credits, coding tools, and free tiers, with a cost-vs-intelligence frontier chart. Intelligence scores quoted from Artificial Analysis with per-datum citations; machine feed: /api/leaderboard.json (cost side only).",
+      pubDate: rfc822("2026-09-07"),
+    },
   ];
-  const xml = `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Token Perks</title><link>${SITE_URL}/</link><description>AI subscription offers, compared on effective cost per task. Research snapshot Sep 6 2026.</description><language>en</language><lastBuildDate>${buildDate}</lastBuildDate>${items
+  const itemDates = items.map((it) => Date.parse(it.pubDate));
+  const buildDate = new Date(Math.max(...itemDates)).toUTCString();
+  const xml = `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Token Perks</title><link>${SITE_URL}/</link><description>AI access routes ranked on effective cost, with cited intelligence scores. Cost snapshot Sep 6-7 2026.</description><language>en</language><lastBuildDate>${buildDate}</lastBuildDate>${items
     .map(
       (it) =>
         `<item><title>${esc(it.title)}</title><link>${esc(it.link)}</link><guid isPermaLink="true">${esc(it.link)}</guid><description>${esc(it.desc)}</description><pubDate>${it.pubDate}</pubDate></item>`,

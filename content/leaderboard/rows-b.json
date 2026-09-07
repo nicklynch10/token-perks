@@ -1,0 +1,865 @@
+[
+ {
+  "id": "anthropic--api--fable-5-1",
+  "provider": "Anthropic",
+  "category": "b",
+  "plan": "Fable 5.1",
+  "listPrice": "$10 in / $50 out",
+  "priceMonthly": null,
+  "apiIn": 10,
+  "apiOut": 50,
+  "unit": "$/MTok",
+  "notes": "Cache read $0.25, write $12.50; batch -50%.",
+  "caveats": [
+   "High output rate"
+  ],
+  "sourceUrl": "https://claude.com/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "claude-fable-5-1"
+ },
+ {
+  "id": "anthropic--api--opus-5",
+  "provider": "Anthropic",
+  "category": "b",
+  "plan": "Opus 5",
+  "listPrice": "$5 in / $25 out",
+  "priceMonthly": null,
+  "apiIn": 5,
+  "apiOut": 25,
+  "unit": "$/MTok",
+  "notes": "Cache read $0.50, write $6.25; fast mode at 2x standard pricing.",
+  "caveats": [],
+  "sourceUrl": "https://claude.com/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "claude-opus-5"
+ },
+ {
+  "id": "anthropic--api--sonnet-5",
+  "provider": "Anthropic",
+  "category": "b",
+  "plan": "Sonnet 5",
+  "listPrice": "$2 in / $10 out",
+  "priceMonthly": null,
+  "apiIn": 2,
+  "apiOut": 10,
+  "unit": "$/MTok",
+  "notes": "Cache read $0.20, write $2.50.",
+  "caveats": [],
+  "sourceUrl": "https://claude.com/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "claude-sonnet-5"
+ },
+ {
+  "id": "anthropic--api--haiku-4-5",
+  "provider": "Anthropic",
+  "category": "b",
+  "plan": "Haiku 4.5",
+  "listPrice": "$1 in / $5 out",
+  "priceMonthly": null,
+  "apiIn": 1,
+  "apiOut": 5,
+  "unit": "$/MTok",
+  "notes": "Cache read $0.10, write $1.25.",
+  "caveats": [],
+  "sourceUrl": "https://claude.com/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "claude-4-5-haiku"
+ },
+ {
+  "id": "anthropic--api--legacy-ladder",
+  "provider": "Anthropic",
+  "category": "b",
+  "plan": "Legacy page ladder (Fable 5; Opus 4.x; Sonnet 4.x)",
+  "listPrice": "$10/$50; $5/$25; $3/$15; $15/$75 as listed",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "$/MTok",
+  "notes": "One legacy page: Fable 5 $10/$50; Opus 4.8/4.7/4.6/4.5 $5/$25; Sonnet 4.6/4.5 $3/$15; Opus 4.1 $15/$75. Batch -50% across rows.",
+  "caveats": [
+   "Superseded ladder; per-model rows not split"
+  ],
+  "sourceUrl": "https://claude.com/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "openai--api--gpt-5-6-sol",
+  "provider": "OpenAI",
+  "category": "b",
+  "plan": "gpt-5.6-sol",
+  "listPrice": "$4.00 in / $20.00 out",
+  "priceMonthly": null,
+  "apiIn": 4,
+  "apiOut": 20,
+  "unit": "$/1M tokens",
+  "notes": "Cached input $0.40; promo pricing available at least through November 21, 2026.",
+  "caveats": [
+   "Promo expiry 2026-11-21"
+  ],
+  "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "gpt-5-6-sol"
+ },
+ {
+  "id": "openai--api--gpt-5-6-terra",
+  "provider": "OpenAI",
+  "category": "b",
+  "plan": "gpt-5.6-terra",
+  "listPrice": "$2.00 in / $12.00 out",
+  "priceMonthly": null,
+  "apiIn": 2,
+  "apiOut": 12,
+  "unit": "$/1M tokens",
+  "notes": "Cached input $0.20.",
+  "caveats": [],
+  "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "gpt-5-6-terra"
+ },
+ {
+  "id": "openai--api--gpt-5-6-luna",
+  "provider": "OpenAI",
+  "category": "b",
+  "plan": "gpt-5.6-luna",
+  "listPrice": "$0.20 in / $1.20 out",
+  "priceMonthly": null,
+  "apiIn": 0.2,
+  "apiOut": 1.2,
+  "unit": "$/1M tokens",
+  "notes": "Cached input $0.02.",
+  "caveats": [],
+  "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "gpt-5-6-luna"
+ },
+ {
+  "id": "openai--api--gpt-6-astra",
+  "provider": "OpenAI",
+  "category": "b",
+  "plan": "gpt-6-astra (newest flagship)",
+  "listPrice": "$10.00 in / $50.00 out",
+  "priceMonthly": null,
+  "apiIn": 10,
+  "apiOut": 50,
+  "unit": "$/1M tokens",
+  "notes": "Positioned above the 5.6 trio.",
+  "caveats": [
+   "Newest flagship; premium rate"
+  ],
+  "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "gpt-6-astra"
+ },
+ {
+  "id": "openai--api--gpt-5-5",
+  "provider": "OpenAI",
+  "category": "b",
+  "plan": "gpt-5.5 / 5.4 / 5.4-mini / 5.4-nano",
+  "listPrice": "$5/$30; $2.50/$15; $0.75/$4.50; $0.20/$1.25",
+  "priceMonthly": null,
+  "apiIn": 5,
+  "apiOut": 30,
+  "unit": "$/1M tokens",
+  "notes": "Cached input about 10x cheaper on each row.",
+  "caveats": [
+   "Ladder row; models not split"
+  ],
+  "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "gpt-5-5-instant"
+ },
+ {
+  "id": "openai--api--gpt-5-2",
+  "provider": "OpenAI",
+  "category": "b",
+  "plan": "gpt-5.2 / gpt-5.1",
+  "listPrice": "$1.75/$14; $1.25/$10",
+  "priceMonthly": null,
+  "apiIn": 1.75,
+  "apiOut": 14,
+  "unit": "$/1M tokens",
+  "notes": "Cached input $0.175 / $0.125.",
+  "caveats": [
+   "Two models on one row"
+  ],
+  "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "openai--api--gpt-5-mini",
+  "provider": "OpenAI",
+  "category": "b",
+  "plan": "gpt-5-mini / gpt-5-nano",
+  "listPrice": "$0.25/$2; $0.05/$0.40",
+  "priceMonthly": null,
+  "apiIn": 0.25,
+  "apiOut": 2,
+  "unit": "$/1M tokens",
+  "notes": "Cached in $0.025 / $0.005; nano is the cheapest frontier-family token on the page.",
+  "caveats": [
+   "Two models on one row"
+  ],
+  "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "gpt-5-mini"
+ },
+ {
+  "id": "openai--api--gpt-5-pro",
+  "provider": "OpenAI",
+  "category": "b",
+  "plan": "gpt-5-pro / 5.2-pro / 5.5-pro",
+  "listPrice": "$15/$120; $21/$168; $30/$180",
+  "priceMonthly": null,
+  "apiIn": 15,
+  "apiOut": 120,
+  "unit": "$/1M tokens",
+  "notes": "Pro tiers; no cached-input rate shown.",
+  "caveats": [
+   "Three models on one row; no cache rate"
+  ],
+  "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "openai--api--o3",
+  "provider": "OpenAI",
+  "category": "b",
+  "plan": "o-series (o3 / o3-pro / o4-mini / o1 / o1-pro)",
+  "listPrice": "$2/$8; $20/$80; $1.10/$4.40; $15/$60; $150/$600",
+  "priceMonthly": null,
+  "apiIn": 2,
+  "apiOut": 8,
+  "unit": "$/1M tokens",
+  "notes": "Legacy reasoning family still priced; o1 cached input $7.50.",
+  "caveats": [
+   "Five models on one row"
+  ],
+  "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "o3"
+ },
+ {
+  "id": "openai--api--gpt-4-1",
+  "provider": "OpenAI",
+  "category": "b",
+  "plan": "gpt-4.1 / 4.1-mini / 4.1-nano",
+  "listPrice": "$2/$8; $0.40/$1.60; $0.10/$0.40",
+  "priceMonthly": null,
+  "apiIn": 2,
+  "apiOut": 8,
+  "unit": "$/1M tokens",
+  "notes": "Cached in $0.50 / $0.10 / $0.025.",
+  "caveats": [
+   "Three models on one row"
+  ],
+  "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "openai--api--embeddings",
+  "provider": "OpenAI",
+  "category": "b",
+  "plan": "Embeddings (3-small / 3-large / ada-002)",
+  "listPrice": "$0.02; $0.13; $0.10",
+  "priceMonthly": null,
+  "apiIn": 0.02,
+  "apiOut": null,
+  "unit": "$/1M input tokens",
+  "notes": "Input-only embedding models.",
+  "caveats": [
+   "Input-only; not chat models"
+  ],
+  "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "openai--api--batch-fast",
+  "provider": "OpenAI",
+  "category": "b",
+  "plan": "Batch / Fast mode / residency modifiers",
+  "listPrice": "Batch -50%; Fast mode ~2x; +10% residency uplift",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "%",
+  "notes": "Cross-cutting modifiers on rows above; residency applies to models released after March 5, 2026.",
+  "caveats": [
+   "Modifiers, not standalone access"
+  ],
+  "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "google--api--gemini-3-8-flash",
+  "provider": "Google",
+  "category": "b",
+  "plan": "Gemini 3.8 / 3.7 / 3.6 Flash",
+  "listPrice": "$0.75 in / $3.75 out (thru Dec 31 2026); $1.50 / $7.50 from Jan 1 2027",
+  "priceMonthly": null,
+  "apiIn": 0.75,
+  "apiOut": 3.75,
+  "unit": "$/1M tokens",
+  "notes": "Free tier available; batch/flex about half; priority about 1.8x. Price rises 2027-01-01.",
+  "caveats": [
+   "Scheduled price increase 2027-01-01"
+  ],
+  "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "gemini-3-8-flash"
+ },
+ {
+  "id": "google--api--gemini-3-5-flash",
+  "provider": "Google",
+  "category": "b",
+  "plan": "Gemini 3.5 Flash / 3.5 Flash-Lite",
+  "listPrice": "$1.50/$9.00; $0.30/$2.50",
+  "priceMonthly": null,
+  "apiIn": 1.5,
+  "apiOut": 9,
+  "unit": "$/1M tokens",
+  "notes": "Free tier available on both.",
+  "caveats": [
+   "Two models on one row"
+  ],
+  "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "gemini-3-5-flash"
+ },
+ {
+  "id": "google--api--gemini-3-1-flash-lite",
+  "provider": "Google",
+  "category": "b",
+  "plan": "Gemini 3.1 Flash-Lite",
+  "listPrice": "$0.25 in / $1.50 out",
+  "priceMonthly": null,
+  "apiIn": 0.25,
+  "apiOut": 1.5,
+  "unit": "$/1M tokens",
+  "notes": "Text/image/video input at listed rates; audio $0.50. Free tier available.",
+  "caveats": [],
+  "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "google--api--gemini-3-1-pro-preview",
+  "provider": "Google",
+  "category": "b",
+  "plan": "Gemini 3.1 Pro Preview",
+  "listPrice": "$2.00 in / $12.00 out (200k and under)",
+  "priceMonthly": null,
+  "apiIn": 2,
+  "apiOut": 12,
+  "unit": "$/1M tokens",
+  "notes": "Over 200k context: $4.00 / $18.00. No free tier.",
+  "caveats": [
+   "Long-context surcharge above 200k",
+   "No free tier"
+  ],
+  "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "gemini-3-1-pro-preview"
+ },
+ {
+  "id": "google--api--gemini-3-flash-preview",
+  "provider": "Google",
+  "category": "b",
+  "plan": "Gemini 3 Flash Preview",
+  "listPrice": "$0.50 in / $3.00 out",
+  "priceMonthly": null,
+  "apiIn": 0.5,
+  "apiOut": 3,
+  "unit": "$/1M tokens",
+  "notes": "Audio input $1.00. Free tier available.",
+  "caveats": [
+   "Preview tier"
+  ],
+  "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "google--api--gemini-2-5-pro",
+  "provider": "Google",
+  "category": "b",
+  "plan": "Gemini 2.5 Pro",
+  "listPrice": "$1.25 in / $10 out (200k and under)",
+  "priceMonthly": null,
+  "apiIn": 1.25,
+  "apiOut": 10,
+  "unit": "$/1M tokens",
+  "notes": "Over 200k: $2.50 / $15. Free tier available; batch $0.625/$5.00.",
+  "caveats": [
+   "Long-context surcharge above 200k"
+  ],
+  "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "gemini-2-5-pro"
+ },
+ {
+  "id": "google--api--gemini-2-5-flash",
+  "provider": "Google",
+  "category": "b",
+  "plan": "Gemini 2.5 Flash / 2.5 Flash-Lite",
+  "listPrice": "$0.30/$2.50; $0.10/$0.40",
+  "priceMonthly": null,
+  "apiIn": 0.3,
+  "apiOut": 2.5,
+  "unit": "$/1M tokens",
+  "notes": "Audio input $1.00 / $0.30; free tier on both.",
+  "caveats": [
+   "Two models on one row"
+  ],
+  "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "xai--api--grok-4-6",
+  "provider": "xAI",
+  "category": "b",
+  "plan": "grok-4.6",
+  "listPrice": "$2.00 in / $6.00 out (under 200k)",
+  "priceMonthly": null,
+  "apiIn": 2,
+  "apiOut": 6,
+  "unit": "$/1M tokens",
+  "notes": "At or above 200k prompt: $4.00 / $12.00; cached input $0.50 / $1.00; 500k context. Prompt over threshold bills the whole request at the higher rate.",
+  "caveats": [
+   "Whole-request repricing above 200k"
+  ],
+  "sourceUrl": "https://docs.x.ai/docs/models",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "grok-4-6"
+ },
+ {
+  "id": "xai--api--grok-4-5",
+  "provider": "xAI",
+  "category": "b",
+  "plan": "grok-4.5",
+  "listPrice": "$2.00 in / $6.00 out (under 200k)",
+  "priceMonthly": null,
+  "apiIn": 2,
+  "apiOut": 6,
+  "unit": "$/1M tokens",
+  "notes": "At or above 200k: $4.00 / $12.00; cached input $0.30 / $0.60; 500k context.",
+  "caveats": [
+   "Whole-request repricing above 200k"
+  ],
+  "sourceUrl": "https://docs.x.ai/docs/models",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "xai--api--grok-4-3",
+  "provider": "xAI",
+  "category": "b",
+  "plan": "grok-4.3",
+  "listPrice": "$1.25 in / $2.50 out (under 200k)",
+  "priceMonthly": null,
+  "apiIn": 1.25,
+  "apiOut": 2.5,
+  "unit": "$/1M tokens",
+  "notes": "At or above 200k: $2.50 / $5.00; cached input $0.20 / $0.40; 1M context.",
+  "caveats": [
+   "Whole-request repricing above 200k"
+  ],
+  "sourceUrl": "https://docs.x.ai/docs/models",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "xai--api--grok-4-20",
+  "provider": "xAI",
+  "category": "b",
+  "plan": "grok-4.20-0309 (reasoning / non-reasoning / multi-agent)",
+  "listPrice": "Same tiers as grok-4.3",
+  "priceMonthly": null,
+  "apiIn": 1.25,
+  "apiOut": 2.5,
+  "unit": "$/1M tokens",
+  "notes": "1M context; logprobs unsupported on 4.20+.",
+  "caveats": [
+   "Logprobs unsupported"
+  ],
+  "sourceUrl": "https://docs.x.ai/docs/models",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "xai--api--grok-build-0-1",
+  "provider": "xAI",
+  "category": "b",
+  "plan": "grok-build-0.1 (coding)",
+  "listPrice": "$1.00 in / $2.00 out (under 200k)",
+  "priceMonthly": null,
+  "apiIn": 1,
+  "apiOut": 2,
+  "unit": "$/1M tokens",
+  "notes": "At or above 200k: $2.00 / $4.00; cached input $0.20 / $0.40; 256k context.",
+  "caveats": [
+   "Whole-request repricing above 200k"
+  ],
+  "sourceUrl": "https://docs.x.ai/docs/models",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "xai--api--imagine",
+  "provider": "xAI",
+  "category": "b",
+  "plan": "Imagine images / video / voice",
+  "listPrice": "$0.02-0.05 per image; $0.05-0.08 per sec; $0.08 per min",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per unit",
+  "notes": "Non-token billing.",
+  "caveats": [
+   "Non-token billing"
+  ],
+  "sourceUrl": "https://docs.x.ai/docs/models",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "deepseek--api--v4-flash",
+  "provider": "DeepSeek",
+  "category": "b",
+  "plan": "deepseek-v4-flash",
+  "listPrice": "In $0.22 off-peak / $0.44 peak; out $0.66 / $1.32",
+  "priceMonthly": null,
+  "apiIn": 0.22,
+  "apiOut": 0.66,
+  "unit": "$/1M tokens",
+  "notes": "Off-peak exactly half; cache-hit input $0.007. Direct fetch blocked (404); figures from search-indexed official copy.",
+  "caveats": [
+   "Peak/off-peak split",
+   "Hours unpublished in snapshot"
+  ],
+  "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
+  "label": "EXCERPT",
+  "offer": null,
+  "modelId": "deepseek-v4-flash"
+ },
+ {
+  "id": "deepseek--api--v4-pro",
+  "provider": "DeepSeek",
+  "category": "b",
+  "plan": "deepseek-v4-pro",
+  "listPrice": "In $0.66 off-peak / $1.32 peak; out $1.98 / $3.96",
+  "priceMonthly": null,
+  "apiIn": 0.66,
+  "apiOut": 1.98,
+  "unit": "$/1M tokens",
+  "notes": "Cache-hit input $0.022. Trackers note an Aug 16 2026 repricing; about 1M context per third parties.",
+  "caveats": [
+   "Peak/off-peak split",
+   "Context window unconfirmed"
+  ],
+  "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
+  "label": "EXCERPT",
+  "offer": null,
+  "modelId": "deepseek-v4-pro"
+ },
+ {
+  "id": "moonshot--api--kimi-k3",
+  "provider": "Moonshot AI",
+  "category": "b",
+  "plan": "kimi-k3 (API)",
+  "listPrice": "$3.00 in (cache-miss) / $15.00 out",
+  "priceMonthly": null,
+  "apiIn": 3,
+  "apiOut": 15,
+  "unit": "$/1M tokens",
+  "notes": "Cache-hit input $0.30; 1,048,576-token context; prices exclude taxes.",
+  "caveats": [
+   "Taxes excluded"
+  ],
+  "sourceUrl": "https://platform.kimi.ai/docs/pricing/chat-k3",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "kimi-k3"
+ },
+ {
+  "id": "moonshot--api--kimi-k2-7",
+  "provider": "Moonshot AI",
+  "category": "b",
+  "plan": "Kimi K2.7 Code / K2.6 (API)",
+  "listPrice": "Not fetched this pass",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "$/1M tokens",
+  "notes": "Listed on the platform pricing index with per-model subpages.",
+  "caveats": [
+   "Prices not fetched"
+  ],
+  "sourceUrl": "https://platform.kimi.ai/docs/pricing",
+  "label": "UNCERTAIN",
+  "offer": null,
+  "modelId": "kimi-k2-7-code"
+ },
+ {
+  "id": "zai--api--glm-5-3",
+  "provider": "Z.ai",
+  "category": "b",
+  "plan": "GLM-5.3 / GLM-5.2 / GLM-5.1",
+  "listPrice": "$1.40 in / $4.40 out",
+  "priceMonthly": null,
+  "apiIn": 1.4,
+  "apiOut": 4.4,
+  "unit": "$/1M tokens",
+  "notes": "Context windows not listed on the pricing page.",
+  "caveats": [
+   "Context windows unpublished"
+  ],
+  "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "glm-5-3"
+ },
+ {
+  "id": "zai--api--glm-5-3-flash",
+  "provider": "Z.ai",
+  "category": "b",
+  "plan": "GLM-5.3-Flash",
+  "listPrice": "$0.075 in / $0.25 out (promo; list $0.15 / $0.50)",
+  "priceMonthly": null,
+  "apiIn": 0.075,
+  "apiOut": 0.25,
+  "unit": "$/1M tokens",
+  "notes": "50% discount with strikethrough list prices shown.",
+  "caveats": [
+   "Promo may end; list is 2x"
+  ],
+  "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "glm-5-3-flash"
+ },
+ {
+  "id": "zai--api--glm-5-ladder",
+  "provider": "Z.ai",
+  "category": "b",
+  "plan": "GLM-5 / 4.7 / 4.6 / 4.5 ladder",
+  "listPrice": "$1/$3.2; $0.6/$2.2 (4.7/4.6/4.5)",
+  "priceMonthly": null,
+  "apiIn": 1,
+  "apiOut": 3.2,
+  "unit": "$/1M tokens",
+  "notes": "GLM-4.5-X $2.2/$8.9; GLM-4.5-Air $0.2/$1.1; GLM-4.5-AirX $1.1/$4.5.",
+  "caveats": [
+   "Ladder row; models not split"
+  ],
+  "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "zai--api--glm-flash-free",
+  "provider": "Z.ai",
+  "category": "b",
+  "plan": "GLM-4.7-FlashX / Flash / 4.5-Flash",
+  "listPrice": "$0.07/$0.4; Free; Free",
+  "priceMonthly": null,
+  "apiIn": 0.07,
+  "apiOut": 0.4,
+  "unit": "$/1M tokens",
+  "notes": "Flash variants are zero-priced API models.",
+  "caveats": [
+   "Zero-priced tiers"
+  ],
+  "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "glm-4-6"
+ },
+ {
+  "id": "zai--api--glm-vision",
+  "provider": "Z.ai",
+  "category": "b",
+  "plan": "GLM-4.6V / 4.5V / GLM-OCR / 4.6V-Flash",
+  "listPrice": "$0.3/$0.9; $0.6/$1.8; $0.03/$0.03; Free",
+  "priceMonthly": null,
+  "apiIn": 0.3,
+  "apiOut": 0.9,
+  "unit": "$/1M tokens",
+  "notes": "Vision ladder; GLM-4.6V-FlashX $0.04/$0.4.",
+  "caveats": [
+   "Ladder row; models not split"
+  ],
+  "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "alibaba--api--qwen-official",
+  "provider": "Alibaba (Qwen)",
+  "category": "b",
+  "plan": "Qwen official API (Model Studio)",
+  "listPrice": "Not verified this pass",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "$/1M tokens",
+  "notes": "Catalog renders model names only (qwen3.8-max, qwen3.7-plus, qwen3.8-flash); per-model pricing pages not fetched.",
+  "caveats": [
+   "Prices not fetched"
+  ],
+  "sourceUrl": "https://www.alibabacloud.com/help/en/model-studio/models",
+  "label": "UNCERTAIN",
+  "offer": null,
+  "modelId": "qwen3-8-max"
+ },
+ {
+  "id": "together--api--qwen-resale",
+  "provider": "Alibaba (Qwen) via Together AI",
+  "category": "b",
+  "plan": "Qwen3.8-2.4T-A95B / Qwen3.8 Flash / Qwen3.7-Max / Qwen3.7-Plus",
+  "listPrice": "$2.00/$6.00; $0.15/$0.47; $1.25/$3.75; $0.32/$1.28",
+  "priceMonthly": null,
+  "apiIn": 2,
+  "apiOut": 6,
+  "unit": "$/1M tokens",
+  "notes": "Resale prices on Together, not Alibaba list.",
+  "caveats": [
+   "Resale pricing, not first-party"
+  ],
+  "sourceUrl": "https://www.together.ai/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "qwen3-8-2-4t"
+ },
+ {
+  "id": "together--api--qwen-value",
+  "provider": "Alibaba (Qwen) via Together AI",
+  "category": "b",
+  "plan": "Qwen3.6-Plus / Qwen3.5-397B-A17B / Qwen3.5-9B / Qwen3-235B-A22B",
+  "listPrice": "$0.50/$3.00; $0.60/$3.60; $0.17/$0.25; $0.20/$0.60",
+  "priceMonthly": null,
+  "apiIn": 0.5,
+  "apiOut": 3,
+  "unit": "$/1M tokens",
+  "notes": "Value ladder for open Qwen checkpoints.",
+  "caveats": [
+   "Resale pricing, not first-party"
+  ],
+  "sourceUrl": "https://www.together.ai/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "together--api--llama-resale",
+  "provider": "Meta (Llama) via Together AI",
+  "category": "b",
+  "plan": "Llama 3.3 70B / Llama 3 8B Instruct Lite",
+  "listPrice": "$1.04/$1.04; $0.14/$0.14",
+  "priceMonthly": null,
+  "apiIn": 1.04,
+  "apiOut": 1.04,
+  "unit": "$/1M tokens",
+  "notes": "No Llama 4 row appeared on any page fetched this pass - Llama 4 pricing unverified anywhere.",
+  "caveats": [
+   "Llama 4 pricing unverified"
+  ],
+  "sourceUrl": "https://www.together.ai/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "llama-4-maverick"
+ },
+ {
+  "id": "mistral--api--mistral-large",
+  "provider": "Mistral",
+  "category": "b",
+  "plan": "Mistral Large (API)",
+  "listPrice": "$0.5 in / $1.5 out",
+  "priceMonthly": null,
+  "apiIn": 0.5,
+  "apiOut": 1.5,
+  "unit": "$/1M tokens",
+  "notes": "Batch work reduces price by 50%; cached input up to 90% cheaper; full per-model table not rendered.",
+  "caveats": [
+   "Full table not rendered"
+  ],
+  "sourceUrl": "https://mistral.ai/pricing",
+  "label": "EXCERPT",
+  "offer": null,
+  "modelId": "mistral-large-3"
+ },
+ {
+  "id": "minimax--api--m2-7",
+  "provider": "MiniMax",
+  "category": "b",
+  "plan": "MiniMax-M2.7",
+  "listPrice": "$0.30 in / $1.20 out",
+  "priceMonthly": null,
+  "apiIn": 0.3,
+  "apiOut": 1.2,
+  "unit": "$/1M tokens",
+  "notes": "Cache read $0.06, cache write $0.375.",
+  "caveats": [],
+  "sourceUrl": "https://platform.minimax.io/docs/guides/pricing-paygo",
+  "label": "EXCERPT",
+  "offer": null,
+  "modelId": "minimax-m3"
+ },
+ {
+  "id": "minimax--api--m2-7-highspeed",
+  "provider": "MiniMax",
+  "category": "b",
+  "plan": "MiniMax-M2.7-highspeed",
+  "listPrice": "$0.60 in / $2.40 out",
+  "priceMonthly": null,
+  "apiIn": 0.6,
+  "apiOut": 2.4,
+  "unit": "$/1M tokens",
+  "notes": "Cache read $0.06; priority multipliers 1.5-2x per docs.",
+  "caveats": [
+   "Priority multipliers raise price"
+  ],
+  "sourceUrl": "https://platform.minimax.io/docs/guides/pricing-paygo",
+  "label": "EXCERPT",
+  "offer": null,
+  "modelId": null
+ }
+]

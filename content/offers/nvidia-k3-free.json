@@ -71,7 +71,7 @@
   ],
   "economics_rows": [
     {
-      "label": "Price now",
+      "label": "Current price",
       "value": "$0 (dev / prototyping)"
     },
     {

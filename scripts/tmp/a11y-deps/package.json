@@ -1,0 +1,10 @@
+{
+  "name": "token-perks-a11y-deps",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Scratch dependency cache for scripts/a11y-check.mjs (jsdom + axe-core). Not part of the site. Safe to delete; a11y-check.mjs prints the bootstrap command if missing.",
+  "dependencies": {
+    "axe-core": "^4.13.0",
+    "jsdom": "^24.1.0"
+  }
+}

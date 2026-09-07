@@ -1,0 +1,269 @@
+[
+ {
+  "id": "google--promo--gemini-api-free-tier",
+  "provider": "Google",
+  "category": "e",
+  "plan": "Gemini API free tier (AI Studio)",
+  "listPrice": "$0",
+  "priceMonthly": 0,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per request",
+  "notes": "Free of charge on most Flash models (2.5 Flash/Lite, 3 Flash Preview, 3.5/3.6/3.7/3.8 Flash); Pro Preview tiers excluded.",
+  "caveats": [
+   "Request-rate caps"
+  ],
+  "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "gemini-3-8-flash"
+ },
+ {
+  "id": "nvidia-build--promo--kimi-k3-dev",
+  "provider": "NVIDIA Build",
+  "category": "e",
+  "plan": "Kimi K3 dev/prototyping",
+  "listPrice": "$0",
+  "priceMonthly": 0,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per account",
+  "notes": "Account-variable limits; reasoning and tool calls preserved.",
+  "caveats": [
+   "Account-variable limits"
+  ],
+  "sourceUrl": "https://build.nvidia.com",
+  "label": "EXCERPT",
+  "offer": "/best/nvidia-k3-free/",
+  "modelId": "kimi-k3"
+ },
+ {
+  "id": "muse-spark--promo--contributor-free",
+  "provider": "Muse Spark (via Zen)",
+  "category": "e",
+  "plan": "Muse Spark 1.3 Contributor Free",
+  "listPrice": "$0 for input, cache, and output",
+  "priceMonthly": 0,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per token, promo window",
+  "notes": "In-product route only: /connect, then Zen, then /models; exact-string match required; limited-time, end date visible only in-product.",
+  "caveats": [
+   "In-product activation",
+   "End date unpublished"
+  ],
+  "sourceUrl": "https://zen.baidu.com/",
+  "label": "EXCERPT",
+  "offer": "/best/muse-spark-zen-free/",
+  "modelId": "muse-spark-1-3"
+ },
+ {
+  "id": "mistral--promo--vibe-free",
+  "provider": "Mistral",
+  "category": "e",
+  "plan": "Vibe Free",
+  "listPrice": "$0 + $10/mo API credits",
+  "priceMonthly": 0,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per month",
+  "notes": "Bundled platform allowance renews monthly on the free tier.",
+  "caveats": [],
+  "sourceUrl": "https://mistral.ai/pricing",
+  "label": "EXCERPT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "mistral--promo--student-pro",
+  "provider": "Mistral",
+  "category": "e",
+  "plan": "Student Pro pricing",
+  "listPrice": "$5.99/mo (normally $14.99)",
+  "priceMonthly": 5.99,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per month",
+  "notes": "Verified students.",
+  "caveats": [
+   "Student verification"
+  ],
+  "sourceUrl": "https://mistral.ai/pricing",
+  "label": "EXCERPT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "openrouter--promo--new-user-free",
+  "provider": "OpenRouter",
+  "category": "e",
+  "plan": "New-user allowance + free models",
+  "listPrice": "$0",
+  "priceMonthly": 0,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per request",
+  "notes": "Small free allowance for all new users; free models capped at 50 requests/day (1,000 with a $10 credit purchase).",
+  "caveats": [
+   "Daily request caps"
+  ],
+  "sourceUrl": "https://openrouter.ai/docs/faq",
+  "label": "EXCERPT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "cerebras--promo--free-trial",
+  "provider": "Cerebras",
+  "category": "e",
+  "plan": "Free trial",
+  "listPrice": "$5 free credits",
+  "priceMonthly": 5,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per account",
+  "notes": "All Cerebras-powered models; community support.",
+  "caveats": [
+   "One-time credit"
+  ],
+  "sourceUrl": "https://www.cerebras.ai/pricing",
+  "label": "EXCERPT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "fireworks--promo--starter-credit",
+  "provider": "Fireworks AI",
+  "category": "e",
+  "plan": "Starter credit",
+  "listPrice": "$1 free credits",
+  "priceMonthly": 1,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per account",
+  "notes": "Serverless inference only.",
+  "caveats": [
+   "One-time credit"
+  ],
+  "sourceUrl": "https://fireworks.ai/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "fireworks--promo--fire-pass",
+  "provider": "Fireworks AI",
+  "category": "e",
+  "plan": "Fire Pass",
+  "listPrice": "$0 per-token on included models (invite-only pass)",
+  "priceMonthly": 0,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per pass",
+  "notes": "Promo-code activation; kimi-k3-fast router; non-production only.",
+  "caveats": [
+   "Invite-only",
+   "Non-production only"
+  ],
+  "sourceUrl": "https://docs.fireworks.ai/firepass",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "kimi-k3"
+ },
+ {
+  "id": "xai--promo--grok-free",
+  "provider": "xAI",
+  "category": "e",
+  "plan": "Grok free tier",
+  "listPrice": "$0",
+  "priceMonthly": 0,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per month",
+  "notes": "Free to try on the web and in the apps.",
+  "caveats": [
+   "Rate limits unpublished"
+  ],
+  "sourceUrl": "https://x.ai/grok",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "anthropic--promo--claude-free",
+  "provider": "Anthropic",
+  "category": "e",
+  "plan": "Claude Free",
+  "listPrice": "$0",
+  "priceMonthly": 0,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per month",
+  "notes": "Full consumer feature surface with throttled usage.",
+  "caveats": [
+   "Throttled usage"
+  ],
+  "sourceUrl": "https://claude.com/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "zai--promo--free-api-models",
+  "provider": "Z.ai",
+  "category": "e",
+  "plan": "Free API models",
+  "listPrice": "$0",
+  "priceMonthly": 0,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "$/1M tokens",
+  "notes": "GLM-4.7-Flash, GLM-4.5-Flash, GLM-4.6V-Flash priced Free.",
+  "caveats": [
+   "Zero-priced models"
+  ],
+  "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "glm-4-6"
+ },
+ {
+  "id": "zai--promo--night-owl",
+  "provider": "Z.ai",
+  "category": "e",
+  "plan": "Night-owl promo (coding plans)",
+  "listPrice": "$0 within plan window",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per day",
+  "notes": "Unlimited GLM-5.3-Flash in ZCode 23:00-09:00 daily; paid coding-plan users only; doubled quota on other agents off-peak.",
+  "caveats": [
+   "Paid-plan requirement",
+   "Time-windowed"
+  ],
+  "sourceUrl": "https://docs.z.ai/devpack/overview",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "glm-5-3-flash"
+ },
+ {
+  "id": "antigravity--promo--developer-access",
+  "provider": "Google",
+  "category": "e",
+  "plan": "Antigravity developer access",
+  "listPrice": "$0 (available at no charge)",
+  "priceMonthly": 0,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per developer",
+  "notes": "Enterprise tier separate.",
+  "caveats": [
+   "Limits unpublished"
+  ],
+  "sourceUrl": "https://antigravity.google",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ }
+]

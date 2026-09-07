@@ -12,11 +12,14 @@ export default function SiteFooter() {
           <Link className="min-h-[44px] content-center hover:underline" href="/best/">
             Offers
           </Link>
+          <Link className="min-h-[44px] content-center hover:underline" href="/providers/">
+            Providers
+          </Link>
           <Link className="min-h-[44px] content-center hover:underline" href="/guides/">
             Guides
           </Link>
           <Link className="min-h-[44px] content-center hover:underline" href="/methodology/">
-            Methodology v0.1
+            Methodology v2
           </Link>
           <Link className="min-h-[44px] content-center hover:underline" href="/changes/">
             Verification log
@@ -39,6 +42,10 @@ export default function SiteFooter() {
           ·{" "}
           <a className="font-semibold underline" href="/api/offers.json">
             offers.json
+          </a>{" "}
+          ·{" "}
+          <a className="font-semibold underline" href="/api/leaderboard.json">
+            leaderboard.json
           </a>{" "}
           ·{" "}
           <a className="font-semibold underline" href="/feed.xml">

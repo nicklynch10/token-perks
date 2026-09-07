@@ -1,0 +1,194 @@
+[
+ {
+  "id": "openrouter--credits--payg",
+  "provider": "OpenRouter",
+  "category": "c",
+  "plan": "Prepaid USD credits",
+  "listPrice": "5.5% top-up fee (Stripe, $0.80 min); 5% via crypto (USDC)",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "% of top-up",
+  "notes": "No markup on inference; credits are deposits; auto top-up supported; BYOK 5% fee above free allowances; unused credits may expire after 1 year.",
+  "caveats": [
+   "Top-up fee",
+   "Credit expiry after 1 year"
+  ],
+  "sourceUrl": "https://openrouter.ai/docs/faq",
+  "label": "EXCERPT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "openrouter--credits--free-tier",
+  "provider": "OpenRouter",
+  "category": "c",
+  "plan": "Free models tier",
+  "listPrice": "$0",
+  "priceMonthly": 0,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per request",
+  "notes": "About 50 requests/day default; 1,000/day after buying $10+ of credits; free router endpoint auto-selects.",
+  "caveats": [
+   "Daily request caps"
+  ],
+  "sourceUrl": "https://openrouter.ai/docs/faq",
+  "label": "EXCERPT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "nvidia-build--credits--kimi-k3-dev",
+  "provider": "NVIDIA Build",
+  "category": "c",
+  "plan": "Kimi K3 free (dev/prototyping)",
+  "listPrice": "$0 within account limits",
+  "priceMonthly": 0,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per account",
+  "notes": "Limits vary by account and change; no published quota table; dev/prototyping scope only.",
+  "caveats": [
+   "Account-variable limits",
+   "Dev/prototyping scope only"
+  ],
+  "sourceUrl": "https://build.nvidia.com",
+  "label": "EXCERPT",
+  "offer": "/best/nvidia-k3-free/",
+  "modelId": "kimi-k3"
+ },
+ {
+  "id": "fireworks--credits--payg",
+  "provider": "Fireworks AI",
+  "category": "c",
+  "plan": "Serverless PAYG + $1 starter credit",
+  "listPrice": "Postpaid per token; $1 free credits for new accounts",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "$",
+  "notes": "No credit purchases shown on pricing page; 10 RPM cap without payment method per third-party reports.",
+  "caveats": [
+   "10 RPM cap without payment method"
+  ],
+  "sourceUrl": "https://fireworks.ai/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "fireworks--credits--fire-pass",
+  "provider": "Fireworks AI",
+  "category": "c",
+  "plan": "Fire Pass",
+  "listPrice": "No listed price; promo-code activated; invite only",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per pass",
+  "notes": "Zeroes per-token cost on included open-weight models via the kimi-k3-fast router; non-production coding use only; experimental; expiration visible in Billing.",
+  "caveats": [
+   "Invite-only",
+   "Non-production only",
+   "Expiration only visible in-account"
+  ],
+  "sourceUrl": "https://docs.fireworks.ai/firepass",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "kimi-k3"
+ },
+ {
+  "id": "fireworks--credits--training-gpu",
+  "provider": "Fireworks AI",
+  "category": "c",
+  "plan": "Training / GPU",
+  "listPrice": "LoRA SFT from $0.50 per 1M training tokens (16B and under) to $10 (300B+); H100 $7-8/GPU-hr; B200 $10-13",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per unit",
+  "notes": "Fine-tune pricing tiered by model size; region-restricted deployments 1.5x.",
+  "caveats": [
+   "Region surcharge 1.5x"
+  ],
+  "sourceUrl": "https://fireworks.ai/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "together--credits--payg",
+  "provider": "Together AI",
+  "category": "c",
+  "plan": "Serverless PAYG (no credit packs)",
+  "listPrice": "Per-token postpaid; H100 dedicated $3.99/hr; B200 $8.19/hr",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "$/1M tokens; per GPU-hr",
+  "notes": "Batch API column on the price table; fine-tuning min $4.00/job; no credit-purchase system on the page.",
+  "caveats": [],
+  "sourceUrl": "https://www.together.ai/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "cerebras--credits--developer",
+  "provider": "Cerebras",
+  "category": "c",
+  "plan": "Free credits + Developer tier",
+  "listPrice": "$5 free credits; Developer self-serve from $10",
+  "priceMonthly": 5,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "$",
+  "notes": "Per-model token prices did not render on the pricing page; 10x rate limits on Developer tier.",
+  "caveats": [
+   "Per-model prices not rendered"
+  ],
+  "sourceUrl": "https://www.cerebras.ai/pricing",
+  "label": "EXCERPT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "groq--credits--payg",
+  "provider": "Groq",
+  "category": "c",
+  "plan": "Pay-as-you-go API",
+  "listPrice": "Not verified this pass",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "$/1M tokens",
+  "notes": "groq.com/pricing is a marketing page with no table; console.groq.com/docs/pricing returned 404.",
+  "caveats": [
+   "Prices not fetched"
+  ],
+  "sourceUrl": "https://groq.com/pricing",
+  "label": "UNCERTAIN",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "deepinfra--credits--observed",
+  "provider": "DeepInfra / Hyperbolic / Novita / Lambda",
+  "category": "c",
+  "plan": "Third-party hosting (observed, not rowed)",
+  "listPrice": "DeepInfra seen at $1.74/$3.48 for deepseek-v4-pro in search results",
+  "priceMonthly": null,
+  "apiIn": 1.74,
+  "apiOut": 3.48,
+  "unit": "$/1M tokens",
+  "notes": "Third-party figure from search results, unverified against its own page.",
+  "caveats": [
+   "Unverified third-party figure"
+  ],
+  "sourceUrl": "https://www.deepinfra.com/",
+  "label": "UNCERTAIN",
+  "offer": null,
+  "modelId": "deepseek-v4-pro"
+ }
+]

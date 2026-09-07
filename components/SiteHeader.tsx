@@ -22,6 +22,9 @@ export default function SiteHeader({
           <Link className="rounded-lg px-3 py-2.5 hover:bg-paper" href="/best/">
             Offers
           </Link>
+          <Link className="rounded-lg px-3 py-2.5 hover:bg-paper" href="/providers/">
+            Providers
+          </Link>
           <Link className="rounded-lg px-3 py-2.5 hover:bg-paper" href="/guides/">
             Guides
           </Link>

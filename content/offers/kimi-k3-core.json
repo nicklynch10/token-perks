@@ -34,7 +34,7 @@
     "Model served as k3-256k with high thinking-on behaviour; output style and verbosity affect consumption",
     "Annual plan is upfront; confirm whether mid-cycle upgrades, downgrades, or refunds are offered"
   ],
-  "verdict": "Pick Kimi K3 membership if you run steady agentic coding volume and want one predictable bill. At Allegretto ($39/mo, about $31/mo effective annually) it beats pay-as-you-go once you clear roughly 40–50 heavy tasks a month — below that, PAYG or a free route wins. The constraint: a single shared credit pool plus 5-hour and weekly controls means marathon sessions can stall mid-sprint.",
+  "verdict": "Pick Kimi K3 membership if you run steady agentic coding volume and want one predictable bill. At Allegretto ($39/mo, about $31/mo effective annually) it beats pay-as-you-go once you clear roughly 40–50 heavy tasks a month — below that, PAYG or a free route costs less. The constraint: a single shared credit pool plus 5-hour and weekly controls means marathon sessions can stall mid-sprint.",
   "catches": [
     "One shared credit pool: membership usage draws from a single balance, so parallel projects and long agent runs drain it together",
     "5-hour and weekly controls: burst caps can throttle you mid-day even when the monthly balance looks healthy",
@@ -120,7 +120,7 @@
   ],
   "faq": [
     {
-      "q": "What does Kimi K3 membership cost right now?",
+      "q": "What does Kimi K3 membership cost as of the Sep 2026 snapshot?",
       "a": "Moderato $19, Allegretto $39, Allegro $99, and Vivace $199 per month. Annual billing lowers the effective monthly cost to about $15 / $31 / $79 / $159, paid upfront. Prices verified in the Sep 6 2026 snapshot — re-check the official page before paying."
     },
     {
@@ -137,7 +137,7 @@
     },
     {
       "q": "Is API credit use cheaper than a $20 subscription, and at what usage?",
-      "a": "At the $0.80/task reference, $19 of pay-as-you-go buys about 24 tasks — below that, credits or a free route are cheaper; above it, the $19 Moderato month wins. The routes do not mix: a PAYG key bills separately from the coding-endpoint membership, so check which one your tools actually hit."
+      "a": "At the $0.80/task reference, $19 of pay-as-you-go buys about 24 tasks — below that, credits or a free route are cheaper; above it, the $19 Moderato month is cheaper. The routes do not mix: a PAYG key bills separately from the coding-endpoint membership, so check which one your tools actually hit."
     },
     {
       "q": "How current is this information?",

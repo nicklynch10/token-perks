@@ -273,7 +273,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
         <h2 className="display-lg">Price and renewal</h2>
         <dl className="mt-2 space-y-2 rounded-xl border border-line bg-card p-4 text-sm sm:p-5">
           <div>
-            <dt className="font-semibold">Price now</dt>
+            <dt className="font-semibold">Current price</dt>
             <dd className="tabular font-semibold">{offer.price.now}</dd>
           </div>
           <div>

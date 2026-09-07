@@ -1,0 +1,328 @@
+{
+ "accessed": "2026-09-07",
+ "source": "artificialanalysis.ai",
+ "indexVersion": "4.3",
+ "terms": "Per-datum brief citation with attribution and outbound link only; no structured or tabular reproduction. Scores are AA's, not ours.",
+ "models": {
+  "claude-fable-5-1": {
+   "intelligenceIndex": 53,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "Claude Fable 5.1",
+   "aaVariant": "max with fallback"
+  },
+  "gpt-6-astra": {
+   "intelligenceIndex": 53,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "GPT-6 Astra",
+   "aaVariant": "max"
+  },
+  "claude-opus-5": {
+   "intelligenceIndex": 51,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "Claude Opus 5",
+   "aaVariant": "max"
+  },
+  "muse-spark-1-3": {
+   "intelligenceIndex": 48,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "Muse Spark 1.3",
+   "aaVariant": "max"
+  },
+  "gpt-5-6-sol": {
+   "intelligenceIndex": 47,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "GPT-5.6 Sol",
+   "aaVariant": "max"
+  },
+  "qwen3-8-max": {
+   "intelligenceIndex": 45,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": true,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "Qwen3.8 Max",
+   "aaVariant": ""
+  },
+  "glm-5-3": {
+   "intelligenceIndex": 44,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "GLM-5.3",
+   "aaVariant": "max"
+  },
+  "grok-4-6": {
+   "intelligenceIndex": 44,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "Grok 4.6",
+   "aaVariant": "high"
+  },
+  "kimi-k3": {
+   "intelligenceIndex": 44,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "Kimi K3",
+   "aaVariant": "max"
+  },
+  "gpt-5-6-terra": {
+   "intelligenceIndex": 42,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "GPT-5.6 Terra",
+   "aaVariant": "max"
+  },
+  "qwen3-8-flash-next": {
+   "intelligenceIndex": 42,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": true,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "Qwen3.8-Flash-Next",
+   "aaVariant": ""
+  },
+  "glm-5-3-flash": {
+   "intelligenceIndex": 42,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "GLM-5.3-Flash",
+   "aaVariant": ""
+  },
+  "gemini-3-8-flash": {
+   "intelligenceIndex": 41,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "Gemini 3.8 Flash",
+   "aaVariant": "high"
+  },
+  "qwen3-8-2-4t": {
+   "intelligenceIndex": 40,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "Qwen3.8 2.4T A95B",
+   "aaVariant": ""
+  },
+  "gemini-3-7-flash": {
+   "intelligenceIndex": 40,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": true,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "Gemini 3.7 Flash",
+   "aaVariant": "medium"
+  },
+  "claude-sonnet-5": {
+   "intelligenceIndex": 38,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "Claude Sonnet 5",
+   "aaVariant": "max"
+  },
+  "gpt-5-6-luna": {
+   "intelligenceIndex": 38,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "GPT-5.6 Luna",
+   "aaVariant": "max"
+  },
+  "deepseek-v4-pro": {
+   "intelligenceIndex": 36,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "DeepSeek V4 Pro 0813",
+   "aaVariant": "max"
+  },
+  "deepseek-v4-flash": {
+   "intelligenceIndex": 35,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "DeepSeek V4 Flash Vision",
+   "aaVariant": "max"
+  },
+  "kimi-k2-7-code": {
+   "intelligenceIndex": 29,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": true,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "Kimi K2.7 Code",
+   "aaVariant": ""
+  },
+  "gpt-5-5-instant": {
+   "intelligenceIndex": 27,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "GPT-5.5 Instant (June 2026)",
+   "aaVariant": ""
+  },
+  "gemini-3-5-flash-lite": {
+   "intelligenceIndex": 23,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "Gemini 3.5 Flash-Lite",
+   "aaVariant": ""
+  },
+  "minimax-m3": {
+   "intelligenceIndex": 30,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "MiniMax-M3",
+   "aaVariant": ""
+  },
+  "gemini-2-5-pro": {
+   "intelligenceIndex": 17,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/models/gemini-2-5-pro",
+   "aaName": "Gemini 2.5 Pro",
+   "aaVariant": ""
+  },
+  "o3": {
+   "intelligenceIndex": 20,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": true,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "o3",
+   "aaVariant": ""
+  },
+  "claude-4-5-haiku": {
+   "intelligenceIndex": 18,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "Claude 4.5 Haiku",
+   "aaVariant": ""
+  },
+  "glm-4-6": {
+   "intelligenceIndex": 15,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": true,
+   "sourceUrl": "https://artificialanalysis.ai/models/glm-4-6",
+   "aaName": "GLM-4.6",
+   "aaVariant": "Non-reasoning"
+  },
+  "gpt-5-mini": {
+   "intelligenceIndex": 17,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/models/gpt-5-mini",
+   "aaName": "GPT-5 mini",
+   "aaVariant": "high"
+  },
+  "kimi-k2": {
+   "intelligenceIndex": 13,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": true,
+   "sourceUrl": "https://artificialanalysis.ai/models/kimi-k2",
+   "aaName": "Kimi K2",
+   "aaVariant": ""
+  },
+  "grok-4": {
+   "intelligenceIndex": 22,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": true,
+   "sourceUrl": "https://artificialanalysis.ai/models/grok-4",
+   "aaName": "Grok 4",
+   "aaVariant": ""
+  },
+  "mistral-large-3": {
+   "intelligenceIndex": 10,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "Mistral Large 3",
+   "aaVariant": ""
+  },
+  "llama-4-maverick": {
+   "intelligenceIndex": 9,
+   "codingIndex": null,
+   "mathIndex": null,
+   "agenticIndex": null,
+   "estimate": false,
+   "sourceUrl": "https://artificialanalysis.ai/leaderboards/models",
+   "aaName": "Llama 4 Maverick",
+   "aaVariant": ""
+  }
+ }
+}

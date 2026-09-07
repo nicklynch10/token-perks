@@ -62,7 +62,7 @@
       "step": "Start with portable work (evals, prototypes) so a promo end does not strand anything load-bearing."
     }
   ],
-  "economics_heading": "The economics: free now, metered later",
+  "economics_heading": "The economics: free during the promo, metered later",
   "economics": [
     "During the promo the effective cost per task is $0, which beats every paid route at any volume — including the $0.80/task PAYG reference and the $40/mo subscription (break-even: 50 tasks).",
     "The accurate comparison is against the promo's expected lifespan. If you expect 200 tasks before the window closes, that is ~$160 of avoided PAYG spend — real money, but one-time.",
@@ -71,7 +71,7 @@
   ],
   "economics_rows": [
     {
-      "label": "Promo price now",
+      "label": "Promo price",
       "value": "$0 in / cache / out"
     },
     {
@@ -123,7 +123,7 @@
     },
     {
       "q": "Should I skip a paid plan and just use this?",
-      "a": "Use it for evaluation and portable work now, but make paid-plan decisions on post-promo prices. If your volume clears ~50 tasks/mo at $0.80/task, a $40-class subscription is the durable answer."
+      "a": "Use it for evaluation and portable work during the promo window, but make paid-plan decisions on post-promo prices. If your volume clears ~50 tasks/mo at $0.80/task, a $40-class subscription is the durable answer."
     },
     {
       "q": "How current is this information?",

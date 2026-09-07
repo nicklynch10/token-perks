@@ -101,7 +101,7 @@ export default function ComparisonTable() {
             <tr>
               <th scope="col">Offer</th>
               <th scope="col" className="num">Price</th>
-              <th scope="col">Annual effective</th>
+              <th scope="col" className="num">Annual effective</th>
               <th scope="col" className="num" aria-sort="ascending">
                 Est. $ per 100 tasks <span aria-hidden="true">▲</span>
               </th>

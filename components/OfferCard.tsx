@@ -57,11 +57,11 @@ export default function OfferCard({
           </span>
           <VerifyBadge date={offer.verified_at} />
         </div>
-        <h3 className="display-sm mt-3">
+        <h2 className="display-sm mt-3">
           <Link href={offer.canonical_url} className="hover:underline">
             {offer.title}
           </Link>
-        </h3>
+        </h2>
         <p className="data mt-1 text-base">{offer.price.now}</p>
         <p className="data text-xs text-ink-soft">{taskNote}</p>
         <p className="mt-1 text-xs font-medium text-ink-mute">

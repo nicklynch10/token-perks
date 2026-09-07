@@ -35,6 +35,18 @@ interface LogEntry {
 const LOG: LogEntry[] = [
   {
     date: "2026-09-07",
+    title: "Pass 6 — cost-intelligence expansion (universe, leaderboard, frontier chart, providers)",
+    items: [
+      "Scope: new data layer added on top of the three tracked offers. No offer data, prices, renewals, limits, or verified_at values changed — every verified_at remains 2026-09-06.",
+      "Universe snapshot published: 121 access routes across 35 subscriptions, 46 API price rows, 10 credit/prepaid systems, 16 coding-tool plans, and 14 free tiers/promos — every row carrying its source URL, access date, and evidence label (70 DIRECT, 35 EXCERPT, 16 UNCERTAIN). Unverified routes are shown as unverified, never priced from memory.",
+      "Homepage rebuilt as a cost leaderboard: an interactive cost-vs-intelligence frontier chart, an API cost table ranked on blended $/M = (3 x input + 1 x output) / 4 at list price, and a full-universe filter table including UNCERTAIN rows.",
+      "Artificial Analysis Intelligence Index v4.3 scores added as quoted reference values: one citation per datum, each linking its exact source row, accessed 2026-09-07. No AA table is reproduced; machine feeds deliberately exclude AA scores entirely. Our own weighted ranking (TPVS) is implemented and documented but not rendered pending written consent from AA.",
+      "New sections: /providers/ index and 24 provider pages cross-linked with the leaderboard; /api/leaderboard.json machine feed (cost side only); llms.txt and llms-full.txt extended with the leaderboard and universe; sitemap extended with per-provider URLs.",
+      "Known gaps recorded on the methodology page: ChatGPT subscription prices, Claude Max 20x split, GLM Coding Pro/Max prices, Qwen first-party API prices, Llama 4 pricing, Groq per-model prices, Devin/Windsurf post-merge pricing, and Kimi K2.7/K2.6 API prices were not verifiable this pass.",
+    ],
+  },
+  {
+    date: "2026-09-07",
     title: "Pass 5 — data-platform reorientation (tone and layout only)",
     items: [
       "Scope: presentation-only. No offer data, prices, renewals, limits, or verified_at values were changed in this pass — every verified_at remains 2026-09-06.",
@@ -49,10 +61,10 @@ const LOG: LogEntry[] = [
     title: "Pass 4 — presentation polish",
     items: [
       "Scope: presentation-only. No offer data, prices, renewals, limits, or verdicts were changed in this pass — every verified_at remains 2026-09-06.",
-      "Offer cards: raster thumbnails replaced with inline ledger mini-charts (same evidence-table language); offers with a Changed entry in the publication log now carry a visible accent tick.",
-      "Reader-trust copy: footer disclosure reordered (no affiliate links now, commissions only possibly future); a no-gifting line added on the offers hub; the free-route boundary hedge moved above the fold on the homepage.",
+      "Offer cards: raster thumbnails replaced with inline ledger mini-charts (same evidence-table language); offers with a Changed entry in the publication log carried a visible accent tick from that pass on.",
+      "Reader-trust copy: footer disclosure reordered (no affiliate links at that pass, commissions only possibly future); a no-gifting line added on the offers hub; the free-route boundary hedge moved above the fold on the homepage.",
       "Navigation and motion: sticky anchor bars gained active-section highlighting; verification stamps given a short reduced-motion-guarded fade; the hero calculator deep-links its computed answer (with your URL inputs) to the matching verdict section.",
-      "Copy repairs: two unexplained references removed or given context (a promo-window aside on the monthly-vs-annual guide; a fleet-allowance aside on the cost-per-task guide). Honest non-link styling applied to in-product access routes on the free-route pages.",
+      "Copy repairs: two unexplained references removed or given context (a promo-window aside on the monthly-vs-annual guide; a fleet-allowance aside on the cost-per-task guide). Plain non-link styling applied to in-product access routes on the free-route pages.",
     ],
   },
   {
@@ -60,7 +72,7 @@ const LOG: LogEntry[] = [
     title: "Pass 3 — link integrity, canonical scheme, and identity rebuild",
     items: [
       "Kimi tier ladder ($19 / $39 / $99 / $199 monthly; ~$15 / $31 / $79 / $159 annual effective) re-checked against the staged Sep 6 snapshot data — values unchanged. The live pricing page responds but renders figures client-side, so no new external confirmation of the numbers is claimed beyond the original snapshot.",
-      "Terms link corrected: api.kimi.com/coding/ was verified serving a bare JSON greeting (stale as a terms page) and the offer now points at the official membership pricing page, reached from the kimi.ai help center — both URLs fetched and status-checked this pass.",
+      "Terms link corrected: api.kimi.com/coding/ was verified serving a bare JSON greeting (stale as a terms page) and the offer points at the official membership pricing page, reached from the kimi.ai help center — both URLs fetched and status-checked this pass.",
       "Canonical scheme recorded: this site uses trailing-slash URLs everywhere — next.config.ts sets trailingSlash, canonical() appends the slash, and the sitemap, feeds, and breadcrumbs all emit slashed URLs. Non-slash requests redirect; treat the slashed form as canonical when citing.",
       "Visual identity rebuilt to the round-3 ledger spec (self-hosted type system, token ramp); no offer data, prices, or verdicts changed in this pass.",
     ],

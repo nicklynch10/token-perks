@@ -1,0 +1,304 @@
+[
+ {
+  "id": "cursor--tool--hobby",
+  "provider": "Cursor",
+  "category": "d",
+  "plan": "Hobby",
+  "listPrice": "Free",
+  "priceMonthly": 0,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per month",
+  "notes": "Limited Agent requests; no credit card required.",
+  "caveats": [],
+  "sourceUrl": "https://cursor.com/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "cursor--tool--pro",
+  "provider": "Cursor",
+  "category": "d",
+  "plan": "Pro",
+  "listPrice": "$20/mo",
+  "priceMonthly": 20,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per month",
+  "notes": "Extended Agent limits; on-demand usage billed in arrears.",
+  "caveats": [
+   "On-demand usage billed in arrears"
+  ],
+  "sourceUrl": "https://cursor.com/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "cursor--tool--pro-plus-ultra",
+  "provider": "Cursor",
+  "category": "d",
+  "plan": "Pro+ / Ultra",
+  "listPrice": "Not rendered this pass",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per month",
+  "notes": "Pro+ = 3x Pro Agent limits; Ultra = 20x Pro + priority. Tabs exist without prices in this render.",
+  "caveats": [
+   "Prices unverifiable in this render"
+  ],
+  "sourceUrl": "https://cursor.com/pricing",
+  "label": "UNCERTAIN",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "cursor--tool--teams",
+  "provider": "Cursor",
+  "category": "d",
+  "plan": "Teams Standard / Premium",
+  "listPrice": "$40/user/mo (Standard); Premium not rendered",
+  "priceMonthly": 40,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per user/month",
+  "notes": "Premium = 5x Standard Agent limits; Enterprise custom with pooled usage.",
+  "caveats": [
+   "Premium price not rendered"
+  ],
+  "sourceUrl": "https://cursor.com/pricing",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "github--tool--copilot-free",
+  "provider": "GitHub",
+  "category": "d",
+  "plan": "Copilot Free",
+  "listPrice": "$0",
+  "priceMonthly": 0,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per month",
+  "notes": "2,000 completions + 50 chat requests per month; Haiku 4.5, GPT-5 mini and more; Copilot CLI.",
+  "caveats": [
+   "Monthly request caps"
+  ],
+  "sourceUrl": "https://github.com/features/copilot/plans",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "claude-4-5-haiku"
+ },
+ {
+  "id": "github--tool--copilot-pro",
+  "provider": "GitHub",
+  "category": "d",
+  "plan": "Copilot Pro",
+  "listPrice": "$10/user/mo",
+  "priceMonthly": 10,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per user/month",
+  "notes": "Unlimited completions; cloud agent + code review; third-party agents (Claude Code, Codex); $15 monthly total credits.",
+  "caveats": [
+   "Credit-capped premium models"
+  ],
+  "sourceUrl": "https://github.com/features/copilot/plans",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "github--tool--copilot-pro-plus",
+  "provider": "GitHub",
+  "category": "d",
+  "plan": "Copilot Pro+",
+  "listPrice": "$39/user/mo",
+  "priceMonthly": 39,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per user/month",
+  "notes": "Premium models including Opus; $70 monthly credits.",
+  "caveats": [
+   "Credit-capped premium models"
+  ],
+  "sourceUrl": "https://github.com/features/copilot/plans",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "claude-opus-5"
+ },
+ {
+  "id": "github--tool--copilot-max",
+  "provider": "GitHub",
+  "category": "d",
+  "plan": "Copilot Max",
+  "listPrice": "$100/user/mo",
+  "priceMonthly": 100,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per user/month",
+  "notes": "Priority access to new models; $200 monthly credits.",
+  "caveats": [
+   "Credit-capped premium models"
+  ],
+  "sourceUrl": "https://github.com/features/copilot/plans",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "github--tool--copilot-business-enterprise",
+  "provider": "GitHub",
+  "category": "d",
+  "plan": "Copilot Business / Enterprise",
+  "listPrice": "Not priced on the plans page",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per user/month",
+  "notes": "Described in FAQ only; checkout values not shown.",
+  "caveats": [
+   "Prices not rendered"
+  ],
+  "sourceUrl": "https://github.com/features/copilot/plans",
+  "label": "UNCERTAIN",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "github--tool--ai-credits-unit",
+  "provider": "GitHub",
+  "category": "d",
+  "plan": "AI Credits unit (cross-cutting)",
+  "listPrice": "1 AI credit = $0.01",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per credit",
+  "notes": "Replaces the premium-requests framing; same model roster on all paid tiers (Claude Sonnet/Opus/Haiku, GPT-5.x/Codex, Gemini Flash, Grok, Kimi).",
+  "caveats": [
+   "Unit definition, not a plan"
+  ],
+  "sourceUrl": "https://github.com/features/copilot/plans",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "devin--tool--devin-pricing",
+  "provider": "Windsurf / Devin (Cognition)",
+  "category": "d",
+  "plan": "Devin pricing",
+  "listPrice": "Not verified this pass",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per month / ACU",
+  "notes": "windsurf.com/pricing redirects to devin.ai/pricing as of this pass; devin.ai returned 429 on two attempts.",
+  "caveats": [
+   "Prices not fetched"
+  ],
+  "sourceUrl": "https://windsurf.com/pricing",
+  "label": "UNCERTAIN",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "antigravity--tool--developer-access",
+  "provider": "Google",
+  "category": "d",
+  "plan": "Antigravity (agentic IDE/CLI/SDK)",
+  "listPrice": "Available at no charge",
+  "priceMonthly": 0,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per developer",
+  "notes": "Antigravity 2.0; separate enterprise offering; Gemini 3.8 / 3.7 Flash noted in product blog titles; no tier or limit detail published.",
+  "caveats": [
+   "Limits unpublished"
+  ],
+  "sourceUrl": "https://antigravity.google",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "gemini-3-8-flash"
+ },
+ {
+  "id": "google--tool--jules",
+  "provider": "Google",
+  "category": "d",
+  "plan": "Jules",
+  "listPrice": "Not fetched this pass",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "n/a",
+  "notes": "Pricing unverified; likely tied to Google AI plans but not confirmed.",
+  "caveats": [
+   "Prices not fetched"
+  ],
+  "sourceUrl": "https://jules.google",
+  "label": "UNCERTAIN",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "openai--tool--codex-via-chatgpt",
+  "provider": "OpenAI",
+  "category": "d",
+  "plan": "Codex via ChatGPT plans / API",
+  "listPrice": "Not verified this pass",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "n/a",
+  "notes": "Codex appears in Copilot's third-party agent roster; ChatGPT-plan-included Codex limits not verifiable this pass.",
+  "caveats": [
+   "Prices not fetched"
+  ],
+  "sourceUrl": "https://openai.com/chatgpt/pricing/",
+  "label": "UNCERTAIN",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "moonshot--tool--kimi-coding-endpoint",
+  "provider": "Moonshot AI",
+  "category": "d",
+  "plan": "Kimi coding endpoint (membership route)",
+  "listPrice": "Membership tiers $19-199 (category a)",
+  "priceMonthly": 19,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per month",
+  "notes": "api.kimi.com/coding/ serves the membership pool, separate from PAYG key billing.",
+  "caveats": [
+   "Shared credit pool"
+  ],
+  "sourceUrl": "https://www.kimi.ai/membership/pricing",
+  "label": "EXCERPT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "zai--tool--glm-coding-plan",
+  "provider": "Z.ai",
+  "category": "d",
+  "plan": "GLM Coding Plan (tool coverage)",
+  "listPrice": "$18+ (see category a)",
+  "priceMonthly": 18,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per month",
+  "notes": "Works with Claude Code, Cline, OpenCode and listed agents; ZCode night promo: unlimited GLM-5.3-Flash 23:00-09:00.",
+  "caveats": [
+   "Credit-cycle caps"
+  ],
+  "sourceUrl": "https://docs.z.ai/devpack/overview",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": "glm-5-3"
+ }
+]
