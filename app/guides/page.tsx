@@ -29,7 +29,7 @@ const GUIDES = [
   {
     href: "/guides/monthly-vs-annual-ai/",
     title: "Monthly vs annual AI plans",
-    text: "Annual saves ~20% but only for stable volume. Allegretto $39 vs ~$31 effective, with a prepay checklist.",
+    text: "Annual saves ~20% but only for stable volume. Allegretto (the $39/month middle tier) $39 vs ~$31 effective, with a prepay checklist.",
   },
 ];
 
@@ -43,6 +43,12 @@ export default function GuidesIndex() {
         </h1>
         <p className="mt-2 max-w-2xl text-ink-soft">
           Two short guides with worked examples and stated assumptions. Research snapshot Sep 6 2026.
+          Throughout, a &ldquo;task&rdquo; means one finished piece of work — a draft, a summary, a
+          fix. The definition and the math are in{" "}
+          <Link href="/guides/effective-cost-per-task-explained/" className="font-bold underline">
+            effective cost per task, explained
+          </Link>
+          .
         </p>
       </header>
       <div className="grid gap-5 md:grid-cols-2">

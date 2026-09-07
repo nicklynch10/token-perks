@@ -29,7 +29,7 @@ interface LogEntry {
 
 /**
  * Seed log: one entry per verification pass, newest first. Each future pass
- * (weekly per Methodology v0.1) appends an entry above these — so the
+ * (weekly per Methodology v2) appends an entry above these — so the
  * "re-verified weekly" claim is provable, not aspirational.
  */
 const LOG: LogEntry[] = [
@@ -129,7 +129,7 @@ export default function ChangesPage() {
           Verification log
         </h1>
         <p className="mt-3 text-lg text-ink-soft">
-          Methodology v0.1 promises weekly re-verification. This log is the proof: every pass gets
+          Methodology v2 promises weekly re-verification. This log is the proof: every pass gets
           a dated entry saying what was checked, what changed, and — just as important — what did
           not. If a pass ever finds nothing new, it still gets an entry.
         </p>

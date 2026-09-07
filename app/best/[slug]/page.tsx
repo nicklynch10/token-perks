@@ -45,7 +45,7 @@ const PAGE_H1: Record<string, string> = {
 /** Lead spec table rows, per offer: figures first, then limits and renewal. */
 const SPEC_ROWS: Record<string, { label: string; value: string }[]> = {
   "kimi-k3-core": [
-    { label: "Monthly tiers", value: "$19 · $39 · $99 · $199 (Moderato / Allegretto / Allegro / Vivace)" },
+    { label: "Monthly tiers", value: "Moderato $19 · Allegretto $39 (middle tier) · Allegro $99 · Vivace $199" },
     { label: "Annual effective", value: "≈$15 · $31 · $79 · $159 per mo (year prepaid upfront)" },
     { label: "Est. cost per task", value: "≈$0.33 at 120 tasks/mo (Allegretto, illustrative)" },
     { label: "Break-even vs PAYG", value: "≈49 tasks/mo (Allegretto) · ≈24 (Moderato) at the $0.80/task reference" },

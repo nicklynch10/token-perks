@@ -3,6 +3,7 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import BreakEvenCalc from "@/components/BreakEvenCalc";
 import ComparisonTable from "@/components/ComparisonTable";
+import CrossoverSection from "@/components/CrossoverSection";
 import JsonLd from "@/components/JsonLd";
 import LeaderboardTable, { type LeaderboardDatum } from "@/components/LeaderboardTable";
 import ParetoChart, { type ParetoDatum } from "@/components/ParetoChart";
@@ -11,6 +12,7 @@ import { ACTIVE_OFFERS } from "@/lib/offers";
 import { aaCitation, getIntel, INTEL } from "@/lib/intelligence";
 import { canonical, SITE_URL } from "@/lib/site";
 import {
+  batchPerM,
   blendedPerM,
   pricedApiRows,
   providerIdOf,
@@ -52,7 +54,7 @@ const GUIDES = [
   {
     href: "/guides/monthly-vs-annual-ai/",
     title: "Monthly vs annual AI plans",
-    text: "Allegretto $39/mo vs ≈$31/mo effective annual ($372 upfront): the prepay conditions and a checklist.",
+    text: "Allegretto — the $39/month middle Kimi tier — at ≈$31/mo effective annual ($372 upfront): the prepay conditions and a checklist.",
   },
   {
     href: "/providers/",
@@ -87,6 +89,8 @@ export default function Home() {
         apiIn: r.apiIn as number,
         apiOut: r.apiOut as number,
         blended: blendedPerM(r) as number,
+        batch: batchPerM(r),
+        batchApprox: r.batchApprox ?? false,
         offer: r.offer,
         caveats: r.caveats,
         label: r.label,
@@ -195,6 +199,14 @@ export default function Home() {
           <h2 className="display-lg">API cost leaderboard</h2>
           <p className="data text-xs text-ink-mute">{lbRows.length} paid per-token routes · sorted by blended $/M</p>
         </div>
+        <p className="mb-3 max-w-3xl text-sm text-ink-soft">
+          A &ldquo;task&rdquo; here means one finished piece of work — a draft, a summary, a fix —
+          estimated at 100k tokens unless you pick another size. Full definition:{" "}
+          <Link href="/guides/effective-cost-per-task-explained/" className="u-draw text-teal-deep">
+            effective cost per task, explained
+          </Link>
+          .
+        </p>
         <LeaderboardTable rows={lbRows} />
       </section>
 
@@ -220,6 +232,9 @@ export default function Home() {
         <ComparisonTable />
       </section>
 
+      {/* 5b · Crossover story: watch flat beat metered (wow moment, self-contained) */}
+      <CrossoverSection />
+
       {/* 6 · Break-even calculator: compact card */}
       <section aria-label="Break-even calculator" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
@@ -231,6 +246,15 @@ export default function Home() {
               The full method is documented in{" "}
               <Link href="/guides/effective-cost-per-task-explained/" className="u-draw text-teal-deep">
                 effective cost per task, explained
+              </Link>
+              .
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+              For writing work, count your drafts per month and enter the number here: about 24
+              drafts clears the $19 Moderato month, about 49 clears the $39 Allegretto month (at
+              the $0.80 reference) — pick the cheapest tier your count clears. Tier details:{" "}
+              <Link href="/best/kimi-k3-core/" className="u-draw text-teal-deep">
+                Kimi K3 membership
               </Link>
               .
             </p>

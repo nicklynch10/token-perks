@@ -11,6 +11,8 @@ export interface LeaderboardDatum {
   apiIn: number;
   apiOut: number;
   blended: number; // $/M tokens
+  batch: number | null; // computed batch $/M, null when no published modifier
+  batchApprox: boolean;
   offer: string | null;
   caveats: string[];
   label: "DIRECT" | "EXCERPT" | "UNCERTAIN";
@@ -94,7 +96,7 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
       <div className="mt-4 hidden md:block overflow-x-auto rounded-xl border border-line-strong">
         <table className="spec-table">
           <caption className="sr-only">
-            Token access routes ranked by blended effective cost per million tokens. Intelligence scores are quoted from Artificial Analysis with per-row citations.
+            Token access routes ranked by blended effective cost per million tokens. Intelligence scores are quoted from Artificial Analysis with per-row citations. Batch cost per million is shown only where the provider publishes a batch discount; a dash means no published batch modifier.
           </caption>
           <thead>
             <tr>
@@ -110,6 +112,7 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
                   Blended $/M{arrowFor("blended")}
                 </button>
               </th>
+              <th scope="col" className="num">Batch $/M</th>
               <th scope="col" className="num">Est. $/task @ {USE_CASE_LABELS[preset]}</th>
               <th scope="col" className="num" aria-sort={ariaSortFor("intel")}>
                 <button type="button" onClick={() => toggleSort("intel")} aria-label="Sort by Artificial Analysis Intelligence Index">
@@ -123,6 +126,7 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
           <tbody>
             {sorted.map((r, i) => {
               const perTask = (r.blended * tokens) / 1_000_000;
+              const batchTask = r.batch != null ? (r.batch * tokens) / 1_000_000 : null;
               return (
                 <tr key={r.id}>
                   <td className="data text-ink-mute">{i + 1}</td>
@@ -148,6 +152,21 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
                     ${r.apiIn.toFixed(2)} / ${r.apiOut.toFixed(2)}
                   </td>
                   <td className="num">{fmtPerM(r.blended)}</td>
+                  <td className="num">
+                    {r.batch != null && batchTask != null ? (
+                      <>
+                        {r.batchApprox ? "~" : ""}
+                        {fmtPerM(r.batch)}
+                        <span className="block text-[11px] text-ink-mute">
+                          ~{batchTask < 0.01 ? `$${batchTask.toFixed(4)}` : `$${batchTask.toFixed(3)}`}/task
+                        </span>
+                      </>
+                    ) : (
+                      <span className="text-ink-mute" title="No published batch discount for this route">
+                        —
+                      </span>
+                    )}
+                  </td>
                   <td className="num text-ink-soft">
                     {perTask < 0.01 ? `$${perTask.toFixed(4)}` : `$${perTask.toFixed(3)}`}
                   </td>
@@ -179,6 +198,7 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
       <ul className="mt-4 space-y-2 md:hidden">
         {sorted.map((r, i) => {
           const perTask = (r.blended * tokens) / 1_000_000;
+          const batchTask = r.batch != null ? (r.batch * tokens) / 1_000_000 : null;
           return (
             <li key={r.id} className="card p-3 text-sm">
               <p className="font-medium">
@@ -188,6 +208,15 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
                 {fmtPerM(r.blended)}/M · ~{perTask < 0.01 ? `$${perTask.toFixed(4)}` : `$${perTask.toFixed(3)}`}/task
                 {r.intel ? ` · ${r.intel.index} II` : ""}
               </p>
+              {r.batch != null && batchTask != null ? (
+                <p className="data mt-1 text-[13px] text-ink-soft">
+                  Batch {r.batchApprox ? "~" : ""}
+                  {fmtPerM(r.batch)}/M · ~
+                  {batchTask < 0.01 ? `$${batchTask.toFixed(4)}` : `$${batchTask.toFixed(3)}`}/task
+                </p>
+              ) : (
+                <p className="mt-1 text-[11.5px] text-ink-mute">Batch price: not published</p>
+              )}
               {r.caveats.length > 0 && <p className="mt-1 text-[11.5px] text-ink-mute">{r.caveats[0]}</p>}
             </li>
           );
@@ -196,10 +225,13 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
 
       <p className="mt-3 text-[12px] text-ink-mute">
         Blended $/M = (3 x input + 1 x output) / 4 at list price — our arithmetic, not a provider figure. The $/task
-        column estimates a {tokens.toLocaleString("en-US")}-token task on that blended rate. AA Intelligence Index v4.3
-        values are quoted, not measured, by us: every cell links its exact source row on artificialanalysis.ai (accessed
-        2026-09-07); * marks AA&apos;s own estimate flag. A dash means no public score. Our own weighted ranking is
-        deliberately not shown — see{" "}
+        column estimates a {tokens.toLocaleString("en-US")}-token task on that blended rate. Batch $/M = blended $/M
+        x (1 − the provider&apos;s published batch discount) — −50% halves the blend — with batch $/task at the same
+        task size; it appears only where the provider publishes a batch rate, and a dash means no published batch
+        modifier, not zero. Cache, off-peak, and residency adjustments stay out of both figures. AA Intelligence Index
+        v4.3 values are quoted, not measured, by us: every cell links its exact source row on artificialanalysis.ai
+        (accessed 2026-09-07); * marks AA&apos;s own estimate flag. A dash means no public score. Our own weighted
+        ranking is deliberately not shown — see{" "}
         <a className="u-draw" href="/methodology/">
           methodology
         </a>

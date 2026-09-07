@@ -30,7 +30,7 @@ const FAQ = [
   },
   {
     q: "Where does the $0.80/task reference come from?",
-    a: "It is our illustrative reference: 100k tokens per task (median over a trailing 7-day example window, Methodology v0.1) at an $8 per 1M blended rate. Your mix will differ — adjust with the calculator above.",
+    a: "It is our illustrative reference: 100k tokens per task (median over a trailing 7-day example window, Methodology v2) at an $8 per 1M blended rate. Your mix will differ — adjust with the calculator above.",
   },
   {
     q: "When is a subscription cheaper?",
@@ -42,7 +42,7 @@ const FAQ = [
   },
   {
     q: "How fresh are these numbers?",
-    a: "Research snapshot Sep 6 2026, re-verified weekly per Methodology v0.1. Re-check official terms before paying.",
+    a: "Research snapshot Sep 6 2026, re-verified weekly per Methodology v2. Re-check official terms before paying.",
   },
 ];
 

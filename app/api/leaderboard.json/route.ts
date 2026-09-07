@@ -1,5 +1,5 @@
 import { INTEL } from "@/lib/intelligence";
-import { blendedPerM, providerIdOf, UNIVERSE } from "@/lib/universe";
+import { batchPerM, blendedPerM, providerIdOf, UNIVERSE } from "@/lib/universe";
 
 export const dynamic = "force-static";
 
@@ -13,6 +13,7 @@ export const dynamic = "force-static";
 export async function GET() {
   const rows = UNIVERSE.rows.map((r) => {
     const blended = blendedPerM(r);
+    const batch = batchPerM(r);
     return {
       id: r.id,
       provider: r.provider,
@@ -24,6 +25,9 @@ export async function GET() {
       apiInPerM: r.apiIn,
       apiOutPerM: r.apiOut,
       blendedPerM: blended == null ? null : Number(blended.toFixed(4)),
+      batchDiscount: r.batchDiscount ?? null,
+      batchApprox: r.batchApprox ?? false,
+      batchPerM: batch == null ? null : Number(batch.toFixed(4)),
       unit: r.unit,
       caveats: r.caveats,
       notes: r.notes,

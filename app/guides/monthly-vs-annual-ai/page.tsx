@@ -50,7 +50,7 @@ const FAQ = [
   },
   {
     q: "How fresh are these numbers?",
-    a: "Research snapshot Sep 6 2026, re-verified weekly per Methodology v0.1. Re-check official terms before paying.",
+    a: "Research snapshot Sep 6 2026, re-verified weekly per Methodology v2. Re-check official terms before paying.",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function GuidePage() {
             Short answer: stay monthly until your volume clears break-even for several consecutive
             months, then prepay annually.
           </strong>{" "}
-          Annual Kimi K3 billing saves ~20% — Allegretto at{" "}
+          Annual Kimi K3 billing saves ~20% — Allegretto (the $39/month middle tier) at{" "}
           <strong className="tabular">~$31/mo effective (~$372 upfront)</strong> vs{" "}
           <strong className="tabular">$39/mo monthly</strong> — but only pays if you clear
           break-even (~39 tasks/mo) all year. Figures verified Sep 6 2026.
@@ -108,6 +108,16 @@ export default function GuidePage() {
         <div className="mt-2">
           <BreakEvenCalc defaultTasks={60} />
         </div>
+        <p className="mt-2 text-sm text-ink-soft">
+          Writing work? Count your drafts per month and enter the number above: about 24 drafts
+          clears the $19 Moderato month, about 49 clears the $39 Allegretto month (at the
+          $0.80/task reference). Pick the cheapest tier your count clears — the tier details are
+          on the{" "}
+          <Link href="/best/kimi-k3-core/" className="font-bold underline">
+            Kimi K3 offer page
+          </Link>
+          .
+        </p>
       </section>
 
       <section aria-label="When annual applies">

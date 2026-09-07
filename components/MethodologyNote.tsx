@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function MethodologyNote() {
   return (
     <section aria-label="Methodology summary" className="card p-5 sm:p-6">
-      <p className="eyebrow">Methodology v0.1</p>
+      <p className="eyebrow">Methodology v2</p>
       <h2 className="display-sm mt-2">How we verify</h2>
       <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-ink-soft">
         <li>Snapshots, not live prices — every figure carries its verification date.</li>
