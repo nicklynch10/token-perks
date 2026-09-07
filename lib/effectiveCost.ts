@@ -79,3 +79,129 @@ export function fmtTasks(n: number): string {
   if (n === Infinity) return "never (at these inputs)";
   return `${Math.round(n).toLocaleString("en-US")} tasks/mo`;
 }
+
+/* ------------------------------------------------------------------ */
+/* Team-size math (v2.1). Tasks/tokens are team totals; per-seat plans  */
+/* multiply by seats. List prices mirror the verified universe rows    */
+/* (snapshot 2026-09-07); single-user consumer tiers are excluded, so  */
+/* the recommendation is the cheapest multi-seat-compliant setup.      */
+/* ------------------------------------------------------------------ */
+
+export interface SeatPlan {
+  id: string;
+  name: string;
+  /** List price per granted seat, monthly billing, USD. */
+  perSeatMonthly: number;
+  note: string;
+  /** Universe row id this price mirrors (traceability). */
+  rowId: string;
+}
+
+export const MAX_SEATS = 50;
+
+export const TEAM_SEAT_PLANS: SeatPlan[] = [
+  {
+    id: "copilot-business",
+    name: "Copilot Business",
+    perSeatMonthly: 19,
+    note: "1,900 AI credits per user/mo included",
+    rowId: "github--tool--copilot-business",
+  },
+  {
+    id: "claude-team-standard",
+    name: "Claude Team Standard",
+    perSeatMonthly: 25,
+    note: "Monthly rate ($20 annual)",
+    rowId: "anthropic--sub--team-standard",
+  },
+  {
+    id: "copilot-enterprise",
+    name: "Copilot Enterprise",
+    perSeatMonthly: 39,
+    note: "3,900 AI credits per user/mo included",
+    rowId: "github--tool--copilot-enterprise",
+  },
+  {
+    id: "reference-flat",
+    name: "Reference flat",
+    perSeatMonthly: COMPARE_SUB_PRICE,
+    note: "Illustrative reference, not a sold plan",
+    rowId: "",
+  },
+  {
+    id: "cursor-teams-standard",
+    name: "Cursor Teams Standard",
+    perSeatMonthly: 40,
+    note: "Standard Agent limits",
+    rowId: "cursor--tool--teams",
+  },
+  {
+    id: "cursor-teams-premium",
+    name: "Cursor Teams Premium",
+    perSeatMonthly: 120,
+    note: "5x Standard Agent limits",
+    rowId: "cursor--tool--teams",
+  },
+  {
+    id: "claude-team-premium",
+    name: "Claude Team Premium",
+    perSeatMonthly: 125,
+    note: "Monthly rate ($100 annual)",
+    rowId: "anthropic--sub--team-premium",
+  },
+];
+
+export interface TeamOption {
+  kind: "payg" | "plan";
+  id: string | null;
+  name: string;
+  perSeat: number | null;
+  monthly: number;
+  note: string;
+}
+
+export interface TeamComparison {
+  seats: number;
+  teamTasks: number;
+  perTask: number;
+  paygMonthly: number;
+  /** Every candidate, cheapest first. */
+  options: TeamOption[];
+  cheapest: TeamOption;
+}
+
+export function clampSeats(n: number): number {
+  if (!Number.isFinite(n)) return 1;
+  return Math.min(MAX_SEATS, Math.max(1, Math.round(n)));
+}
+
+/** Cheapest compliant team setup: team PAYG total vs each seat plan x seats. */
+export function compareTeamOptions(
+  teamTasks: number,
+  tokensPerTask: number,
+  seats: number,
+): TeamComparison {
+  const s = clampSeats(seats);
+  const t = Number.isFinite(teamTasks) ? Math.max(0, Math.round(teamTasks)) : 0;
+  const perTask = paygPerTask(tokensPerTask);
+  const paygMonthly = t * perTask;
+  const options: TeamOption[] = [
+    {
+      kind: "payg" as const,
+      id: null,
+      name: "Pay-as-you-go",
+      perSeat: null,
+      monthly: paygMonthly,
+      note: "Metered at the reference per-task rate",
+    },
+    ...TEAM_SEAT_PLANS.map((p) => ({
+      kind: "plan" as const,
+      id: p.id,
+      name: p.name,
+      perSeat: p.perSeatMonthly,
+      monthly: p.perSeatMonthly * s,
+      note: p.note,
+    })),
+  ].sort((a, b) => a.monthly - b.monthly);
+  return { seats: s, teamTasks: t, perTask, paygMonthly, options, cheapest: options[0] };
+}

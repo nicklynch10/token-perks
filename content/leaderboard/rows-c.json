@@ -1,5 +1,22 @@
 [
  {
+  "id": "openai--sub--chatgpt-credits",
+  "provider": "OpenAI",
+  "category": "c",
+  "plan": "ChatGPT credit packs",
+  "listPrice": "100 credits $4.00; 500 credits $20.00; 1,000 credits $40.00",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per pack",
+  "notes": "$0.04 per credit at pack rates; official IAP list.",
+  "caveats": [],
+  "sourceUrl": "https://apps.apple.com/us/app/chatgpt/id6448311069",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
   "id": "openrouter--credits--payg",
   "provider": "OpenRouter",
   "category": "c",
@@ -87,7 +104,7 @@
   "apiIn": null,
   "apiOut": null,
   "unit": "per pass",
-  "notes": "Zeroes per-token cost on included open-weight models via the kimi-k3-fast router; non-production coding use only; experimental; expiration visible in Billing.",
+  "notes": "Zeroes per-token cost on included open-weight models via the kimi-k3-fast router; non-production coding use only; experimental; expiration visible in Billing. Full doc re-read 2026-09-07: still no list price and no duration - officially unpublished, invite only.",
   "caveats": [
    "Invite-only",
    "Non-production only",
@@ -150,25 +167,6 @@
   ],
   "sourceUrl": "https://www.cerebras.ai/pricing",
   "label": "EXCERPT",
-  "offer": null,
-  "modelId": null
- },
- {
-  "id": "groq--credits--payg",
-  "provider": "Groq",
-  "category": "c",
-  "plan": "Pay-as-you-go API",
-  "listPrice": "Not verified this pass",
-  "priceMonthly": null,
-  "apiIn": null,
-  "apiOut": null,
-  "unit": "$/1M tokens",
-  "notes": "groq.com/pricing is a marketing page with no table; console.groq.com/docs/pricing returned 404.",
-  "caveats": [
-   "Prices not fetched"
-  ],
-  "sourceUrl": "https://groq.com/pricing",
-  "label": "UNCERTAIN",
   "offer": null,
   "modelId": null
  },

@@ -180,6 +180,78 @@ export default function MethodologyPage() {
         </ul>
       </section>
 
+      <section aria-label="Benchmark provenance">
+        <h2 className="display-lg">Benchmark provenance</h2>
+        <p className="mt-2 text-sm text-ink-soft">
+          Which index version we quote, what the number is made of, and where the detail lives
+          (on AA&apos;s pages, linked — not reproduced here). All AA pages below were read on{" "}
+          <strong className="text-ink">2026-09-07</strong>.
+        </p>
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-ink-soft">
+          <li>
+            <strong className="text-ink">Index version: v{AA_INDEX_VERSION}.</strong> Confirmed the
+            same day on the{" "}
+            <a
+              href="https://artificialanalysis.ai/methodology/intelligence-benchmarking"
+              rel="noopener"
+              className="font-bold underline"
+            >
+              Intelligence Index methodology page
+            </a>
+            , on individual AA model pages, and in AA&apos;s data-API docs (the{" "}
+            <span className="data">intelligence_index_version</span> field reports{" "}
+            {AA_INDEX_VERSION}). Some AA page furniture still says v4.2 — stale copy; v4.3 is
+            current.
+          </li>
+          <li>
+            <strong className="text-ink">The suite behind the number.</strong> v{AA_INDEX_VERSION}{" "}
+            is a weighted average over 10 evaluations in four categories — Agents 30%
+            (AA-Briefcase 15%, GDPval-AA v2 10%, AutomationBench-AA 5%), Coding 20%
+            (Terminal-Bench v4.0 10%, SciCode 10%), General knowledge 30% (AA-Omniscience 15%,
+            GDP.pdf 10%, AA-LCR v1.1 5%), Scientific reasoning 20% (Humanity&apos;s Last Exam
+            10%, CritPt 10%). v4.3 replaces &#964;<sup>3</sup>-Banking with AutomationBench-AA
+            and upgrades Terminal-Bench to v4.0. The weights, harness conditions, and
+            normalization are AA&apos;s methodology detail — read them at the source, not here.
+          </li>
+          <li>
+            <strong className="text-ink">One score per effort variant.</strong> AA scores each
+            model endpoint and reasoning-effort setting as its own leaderboard row (e.g.
+            &ldquo;GPT-5.6 Sol (max)&rdquo; vs &ldquo;(medium)&rdquo; vs
+            &ldquo;(Non-reasoning)&rdquo;). Scores move with the effort setting, so every
+            citation on this site names the variant quoted and links that variant&apos;s exact
+            source row — a bare model name without its qualifier is not a complete citation.
+          </li>
+          <li>
+            <strong className="text-ink">What we cite vs what we link.</strong> Cited here: single
+            index values and AA&apos;s own estimate flags, each inline with its source link
+            (provider pages carry a full Sources &amp; methods table). Linked, never copied:
+            the{" "}
+            <a
+              href="https://artificialanalysis.ai/leaderboards/models"
+              rel="noopener"
+              className="font-bold underline"
+            >
+              AA leaderboard
+            </a>
+            , per-model pages, and the methodology page above. No AA table, CSV, or score feed
+            is reproduced anywhere on this site, and machine feeds carry cost data only.
+          </li>
+          <li>
+            <strong className="text-ink">What does not exist publicly.</strong> AA publishes no
+            per-model Coding Index composite on its website, and there is no Math Index
+            composite (math ability is carried inside the index by HLE and CritPt) — so this
+            site quotes only the Overall index and documents the absence rather than
+            filling it.
+          </li>
+          <li>
+            <strong className="text-ink">Consent gate.</strong> Our intelligence-x-cost weighting
+            (TPVS, next section) is implemented and documented but renders nowhere: a merged
+            ranking over AA&apos;s scores is a derivative work, and it ships only with
+            AA&apos;s written consent.
+          </li>
+        </ul>
+      </section>
+
       <section aria-label="Withheld weighted ranking">
         <h2 className="display-lg">Our score — documented, withheld</h2>
         <p className="mt-2 text-sm text-ink-soft">

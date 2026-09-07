@@ -35,6 +35,17 @@ interface LogEntry {
 const LOG: LogEntry[] = [
   {
     date: "2026-09-07",
+    title: "Pass 7 — coverage-gap merge, citation drill-down, team-size math",
+    items: [
+      "Scope: same-day evidence merge from the provider-universe gap pass. No offer data, prices, renewals, limits, or verified_at values changed — every verified_at remains 2026-09-06. Universe snapshot stays 2026-09-07.",
+      "Universe: 121 → 129 access routes (39 subscriptions, 48 API price rows, 10 credit/prepaid systems, 18 coding-tool plans, 14 free tiers/promos; 88 DIRECT, 35 EXCERPT, 6 UNCERTAIN). Closed this pass: ChatGPT consumer tiers (Plus $19.99, Go $8.00, Pro 5x $100 / 20x $200, credit packs), Claude Max $100/$200 split, SuperGrok Lite $10 / Heavy $300, Cursor Pro+ $60 / Ultra $200 / Teams Premium $120, Copilot Business $19 / Enterprise $39 per seat, DeepSeek peak/off-peak hours, Kimi K2.7 Code / K2.6 API prices, Qwen Model Studio list prices, Groq console list prices, Devin post-merge ladder (via official-page snapshot), Jules task tiers, and GPT-6 Astra plan availability.",
+      "Still open — shown as “not fetched”, never estimated: GLM Coding Pro/Max prices, Llama 4 pricing, Fireworks Fire Pass price/duration, ChatGPT Business per-seat dollar, and third-party-resale sightings. ChatGPT Free carries no standalone row (unverified this pass).",
+      "Citation drill-down: every benchmark citation now links its exact AA source row (the gpt-5-mini stale-leaderboard link now points at its verified AA model page); each provider page gains a cited-scores section plus a Sources & methods table listing every datum's source and access date; the methodology page gains a benchmark-provenance section (v4.3 suite, effort variants, cite-vs-link, consent gate). No AA table is reproduced.",
+      "Break-even calculator: new team-size input (1–50 seats, shareable via ?seats=) multiplies verified per-seat plan math and recommends the cheapest multi-seat-compliant setup; solo behavior is unchanged.",
+    ],
+  },
+  {
+    date: "2026-09-07",
     title: "Pass 6 — cost-intelligence expansion (universe, leaderboard, frontier chart, providers)",
     items: [
       "Scope: new data layer added on top of the three tracked offers. No offer data, prices, renewals, limits, or verified_at values changed — every verified_at remains 2026-09-06.",

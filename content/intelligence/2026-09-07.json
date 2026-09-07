@@ -307,8 +307,7 @@
    "estimate": false,
    "sourceUrl": "https://artificialanalysis.ai/models/gpt-5-mini",
    "aaName": "GPT-5 mini",
-   "aaVariant": "high",
-   "sourceNote": "Score read from the public leaderboard capture; a dedicated AA model page was not verified this pass, so the leaderboard URL is the exact source."
+   "aaVariant": "high"
   },
   "kimi-k2": {
    "intelligenceIndex": 13,

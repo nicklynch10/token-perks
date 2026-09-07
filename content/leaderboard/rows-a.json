@@ -44,17 +44,17 @@
   "provider": "Anthropic",
   "category": "a",
   "plan": "Claude Max 5x",
-  "listPrice": "From $100/mo",
+  "listPrice": "$100/mo",
   "priceMonthly": 100,
   "apiIn": null,
   "apiOut": null,
   "unit": "per month",
-  "notes": "5x Pro usage per 5-hour session; Fable capped at 50% of weekly limits.",
+  "notes": "Official help article: \"Max 5x: $100 per month\"; monthly billing only; web prices (mobile may vary). 5x Pro usage per 5-hour session; Fable capped at 50% of weekly limits.",
   "caveats": [
-   "5x and 20x dollar split not itemized",
+   "Web price; mobile may differ",
    "Weekly cap on Fable"
   ],
-  "sourceUrl": "https://claude.com/pricing",
+  "sourceUrl": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan",
   "label": "DIRECT",
   "offer": null,
   "modelId": null
@@ -64,17 +64,15 @@
   "provider": "Anthropic",
   "category": "a",
   "plan": "Claude Max 20x",
-  "listPrice": "Not itemized (Max from $100)",
-  "priceMonthly": null,
+  "listPrice": "$200/mo",
+  "priceMonthly": 200,
   "apiIn": null,
   "apiOut": null,
   "unit": "per month",
-  "notes": "20x Pro usage, same pool; page does not break out the 20x figure.",
-  "caveats": [
-   "Price not published"
-  ],
-  "sourceUrl": "https://claude.com/pricing",
-  "label": "UNCERTAIN",
+  "notes": "Same help article: \"Max 20x: $200 per month\". The pricing page itself shows only a single Max card \"From $100\" — the help center is the only itemized source.",
+  "caveats": [],
+  "sourceUrl": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan",
+  "label": "DIRECT",
   "offer": null,
   "modelId": null
  },
@@ -134,20 +132,90 @@
   "modelId": null
  },
  {
-  "id": "openai--sub--chatgpt-ladder",
+  "id": "openai--sub--chatgpt-plus",
   "provider": "OpenAI",
   "category": "a",
-  "plan": "ChatGPT Free / Plus / Pro / Team",
-  "listPrice": "Not verified this pass",
-  "priceMonthly": null,
+  "plan": "ChatGPT Plus",
+  "listPrice": "$19.99/mo",
+  "priceMonthly": 19.99,
   "apiIn": null,
   "apiOut": null,
   "unit": "per month",
-  "notes": "Plan ladder (Free, Plus, Pro, Team/Enterprise) confirmed; dollar values render client-side; direct fetches returned 403.",
+  "notes": "Itemized in the official US App Store In-App Purchases list.",
   "caveats": [
-   "Prices unverified - structure only"
+   "App Store price; web may differ"
   ],
-  "sourceUrl": "https://openai.com/chatgpt/pricing/",
+  "sourceUrl": "https://apps.apple.com/us/app/chatgpt/id6448311069",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "openai--sub--chatgpt-go",
+  "provider": "OpenAI",
+  "category": "a",
+  "plan": "ChatGPT Go",
+  "listPrice": "$8.00/mo",
+  "priceMonthly": 8.0,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per month",
+  "notes": "Offered in the US App Store as an IAP — Go is no longer India-only.",
+  "caveats": [],
+  "sourceUrl": "https://apps.apple.com/us/app/chatgpt/id6448311069",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "openai--sub--chatgpt-pro-5x",
+  "provider": "OpenAI",
+  "category": "a",
+  "plan": "ChatGPT Pro 5x",
+  "listPrice": "$100/mo",
+  "priceMonthly": 100.0,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per month",
+  "notes": "App Store IAP; corroborated by the server-rendered breadcrumb \"Consumer > Pro $100\" in the 2026-09-06 Wayback capture of chatgpt.com/pricing (dollar table itself renders client-side).",
+  "caveats": [],
+  "sourceUrl": "https://apps.apple.com/us/app/chatgpt/id6448311069",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "openai--sub--chatgpt-pro-20x",
+  "provider": "OpenAI",
+  "category": "a",
+  "plan": "ChatGPT Pro 20x",
+  "listPrice": "$200/mo",
+  "priceMonthly": 200.0,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per month",
+  "notes": "App Store IAP; Google Play IAP band \"$8.00 - $200.00 per item\" corroborates the top of the ladder.",
+  "caveats": [],
+  "sourceUrl": "https://apps.apple.com/us/app/chatgpt/id6448311069",
+  "label": "DIRECT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "openai--sub--chatgpt-business",
+  "provider": "OpenAI",
+  "category": "a",
+  "plan": "ChatGPT Business seat",
+  "listPrice": "not fetched",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "per seat/month",
+  "notes": "Structure verified (flexible credit-based pricing: per-seat limits + shared credit pool; Codex seats closed to NEW Business workspaces from Jun 24 2026) via the help-center article (snapshot 2026-07-29, fetched 2026-09-07) — but no public per-seat dollar; the checkout figure is not published. Consumer tiers are itemized in sibling rows.",
+  "caveats": [
+   "Per-seat price not published"
+  ],
+  "sourceUrl": "https://web.archive.org/web/20260729/https://help.openai.com/en/articles/11487671-flexible-pricing-for-the-enterprise-edu-and-business-plans",
   "label": "UNCERTAIN",
   "offer": null,
   "modelId": null
@@ -270,12 +338,10 @@
   "apiIn": null,
   "apiOut": null,
   "unit": "per month",
-  "notes": "2x longer conversations; basic image and video; 1 Expert-mode agent.",
-  "caveats": [
-   "Third-party-reported; official page blocked"
-  ],
-  "sourceUrl": "https://x.ai/pricing",
-  "label": "UNCERTAIN",
+  "notes": "Official Grok app In-App Purchases list. The x.ai/pricing ladder (Free $0 / SuperGrok $30 / Plus $100) renders Lite/Heavy prices client-side.",
+  "caveats": [],
+  "sourceUrl": "https://apps.apple.com/us/app/grok-ai/id6670324846",
+  "label": "DIRECT",
   "offer": null,
   "modelId": null
  },
@@ -289,12 +355,12 @@
   "apiIn": null,
   "apiOut": null,
   "unit": "per month",
-  "notes": "Multi-agent Heavy model access; annual reported near $250/mo effective.",
+  "notes": "Same IAP list; also lists SuperGrok $30, Plus $100, and Extra Usage Credits packs $5/$20/$50/$100. Third-party \"annual approx $250/mo effective\" remains unconfirmed.",
   "caveats": [
-   "Third-party-reported; official page blocked"
+   "Annual-effective figure unconfirmed"
   ],
-  "sourceUrl": "https://x.ai/pricing",
-  "label": "UNCERTAIN",
+  "sourceUrl": "https://apps.apple.com/us/app/grok-ai/id6670324846",
+  "label": "DIRECT",
   "offer": null,
   "modelId": null
  },
@@ -472,12 +538,12 @@
   "provider": "Z.ai",
   "category": "a",
   "plan": "GLM Coding Plan - Pro",
-  "listPrice": "Not published (community ~$72-80)",
+  "listPrice": "not fetched",
   "priceMonthly": null,
   "apiIn": null,
   "apiOut": null,
   "unit": "per month",
-  "notes": "12,000 credits per 5-hour / 60,000 weekly. Community price reports unverified.",
+  "notes": "12,000 credits per 5-hour / 60,000 weekly. The official checkout is client-gated and the 2026-09-07 Wayback capture of z.ai/subscribe contains zero price strings; docs say only \"Starting at just 18 USD per month, with Pro and Max plans\". Third-party figures conflict and are unverified - not quoted.",
   "caveats": [
    "Price not published"
   ],
@@ -491,12 +557,12 @@
   "provider": "Z.ai",
   "category": "a",
   "plan": "GLM Coding Plan - Max",
-  "listPrice": "Not published (community ~$160-168)",
+  "listPrice": "not fetched",
   "priceMonthly": null,
   "apiIn": null,
   "apiOut": null,
   "unit": "per month",
-  "notes": "28,000 credits per 5-hour / 140,000 weekly. Community price reports unverified.",
+  "notes": "28,000 credits per 5-hour / 140,000 weekly. Same verification attempts as the Pro row: no official dollar found; third-party figures conflict and are unverified - not quoted.",
   "caveats": [
    "Price not published"
   ],
@@ -515,7 +581,7 @@
   "apiIn": null,
   "apiOut": null,
   "unit": "per month",
-  "notes": "About 34k calls/mo; Subscription Key route; weekly token quotas.",
+  "notes": "About 34k calls/mo; Subscription Key route; weekly token quotas. Token-plan docs confirm coverage of the full MiniMax lineup (M3 / M2.7 / image / speech).",
   "caveats": [
    "Weekly quota caps"
   ],
@@ -534,7 +600,7 @@
   "apiIn": null,
   "apiOut": null,
   "unit": "per month",
-  "notes": "About 102k calls/mo; daily coding and multimodal.",
+  "notes": "About 102k calls/mo; daily coding and multimodal. Token-plan docs confirm coverage of the full MiniMax lineup (M3 / M2.7 / image / speech).",
   "caveats": [
    "Weekly quota caps"
   ],
@@ -553,7 +619,7 @@
   "apiIn": null,
   "apiOut": null,
   "unit": "per month",
-  "notes": "About 250k calls/mo; heavy agent usage.",
+  "notes": "About 250k calls/mo; heavy agent usage. Token-plan docs confirm coverage of the full MiniMax lineup (M3 / M2.7 / image / speech).",
   "caveats": [
    "Weekly quota caps"
   ],

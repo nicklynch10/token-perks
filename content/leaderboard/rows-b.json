@@ -1,5 +1,24 @@
 [
  {
+  "id": "meta--api--llama-4",
+  "provider": "Meta",
+  "category": "b",
+  "plan": "Llama 4 (hosted/first-party)",
+  "listPrice": "not fetched",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "$/1M tokens",
+  "notes": "No Llama 4 row on any fetched page this pass: llama.com redirects to a JS-gated developer page, the llama-api pricing docs URL 404s, and Groq's live models table carries no Llama 4 row. Hosted Llama 3.x rows are under Together AI.",
+  "caveats": [
+   "Not verifiable this pass"
+  ],
+  "sourceUrl": "https://developer.meta.com/ai/",
+  "label": "UNCERTAIN",
+  "offer": null,
+  "modelId": null
+ },
+ {
   "id": "anthropic--api--fable-5-1",
   "provider": "Anthropic",
   "category": "b",
@@ -563,18 +582,17 @@
   "provider": "DeepSeek",
   "category": "b",
   "plan": "deepseek-v4-flash",
-  "listPrice": "In $0.22 off-peak / $0.44 peak; out $0.66 / $1.32",
+  "listPrice": "Cache-miss in $0.22 off-peak / $0.44 peak; out $0.66 / $1.32",
   "priceMonthly": null,
   "apiIn": 0.22,
   "apiOut": 0.66,
   "unit": "$/1M tokens",
-  "notes": "Off-peak exactly half; cache-hit input $0.007. Direct fetch blocked (404); figures from search-indexed official copy.",
+  "notes": "1M context, 384K max output; model version DeepSeek-V4-Flash-0731; concurrency limit 2,500. Peak = Mon-Fri 01:00-04:00 and 06:00-10:00 UTC; all other hours off-peak at exactly half peak. Cache-hit input $0.007 off-peak / $0.014 peak. Fetched live from the trailing-slash pricing URL (the no-slash URL serves the wrong doc).",
   "caveats": [
-   "Peak/off-peak split",
-   "Hours unpublished in snapshot"
+   "Peak/off-peak split - see hours"
   ],
-  "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
-  "label": "EXCERPT",
+  "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "label": "DIRECT",
   "offer": null,
   "modelId": "deepseek-v4-flash"
  },
@@ -583,18 +601,17 @@
   "provider": "DeepSeek",
   "category": "b",
   "plan": "deepseek-v4-pro",
-  "listPrice": "In $0.66 off-peak / $1.32 peak; out $1.98 / $3.96",
+  "listPrice": "Cache-miss in $0.66 off-peak / $1.32 peak; out $1.98 / $3.96",
   "priceMonthly": null,
   "apiIn": 0.66,
   "apiOut": 1.98,
   "unit": "$/1M tokens",
-  "notes": "Cache-hit input $0.022. Trackers note an Aug 16 2026 repricing; about 1M context per third parties.",
+  "notes": "1M context; version DeepSeek-V4-Pro-0813; concurrency limit 500. Same peak/off-peak definition as v4-flash. Cache-hit input $0.022 / $0.044. Fetched live from the trailing-slash pricing URL.",
   "caveats": [
-   "Peak/off-peak split",
-   "Context window unconfirmed"
+   "Peak/off-peak split - see hours"
   ],
-  "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
-  "label": "EXCERPT",
+  "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "label": "DIRECT",
   "offer": null,
   "modelId": "deepseek-v4-pro"
  },
@@ -621,18 +638,18 @@
   "id": "moonshot--api--kimi-k2-7",
   "provider": "Moonshot AI",
   "category": "b",
-  "plan": "Kimi K2.7 Code / K2.6 (API)",
-  "listPrice": "Not fetched this pass",
+  "plan": "Kimi K2.7 Code / K2.7-highspeed / K2.6 (API)",
+  "listPrice": "K2.7 Code: cache-miss in $0.95 / out $4.00; highspeed $1.90 / $8.00; K2.6 $0.95 / $4.00",
   "priceMonthly": null,
-  "apiIn": null,
-  "apiOut": null,
+  "apiIn": 0.95,
+  "apiOut": 4.0,
   "unit": "$/1M tokens",
-  "notes": "Listed on the platform pricing index with per-model subpages.",
+  "notes": "262,144-token context; prices exclude taxes. Cache-hit input $0.19 (K2.7) / $0.16 (K2.6). Highspeed serves the same model at approx 180 tok/s for 2x rates. K2.6 prices from the sibling doc endpoint /docs/pricing/chat-k26.",
   "caveats": [
-   "Prices not fetched"
+   "Cache-hit rates differ - see notes"
   ],
-  "sourceUrl": "https://platform.kimi.ai/docs/pricing",
-  "label": "UNCERTAIN",
+  "sourceUrl": "https://platform.kimi.ai/docs/pricing/chat-k27-code",
+  "label": "DIRECT",
   "offer": null,
   "modelId": "kimi-k2-7-code"
  },
@@ -736,17 +753,17 @@
   "provider": "Alibaba (Qwen)",
   "category": "b",
   "plan": "Qwen official API (Model Studio)",
-  "listPrice": "Not verified this pass",
+  "listPrice": "qwen3.8-max $2.00/$6.00; qwen3.7-max $2.50/$7.50; qwen3.7-plus $0.40/$1.60; qwen3.8-flash $0.15/$0.47",
   "priceMonthly": null,
-  "apiIn": null,
-  "apiOut": null,
+  "apiIn": 2.0,
+  "apiOut": 6.0,
   "unit": "$/1M tokens",
-  "notes": "Catalog renders model names only (qwen3.8-max, qwen3.7-plus, qwen3.8-flash); per-model pricing pages not fetched.",
+  "notes": "Singapore-region Model Studio list price, 0<token<=1M tiers. Hong Kong region prices qwen3.8-max at $1.65/$4.951 with night discounts 22:00-08:00 UTC+8. Together resale of qwen3.7-plus ($0.32/$1.28) undercuts Alibaba's own Singapore list.",
   "caveats": [
-   "Prices not fetched"
+   "Region/term tiers - see notes"
   ],
-  "sourceUrl": "https://www.alibabacloud.com/help/en/model-studio/models",
-  "label": "UNCERTAIN",
+  "sourceUrl": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
+  "label": "DIRECT",
   "offer": null,
   "modelId": "qwen3-8-max"
  },
@@ -859,6 +876,26 @@
   ],
   "sourceUrl": "https://platform.minimax.io/docs/guides/pricing-paygo",
   "label": "EXCERPT",
+  "offer": null,
+  "modelId": null
+ },
+ {
+  "id": "groq--api--console-list",
+  "provider": "Groq",
+  "category": "b",
+  "plan": "Groq API (console list)",
+  "listPrice": "gpt-oss-120b $0.15/$0.60; 20b $0.075/$0.30; qwen3.6-27b $0.60/$3.00; qwen3.8-27b $0.80/$4.00",
+  "priceMonthly": null,
+  "apiIn": null,
+  "apiOut": null,
+  "unit": "$/1M tokens",
+  "notes": "Official console docs table, fetched live. gpt-oss rows at 500-1,000 tok/s with 131,072 context. Flagship/legacy open-weight rows (llama-3.1-8b-instant, llama-3.3-70b-versatile, minimax-m2.7, compound) moved behind \"Enterprise - Contact Sales\". Whisper bills per audio hour; Orpheus TTS per 1M characters.",
+  "caveats": [
+   "Multi-model row - no single blend",
+   "Flagship rows sales-gated"
+  ],
+  "sourceUrl": "https://console.groq.com/docs/models",
+  "label": "DIRECT",
   "offer": null,
   "modelId": null
  }

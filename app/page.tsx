@@ -24,7 +24,7 @@ export const dynamic = "force-static";
 export const metadata: Metadata = {
   title: "AI cost leaderboard — every access route, priced and ranked",
   description:
-    "121 tracked AI access routes — subscriptions, API per-token pricing, credits, coding tools, and free tiers — ranked on effective cost with cited Artificial Analysis intelligence scores and an interactive cost-intelligence frontier chart.",
+    "129 tracked AI access routes — subscriptions, API per-token pricing, credits, coding tools, and free tiers — ranked on effective cost with cited Artificial Analysis intelligence scores and an interactive cost-intelligence frontier chart.",
   alternates: { canonical: canonical("/") },
   openGraph: {
     title: "Token Perks — AI cost leaderboard",

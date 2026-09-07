@@ -3,8 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
+import { aaCitation, getIntel, INTEL } from "@/lib/intelligence";
 import { canonical, SITE_URL } from "@/lib/site";
-import { CATEGORY_LABELS, getProvider, providerGroups } from "@/lib/universe";
+import { CATEGORY_LABELS, getProvider, providerGroups, UNIVERSE } from "@/lib/universe";
 
 export const dynamic = "force-static";
 
@@ -39,6 +40,14 @@ const LABEL_STYLES: Record<string, string> = {
   UNCERTAIN: "text-ink-mute",
 };
 
+function hostOf(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return url;
+  }
+}
+
 export default async function ProviderPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const g = getProvider(slug);
@@ -51,6 +60,16 @@ export default async function ProviderPage({ params }: { params: Promise<{ slug:
   const cheapest = g.rows
     .filter((r) => r.apiIn != null && r.apiIn > 0 && r.apiOut != null)
     .sort((a, b) => (3 * (a.apiIn as number) + (a.apiOut as number)) / 4 - (3 * (b.apiIn as number) + (b.apiOut as number)) / 4)[0];
+
+  // Quoted benchmark scores for this provider's models (one citation per
+  // datum, linked to the exact AA source row — never a republished table).
+  const intelEntries = g.rows
+    .filter((r, i, all) => r.modelId != null && all.findIndex((o) => o.modelId === r.modelId) === i)
+    .map((r) => ({ row: r, intel: getIntel(r.modelId) }))
+    .filter(
+      (e): e is { row: (typeof g.rows)[number]; intel: NonNullable<ReturnType<typeof getIntel>> } =>
+        e.intel != null,
+    );
 
   return (
     <div>
@@ -168,6 +187,141 @@ export default async function ProviderPage({ params }: { params: Promise<{ slug:
             </li>
           ))}
         </ul>
+      </section>
+
+      {intelEntries.length > 0 && (
+        <section
+          aria-label={`${g.name} cited intelligence scores`}
+          className="mx-auto max-w-6xl px-4 pb-12 sm:px-6"
+        >
+          <h2 className="display-lg">Cited intelligence scores</h2>
+          <p className="mt-2 max-w-3xl text-sm text-ink-soft">
+            Quoted from the Artificial Analysis Intelligence Index v{INTEL.indexVersion}, accessed{" "}
+            {INTEL.accessed} — not measured by us. Each value links its exact AA source row.
+            Artificial Analysis scores every reasoning-effort variant separately; we quote the
+            named variant shown. An asterisk marks scores AA itself flags as estimates.
+          </p>
+          <ul className="mt-4 space-y-2">
+            {intelEntries.map(({ row, intel }) => (
+              <li key={row.modelId} className="card p-3 text-sm sm:p-4">
+                <p>
+                  <strong>
+                    {intel.aaName}
+                    {intel.aaVariant ? ` (${intel.aaVariant})` : ""}
+                  </strong>{" "}
+                  <span className="data">
+                    —{" "}
+                    <a
+                      className="u-draw font-semibold text-teal-deep"
+                      href={intel.sourceUrl}
+                      target="_blank"
+                      rel="noopener nofollow"
+                      title={aaCitation(row.modelId) ?? undefined}
+                    >
+                      {intel.intelligenceIndex}
+                      {intel.estimate ? "*" : ""}
+                    </a>
+                  </span>
+                </p>
+                <p className="mt-1 text-[12px] text-ink-mute">
+                  {aaCitation(row.modelId)} ·{" "}
+                  <a
+                    className="u-draw"
+                    href={intel.sourceUrl}
+                    target="_blank"
+                    rel="noopener nofollow"
+                  >
+                    AA source
+                  </a>{" "}
+                  · priced on this page as {row.plan}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <section aria-label={`${g.name} sources and methods`} className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
+        <h2 className="display-lg">Sources &amp; methods</h2>
+        <p className="mt-2 max-w-3xl text-sm text-ink-soft">
+          Snapshot {UNIVERSE.snapshot} (per-datum access dates at right; a few rows rest on dated official snapshots — see notes). Every price above links
+          its official source in the routes table; every score above links its AA source row.
+          Below, each datum&apos;s source and access date, in full. Method:{" "}
+          <a className="u-draw text-teal-deep" href="/methodology/">
+            methodology
+          </a>
+          .
+        </p>
+        <div className="mt-4 overflow-x-auto rounded-xl border border-line-strong">
+          <table className="spec-table">
+            <caption className="sr-only">
+              {g.name} datum-level sources: each price and score with its source and access date
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Datum</th>
+                <th scope="col">Source</th>
+                <th scope="col">Accessed</th>
+                <th scope="col" className="w-24">Evidence</th>
+              </tr>
+            </thead>
+            <tbody>
+              {g.rows.map((r) => (
+                <tr key={r.id}>
+                  <th scope="row" className="font-normal">
+                    <span className="font-medium">{r.plan}</span>
+                    <span className="data block text-[11px] text-ink-mute">
+                      {CATEGORY_LABELS[r.category]} · {r.listPrice}
+                    </span>
+                  </th>
+                  <td className="text-[12.5px]">
+                    <a
+                      className="u-draw text-teal-deep"
+                      href={r.sourceUrl}
+                      target="_blank"
+                      rel="noopener nofollow"
+                    >
+                      {hostOf(r.sourceUrl)}
+                    </a>
+                  </td>
+                  <td className="data text-[12.5px] text-ink-soft">{r.accessed}</td>
+                  <td>
+                    <span className={`text-[10.5px] ${LABEL_STYLES[r.label]}`}>{r.label}</span>
+                  </td>
+                </tr>
+              ))}
+              {intelEntries.map(({ row, intel }) => (
+                <tr key={`intel-${row.modelId}`}>
+                  <th scope="row" className="font-normal">
+                    <span className="font-medium">
+                      {intel.aaName}
+                      {intel.aaVariant ? ` (${intel.aaVariant})` : ""} — II v{INTEL.indexVersion}:{" "}
+                      {intel.intelligenceIndex}
+                      {intel.estimate ? "*" : ""}
+                    </span>
+                    <span className="data block text-[11px] text-ink-mute">
+                      Quoted score, not measured by us{intel.estimate ? "; AA-marked estimate" : ""}
+                    </span>
+                  </th>
+                  <td className="text-[12.5px]">
+                    <a
+                      className="u-draw text-teal-deep"
+                      href={intel.sourceUrl}
+                      target="_blank"
+                      rel="noopener nofollow"
+                    >
+                      {hostOf(intel.sourceUrl)}
+                    </a>
+                  </td>
+                  <td className="data text-[12.5px] text-ink-soft">{INTEL.accessed}</td>
+                  <td>
+                    <span className="text-[10.5px] text-teal-deep">CITED</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <JsonLd
