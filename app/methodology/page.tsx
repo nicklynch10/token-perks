@@ -30,7 +30,7 @@ const FAQ = [
   },
   {
     q: "What does 'blended $/M' mean?",
-    a: "A single per-million-token figure computed as (3 x input price + 1 x output price) / 4. The 3:1 ratio mirrors a write-heavy workload. It is Token Perks arithmetic, not a provider figure, and it uses list prices — cache discounts, batch discounts, and off-peak windows are documented per row but not baked into the blend.",
+    a: "A single per-million-token figure computed as (3 x input price + 1 x output price) / 4. The 3:1 ratio mirrors a write-heavy workload. It is Token Perks arithmetic, not a provider figure, and it uses list prices — cache discounts, off-peak windows, and long-context surcharges are documented per row but not baked into the blend. Batch discounts get their own computed column instead: batch $/M = blended $/M x (1 - published batch discount), shown only where the provider publishes a batch rate; rows without one show a dash, never a guess.",
   },
   {
     q: "Are the intelligence scores yours?",
@@ -71,7 +71,7 @@ export default function MethodologyPage() {
       </header>
 
       <section aria-label="Verification rules">
-        <h2 className="display-lg">The rules (v0.1, retained)</h2>
+        <h2 className="display-lg">The rules (retained from v0.1)</h2>
         <ol className="mt-2 list-decimal space-y-2 pl-5 text-sm text-ink-soft">
           <li>
             <strong className="text-ink">Official sources only.</strong> Provider pages and
@@ -133,11 +133,55 @@ export default function MethodologyPage() {
         <p className="mt-3 text-sm text-ink-soft">
           The 3:1 input-to-output weighting mirrors a write-heavy agent workload; it is our
           convention, stated everywhere the number appears, and never attributed to providers. List
-          prices only: cache discounts, batch modes, off-peak windows, and long-context surcharges
+          prices only: cache discounts, off-peak windows, and long-context surcharges
           are recorded in each row&apos;s notes and caveats, not averaged in. Estimated $/task
           multiplies the blend by a task-size preset (12k, 60k, 120k, or 200k tokens — our
           estimates). Subscription rows without published quotas get no per-task figure at all
           rather than a guess.
+        </p>
+        <p className="data mt-3 rounded-xl border border-line-strong bg-card p-4 text-sm">
+          batch $/M = blended $/M &times; (1 &minus; published batch discount)
+        </p>
+        <p className="mt-3 text-sm text-ink-soft">
+          Batch pricing is a separate computed column, not part of the blend: each row&apos;s
+          stated batch modifier (for example −50%) scales that row&apos;s blended figure, with
+          batch $/task at the same task-size preset. It appears only where the provider
+          publishes a batch rate — a dash means no published batch modifier, never an assumed
+          one. OpenAI&apos;s Batch −50% is a cross-cutting modifier documented on the provider
+          pricing page and applied to that page&apos;s per-token rows; every other batch figure
+          comes from the row&apos;s own notes.
+        </p>
+      </section>
+
+      <section aria-label="Overage and cache terms">
+        <h2 className="display-lg">Overage and cache terms</h2>
+        <p className="mt-2 text-sm text-ink-soft">
+          Two optional field groups extend the universe rows beyond list prices. Both are quoted
+          from official provider docs — never inferred, never filled from memory:
+        </p>
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-ink-soft">
+          <li>
+            <strong className="text-ink">Overage.</strong> Subscription, credit, and coding-tool
+            rows carry an <span className="data">overage</span> group: the per-unit excess or
+            top-up rate (per extra seat, per extra request, per credit pack), the official page
+            it was read on, and the access date. Cap behavior alone is not a rate — where the
+            docs describe caps but publish no dollar figure, the rate reads{" "}
+            <span className="data">&ldquo;not published&rdquo;</span>.
+          </li>
+          <li>
+            <strong className="text-ink">Cache terms.</strong> API per-token rows carry a{" "}
+            <span className="data">cacheTerms</span> group: TTL, minimum cacheable or billable
+            tokens, cache-write fee, and cached-input read discount, each with its official
+            source and access date. Any term the docs do not state reads{" "}
+            <span className="data">&ldquo;not published&rdquo;</span>.
+          </li>
+        </ul>
+        <p className="mt-3 text-sm text-ink-soft">
+          <span className="data">&ldquo;Not published&rdquo;</span> is a finding, not a gap in our
+          process: it means the official docs were checked on the stated date and carried no
+          figure. A missing group means the terms do not apply to that row (for example, cache
+          terms on a flat-rate subscription). Neither group enters the blended $/M blend, which
+          stays list-price-only so rows remain comparable.
         </p>
       </section>
 
@@ -304,7 +348,15 @@ export default function MethodologyPage() {
               apiIn, apiOut,          // USD per 1M tokens, null when absent
               unit, notes, caveats[],
               sourceUrl, label: DIRECT|EXCERPT|UNCERTAIN,
-              offer, modelId } ] }
+              offer, modelId,
+              batchDiscount?,        // fraction off list (0.5 = -50%), absent when unpublished
+              batchApprox?,           // true when the published wording is approximate
+              overage?:               // subs / credits / tools only
+                { rate,               // per-unit excess, or "not published"
+                  sourceUrl, accessed },
+              cacheTerms?:            // API per-token rows only
+                { ttl, minTokens, writeFee, readDiscount,
+                  sourceUrl, accessed } } ] }
 
 content/intelligence/2026-09-07.json
   { accessed: "2026-09-07", source: "artificialanalysis.ai",

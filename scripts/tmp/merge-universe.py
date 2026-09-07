@@ -24,8 +24,11 @@ universe = {
     "snapshot": "2026-09-07",
     "conventions": {
         "blendedPerM": "(3 x input + 1 x output) / 4 — Token Perks arithmetic, not a provider figure",
+        "batchPerM": "blended $/M x (1 - published batch discount), shown only where the provider publishes a batch rate; otherwise null (rendered as --)",
         "labels": "DIRECT = read on the provider's own page this pass; EXCERPT = official copy obtained via search index or snapshot; UNCERTAIN = not verified this pass, shown as-is",
         "categories": {"a": "consumer subscription", "b": "API per-token", "c": "credits / prepaid", "d": "coding-tool plan", "e": "free tier / live promo"},
+        "overage": "per-unit excess/top-up rate on sub/credit/tool rows, quoted from official docs; 'not published' = checked, no figure; absent = not applicable",
+        "cacheTerms": "ttl, minimum tokens, write fee, read discount on API rows, quoted from official docs; 'not published' = checked, no figure; absent = not applicable",
     },
     "rows": rows,
 }

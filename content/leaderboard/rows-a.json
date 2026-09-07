@@ -17,7 +17,12 @@
   "sourceUrl": "https://claude.com/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://claude.com/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "anthropic--sub--claude-pro",
@@ -37,7 +42,12 @@
   "sourceUrl": "https://claude.com/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "Usage credits at standard API rates (no flat per-unit overage published)",
+   "sourceUrl": "https://claude.com/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "anthropic--sub--max-5x",
@@ -57,7 +67,12 @@
   "sourceUrl": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "anthropic--sub--max-20x",
@@ -74,7 +89,12 @@
   "sourceUrl": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://support.claude.com/en/articles/11049741-what-is-the-max-plan",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "anthropic--sub--team-standard",
@@ -93,7 +113,12 @@
   "sourceUrl": "https://claude.com/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://claude.com/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "anthropic--sub--team-premium",
@@ -110,7 +135,12 @@
   "sourceUrl": "https://claude.com/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://claude.com/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "anthropic--sub--enterprise",
@@ -129,7 +159,12 @@
   "sourceUrl": "https://claude.com/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "$20/seat/mo plus usage billed at API rates",
+   "sourceUrl": "https://claude.com/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openai--sub--chatgpt-plus",
@@ -148,7 +183,12 @@
   "sourceUrl": "https://apps.apple.com/us/app/chatgpt/id6448311069",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://openai.com/chatgpt/pricing/",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openai--sub--chatgpt-go",
@@ -165,7 +205,12 @@
   "sourceUrl": "https://apps.apple.com/us/app/chatgpt/id6448311069",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://openai.com/chatgpt/pricing/",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openai--sub--chatgpt-pro-5x",
@@ -182,7 +227,12 @@
   "sourceUrl": "https://apps.apple.com/us/app/chatgpt/id6448311069",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://openai.com/chatgpt/pricing/",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openai--sub--chatgpt-pro-20x",
@@ -199,7 +249,12 @@
   "sourceUrl": "https://apps.apple.com/us/app/chatgpt/id6448311069",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://openai.com/chatgpt/pricing/",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openai--sub--chatgpt-business",
@@ -218,7 +273,12 @@
   "sourceUrl": "https://web.archive.org/web/20260729/https://help.openai.com/en/articles/11487671-flexible-pricing-for-the-enterprise-edu-and-business-plans",
   "label": "UNCERTAIN",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://help.openai.com/en/articles/11487671-flexible-pricing-for-the-enterprise-edu-and-business-plans",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "google--sub--ai-plus",
@@ -235,7 +295,12 @@
   "sourceUrl": "https://one.google.com/intl/en_us/about/google-ai-plans/",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://one.google.com/intl/en_us/about/google-ai-plans/",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "google--sub--ai-pro",
@@ -252,7 +317,12 @@
   "sourceUrl": "https://one.google.com/intl/en_us/about/google-ai-plans/",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://one.google.com/intl/en_us/about/google-ai-plans/",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "google--sub--ai-ultra",
@@ -269,7 +339,12 @@
   "sourceUrl": "https://one.google.com/intl/en_us/about/google-ai-plans/",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://one.google.com/intl/en_us/about/google-ai-plans/",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "xai--sub--grok-free",
@@ -288,7 +363,12 @@
   "sourceUrl": "https://x.ai/grok",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://docs.x.ai/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "xai--sub--supergrok",
@@ -307,7 +387,12 @@
   "sourceUrl": "https://x.ai/pricing",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://docs.x.ai/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "xai--sub--supergrok-plus",
@@ -326,7 +411,12 @@
   "sourceUrl": "https://x.ai/pricing",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://docs.x.ai/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "xai--sub--supergrok-lite",
@@ -343,7 +433,12 @@
   "sourceUrl": "https://apps.apple.com/us/app/grok-ai/id6670324846",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://docs.x.ai/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "xai--sub--supergrok-heavy",
@@ -362,7 +457,12 @@
   "sourceUrl": "https://apps.apple.com/us/app/grok-ai/id6670324846",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://docs.x.ai/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "mistral--sub--vibe-free",
@@ -379,7 +479,12 @@
   "sourceUrl": "https://mistral.ai/pricing",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "Extend usage with PAYG credits at API rate (no separate overage figure)",
+   "sourceUrl": "https://mistral.ai/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "mistral--sub--vibe-pro",
@@ -396,7 +501,12 @@
   "sourceUrl": "https://mistral.ai/pricing",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "Extend usage with PAYG credits at API rate (no separate overage figure)",
+   "sourceUrl": "https://mistral.ai/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "mistral--sub--vibe-team",
@@ -413,7 +523,12 @@
   "sourceUrl": "https://mistral.ai/pricing",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "Extend usage with PAYG credits at API rate (no separate overage figure)",
+   "sourceUrl": "https://mistral.ai/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "mistral--sub--vibe-enterprise",
@@ -432,7 +547,12 @@
   "sourceUrl": "https://mistral.ai/pricing",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "Extend usage with PAYG credits at API rate (no separate overage figure)",
+   "sourceUrl": "https://mistral.ai/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "moonshot--sub--kimi-k3-moderato",
@@ -452,7 +572,12 @@
   "sourceUrl": "https://www.kimi.ai/membership/pricing",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://www.kimi.ai/membership/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "moonshot--sub--kimi-k3-allegretto",
@@ -472,7 +597,12 @@
   "sourceUrl": "https://www.kimi.ai/membership/pricing",
   "label": "EXCERPT",
   "offer": "/best/kimi-k3-core/",
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://www.kimi.ai/membership/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "moonshot--sub--kimi-k3-allegro",
@@ -492,7 +622,12 @@
   "sourceUrl": "https://www.kimi.ai/membership/pricing",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://www.kimi.ai/membership/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "moonshot--sub--kimi-k3-vivace",
@@ -512,7 +647,12 @@
   "sourceUrl": "https://www.kimi.ai/membership/pricing",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://www.kimi.ai/membership/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "zai--tool--glm-coding-lite",
@@ -531,7 +671,12 @@
   "sourceUrl": "https://docs.z.ai/devpack/overview",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://docs.z.ai/devpack/overview",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "zai--tool--glm-coding-pro",
@@ -550,7 +695,12 @@
   "sourceUrl": "https://docs.z.ai/devpack/overview",
   "label": "UNCERTAIN",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://docs.z.ai/devpack/overview",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "zai--tool--glm-coding-max",
@@ -569,7 +719,12 @@
   "sourceUrl": "https://docs.z.ai/devpack/overview",
   "label": "UNCERTAIN",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://docs.z.ai/devpack/overview",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "minimax--sub--token-plan-plus",
@@ -588,7 +743,12 @@
   "sourceUrl": "https://platform.minimax.io/docs/guides/pricing-token-plan",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published (overflow billed from Credits at paygo list; no distinct extra-token rate)",
+   "sourceUrl": "https://platform.minimax.io/docs/guides/pricing-token-plan",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "minimax--sub--token-plan-max",
@@ -607,7 +767,12 @@
   "sourceUrl": "https://platform.minimax.io/docs/guides/pricing-token-plan",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published (overflow billed from Credits at paygo list; no distinct extra-token rate)",
+   "sourceUrl": "https://platform.minimax.io/docs/guides/pricing-token-plan",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "minimax--sub--token-plan-ultra",
@@ -626,7 +791,12 @@
   "sourceUrl": "https://platform.minimax.io/docs/guides/pricing-token-plan",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published (overflow billed from Credits at paygo list; no distinct extra-token rate)",
+   "sourceUrl": "https://platform.minimax.io/docs/guides/pricing-token-plan",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "deepseek--sub--none",
@@ -643,7 +813,12 @@
   "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "perplexity--sub--pro",
@@ -660,7 +835,12 @@
   "sourceUrl": "https://www.perplexity.ai/pro",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://www.perplexity.ai/pro",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "perplexity--sub--max",
@@ -679,7 +859,12 @@
   "sourceUrl": "https://www.perplexity.ai/hub/pricing",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://www.perplexity.ai/hub/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "perplexity--sub--education-pro",
@@ -698,7 +883,12 @@
   "sourceUrl": "https://www.perplexity.ai/hub/pricing",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://www.perplexity.ai/hub/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "meta--sub--none",
@@ -717,6 +907,11 @@
   "sourceUrl": "https://www.together.ai/pricing",
   "label": "UNCERTAIN",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://www.together.ai/pricing",
+   "accessed": "2026-09-07"
+  }
  }
 ]

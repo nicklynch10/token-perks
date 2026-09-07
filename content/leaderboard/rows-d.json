@@ -14,7 +14,12 @@
   "sourceUrl": "https://cursor.com/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://cursor.com/help/account-and-billing/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "cursor--tool--pro",
@@ -33,7 +38,12 @@
   "sourceUrl": "https://cursor.com/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://cursor.com/help/account-and-billing/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "cursor--tool--pro-plus",
@@ -50,7 +60,12 @@
   "sourceUrl": "https://cursor.com/help/account-and-billing/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://cursor.com/help/account-and-billing/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "cursor--tool--ultra",
@@ -67,7 +82,12 @@
   "sourceUrl": "https://cursor.com/help/account-and-billing/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://cursor.com/help/account-and-billing/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "cursor--tool--teams",
@@ -84,7 +104,12 @@
   "sourceUrl": "https://cursor.com/help/account-and-billing/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://cursor.com/help/account-and-billing/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "github--tool--copilot-free",
@@ -103,7 +128,12 @@
   "sourceUrl": "https://github.com/features/copilot/plans",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "claude-4-5-haiku"
+  "modelId": "claude-4-5-haiku",
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://github.com/features/copilot/plans",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "github--tool--copilot-pro",
@@ -122,7 +152,12 @@
   "sourceUrl": "https://github.com/features/copilot/plans",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "$0.01 per AI credit; $15/mo total credits ($10 base + $5 flex)",
+   "sourceUrl": "https://github.com/features/copilot/plans",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "github--tool--copilot-pro-plus",
@@ -141,7 +176,12 @@
   "sourceUrl": "https://github.com/features/copilot/plans",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "claude-opus-5"
+  "modelId": "claude-opus-5",
+  "overage": {
+   "rate": "$0.01 per AI credit; $70/mo total credits ($39 + $31)",
+   "sourceUrl": "https://github.com/features/copilot/plans",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "github--tool--copilot-max",
@@ -160,7 +200,12 @@
   "sourceUrl": "https://github.com/features/copilot/plans",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "$0.01 per AI credit; $200/mo total credits ($100 + $100)",
+   "sourceUrl": "https://github.com/features/copilot/plans",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "github--tool--copilot-business",
@@ -177,7 +222,12 @@
   "sourceUrl": "https://docs.github.com/en/copilot/get-started/plans",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "$0.01 per AI credit; 1,900 credits/seat/mo",
+   "sourceUrl": "https://github.com/features/copilot/plans",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "github--tool--copilot-enterprise",
@@ -194,7 +244,12 @@
   "sourceUrl": "https://docs.github.com/en/copilot/get-started/plans",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "$0.01 per AI credit; 3,900 credits/seat/mo",
+   "sourceUrl": "https://github.com/features/copilot/plans",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "github--tool--ai-credits-unit",
@@ -213,7 +268,12 @@
   "sourceUrl": "https://github.com/features/copilot/plans",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "$0.01 per AI credit (budget-based; alerts at 75/90/100%)",
+   "sourceUrl": "https://docs.github.com/en/billing/managing-billing-for-github-copilot/about-billing-for-github-copilot",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "devin--tool--devin-pricing",
@@ -232,7 +292,12 @@
   "sourceUrl": "https://web.archive.org/web/20260814065709/https://devin.ai/pricing",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://devin.ai/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "antigravity--tool--developer-access",
@@ -251,7 +316,12 @@
   "sourceUrl": "https://antigravity.google",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "gemini-3-8-flash"
+  "modelId": "gemini-3-8-flash",
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://antigravity.google",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "google--tool--jules",
@@ -270,7 +340,12 @@
   "sourceUrl": "https://jules.google/docs/usage-limits/",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://jules.google/docs/usage-limits/",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openai--tool--codex-via-chatgpt",
@@ -289,7 +364,12 @@
   "sourceUrl": "https://web.archive.org/web/20260906/https://help.openai.com/en/articles/11481834-chatgpt-rate-card-business-enterpriseedu-credit-based-pricing",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://help.openai.com/en/articles/11481834-chatgpt-rate-card-business-enterpriseedu-credit-based-pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "moonshot--tool--kimi-coding-endpoint",
@@ -308,7 +388,12 @@
   "sourceUrl": "https://www.kimi.ai/membership/pricing",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://www.kimi.ai/code",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "zai--tool--glm-coding-plan",
@@ -327,6 +412,11 @@
   "sourceUrl": "https://docs.z.ai/devpack/overview",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "glm-5-3"
+  "modelId": "glm-5-3",
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://docs.z.ai/devpack/overview",
+   "accessed": "2026-09-07"
+  }
  }
 ]

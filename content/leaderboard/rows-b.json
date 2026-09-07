@@ -16,7 +16,15 @@
   "sourceUrl": "https://developer.meta.com/ai/",
   "label": "UNCERTAIN",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "not published",
+   "sourceUrl": "https://developer.meta.com/ai/",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "anthropic--api--fable-5-1",
@@ -35,7 +43,16 @@
   "sourceUrl": "https://claude.com/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "claude-fable-5-1"
+  "modelId": "claude-fable-5-1",
+  "batchDiscount": 0.5,
+  "cacheTerms": {
+   "ttl": "5m default (free refresh on use); 1h option at extra cost",
+   "minTokens": "512 tokens",
+   "writeFee": "1.25x base input (5m); 2x (1h)",
+   "readDiscount": "0.025x base input (97.5% off)",
+   "sourceUrl": "https://platform.claude.com/docs/en/docs/build-with-claude/prompt-caching",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "anthropic--api--opus-5",
@@ -52,7 +69,15 @@
   "sourceUrl": "https://claude.com/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "claude-opus-5"
+  "modelId": "claude-opus-5",
+  "cacheTerms": {
+   "ttl": "5m default (free refresh on use); 1h option at extra cost",
+   "minTokens": "1024 tokens",
+   "writeFee": "1.25x base input (5m); 2x (1h)",
+   "readDiscount": "0.1x base input (90% off)",
+   "sourceUrl": "https://platform.claude.com/docs/en/docs/build-with-claude/prompt-caching",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "anthropic--api--sonnet-5",
@@ -69,7 +94,15 @@
   "sourceUrl": "https://claude.com/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "claude-sonnet-5"
+  "modelId": "claude-sonnet-5",
+  "cacheTerms": {
+   "ttl": "5m default (free refresh on use); 1h option at extra cost",
+   "minTokens": "1024 tokens",
+   "writeFee": "1.25x base input (5m); 2x (1h)",
+   "readDiscount": "0.1x base input (90% off)",
+   "sourceUrl": "https://platform.claude.com/docs/en/docs/build-with-claude/prompt-caching",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "anthropic--api--haiku-4-5",
@@ -86,7 +119,15 @@
   "sourceUrl": "https://claude.com/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "claude-4-5-haiku"
+  "modelId": "claude-4-5-haiku",
+  "cacheTerms": {
+   "ttl": "5m default (free refresh on use); 1h option at extra cost",
+   "minTokens": "4096 tokens",
+   "writeFee": "1.25x base input (5m); 2x (1h)",
+   "readDiscount": "0.1x base input (90% off)",
+   "sourceUrl": "https://platform.claude.com/docs/en/docs/build-with-claude/prompt-caching",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "anthropic--api--legacy-ladder",
@@ -105,7 +146,15 @@
   "sourceUrl": "https://claude.com/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "cacheTerms": {
+   "ttl": "5m default (free refresh on use); 1h option at extra cost",
+   "minTokens": "512-4096 by model (Fable 5: 512; Sonnet 4.x / Opus 4.1 / Opus 4: 1024; Opus 4.6 / 4.5: 4096; Haiku 3.5: 2048)",
+   "writeFee": "1.25x base input (5m); 2x (1h) all models",
+   "readDiscount": "0.1x base input (90% off)",
+   "sourceUrl": "https://platform.claude.com/docs/en/docs/build-with-claude/prompt-caching",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openai--api--gpt-5-6-sol",
@@ -124,7 +173,16 @@
   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "gpt-5-6-sol"
+  "modelId": "gpt-5-6-sol",
+  "batchDiscount": 0.5,
+  "cacheTerms": {
+   "ttl": "30m (refreshed on reuse)",
+   "minTokens": "1024 tokens",
+   "writeFee": "1.25x input",
+   "readDiscount": "0.1x input (90% off)",
+   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openai--api--gpt-5-6-terra",
@@ -141,7 +199,16 @@
   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "gpt-5-6-terra"
+  "modelId": "gpt-5-6-terra",
+  "batchDiscount": 0.5,
+  "cacheTerms": {
+   "ttl": "30m (refreshed on reuse)",
+   "minTokens": "1024 tokens",
+   "writeFee": "1.25x input",
+   "readDiscount": "0.1x input (90% off)",
+   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openai--api--gpt-5-6-luna",
@@ -158,7 +225,16 @@
   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "gpt-5-6-luna"
+  "modelId": "gpt-5-6-luna",
+  "batchDiscount": 0.5,
+  "cacheTerms": {
+   "ttl": "30m (refreshed on reuse)",
+   "minTokens": "1024 tokens",
+   "writeFee": "1.25x input",
+   "readDiscount": "0.1x input (90% off)",
+   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openai--api--gpt-6-astra",
@@ -177,7 +253,16 @@
   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "gpt-6-astra"
+  "modelId": "gpt-6-astra",
+  "batchDiscount": 0.5,
+  "cacheTerms": {
+   "ttl": "30m (refreshed on reuse)",
+   "minTokens": "1024 tokens",
+   "writeFee": "1.25x input",
+   "readDiscount": "0.1x input (90% off)",
+   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openai--api--gpt-5-5",
@@ -196,7 +281,16 @@
   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "gpt-5-5-instant"
+  "modelId": "gpt-5-5-instant",
+  "batchDiscount": 0.5,
+  "cacheTerms": {
+   "ttl": "not published (30m-class typical; exact per-model TTL not stated)",
+   "minTokens": "2048 tokens",
+   "writeFee": "not published (no write charge shown)",
+   "readDiscount": "90% off cached input (pro variants: no cached rate published)",
+   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openai--api--gpt-5-2",
@@ -215,7 +309,16 @@
   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "batchDiscount": 0.5,
+  "cacheTerms": {
+   "ttl": "not published (30m-class typical; exact per-model TTL not stated)",
+   "minTokens": "2048 tokens",
+   "writeFee": "not published (no write charge shown)",
+   "readDiscount": "90% off cached input",
+   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openai--api--gpt-5-mini",
@@ -234,7 +337,16 @@
   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "gpt-5-mini"
+  "modelId": "gpt-5-mini",
+  "batchDiscount": 0.5,
+  "cacheTerms": {
+   "ttl": "not published (30m-class typical; exact per-model TTL not stated)",
+   "minTokens": "2048 tokens",
+   "writeFee": "not published (no write charge shown)",
+   "readDiscount": "90% off cached input",
+   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openai--api--gpt-5-pro",
@@ -253,7 +365,16 @@
   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "batchDiscount": 0.5,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "not published (no cached rate in table)",
+   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openai--api--o3",
@@ -272,7 +393,16 @@
   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "o3"
+  "modelId": "o3",
+  "batchDiscount": 0.5,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "2048 tokens",
+   "writeFee": "not published",
+   "readDiscount": "Differs by model: o3 75% off; o4-mini 75% off; o1 50% off; o1-pro / o3-pro not published",
+   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openai--api--gpt-4-1",
@@ -291,7 +421,16 @@
   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "batchDiscount": 0.5,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "2048 tokens",
+   "writeFee": "not published",
+   "readDiscount": "75% off cached input",
+   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openai--api--embeddings",
@@ -310,7 +449,15 @@
   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "not published (no cached column)",
+   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openai--api--batch-fast",
@@ -329,7 +476,15 @@
   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "not published",
+   "sourceUrl": "https://developers.openai.com/api/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "google--api--gemini-3-8-flash",
@@ -348,7 +503,17 @@
   "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "gemini-3-8-flash"
+  "modelId": "gemini-3-8-flash",
+  "batchDiscount": 0.5,
+  "batchApprox": true,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "4096 tokens",
+   "writeFee": "not published",
+   "readDiscount": "Cached input $0.075/M through Dec 31 2026, $0.15/M from Jan 1 2027",
+   "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "google--api--gemini-3-5-flash",
@@ -367,7 +532,15 @@
   "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "gemini-3-5-flash"
+  "modelId": "gemini-3-5-flash",
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "4096 tokens (Flash; Flash-Lite not published)",
+   "writeFee": "not published",
+   "readDiscount": "Cached input $0.15/M (Flash), $0.03/M (Flash-Lite)",
+   "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "google--api--gemini-3-1-flash-lite",
@@ -384,7 +557,15 @@
   "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "Cached input $0.025/M",
+   "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "google--api--gemini-3-1-pro-preview",
@@ -404,7 +585,15 @@
   "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "gemini-3-1-pro-preview"
+  "modelId": "gemini-3-1-pro-preview",
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "4096 tokens",
+   "writeFee": "not published",
+   "readDiscount": "Cached input $0.20/M (prompts <=200k tokens)",
+   "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "google--api--gemini-3-flash-preview",
@@ -423,7 +612,15 @@
   "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "Cached input $0.05/M (text / image / video)",
+   "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "google--api--gemini-2-5-pro",
@@ -442,7 +639,16 @@
   "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "gemini-2-5-pro"
+  "modelId": "gemini-2-5-pro",
+  "batchDiscount": 0.5,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "2048 tokens",
+   "writeFee": "not published",
+   "readDiscount": "Cached input $0.125/M (<=200k), $0.25/M (>200k)",
+   "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "google--api--gemini-2-5-flash",
@@ -461,7 +667,15 @@
   "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "2048 tokens (Flash; Flash-Lite not published)",
+   "writeFee": "not published",
+   "readDiscount": "Cached input $0.03/M (Flash), $0.01/M (Flash-Lite text / image / video)",
+   "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "xai--api--grok-4-6",
@@ -480,7 +694,15 @@
   "sourceUrl": "https://docs.x.ai/docs/models",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "grok-4-6"
+  "modelId": "grok-4-6",
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "Cached input $0.50/M (under-200k bracket)",
+   "sourceUrl": "https://docs.x.ai/docs/models",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "xai--api--grok-4-5",
@@ -499,7 +721,15 @@
   "sourceUrl": "https://docs.x.ai/docs/models",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "Cached input $0.30/M (under 200k), $0.60/M (at/above 200k)",
+   "sourceUrl": "https://docs.x.ai/docs/models",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "xai--api--grok-4-3",
@@ -518,7 +748,15 @@
   "sourceUrl": "https://docs.x.ai/docs/models",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "Cached input $0.20/M (under 200k), $0.40/M (at/above 200k)",
+   "sourceUrl": "https://docs.x.ai/docs/models",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "xai--api--grok-4-20",
@@ -537,7 +775,15 @@
   "sourceUrl": "https://docs.x.ai/docs/models",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "Cached input $0.20/M (under 200k), $0.40/M (at/above 200k)",
+   "sourceUrl": "https://docs.x.ai/docs/models",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "xai--api--grok-build-0-1",
@@ -556,7 +802,15 @@
   "sourceUrl": "https://docs.x.ai/docs/models",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "Cached input $0.20/M (under 200k), $0.40/M (at/above 200k)",
+   "sourceUrl": "https://docs.x.ai/docs/models",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "xai--api--imagine",
@@ -575,7 +829,15 @@
   "sourceUrl": "https://docs.x.ai/docs/models",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "not published (per-image/sec/min billing; no cache terms)",
+   "sourceUrl": "https://docs.x.ai/docs/models",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "deepseek--api--v4-flash",
@@ -594,7 +856,15 @@
   "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing/",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "deepseek-v4-flash"
+  "modelId": "deepseek-v4-flash",
+  "cacheTerms": {
+   "ttl": "not published (docs: cache usually cleared within hours to days)",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "Cache-hit input $0.014/M peak, $0.007/M off-peak (vs $0.44/$0.22 miss)",
+   "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing/",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "deepseek--api--v4-pro",
@@ -613,7 +883,15 @@
   "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing/",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "deepseek-v4-pro"
+  "modelId": "deepseek-v4-pro",
+  "cacheTerms": {
+   "ttl": "not published (docs: cache usually cleared within hours to days)",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "Cache-hit input $0.044/M peak, $0.022/M off-peak (vs $1.32/$0.66 miss)",
+   "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing/",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "moonshot--api--kimi-k3",
@@ -632,7 +910,15 @@
   "sourceUrl": "https://platform.kimi.ai/docs/pricing/chat-k3",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "kimi-k3"
+  "modelId": "kimi-k3",
+  "cacheTerms": {
+   "ttl": "not published (system-managed, no TTL control)",
+   "minTokens": "256 prompt tokens (previous request)",
+   "writeFee": "not published",
+   "readDiscount": "Cache-hit input $0.30/M vs $3.00/M miss",
+   "sourceUrl": "https://platform.kimi.ai/docs/pricing/chat-k3",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "moonshot--api--kimi-k2-7",
@@ -651,7 +937,15 @@
   "sourceUrl": "https://platform.kimi.ai/docs/pricing/chat-k27-code",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "kimi-k2-7-code"
+  "modelId": "kimi-k2-7-code",
+  "cacheTerms": {
+   "ttl": "not published (system-managed, no TTL control)",
+   "minTokens": "256 prompt tokens (previous request)",
+   "writeFee": "not published",
+   "readDiscount": "Cache-hit $0.19/M vs $0.95/M miss (K2.7 Code; highspeed $0.38/$1.90; K2.6 $0.16/$0.95)",
+   "sourceUrl": "https://platform.kimi.ai/docs/pricing/chat-k27-code",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "zai--api--glm-5-3",
@@ -670,7 +964,15 @@
   "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "glm-5-3"
+  "modelId": "glm-5-3",
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "Cached input $0.26/M vs $1.40/M in, $4.40/M out (no % stated)",
+   "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "zai--api--glm-5-3-flash",
@@ -689,7 +991,15 @@
   "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "glm-5-3-flash"
+  "modelId": "glm-5-3-flash",
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "Cached input $0.015/M vs $0.075/M in ($0.03 list), $0.25/M out ($0.50 list); promo ends Sep 9 2026 24:00 UTC+8",
+   "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "zai--api--glm-5-ladder",
@@ -708,7 +1018,15 @@
   "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "Cached input e.g. GLM-5.1 $0.26/M, GLM-5 $0.20/M, GLM-4.7/4.6 $0.11/M (no % stated)",
+   "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "zai--api--glm-flash-free",
@@ -727,7 +1045,15 @@
   "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "glm-4-6"
+  "modelId": "glm-4-6",
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "not published (free models; no cached column)",
+   "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "zai--api--glm-vision",
@@ -746,7 +1072,15 @@
   "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "Cached input e.g. 4.6V $0.05/M, 4.6V-FlashX $0.004/M, 4.5V $0.11/M (no % stated)",
+   "sourceUrl": "https://docs.z.ai/guides/overview/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "alibaba--api--qwen-official",
@@ -758,14 +1092,22 @@
   "apiIn": 2.0,
   "apiOut": 6.0,
   "unit": "$/1M tokens",
-  "notes": "Singapore-region Model Studio list price, 0<token<=1M tiers. Hong Kong region prices qwen3.8-max at $1.65/$4.951 with night discounts 22:00-08:00 UTC+8. Together resale of qwen3.7-plus ($0.32/$1.28) undercuts Alibaba's own Singapore list.",
+  "notes": "Singapore-region Model Studio list price, 0<token<=1M tiers. Hong Kong region prices qwen3.8-max at $1.65/$4.951 with night discounts 22:00-08:00 UTC+8. Together resale of qwen3.7-plus ($0.32/$1.28) undercuts Alibaba's own Singapore list. Verified night rate on the same page: qwen3.7-plus (Hong Kong) lists $0.276 with 60% off at night (22:00-08:00 UTC+8) and 20% off daytime.",
   "caveats": [
    "Region/term tiers - see notes"
   ],
   "sourceUrl": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "qwen3-8-max"
+  "modelId": "qwen3-8-max",
+  "cacheTerms": {
+   "ttl": "5 minutes, resets on hit (explicit); implicit tier system-managed",
+   "minTokens": "1024 tokens",
+   "writeFee": "125% of input price (explicit); 100% (implicit)",
+   "readDiscount": "10% of input price, i.e. 90% off (explicit); 20% (implicit)",
+   "sourceUrl": "https://www.alibabacloud.com/help/en/model-studio/context-cache",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "together--api--qwen-resale",
@@ -784,7 +1126,15 @@
   "sourceUrl": "https://www.together.ai/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "qwen3-8-2-4t"
+  "modelId": "qwen3-8-2-4t",
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "Cached input shown per model (e.g. Qwen3.8-2.4T-A95B $0.25/M, Qwen3.7-Max $0.13/M); no discount % stated",
+   "sourceUrl": "https://www.together.ai/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "together--api--qwen-value",
@@ -803,7 +1153,15 @@
   "sourceUrl": "https://www.together.ai/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "Cached input $0.35/M shown for Qwen3.5-397B-A17B; no discount % stated",
+   "sourceUrl": "https://www.together.ai/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "together--api--llama-resale",
@@ -822,7 +1180,15 @@
   "sourceUrl": "https://www.together.ai/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "llama-4-maverick"
+  "modelId": "llama-4-maverick",
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "Cached input prices shown per model; no discount % stated",
+   "sourceUrl": "https://www.together.ai/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "mistral--api--mistral-large",
@@ -841,7 +1207,16 @@
   "sourceUrl": "https://mistral.ai/pricing",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": "mistral-large-3"
+  "modelId": "mistral-large-3",
+  "batchDiscount": 0.5,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "not published",
+   "readDiscount": "Up to 90% off input for repeated prompts (cached input)",
+   "sourceUrl": "https://mistral.ai/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "minimax--api--m2-7",
@@ -858,7 +1233,15 @@
   "sourceUrl": "https://platform.minimax.io/docs/guides/pricing-paygo",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": "minimax-m3"
+  "modelId": "minimax-m3",
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "$0.375/M cache write",
+   "readDiscount": "Cache-read $0.06/M vs $0.30/M input (no % stated)",
+   "sourceUrl": "https://platform.minimax.io/docs/guides/pricing-paygo",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "minimax--api--m2-7-highspeed",
@@ -877,7 +1260,15 @@
   "sourceUrl": "https://platform.minimax.io/docs/guides/pricing-paygo",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "cacheTerms": {
+   "ttl": "not published",
+   "minTokens": "not published",
+   "writeFee": "$0.375/M cache write",
+   "readDiscount": "Cache-read $0.06/M vs $0.60/M input (no % stated)",
+   "sourceUrl": "https://platform.minimax.io/docs/guides/pricing-paygo",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "groq--api--console-list",
@@ -897,6 +1288,14 @@
   "sourceUrl": "https://console.groq.com/docs/models",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "cacheTerms": {
+   "ttl": "2 hours without use",
+   "minTokens": "128-1024 tokens by model",
+   "writeFee": "None (no additional cost)",
+   "readDiscount": "50% off cached input",
+   "sourceUrl": "https://console.groq.com/docs/prompt-caching",
+   "accessed": "2026-09-07"
+  }
  }
 ]

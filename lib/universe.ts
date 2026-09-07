@@ -13,6 +13,10 @@ export interface UniverseRow {
   apiIn: number | null;
   apiOut: number | null;
   unit: string;
+  /** Published batch discount as a fraction off list (0.5 = -50%). Absent/null = no published batch modifier. */
+  batchDiscount?: number | null;
+  /** True when the published modifier is approximate wording (e.g. "about half"). */
+  batchApprox?: boolean;
   notes: string;
   caveats: string[];
   sourceUrl: string;
@@ -21,14 +25,56 @@ export interface UniverseRow {
   label: RowLabel;
   offer: string | null;
   modelId: string | null;
+  /**
+   * Per-unit overage / excess / top-up terms for subscription, credit, and
+   * tool rows. Optional: absent when not applicable to the row. When present
+   * and the official docs state no figure, `rate` is the literal string
+   * "not published" — never a guess (see /methodology/).
+   */
+  overage?: OverageTerms;
+  /**
+   * Prompt-cache terms for API per-token rows. Optional: absent when not
+   * applicable to the row. Unknown sub-fields are the literal string
+   * "not published" — never a guess (see /methodology/).
+   */
+  cacheTerms?: CacheTerms;
+}
+
+/** Overage / excess-usage / top-up terms, quoted from official provider docs. */
+export interface OverageTerms {
+  /** Per-unit excess rate as stated, or "not published". */
+  rate: string;
+  /** Official page where the rate (or its absence) was verified. */
+  sourceUrl: string;
+  /** Date the overage source was read. */
+  accessed: string;
+}
+
+/** Prompt-cache terms, quoted from official provider docs. */
+export interface CacheTerms {
+  /** Cache TTL as stated (e.g. "5m default, 1h with header"), or "not published". */
+  ttl: string;
+  /** Minimum cacheable / billable tokens as stated, or "not published". */
+  minTokens: string;
+  /** Cache-write fee as stated, or "not published". */
+  writeFee: string;
+  /** Cached-input read discount as stated, or "not published". */
+  readDiscount: string;
+  /** Official page where the terms (or their absence) were verified. */
+  sourceUrl: string;
+  /** Date the cache source was read. */
+  accessed: string;
 }
 
 export interface Universe {
   snapshot: string;
   conventions: {
     blendedPerM: string;
+    batchPerM: string;
     labels: string;
     categories: Record<CategoryKey, string>;
+    overage?: string;
+    cacheTerms?: string;
   };
   rows: UniverseRow[];
 }
@@ -58,6 +104,25 @@ export function blendedPerM(r: UniverseRow): number | null {
 /** Estimated $/task at a tokens-per-task preset. Null when the row has no token price. */
 export function estPerTask(r: UniverseRow, tokensPerTask: number): number | null {
   const perM = blendedPerM(r);
+  if (perM == null) return null;
+  return (perM * tokensPerTask) / 1_000_000;
+}
+
+/**
+ * Computed batch $/M tokens — blended $/M x (1 - batchDiscount).
+ * Only defined where the row carries a published batch modifier;
+ * otherwise null (rendered as "—", never guessed).
+ */
+export function batchPerM(r: UniverseRow): number | null {
+  if (r.batchDiscount == null) return null;
+  const perM = blendedPerM(r);
+  if (perM == null) return null;
+  return perM * (1 - r.batchDiscount);
+}
+
+/** Estimated batch $/task at a tokens-per-task preset. Null without a published modifier. */
+export function batchPerTask(r: UniverseRow, tokensPerTask: number): number | null {
+  const perM = batchPerM(r);
   if (perM == null) return null;
   return (perM * tokensPerTask) / 1_000_000;
 }

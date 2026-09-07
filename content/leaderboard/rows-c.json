@@ -14,7 +14,12 @@
   "sourceUrl": "https://apps.apple.com/us/app/chatgpt/id6448311069",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://openai.com/chatgpt/pricing/",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openrouter--credits--payg",
@@ -34,7 +39,12 @@
   "sourceUrl": "https://openrouter.ai/docs/faq",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://openrouter.ai/docs/faq",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "openrouter--credits--free-tier",
@@ -53,7 +63,12 @@
   "sourceUrl": "https://openrouter.ai/docs/faq",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://openrouter.ai/docs/faq",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "nvidia-build--credits--kimi-k3-dev",
@@ -73,7 +88,12 @@
   "sourceUrl": "https://build.nvidia.com",
   "label": "EXCERPT",
   "offer": "/best/nvidia-k3-free/",
-  "modelId": "kimi-k3"
+  "modelId": "kimi-k3",
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://build.nvidia.com",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "fireworks--credits--payg",
@@ -92,7 +112,12 @@
   "sourceUrl": "https://fireworks.ai/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://fireworks.ai/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "fireworks--credits--fire-pass",
@@ -113,7 +138,12 @@
   "sourceUrl": "https://docs.fireworks.ai/firepass",
   "label": "DIRECT",
   "offer": null,
-  "modelId": "kimi-k3"
+  "modelId": "kimi-k3",
+  "overage": {
+   "rate": "Off-pass model usage billed at standard per-token rates (list price not published)",
+   "sourceUrl": "https://docs.fireworks.ai/firepass",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "fireworks--credits--training-gpu",
@@ -132,7 +162,12 @@
   "sourceUrl": "https://fireworks.ai/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://fireworks.ai/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "together--credits--payg",
@@ -149,7 +184,12 @@
   "sourceUrl": "https://www.together.ai/pricing",
   "label": "DIRECT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://docs.together.ai/docs/billing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "cerebras--credits--developer",
@@ -168,7 +208,12 @@
   "sourceUrl": "https://www.cerebras.ai/pricing",
   "label": "EXCERPT",
   "offer": null,
-  "modelId": null
+  "modelId": null,
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://www.cerebras.ai/pricing",
+   "accessed": "2026-09-07"
+  }
  },
  {
   "id": "deepinfra--credits--observed",
@@ -187,6 +232,11 @@
   "sourceUrl": "https://www.deepinfra.com/",
   "label": "UNCERTAIN",
   "offer": null,
-  "modelId": "deepseek-v4-pro"
+  "modelId": "deepseek-v4-pro",
+  "overage": {
+   "rate": "not published",
+   "sourceUrl": "https://deepinfra.com/pricing",
+   "accessed": "2026-09-07"
+  }
  }
 ]
