@@ -1,5 +1,5 @@
 export const SITE_NAME = "Token Perks";
-export const SITE_TAGLINE = "The best AI offers. The catches, upfront.";
+export const SITE_TAGLINE = "AI subscription offers, compared on effective cost per task.";
 export const SITE_URL = "https://token-perks.com";
 export const SNAPSHOT_DATE = "Sep 6 2026";
 /** ISO form of the snapshot date — shared by feeds, sitemap, and stamps. */

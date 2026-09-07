@@ -1,39 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Round-3 ramp (docs/design-round3.md §2 — WCAG ratios verified there) ── */
-  --color-paper: #faf8f3;
-  --color-paper-deep: #f3efe6;
+  /* ── Data-platform ramp: one neutral paper surface, one accent, delta green/red ── */
+  --color-paper: #fafaf8;
+  --color-paper-deep: #f4f4f1;
   --color-card: #ffffff;
-  --color-ink: #1a1a18;
-  --color-ink-soft: #4a4741;
-  --color-ink-mute: #6f6a61;
-  --color-line: #e4dfd3;
-  --color-line-strong: #cfc8b8;
+  --color-ink: #1c1c1a;
+  --color-ink-soft: #494943;
+  --color-ink-mute: #71716a;
+  --color-line: #e5e5e0;
+  --color-line-strong: #cfcfc7;
+  /* Single accent for data emphasis */
   --color-teal: #0f766e;
   --color-teal-deep: #0b5a54;
-  --color-teal-wash: #e7f1ef;
-  --color-teal-band: #f0f6f4;
-  --color-amber: #b45309;
-  --color-amber-deep: #8a3e06;
-  --color-amber-wash: #faf0dc;
-  --color-amber-line: #e8c98a;
+  --color-teal-wash: #edf4f2;
+  /* Deltas: green = lower cost, red = higher cost. No other delta colors. */
+  --color-down: #15803d;
+  --color-up: #b91c1c;
   --color-expired: #b91c1c;
-  --color-expired-wash: #fee2e2;
-  /* Legacy aliases — existing class names keep rendering on the new ramp */
-  --color-verified: var(--color-teal);
-  --color-verified-deep: var(--color-teal-deep);
-  --color-verified-wash: var(--color-teal-wash);
-  --color-catch: var(--color-amber-deep);
-  --color-catch-wash: var(--color-amber-wash);
-  --color-catch-line: var(--color-amber-line);
+  --color-expired-wash: #fdeaea;
   /* ── Fonts (variables injected by app/fonts.ts via next/font/local) ── */
   --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif; /* wordmark only */
   --font-mono: var(--font-plex-mono), ui-monospace, "Cascadia Mono", Consolas, monospace;
 }
 
-/* Light-only by design (§2.3): OS forced-dark must not garble the paper tint */
+/* Light-only by design: OS forced-dark must not garble the page */
 :root {
   color-scheme: light;
 }
@@ -42,158 +34,80 @@ body {
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
-  font-weight: 430;
+  font-weight: 420;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── §1.3 Type scale ─────────────────────────────────────────────── */
+/* ── Type scale: sans throughout; mono for all numerals ──────────── */
 .display-xl {
-  font-family: var(--font-display);
-  font-size: clamp(2.75rem, 2rem + 3.75vw, 4.25rem);
-  font-weight: 560;
-  line-height: 1.04;
+  font-family: var(--font-sans);
+  font-size: clamp(1.9rem, 1.6rem + 1.3vw, 2.6rem);
+  font-weight: 640;
+  line-height: 1.12;
   letter-spacing: -0.015em;
-  font-variation-settings: "opsz" 144;
 }
 .display-md {
-  font-family: var(--font-display);
-  font-size: clamp(1.9rem, 1.6rem + 1.5vw, 2.6rem);
-  font-weight: 560;
-  line-height: 1.1;
+  font-family: var(--font-sans);
+  font-size: clamp(1.6rem, 1.45rem + 0.7vw, 2.05rem);
+  font-weight: 640;
+  line-height: 1.15;
   letter-spacing: -0.012em;
-  font-variation-settings: "opsz" 60;
 }
 .display-lg {
-  font-family: var(--font-display);
-  font-size: clamp(1.6rem, 1.45rem + 0.75vw, 2.1rem);
-  font-weight: 520;
-  line-height: 1.12;
-  letter-spacing: -0.01em;
+  font-family: var(--font-sans);
+  font-size: clamp(1.25rem, 1.15rem + 0.45vw, 1.5rem);
+  font-weight: 620;
+  line-height: 1.22;
+  letter-spacing: -0.008em;
 }
 .display-sm {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 560;
-  line-height: 1.25;
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  font-weight: 620;
+  line-height: 1.3;
   letter-spacing: -0.005em;
 }
 .lede {
-  font-size: clamp(1.125rem, 1.02rem + 0.5vw, 1.25rem);
+  font-size: clamp(1.05rem, 1rem + 0.3vw, 1.15rem);
   line-height: 1.6;
-  font-weight: 450;
-  letter-spacing: -0.005em;
+  font-weight: 440;
   color: var(--color-ink);
 }
 .eyebrow {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.3;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-teal-deep);
+  color: var(--color-ink-mute);
 }
-.eyebrow-amber { color: var(--color-amber-deep); }
-.eyebrow-ink { color: var(--color-ink-mute); }
-.eyebrow-light { color: var(--color-teal-wash); }
 .data {
   font-family: var(--font-mono);
   font-weight: 500;
   font-variant-numeric: tabular-nums;
 }
 .verdict-line {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  line-height: 1.45;
-  font-weight: 480;
-  font-variation-settings: "opsz" 30;
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  font-weight: 440;
 }
 
-/* ── §3 Ledger hero ──────────────────────────────────────────────── */
-.paper-grid {
-  background-image:
-    linear-gradient(to right, rgb(26 26 24 / 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(26 26 24 / 0.05) 1px, transparent 1px);
-  background-size: 24px 24px;
-  -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent);
-  mask-image: linear-gradient(to bottom, black 55%, transparent);
-}
-.paper-grid-light {
-  background-image:
-    linear-gradient(to right, rgb(255 255 255 / 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(255 255 255 / 0.08) 1px, transparent 1px);
-  background-size: 24px 24px;
-}
-.chart-axis {
-  height: 9px;
-  border-bottom: 2px solid var(--color-ink);
-  background: repeating-linear-gradient(90deg,
-    var(--color-line-strong) 0 1px, transparent 1px 12.5%);
-  font: 500 10px/1 var(--font-mono);
-  color: var(--color-ink-mute);
-}
-.ref-line {
-  position: absolute;
-  inset-block: 0;
-  right: 0;
-  width: 0;
-  border-left: 1px dashed var(--color-ink-mute);
-}
-.ref-line::after {
-  content: "PAYG $0.80/TASK";
-  position: absolute;
-  top: -1.4rem;
-  right: 0;
-  font: 600 10px/1.2 var(--font-mono);
-  letter-spacing: 0.08em;
-  color: var(--color-ink-mute);
-  white-space: nowrap;
-}
-.delta-flag {
-  position: absolute;
-  transform: translateY(-50%);
-  background: var(--color-amber);
-  color: #fff;
-  font: 600 11px/1 var(--font-mono);
-  padding: 0.2rem 0.4rem 0.22rem;
-  border-radius: 4px;
-}
-.delta-flag::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0.8rem;
-  border: 5px solid transparent;
-  border-top-color: var(--color-amber);
-}
+/* ── Verification stamp: static, no rotation, no motion ──────────── */
 .stamp {
   display: inline-block;
-  transform: rotate(-4deg);
-  font: 600 11px/1.2 var(--font-mono);
-  letter-spacing: 0.14em;
+  font: 500 11px/1.2 var(--font-mono);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgb(26 26 24 / 0.82);
-  border: 2px solid currentColor;
-  border-radius: 4px;
-  padding: 0.32rem 0.55rem;
-  mix-blend-mode: multiply;
-  position: relative;
-  background: transparent;
+  color: var(--color-ink-mute);
+  border: 1px solid var(--color-line-strong);
+  border-radius: 999px;
+  padding: 0.28rem 0.6rem;
+  background: var(--color-card);
 }
-.stamp::before {
-  content: "";
-  position: absolute;
-  inset: 3px;
-  border: 1px dashed currentColor;
-  border-radius: 2px;
-}
-.stamp-teal { color: var(--color-teal-deep); }
-.mark-underline {
-  background-image: linear-gradient(100deg, transparent 1%, var(--color-amber) 4%, var(--color-amber) 96%, transparent 99%);
-  background-repeat: no-repeat;
-  background-size: 100% 0.16em;
-  background-position: 0 88%;
-}
+.stamp-teal { color: var(--color-teal-deep); border-color: var(--color-teal); }
+
 .asof {
   display: inline-flex;
   align-items: center;
@@ -211,155 +125,58 @@ body {
   background: var(--color-line-strong);
 }
 
-/* ── §4 Interactions (CSS-only; reduced-motion guarded) ──────────── */
+/* ── Surfaces: flat cards, hairline dividers, no lift theatrics ──── */
 .card {
   border: 1px solid var(--color-line-strong);
-  border-radius: 16px;
+  border-radius: 12px;
   background: var(--color-card);
-  box-shadow: 3px 3px 0 0 rgb(26 26 24 / 0.06);
-  transition:
-    translate 0.16s cubic-bezier(0.2, 0.7, 0.3, 1),
-    box-shadow 0.16s cubic-bezier(0.2, 0.7, 0.3, 1),
-    border-color 0.16s;
 }
 @media (hover: hover) {
   .card:hover {
-    translate: 0 -3px;
-    box-shadow: 5px 7px 0 0 rgb(26 26 24 / 0.09);
     border-color: var(--color-teal);
   }
 }
-.card:active {
-  translate: 0 1px;
-  box-shadow: 2px 2px 0 0 rgb(26 26 24 / 0.06);
-}
-.grow { transform-origin: left center; }
-@property --p {
-  syntax: "<integer>";
-  inherits: false;
-  initial-value: 0;
-}
-.count-up {
-  counter-reset: n var(--p);
-  font: 600 1rem/1.4 var(--font-mono);
-}
-.count-up::after { content: attr(data-final); }
-@media (prefers-reduced-motion: no-preference) {
-  .hero .grow { animation: grow 0.7s cubic-bezier(0.2, 0.7, 0.3, 1) both; }
-  .hero .grow-2 { animation-delay: 0.12s; }
-  .hero .grow-3 { animation-delay: 0.24s; }
-  @keyframes grow {
-    from { transform: scaleX(0); }
-  }
-  /* One-time stamp "thump": lands at 1.02 → 1 with a fade-in (~200ms) */
-  .stamp {
-    animation: stamp-in 0.2s cubic-bezier(0.2, 0.7, 0.3, 1) both;
-  }
-  @keyframes stamp-in {
-    from {
-      transform: rotate(-4deg) scale(1.02);
-      opacity: 0;
-    }
-    to {
-      transform: rotate(-4deg) scale(1);
-      opacity: 1;
-    }
-  }
-  @supports (animation-timeline: view()) {
-    .scroll-grow {
-      animation: grow linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 60%;
-    }
-    .count-up::after {
-      content: counter(n);
-      animation: tally linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 80%;
-    }
-    @keyframes tally {
-      to { --p: var(--target, 100); }
-    }
-  }
-}
+
+/* Deltas: the only green/red on any page */
+.delta-down { color: var(--color-down); }
+.delta-up { color: var(--color-up); }
+
 :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
   outline: 2px solid var(--color-teal-deep);
   outline-offset: 2px;
   border-radius: 6px;
-  box-shadow: 0 0 0 5px var(--color-teal-wash);
 }
 .u-draw {
   text-decoration: none;
   font-weight: 600;
-  background-image: linear-gradient(var(--color-teal-deep), var(--color-teal-deep));
-  background-size: 0% 2px;
-  background-repeat: no-repeat;
-  background-position: 0 100%;
-  transition: background-size 0.18s cubic-bezier(0.2, 0.7, 0.3, 1);
 }
 .u-draw:hover,
-.u-draw:focus-visible { background-size: 100% 2px; }
+.u-draw:focus-visible { text-decoration: underline; }
 .btn {
-  transition: translate 0.12s, box-shadow 0.12s;
-  box-shadow: 2px 2px 0 0 rgb(26 26 24 / 0.18);
+  border: 1px solid transparent;
+  transition: background-color 0.12s, border-color 0.12s;
 }
-.btn:hover {
-  translate: 0 -1px;
-  box-shadow: 3px 3px 0 0 rgb(26 26 24 / 0.18);
-}
-.btn:active {
-  translate: 0 1px;
-  box-shadow: 1px 1px 0 0 rgb(26 26 24 / 0.18);
-}
+.btn:hover { filter: brightness(0.96); }
 
-/* ── §5 Bands & rhythm ───────────────────────────────────────────── */
-.band-paper-deep { background: var(--color-paper-deep); }
-.band-teal { background: var(--color-teal-deep); }
-.band-amber { background: var(--color-amber-wash); }
-.band-colophon { background: var(--color-paper-deep); }
-.rule-double {
-  height: 4px;
-  border-top: 2px solid var(--color-ink);
-  border-bottom: 1px solid var(--color-line-strong);
-}
-.leader {
-  flex: 1 1 auto;
-  min-width: 1.5rem;
-  border-bottom: 2px dotted var(--color-line-strong);
-  translate: 0 -0.3em;
-}
-.anchor-bar {
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  background: color-mix(in srgb, var(--color-paper) 92%, transparent);
-  backdrop-filter: blur(6px);
-  border-block: 1px solid var(--color-line);
-}
-
-/* ── §7 Evidence blocks ──────────────────────────────────────────── */
+/* ── Spec/comparison tables ──────────────────────────────────────── */
 .ledger {
   width: 100%;
   border-collapse: collapse;
   background: var(--color-card);
 }
 .ledger thead th {
-  font: 600 11px/1.4 var(--font-mono);
+  font: 500 11px/1.4 var(--font-mono);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-ink-soft);
   text-align: left;
   padding: 0.6rem 0.75rem;
-  border-bottom: 2px solid var(--color-ink);
-  box-shadow: inset 0 -4px 0 -3px var(--color-line-strong);
+  border-bottom: 1px solid var(--color-line-strong);
 }
 .ledger tbody td {
   padding: 0.65rem 0.75rem;
   border-bottom: 1px solid var(--color-line);
   vertical-align: top;
-}
-.ledger tbody tr:hover {
-  background: color-mix(in srgb, var(--color-teal-wash) 45%, transparent);
 }
 .ledger .num {
   text-align: right;
@@ -370,35 +187,84 @@ body {
   color: var(--color-ink-mute);
   border-bottom: 0;
 }
-.catch-panel {
-  background: var(--color-amber-wash);
-  border-left: 2px solid var(--color-amber-line);
-  border-radius: 0 12px 12px 0;
+
+/* Comparison-table centerpiece: striped rows, sticky header, hairlines */
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-card);
+  font-size: 0.875rem;
 }
-.dashed-frame {
-  border: 2px dashed var(--color-amber-line);
-  border-radius: 16px;
+.spec-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--color-card);
+  font: 500 10.5px/1.4 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--color-ink);
+  box-shadow: 0 1px 0 0 var(--color-line);
+}
+.spec-table tbody td,
+.spec-table tbody th {
+  padding: 0.7rem 0.75rem;
+  border-bottom: 1px solid var(--color-line);
+  vertical-align: top;
+  text-align: left;
+}
+.spec-table tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--color-ink) 3%, var(--color-card));
+}
+.spec-table .num {
+  text-align: right;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.spec-table tfoot td {
+  padding: 0.6rem 0.75rem;
+  color: var(--color-ink-mute);
+  border-bottom: 0;
+}
+/* Inline to-scale bar for the $-per-100-tasks column */
+.meter {
+  display: block;
+  width: 100%;
+  max-width: 8rem;
+  height: 4px;
+  margin-top: 0.3rem;
+  margin-left: auto;
+  background: var(--color-paper-deep);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.meter > span {
+  display: block;
+  height: 100%;
+  background: var(--color-teal);
+  border-radius: 2px;
+}
+
+/* Calm caveat block: neutral surface, hairline, dry label */
+.caveat-panel {
+  background: var(--color-paper-deep);
+  border-left: 2px solid var(--color-line-strong);
+  border-radius: 0 8px 8px 0;
 }
 .colophon {
-  border-top: 2px solid var(--color-ink);
-  box-shadow: inset 0 4px 0 -3px var(--color-line-strong);
+  border-top: 1px solid var(--color-line-strong);
   font: 400 12px/1.7 var(--font-mono);
   color: var(--color-ink-mute);
 }
 
-/* Numerals are mono everywhere numbers compare — .tabular now means Plex Mono */
+/* Numerals are mono everywhere numbers compare */
 .tabular {
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
-}
-
-/* Sticky first column for comparison tables on desktop */
-.sticky-col th:first-child,
-.sticky-col td:first-child {
-  position: sticky;
-  left: 0;
-  background: inherit;
-  z-index: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {

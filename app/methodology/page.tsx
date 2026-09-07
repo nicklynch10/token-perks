@@ -29,7 +29,7 @@ const FAQ = [
   },
   {
     q: "What is the trailing-7-day median window?",
-    a: "Per-task cost references (like $0.80/task) use the median tokens-per-task over a trailing 7-day example window at an illustrative blended rate — medians, so one monster session cannot skew the number.",
+    a: "Per-task cost references (like $0.80/task) use the median tokens-per-task over a trailing 7-day example window at an illustrative blended rate — medians, so one outlier session cannot skew the number.",
   },
   {
     q: "Why show both unit and per-task prices?",
@@ -49,7 +49,7 @@ export default function MethodologyPage() {
         trail={[{ label: "Home", href: "/" }, { label: "Methodology v0.1" }]}
       />
       <header>
-        <p className="inline-block rounded-full bg-verified-wash px-3 py-1 text-xs font-bold text-verified-deep">
+        <p className="inline-block rounded-full bg-teal-wash px-3 py-1 text-xs font-bold text-teal-deep">
           Version 0.1 · dated Sep 6 2026
         </p>
         <h1 className="mt-3 display-md">

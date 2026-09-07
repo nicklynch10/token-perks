@@ -6,7 +6,7 @@ export const dynamic = "force-static";
 export async function GET() {
   const lines = [
     "# Token Perks",
-    "The best AI offers. The catches, upfront.",
+    "AI subscription offers, compared on effective cost per task.",
     "",
     SNAPSHOT_LINE,
     "Methodology v0.1 (Sep 6 2026): weekly re-verification, daily for active promos; per-task costs use median over trailing 7-day example window; official sources only.",
@@ -15,7 +15,7 @@ export async function GET() {
     "## Offers",
     ...OFFERS.map(
       (o) =>
-        `- ${o.shortTitle} (${o.status}): ${o.price.now}. Renewal: ${o.renewal} Catch: ${o.catchSummary} Details: ${SITE_URL}${o.canonical_url}`,
+        `- ${o.shortTitle} (${o.status}): ${o.price.now}. Renewal: ${o.renewal} Caveats: ${o.catchSummary} Details: ${SITE_URL}${o.canonical_url}`,
     ),
     "",
     "## Guides",

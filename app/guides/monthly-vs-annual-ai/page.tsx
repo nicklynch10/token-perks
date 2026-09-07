@@ -11,12 +11,12 @@ import { canonical, SITE_URL } from "@/lib/site";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Monthly vs Annual AI Plans: Which Wins? (Sep 2026)",
+  title: "Monthly vs Annual AI Plans — When Prepaying Pays (Sep 2026)",
   description:
-    "Kimi Allegretto $39/mo vs ~$31/mo annual (~$372 upfront, ~$96/yr saved). Prepay only stable volume. Verified Sep 6 2026.",
+    "Kimi Allegretto $39/mo vs ~$31/mo annual (~$372 upfront, ~$96/yr difference). Prepay only stable volume. Verified Sep 6 2026.",
   alternates: { canonical: canonical("/guides/monthly-vs-annual-ai/") },
   openGraph: {
-    title: "Monthly vs Annual AI Plans: Which Wins? (Sep 2026)",
+    title: "Monthly vs Annual AI Plans — When Prepaying Pays (Sep 2026)",
     description: "Allegretto $39/mo vs ~$31/mo effective annual. Prepay only stable volume.",
     url: canonical("/guides/monthly-vs-annual-ai/"),
     type: "article",
@@ -37,7 +37,7 @@ const FAQ = [
     a: "Seasonal or experimental usage, teams still measuring volume, anyone relying on a free promo that could end, and any plan whose refund terms you have not read.",
   },
   {
-    q: "Does annual change the catch?",
+    q: "Does annual change the limits?",
     a: "No — the shared credit pool plus 5-hour and weekly controls apply either way. Annual only locks the price; it does not raise the caps.",
   },
   {
@@ -67,11 +67,12 @@ export default function GuidePage() {
       />
       <header>
         <h1 className="display-md">
-          Should you pay monthly or annually for AI?
+          Monthly vs annual AI plans
         </h1>
         <p className="mt-3 text-lg text-ink-soft">
           <strong className="text-ink">
-            Short answer: stay monthly until your volume is boring, then prepay.
+            Short answer: stay monthly until your volume clears break-even for several consecutive
+            months, then prepay annually.
           </strong>{" "}
           Annual Kimi K3 billing saves ~20% — Allegretto at{" "}
           <strong className="tabular">~$31/mo effective (~$372 upfront)</strong> vs{" "}
@@ -148,11 +149,11 @@ export default function GuidePage() {
         <Link href="/guides/effective-cost-per-task-explained/" className="font-bold underline">
           Effective cost per task, explained
         </Link>{" "}
-        · <Link href="/best/kimi-k3-core/" className="font-bold underline">Kimi K3 full verdict</Link>
+        · <Link href="/best/kimi-k3-core/" className="font-bold underline">Kimi K3 offer details</Link>
       </p>
 
       <CiteBlock
-        citation={`Token Perks. “Should you pay monthly or annually for AI?” Research snapshot Sep 6 2026. ${url} Re-verify at official terms before paying.`}
+        citation={`Token Perks. “Monthly vs annual AI plans.” Research snapshot Sep 6 2026. ${url} Re-verify at official terms before paying.`}
       />
       <ResearchSnapshot />
       <JsonLd

@@ -8,24 +8,21 @@ const RENEWAL_LINE: Record<string, string> = {
   "nvidia-k3-free": "No renewal — account limits govern",
 };
 
-/** Offers flagged "Changed" in the publication log get an accent tick (C6). */
-const CHANGED: Record<string, boolean> = { "kimi-k3-core": true };
-
-/** Inline ledger mini-chart: three evidence rows per route (design judge, item 1). */
+/** Inline spec summary per route (three facts, mono numerals, hairline rows). */
 const MINI_LEDGER: Record<string, { label: string; value: string }[]> = {
   "kimi-k3-core": [
     { label: "Tiers (mo)", value: "$19–$199" },
     { label: "Annual effective (mo)", value: "≈$15–$159" },
-    { label: "Break-even (Allegretto)", value: "≈49 tasks/mo" },
+    { label: "Est. $/task (120 tasks)", value: "≈$0.33" },
   ],
   "muse-spark-zen-free": [
     { label: "Promo price", value: "$0 in/cache/out" },
     { label: "Renewal", value: "None — promo" },
-    { label: "200 tasks ≈", value: "~$160 avoided" },
+    { label: "End date", value: "In-product only" },
   ],
   "nvidia-k3-free": [
     { label: "Price", value: "$0 dev/proto" },
-    { label: "Reasoning + tools", value: "Preserved" },
+    { label: "Scope", value: "Dev / prototyping" },
     { label: "Quota", value: "Varies by account" },
   ],
 };
@@ -33,71 +30,52 @@ const MINI_LEDGER: Record<string, { label: string; value: string }[]> = {
 export default function OfferCard({
   offer,
   taskNote,
-  fig,
 }: {
   offer: Offer;
   taskNote: string;
-  fig?: string;
 }) {
   const rows = MINI_LEDGER[offer.id] ?? [];
   return (
     <article className="card flex flex-col overflow-hidden">
-      {/* Inline ledger mini-chart (replaces raster art): paper ground, double rule, mono numerals */}
-      <figure className="m-0 border-b border-line bg-paper-deep">
-        <div className="rule-double" aria-hidden="true" />
-        <dl className="px-4 py-3">
-          {rows.map((r, i) => (
-            <div
-              key={r.label}
-              className={`flex items-baseline justify-between gap-3 py-1.5 ${
-                i < rows.length - 1 ? "border-b border-line" : ""
-              }`}
-            >
-              <dt className="text-xs font-semibold text-ink-soft">{r.label}</dt>
-              <dd className="data shrink-0 text-xs text-teal-deep">{r.value}</dd>
-            </div>
-          ))}
-        </dl>
-        {fig && (
-          <figcaption className="data border-t border-line bg-paper px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-ink-mute">
-            {fig}
-          </figcaption>
-        )}
-      </figure>
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
+      <dl className="border-b border-line bg-paper-deep px-4 py-3">
+        {rows.map((r, i) => (
+          <div
+            key={r.label}
+            className={`flex items-baseline justify-between gap-3 py-1.5 ${
+              i < rows.length - 1 ? "border-b border-line" : ""
+            }`}
+          >
+            <dt className="text-xs font-medium text-ink-soft">{r.label}</dt>
+            <dd className="data shrink-0 text-xs">{r.value}</dd>
+          </div>
+        ))}
+      </dl>
+      <div className="flex flex-1 flex-col p-5">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="data rounded-full bg-ink px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">
+          <span className="data rounded-full border border-line-strong px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] text-ink-soft">
             {offer.badge}
           </span>
           <VerifyBadge date={offer.verified_at} />
-          {CHANGED[offer.id] && (
-            <span
-              className="data text-[10px] font-semibold uppercase tracking-[0.12em] text-amber-deep"
-              title="This offer has a Changed entry in the publication log"
-            >
-              ▲ Changed
-            </span>
-          )}
         </div>
         <h3 className="display-sm mt-3">
           <Link href={offer.canonical_url} className="hover:underline">
             {offer.title}
           </Link>
         </h3>
-        <p className="data mt-1 text-lg text-teal-deep">{offer.price.now}</p>
+        <p className="data mt-1 text-base">{offer.price.now}</p>
         <p className="data text-xs text-ink-soft">{taskNote}</p>
         <p className="mt-1 text-xs font-medium text-ink-mute">
           {RENEWAL_LINE[offer.id] ?? offer.price.renewal}
         </p>
-        <div role="note" aria-label="The catch, upfront" className="catch-panel mt-3 p-3 text-sm">
-          <p className="eyebrow eyebrow-amber">The catch</p>
+        <div role="note" aria-label="Caveats" className="caveat-panel mt-3 p-3 text-sm">
+          <p className="eyebrow">Caveats</p>
           <p className="mt-1 text-ink">{offer.catchSummary}</p>
         </div>
         <Link
           href={offer.canonical_url}
-          className="btn mt-4 inline-flex min-h-[44px] items-center justify-center rounded-xl bg-ink px-4 font-bold text-white hover:bg-teal-deep"
+          className="btn mt-4 inline-flex min-h-[44px] items-center justify-center rounded-lg bg-ink px-4 text-sm font-semibold text-white"
         >
-          See full verdict
+          View offer details
         </Link>
       </div>
     </article>

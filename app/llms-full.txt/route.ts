@@ -20,7 +20,7 @@ export async function GET() {
       `Verified: ${o.verified_at}`,
       `Verdict: ${o.verdict}`,
       `Access: ${o.access_route}`,
-      `Catches: ${o.catches.join(" | ")}`,
+      `Caveats: ${o.catches.join(" | ")}`,
       `Limits: ${o.limits.join(" | ")}`,
       `Eligibility: ${o.eligibility.join(" | ")}`,
       `Restrictions: ${o.restrictions.join(" | ")}`,

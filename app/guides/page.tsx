@@ -28,7 +28,7 @@ const GUIDES = [
   },
   {
     href: "/guides/monthly-vs-annual-ai/",
-    title: "Monthly vs annual AI plans: which wins?",
+    title: "Monthly vs annual AI plans",
     text: "Annual saves ~20% but only for stable volume. Allegretto $39 vs ~$31 effective, with a prepay checklist.",
   },
 ];
@@ -39,16 +39,16 @@ export default function GuidesIndex() {
       <Breadcrumbs trail={[{ label: "Home", href: "/" }, { label: "Guides" }]} />
       <header>
         <h1 className="display-md">
-          Guides: pay for AI without guessing
+          Guides
         </h1>
         <p className="mt-2 max-w-2xl text-ink-soft">
-          Two short guides with worked numbers, not vibes. Research snapshot Sep 6 2026.
+          Two short guides with worked examples and stated assumptions. Research snapshot Sep 6 2026.
         </p>
       </header>
       <div className="grid gap-5 md:grid-cols-2">
         {GUIDES.map((g) => (
           <article key={g.href} className="card p-5 sm:p-6">
-            <p className="eyebrow eyebrow-amber">Guide</p>
+            <p className="eyebrow">Guide</p>
             <h2 className="display-sm mt-2">
               <Link href={g.href} className="hover:underline">
                 {g.title}
@@ -57,7 +57,7 @@ export default function GuidesIndex() {
             <p className="mt-1 text-sm text-ink-soft">{g.text}</p>
             <Link
               href={g.href}
-              className="mt-3 inline-flex min-h-[44px] items-center font-bold text-amber-deep hover:underline"
+              className="mt-3 inline-flex min-h-[44px] items-center font-bold text-teal-deep hover:underline"
             >
               Read the guide →
             </Link>

@@ -5,7 +5,7 @@
   "plan": "Kimi K3 Membership — Moderato / Allegretto / Allegro / Vivace",
   "title": "Kimi K3 core membership",
   "shortTitle": "Kimi K3 Membership",
-  "badge": "Best documented value",
+  "badge": "Full pricing ladder published",
   "catchSummary": "Credits are shared across one pool with 5-hour and weekly controls — heavy sprint days can throttle before the month ends.",
   "canonical_url": "/best/kimi-k3-core/",
   "official_terms_url": "https://www.kimi.ai/membership/pricing",
@@ -34,11 +34,11 @@
     "Model served as k3-256k with high thinking-on behaviour; output style and verbosity affect consumption",
     "Annual plan is upfront; confirm whether mid-cycle upgrades, downgrades, or refunds are offered"
   ],
-  "verdict": "Pick Kimi K3 membership if you run steady agentic coding volume and want one predictable bill. At Allegretto ($39/mo, about $31/mo effective annually) it beats pay-as-you-go once you clear roughly 40–50 heavy tasks a month — below that, PAYG or a free route wins. Read the catch first: a single shared credit pool plus 5-hour and weekly controls means marathon sessions can stall mid-sprint.",
+  "verdict": "Pick Kimi K3 membership if you run steady agentic coding volume and want one predictable bill. At Allegretto ($39/mo, about $31/mo effective annually) it beats pay-as-you-go once you clear roughly 40–50 heavy tasks a month — below that, PAYG or a free route wins. The constraint: a single shared credit pool plus 5-hour and weekly controls means marathon sessions can stall mid-sprint.",
   "catches": [
     "One shared credit pool: membership usage draws from a single balance, so parallel projects and long agent runs drain it together",
     "5-hour and weekly controls: burst caps can throttle you mid-day even when the monthly balance looks healthy",
-    "Tier jump is steep: Allegretto ($39) to Allegro ($99) is a 2.5x step — straddling the boundary is the worst seat in the house",
+    "Tier jump is steep: Allegretto ($39) to Allegro ($99) is a 2.5x step — usage between those tiers is priced comparatively poorly",
     "Annual discount is upfront cash: the ~20% effective saving requires a full-year prepay with terms you must confirm first"
   ],
   "limits": [
@@ -64,21 +64,42 @@
       "url": "https://api.kimi.com/coding/"
     }
   ],
-  "economics_heading": "The economics: when membership beats PAYG",
+  "economics_heading": "Membership vs PAYG: break-even",
   "economics": [
     "Think in effective cost per task: monthly price divided by tasks you actually complete. Allegretto at $39 over 120 tasks is about $0.33 per task — less than half the $0.80 illustrative PAYG reference for a 100k-token task.",
     "The break-even against the $0.80/task reference is about 49 tasks a month on Allegretto ($39 ÷ $0.80) and about 24 tasks on Moderato ($19 ÷ $0.80). Below those lines, PAYG or a free tier is cheaper.",
     "Annual billing drops Allegretto to about $31/mo effective (~$372 upfront), which moves break-even down to roughly 39 tasks a month — worth it only if your volume is stable year-round.",
-    "The shared-pool catch has a cost too: if 5-hour or weekly controls idle you for half a day each week, discount the membership's value by that lost throughput before comparing."
+    "The shared pool has a throughput cost too: if 5-hour or weekly controls idle you for half a day each week, discount the membership's value by that lost throughput before comparing."
   ],
   "economics_rows": [
-    { "label": "Moderato monthly", "value": "$19/mo" },
-    { "label": "Allegretto monthly", "value": "$39/mo" },
-    { "label": "Allegro monthly", "value": "$99/mo" },
-    { "label": "Vivace monthly", "value": "$199/mo" },
-    { "label": "Annual effective (per month)", "value": "≈ $15 / $31 / $79 / $159" },
-    { "label": "Break-even vs $0.80/task PAYG (Allegretto)", "value": "≈ 49 tasks/mo" },
-    { "label": "Model served", "value": "k3-256k, high thinking-on" }
+    {
+      "label": "Moderato monthly",
+      "value": "$19/mo"
+    },
+    {
+      "label": "Allegretto monthly",
+      "value": "$39/mo"
+    },
+    {
+      "label": "Allegro monthly",
+      "value": "$99/mo"
+    },
+    {
+      "label": "Vivace monthly",
+      "value": "$199/mo"
+    },
+    {
+      "label": "Annual effective (per month)",
+      "value": "≈ $15 / $31 / $79 / $159"
+    },
+    {
+      "label": "Break-even vs $0.80/task PAYG (Allegretto)",
+      "value": "≈ 49 tasks/mo"
+    },
+    {
+      "label": "Model served",
+      "value": "k3-256k, high thinking-on"
+    }
   ],
   "evidence": [
     {
@@ -103,7 +124,7 @@
       "a": "Moderato $19, Allegretto $39, Allegro $99, and Vivace $199 per month. Annual billing lowers the effective monthly cost to about $15 / $31 / $79 / $159, paid upfront. Prices verified in the Sep 6 2026 snapshot — re-check the official page before paying."
     },
     {
-      "q": "What is the catch with the shared credit pool?",
+      "q": "How does the shared credit pool restrict usage?",
       "a": "Membership usage draws from one shared credit pool, and 5-hour plus weekly controls can throttle burst usage even when monthly balance remains. Spread heavy agent runs across the week instead of one marathon day."
     },
     {

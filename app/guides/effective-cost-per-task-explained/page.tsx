@@ -33,12 +33,12 @@ const FAQ = [
     a: "It is our illustrative reference: 100k tokens per task (median over a trailing 7-day example window, Methodology v0.1) at an $8 per 1M blended rate. Your mix will differ — adjust with the calculator above.",
   },
   {
-    q: "When does a subscription win?",
-    a: "When your monthly tasks clear break-even: price divided by PAYG per-task cost. $40 ÷ $0.80 = 50 tasks. Above 50, the sub wins; below, PAYG or a free route wins.",
+    q: "When is a subscription cheaper?",
+    a: "When your monthly tasks clear break-even: price divided by PAYG per-task cost. $40 ÷ $0.80 = 50 tasks. Above 50, the subscription is cheaper; below, PAYG or a free route is cheaper.",
   },
   {
     q: "Do free promos change the math?",
-    a: "Temporarily: at $0/task any promo wins while it lasts. But promos end on the provider's schedule, so make durable decisions (like annual prepay) on post-promo prices.",
+    a: "Temporarily: at $0/task any promo is cheaper while it lasts. But promos end on the provider's schedule, so make durable decisions (like annual prepay) on post-promo prices.",
   },
   {
     q: "How fresh are these numbers?",
@@ -59,7 +59,7 @@ export default function GuidePage() {
       />
       <header>
         <h1 className="display-md">
-          What is effective cost per task?
+          Effective cost per task, explained
         </h1>
         <p className="mt-3 text-lg text-ink-soft">
           <strong className="text-ink">
@@ -92,14 +92,14 @@ export default function GuidePage() {
             50, subscribe; below 50, pay per task.
           </li>
           <li>
-            Reality check: the $0.80 reference assumes 100k tokens/task (median, trailing 7-day
+            Note: the $0.80 reference assumes 100k tokens/task (median, trailing 7-day
             example window). Heavy agent runs can double it — which halves break-even to 25.
           </li>
         </ol>
       </section>
 
-      <section aria-label="Try the calculator">
-        <h2 className="display-lg">Try your own numbers</h2>
+      <section aria-label="Calculator">
+        <h2 className="display-lg">Calculator</h2>
         <div className="mt-2">
           <BreakEvenCalc />
         </div>
@@ -117,7 +117,7 @@ export default function GuidePage() {
       <section aria-label="When this does not apply">
         <h2 className="display-lg">When it does not apply</h2>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-ink-soft">
-          <li>Spiky usage capped by 5-hour or weekly controls (see the Kimi K3 catch).</li>
+          <li>Spiky usage capped by 5-hour or weekly controls (see the Kimi K3 limits).</li>
           <li>Free promos — $0/task wins trivially but temporarily.</li>
           <li>
             Mixed fleets where allowances differ by model — some plans split one window budget
@@ -129,8 +129,8 @@ export default function GuidePage() {
       <section aria-label="Checklist">
         <h2 className="display-lg">Checklist before you subscribe</h2>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-ink-soft">
-          <li>Measure two real weeks of tasks and tokens-per-task — not vibes.</li>
-          <li>Compute break-even with your PAYG rate, not ours.</li>
+          <li>Measure two real weeks of tasks and tokens-per-task.</li>
+          <li>Compute break-even with your pay-as-you-go rate, not the reference here.</li>
           <li>Read the renewal and cancellation terms (monthly first, annual later).</li>
           <li>Confirm burst caps (5-hour/weekly) against your heaviest day.</li>
         </ul>
@@ -146,13 +146,13 @@ export default function GuidePage() {
       <p className="text-sm text-ink-soft">
         Next:{" "}
         <Link href="/guides/monthly-vs-annual-ai/" className="font-bold underline">
-          Monthly vs annual AI plans: which wins?
+          Monthly vs annual AI plans
         </Link>{" "}
-        · <Link href="/best/kimi-k3-core/" className="font-bold underline">Kimi K3 full verdict</Link>
+        · <Link href="/best/kimi-k3-core/" className="font-bold underline">Kimi K3 offer details</Link>
       </p>
 
       <CiteBlock
-        citation={`Token Perks. “What is effective cost per task?” Research snapshot Sep 6 2026. ${url} Re-verify at official terms before paying.`}
+        citation={`Token Perks. “Effective cost per task, explained.” Research snapshot Sep 6 2026. ${url} Re-verify at official terms before paying.`}
       />
       <ResearchSnapshot />
       <JsonLd

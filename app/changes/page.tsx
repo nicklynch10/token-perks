@@ -35,12 +35,23 @@ interface LogEntry {
 const LOG: LogEntry[] = [
   {
     date: "2026-09-07",
+    title: "Pass 5 — data-platform reorientation (tone and layout only)",
+    items: [
+      "Scope: presentation-only. No offer data, prices, renewals, limits, or verified_at values were changed in this pass — every verified_at remains 2026-09-06.",
+      "Homepage rebuilt around the comparison table (offer / price / annual effective / est. $ per 100 tasks / key limit / renewal behavior / verified date); the break-even calculator moved below it as a compact card; the publication log demoted to a single verification line linking here.",
+      "Copy pass: headlines, verdict labels, badge text, and call-to-action labels rewritten in neutral documentation style; decorative full-bleed bands, tinted route color-coding, and on-page anchor bars removed.",
+      "Motion: scroll-linked bar and tally animations, hover-lift cards, and stamp animation removed; verification stamps are static.",
+      "Offer pages restructured to lead with a spec table (tiers, price, annual effective, estimated cost per task, limits, renewal, verified date), followed by the caveats block, summary, and details; page titles made descriptive.",
+    ],
+  },
+  {
+    date: "2026-09-07",
     title: "Pass 4 — presentation polish",
     items: [
       "Scope: presentation-only. No offer data, prices, renewals, limits, or verdicts were changed in this pass — every verified_at remains 2026-09-06.",
       "Offer cards: raster thumbnails replaced with inline ledger mini-charts (same evidence-table language); offers with a Changed entry in the publication log now carry a visible accent tick.",
       "Reader-trust copy: footer disclosure reordered (no affiliate links now, commissions only possibly future); a no-gifting line added on the offers hub; the free-route boundary hedge moved above the fold on the homepage.",
-      "Navigation and motion: sticky anchor bars gained active-section highlighting; verification stamps land with a one-time reduced-motion-guarded thump; the hero calculator deep-links its computed answer (with your URL inputs) to the matching verdict section.",
+      "Navigation and motion: sticky anchor bars gained active-section highlighting; verification stamps given a short reduced-motion-guarded fade; the hero calculator deep-links its computed answer (with your URL inputs) to the matching verdict section.",
       "Copy repairs: two unexplained references removed or given context (a promo-window aside on the monthly-vs-annual guide; a fleet-allowance aside on the cost-per-task guide). Honest non-link styling applied to in-product access routes on the free-route pages.",
     ],
   },
@@ -88,7 +99,7 @@ export default function ChangesPage() {
         ]}
       />
       <header>
-        <p className="inline-block rounded-full bg-verified-wash px-3 py-1 text-xs font-bold text-verified-deep">
+        <p className="inline-block rounded-full bg-teal-wash px-3 py-1 text-xs font-bold text-teal-deep">
           One entry per verification pass · newest first
         </p>
         <h1 className="mt-3 display-md">
@@ -103,12 +114,12 @@ export default function ChangesPage() {
 
       <ol className="space-y-6">
         {LOG.map((e) => (
-          <li key={`${e.date}-${e.title}`} className="rounded-2xl border border-line bg-card p-5 sm:p-6">
+          <li key={`${e.date}-${e.title}`} className="rounded-xl border border-line bg-card p-5 sm:p-6">
             <p className="flex flex-wrap items-baseline gap-x-3">
-              <span className="tabular rounded-full bg-verified-wash px-3 py-0.5 text-xs font-bold text-verified-deep">
+              <span className="tabular rounded-full bg-teal-wash px-3 py-0.5 text-xs font-bold text-teal-deep">
                 {e.date}
               </span>
-              <span className="text-lg font-extrabold tracking-tight">{e.title}</span>
+              <span className="text-lg font-bold tracking-tight">{e.title}</span>
             </p>
             <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm text-ink-soft">
               {e.items.map((it) => (

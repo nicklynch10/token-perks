@@ -43,7 +43,7 @@ export default function MoneyPage() {
             content carry <code>rel=&quot;ugc&quot;</code>. Macros are ready; usage is currently
             zero.
           </li>
-          <li>Paid placement never changes a verdict, a catch box, or verification dates.</li>
+          <li>Paid placement never changes a summary, a caveats block, or verification dates.</li>
           <li>Any sponsored slot is labeled in plain language next to the link.</li>
           <li>This page is updated the day the first paid link ships.</li>
         </ul>

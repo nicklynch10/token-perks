@@ -5,7 +5,7 @@
   "plan": "Muse Spark 1.3 Contributor Free — limited-time promo",
   "title": "Zen Muse Spark 1.3 free promo",
   "shortTitle": "Muse Spark 1.3 Free",
-  "badge": "Best free route",
+  "badge": "$0 promo route",
   "catchSummary": "$0 in, cache, and out — but it is a limited-time promo. When the window closes, the meter starts.",
   "canonical_url": "/best/muse-spark-zen-free/",
   "official_terms_url": null,
@@ -34,10 +34,10 @@
     "Reasonable-use gating may apply even at $0; it is free, not unlimited",
     "No renewal or price lock — post-promo terms are whatever the provider publishes next"
   ],
-  "verdict": "If you can see the exact string “Muse Spark 1.3 Contributor Free” under /connect → Zen → /models, use it now and pay nothing for input, cache, and output while the promo lasts. Verdict in 30 seconds: great for evaluation, prototyping, and light tasks today; a bad foundation for anything you cannot migrate in a day, because the promo ends on the provider's schedule, not yours.",
+  "verdict": "If you can see the exact string “Muse Spark 1.3 Contributor Free” under /connect → Zen → /models, use it at $0 for input, cache, and output while the promo lasts. In short: great for evaluation, prototyping, and light tasks today; a bad foundation for anything you cannot migrate in a day, because the promo ends on the provider's schedule, not yours.",
   "catches": [
     "Limited-time promo: $0 today can become metered tomorrow, with the end date visible only in-product",
-    "Exact-string trap: only “Muse Spark 1.3 Contributor Free” is free — a near-identical paid entry may sit one row away",
+    "Exact-string requirement: only “Muse Spark 1.3 Contributor Free” is free — a near-identical paid entry may sit one row away",
     "No price lock: there is nothing to renew and no grandfathering to assume",
     "Route-dependent: the /connect → Zen → /models path is the documented access; if the UI changes, the promo may be unreachable"
   ],
@@ -65,16 +65,31 @@
   "economics_heading": "The economics: free now, metered later",
   "economics": [
     "During the promo the effective cost per task is $0, which beats every paid route at any volume — including the $0.80/task PAYG reference and the $40/mo subscription (break-even: 50 tasks).",
-    "The honest comparison is against the promo's expected lifespan. If you expect 200 tasks before the window closes, that is ~$160 of avoided PAYG spend — real money, but one-time.",
+    "The accurate comparison is against the promo's expected lifespan. If you expect 200 tasks before the window closes, that is ~$160 of avoided PAYG spend — real money, but one-time.",
     "Do not annualize free: a $39/mo membership decision should be made on post-promo prices, with the promo treated as a free trial of arbitrary length.",
     "Migration cost is the hidden line item. Keep prompts, evals, and outputs provider-portable so the end of the promo costs you an afternoon, not a rewrite."
   ],
   "economics_rows": [
-    { "label": "Promo price now", "value": "$0 in / cache / out" },
-    { "label": "Renewal", "value": "None — limited-time promo" },
-    { "label": "Equal-value PAYG avoided", "value": "~$0.80/task (illustrative)" },
-    { "label": "200 promo tasks ≈", "value": "~$160 avoided PAYG" },
-    { "label": "Post-promo price", "value": "Unpublished — confirm in-product" }
+    {
+      "label": "Promo price now",
+      "value": "$0 in / cache / out"
+    },
+    {
+      "label": "Renewal",
+      "value": "None — limited-time promo"
+    },
+    {
+      "label": "Equal-value PAYG avoided",
+      "value": "~$0.80/task (illustrative)"
+    },
+    {
+      "label": "200 promo tasks ≈",
+      "value": "~$160 avoided PAYG"
+    },
+    {
+      "label": "Post-promo price",
+      "value": "Unpublished — confirm in-product"
+    }
   ],
   "evidence": [
     {

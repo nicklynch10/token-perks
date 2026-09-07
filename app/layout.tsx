@@ -8,32 +8,37 @@ import { SITE_NAME, SITE_TAGLINE, canonical } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL("https://token-perks.com"),
   title: {
-    default: "Token Perks: Best AI Deals & Catches, Verified Sep 2026",
+    default: "Token Perks — AI offer prices, limits, and effective cost per task",
     template: "%s | Token Perks",
   },
   description:
-    "The best AI offers with the catches, upfront. Prices, renewals, and limits verified Sep 6 2026 — re-verify at official terms before paying.",
+    "AI offers compared on price, annual effective cost, estimated cost per task, limits, and renewal terms. Snapshot verified Sep 6 2026 — re-verify at official terms before paying.",
   alternates: { canonical: canonical("/") },
   openGraph: {
-    title: "Token Perks: Best AI Deals & Catches, Verified Sep 2026",
+    title: "Token Perks — AI offer prices, limits, and effective cost per task",
     description:
-      "The best AI offers with the catches, upfront. Prices verified Sep 6 2026 — compare true cost per task.",
+      "AI offers compared on price, annual effective cost, and estimated cost per task. Snapshot Sep 6 2026.",
     url: canonical("/"),
     type: "website",
     images: [
       {
-        url: "/og-default.png",
+        url: "/img/og/og-home.png",
         width: 1200,
         height: 630,
-        alt: "Token Perks — The best AI offers. The catches, upfront.",
+        alt: "Token Perks — AI subscription offers, compared on effective cost per task",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Token Perks: Best AI Deals & Catches, Verified Sep 2026",
-    description: "The best AI offers. The catches, upfront.",
-    images: ["/og-default.png"],
+    title: "Token Perks — AI offer prices, limits, and effective cost per task",
+    description:
+      "AI offers compared on price, annual effective cost, and estimated cost per task. Snapshot Sep 6 2026.",
+    images: ["/img/og/og-home.png"],
+  },
+  icons: {
+    icon: [{ url: "/img/og/avatar-512.png" }, { url: "/favicon.ico", sizes: "any" }],
+    apple: [{ url: "/img/og/avatar-512.png" }],
   },
 };
 

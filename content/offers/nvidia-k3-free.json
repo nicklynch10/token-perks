@@ -5,8 +5,8 @@
   "plan": "Kimi K3 free for development and prototyping",
   "title": "NVIDIA Build Kimi K3 free",
   "shortTitle": "NVIDIA K3 Free",
-  "badge": "Best for prototyping",
-  "catchSummary": "Free for dev and prototyping with reasoning and tool calls preserved — but limits vary by account, so quota is a rumor until tested.",
+  "badge": "Dev / prototyping scope",
+  "catchSummary": "Free for dev and prototyping with reasoning and tool calls preserved — but limits vary by account, so quota must be measured in your own account.",
   "canonical_url": "/best/nvidia-k3-free/",
   "official_terms_url": null,
   "official_links": [
@@ -34,7 +34,7 @@
     "Catalog availability can shift without notice; listings rotate",
     "Usage is subject to the platform's acceptable-use and rate-limit policies"
   ],
-  "verdict": "Verdict in 30 seconds: the cheapest way to prototype on Kimi K3 with reasoning and tool calls intact. $0 for dev work within your account's limits, and the model behaviour you validate here — reasoning traces plus tool calls — carries over when you graduate to paid serving. The catch is quota opacity: limits vary by account, so measure your actual ceiling on day one instead of trusting any number on this page.",
+  "verdict": "A $0 way to prototype on Kimi K3 with reasoning and tool calls intact. $0 for dev work within your account's limits, and the model behaviour you validate here — reasoning traces plus tool calls — carries over when you graduate to paid serving. The limiting factor is quota opacity: limits vary by account, so measure your actual ceiling on day one instead of trusting any number on this page.",
   "catches": [
     "Limits vary by account: two developers can see two different ceilings, and both can change",
     "Dev/prototyping scope only: this is a workbench, not a production SLA",
@@ -70,11 +70,26 @@
     "Do not price production on free quota. Account-variable limits mean this page cannot promise a ceiling — your console's numbers are the only ones that count."
   ],
   "economics_rows": [
-    { "label": "Price now", "value": "$0 (dev / prototyping)" },
-    { "label": "Renewal", "value": "None — account limits govern" },
-    { "label": "Reasoning + tool calls", "value": "Preserved in free route" },
-    { "label": "100 prototype tasks ≈", "value": "~$80 avoided PAYG (illustrative)" },
-    { "label": "Quota", "value": "Varies by account — test yours" }
+    {
+      "label": "Price now",
+      "value": "$0 (dev / prototyping)"
+    },
+    {
+      "label": "Renewal",
+      "value": "None — account limits govern"
+    },
+    {
+      "label": "Reasoning + tool calls",
+      "value": "Preserved in free route"
+    },
+    {
+      "label": "100 prototype tasks ≈",
+      "value": "~$80 avoided PAYG (illustrative)"
+    },
+    {
+      "label": "Quota",
+      "value": "Varies by account — test yours"
+    }
   ],
   "evidence": [
     {

@@ -19,23 +19,23 @@ export async function GET() {
     ...ACTIVE_OFFERS.map((o) => ({
       title: `${o.title} — ${o.price.now} (verified ${o.verified_at})`,
       link: `${SITE_URL}${o.canonical_url}`,
-      desc: `${o.verdict} Catch: ${o.catchSummary}`,
+      desc: `${o.verdict} Limits: ${o.catchSummary}`,
       pubDate: rfc822(o.verified_at),
     })),
     {
-      title: "What is effective cost per task?",
+      title: "Effective cost per task, explained",
       link: `${SITE_URL}/guides/effective-cost-per-task-explained/`,
       desc: "$40/120-task/$0.80 example breaks even at 50 tasks.",
       pubDate: rfc822(SNAPSHOT_ISO),
     },
     {
-      title: "Should you pay monthly or annually for AI?",
+      title: "Monthly vs annual AI plans",
       link: `${SITE_URL}/guides/monthly-vs-annual-ai/`,
       desc: "Annual saves ~20% for stable volume only.",
       pubDate: rfc822(SNAPSHOT_ISO),
     },
   ];
-  const xml = `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Token Perks</title><link>${SITE_URL}/</link><description>The best AI offers. The catches, upfront. Research snapshot Sep 6 2026.</description><language>en</language><lastBuildDate>${buildDate}</lastBuildDate>${items
+  const xml = `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Token Perks</title><link>${SITE_URL}/</link><description>AI subscription offers, compared on effective cost per task. Research snapshot Sep 6 2026.</description><language>en</language><lastBuildDate>${buildDate}</lastBuildDate>${items
     .map(
       (it) =>
         `<item><title>${esc(it.title)}</title><link>${esc(it.link)}</link><guid isPermaLink="true">${esc(it.link)}</guid><description>${esc(it.desc)}</description><pubDate>${it.pubDate}</pubDate></item>`,

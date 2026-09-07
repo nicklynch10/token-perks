@@ -10,7 +10,7 @@ export default function SiteFooter() {
             Home
           </Link>
           <Link className="min-h-[44px] content-center hover:underline" href="/best/">
-            Best offers
+            Offers
           </Link>
           <Link className="min-h-[44px] content-center hover:underline" href="/guides/">
             Guides

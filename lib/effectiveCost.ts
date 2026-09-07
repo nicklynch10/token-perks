@@ -79,33 +79,3 @@ export function fmtTasks(n: number): string {
   if (n === Infinity) return "never (at these inputs)";
   return `${Math.round(n).toLocaleString("en-US")} tasks/mo`;
 }
-
-/**
- * Hero bar trio: effective cost per task for the three tracked routes,
- * rendered to scale against BASELINE_PAYG_PER_TASK (the full-width bar).
- * Kimi figure = Allegretto $39/mo ÷ 120 tasks (matches the offer page);
- * both free routes are $0.00 while their windows last.
- */
-export const HERO_ROUTE_BARS = [
-  {
-    id: "kimi-k3-core",
-    label: "Kimi K3 (Allegretto)",
-    perTask: 39 / 120,
-    display: "$0.33",
-    paid: true,
-  },
-  {
-    id: "muse-spark-zen-free",
-    label: "Zen Muse Spark promo",
-    perTask: 0,
-    display: "$0.00",
-    paid: false,
-  },
-  {
-    id: "nvidia-k3-free",
-    label: "NVIDIA K3 (dev)",
-    perTask: 0,
-    display: "$0.00",
-    paid: false,
-  },
-] as const;
