@@ -1,0 +1,49 @@
+name: "Deal lead (manual)"
+description: "Hand-file a candidate deal lead for editorial verification (same flow the Reddit harvester uses)"
+title: "[lead] <subreddit/source> <high|medium> <short title>"
+labels: ["editor-lead"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Manual-lead model: this issue is a **candidate only**. Nothing is published
+        until an editor verifies the offer and publishes it manually. Link-first to
+        the source; short quotes only; no PII beyond public usernames.
+  - type: input
+    id: source_url
+    attributes:
+      label: Source URL
+      description: "Link to the post/thread (Reddit or other public source). Link-first."
+    validations:
+      required: true
+  - type: input
+    id: subreddit
+    attributes:
+      label: Subreddit / source
+      placeholder: "r/LocalLLaMA"
+    validations:
+      required: true
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Score tier
+      options:
+        - high (explicit deal/pricing language)
+        - medium (purchase-intent / offer-lifecycle language)
+    validations:
+      required: true
+  - type: textarea
+    id: excerpt
+    attributes:
+      label: Verbatim excerpt (<=280 characters)
+      description: "Short quote only. If longer, note: 'open URL to read the rest.'"
+  - type: checkboxes
+    id: editor_checklist
+    attributes:
+      label: Editor checklist
+      options:
+        - label: "Verify price/offer on the official vendor source"
+        - label: "Check expiry and terms of the offer"
+        - label: "Confirm eligibility (region, student status, plan requirements, etc.)"
+        - label: "Discard if stale, incorrect, spam, or off-editorial"
+        - label: "If publishing: rewrite in our own words, link-first, state the catch upfront"

@@ -1,0 +1,66 @@
+name: Reddit deal-lead harvest
+
+# Collects candidate deal leads from public Reddit JSON into GitHub issues.
+# MANUAL-LEADS model: automation collects, humans review/verify/publish.
+# See docs/reddit-harvest.md.
+
+on:
+  schedule:
+    # Every 6 hours at minute 23 (avoids the :00 top-of-hour API crunch).
+    - cron: '23 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run: print candidates, create no issues, write no state'
+        type: boolean
+        default: false
+      subreddits:
+        description: 'Optional comma-separated subreddit override (e.g. LocalLLaMA,cursor)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write   # commit the updated seen-state file
+  issues: write     # create editor-lead issues
+
+concurrency:
+  group: reddit-harvest
+  cancel-in-progress: false
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Harvest Reddit leads
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          ARGS=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          if [ -n "${{ inputs.subreddits }}" ]; then
+            ARGS="$ARGS --subreddits ${{ inputs.subreddits }}"
+          fi
+          node scripts/reddit-harvest.mjs $ARGS
+
+      - name: Commit updated seen-state
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/reddit-harvest-state.json
+          if git diff --cached --quiet; then
+            echo "No state changes to commit."
+          else
+            git commit -m "chore(reddit-harvest): update seen-post state [skip ci]"
+            git push
+          fi
