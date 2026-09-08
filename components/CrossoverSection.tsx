@@ -1,5 +1,7 @@
 import Link from "next/link";
+import ChartDownloadButton from "@/components/ChartDownloadButton";
 import CrossoverStory from "@/components/CrossoverStory";
+import SectionAnchor from "@/components/SectionAnchor";
 import styles from "@/components/CrossoverSection.module.css";
 import {
   ALLEGRETTO_ANNUAL_EFF,
@@ -52,28 +54,39 @@ export default function CrossoverSection() {
       <p className="eyebrow">Break-even, in one chart</p>
       <h2 id="crossover-h" className="display-lg mt-1">
         Where flat beats metered
+        <SectionAnchor id="crossover-h" label="the crossover story" />
       </h2>
       <p className="lede mt-3 max-w-3xl">
         Metered billing climbs with every task; a flat plan holds its price. Scroll through the
         four steps to watch the two lines cross — first on monthly billing, then on annual.
       </p>
+      <nav aria-label="Jump to a block" className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+        <span className="eyebrow mr-1">On this page</span>
+        <a href="#chart" className="u-draw inline-flex min-h-[40px] items-center text-teal-deep touch:min-h-[44px]">Chart</a>
+        <a href="#steps" className="u-draw inline-flex min-h-[40px] items-center text-teal-deep touch:min-h-[44px]">Four steps</a>
+        <a href="#ledger" className="u-draw inline-flex min-h-[40px] items-center text-teal-deep touch:min-h-[44px]">Ledger table</a>
+      </nav>
 
       <div className={`${styles.grid} mt-6`}>
         {/* Chart column: sticky instrument on desktop, static figure otherwise */}
         <div className={styles.chartCol}>
-          <figure className="card p-4 sm:p-5">
-            <ul className={styles.legend} aria-label="Chart legend">
+          <figure id="chart" className="card scroll-mt-16 p-4 sm:p-5">
+            <div className="flex flex-wrap items-start justify-between gap-2">
+              <ul className={styles.legend} aria-label="Chart legend">
               <li>
                 <span className={styles.sw} aria-hidden="true" /> Metered · ${PAYG_PER_TASK.toFixed(2)}/task
               </li>
               <li>
                 <span className={`${styles.sw} ${styles.swFlat}`} aria-hidden="true" /> Allegretto monthly · ${ALLEGRETTO_MONTHLY}
               </li>
-              <li>
-                <span className={`${styles.sw} ${styles.swAnnual}`} aria-hidden="true" /> Allegretto annual · ≈${ALLEGRETTO_ANNUAL_EFF}/mo eff.
-              </li>
-            </ul>
+                <li>
+                  <span className={`${styles.sw} ${styles.swAnnual}`} aria-hidden="true" /> Allegretto annual · ≈${ALLEGRETTO_ANNUAL_EFF}/mo eff.
+                </li>
+              </ul>
+              <ChartDownloadButton targetId="crossover-chart" filename="token-perks-crossover-chart.png" />
+            </div>
             <svg
+              id="crossover-chart"
               viewBox={`0 0 ${W} ${H}`}
               role="img"
               aria-label={`Line chart of monthly cost against tasks per month. Metered billing at $0.80 per task rises from $0 to $${paygMonthly(CHART.X_MAX).toFixed(0)} at ${CHART.X_MAX} tasks. The $39 monthly flat line crosses it at about 49 tasks per month; the $31 annual-effective line crosses at about 39 tasks per month.`}
@@ -218,7 +231,7 @@ export default function CrossoverSection() {
           </figure>
 
           {/* Static data table: the chart's numbers in tabular form (SEO, agents, no-JS) */}
-          <div className={`${styles.tableWrap} card mt-4`}>
+          <div id="ledger" className={`${styles.tableWrap} card mt-4 scroll-mt-16`}>
             <table className="ledger text-left text-[13px]">
               <caption className="px-4 pb-1 pt-3 text-left text-[12px] text-ink-mute">
                 Monthly cost at three volumes — Allegretto monthly vs metered reference.
@@ -256,7 +269,7 @@ export default function CrossoverSection() {
         </div>
 
         {/* Steps column */}
-        <ol className={styles.steps} aria-label="Break-even story in four steps">
+        <ol id="steps" className={`${styles.steps} scroll-mt-16`} aria-label="Break-even story in four steps">
           <li className={`${styles.step} crossover-step`} data-step="1">
             <p className={styles.stepNum}>Step 1 · Metered climbs</p>
             <p className={styles.stepTitle}>Every task adds about $0.80.</p>

@@ -6,6 +6,7 @@ import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import ResearchSnapshot from "@/components/ResearchSnapshot";
 import { skuById, type TeamSeatSku } from "@/app/cost-calculator/team-seats";
+import SectionAnchor from "@/components/SectionAnchor";
 import { BASELINE_PAYG_PER_TASK } from "@/lib/effectiveCost";
 import { canonical, SITE_URL, social } from "@/lib/site";
 import { UNIVERSE, type UniverseRow } from "@/lib/universe";
@@ -138,7 +139,9 @@ export default function AiSeatsForTeamsGuide() {
       </header>
 
       <section aria-label="How to read a seat row">
-        <h2 className="display-lg">How to read a seat row</h2>
+        <h2 id="how-to-read" className="display-lg scroll-mt-16">
+          How to read a seat row <SectionAnchor id="how-to-read" label="how to read a seat row" />
+        </h2>
         <p className="mt-2 text-sm leading-relaxed text-ink-soft">
           A seat price is three numbers, not one. (1)&nbsp;The&nbsp;rate per seat — and which
           billing term earns it: Claude Team&apos;s {usd(std.perSeatMonthly as number)} is the{" "}
@@ -152,9 +155,13 @@ export default function AiSeatsForTeamsGuide() {
       </section>
 
       <section aria-label="Worked seat math">
-        <h2 className="display-lg">Worked seat math</h2>
+        <h2 id="worked-math" className="display-lg scroll-mt-16">
+          Worked seat math <SectionAnchor id="worked-math" label="worked seat math" />
+        </h2>
 
-        <h3 className="display-sm mt-4">Mixed Claude Team seats</h3>
+        <h3 id="mixed-claude" className="display-sm mt-4 scroll-mt-16">
+          Mixed Claude Team seats <SectionAnchor id="mixed-claude" label="mixed Claude Team seats" />
+        </h3>
         <p className="mt-1 text-sm leading-relaxed text-ink-soft">
           The row for Premium seats states 5x Standard-seat usage and mixing with Standard seats{" "}
           <Cite sku={prem} />. Two heavy users on Standard seats and one on Premium, at annual
@@ -210,7 +217,9 @@ export default function AiSeatsForTeamsGuide() {
           needs the 5x tier; otherwise you are renting headroom.
         </p>
 
-        <h3 className="display-sm mt-5">Three-person office, one seat class</h3>
+        <h3 id="three-person" className="display-sm mt-5 scroll-mt-16">
+          Three-person office, one seat class <SectionAnchor id="three-person" label="three-person office example" />
+        </h3>
         <p className="mt-1 text-sm leading-relaxed text-ink-soft">
           Three Standard Claude Team seats: {usd(threeStdAnnual)}/mo on the annual rate,{" "}
           {usd(threeStdMonthly)}/mo billed monthly <Cite sku={std} />. For reference, one consumer
@@ -223,7 +232,9 @@ export default function AiSeatsForTeamsGuide() {
           minimum.
         </p>
 
-        <h3 className="display-sm mt-5">Copilot: five seats, five credit buckets</h3>
+        <h3 id="copilot-buckets" className="display-sm mt-5 scroll-mt-16">
+          Copilot: five seats, five credit buckets <SectionAnchor id="copilot-buckets" label="Copilot credit buckets example" />
+        </h3>
         <p className="mt-1 text-sm leading-relaxed text-ink-soft">
           {COPILOT_N} × {usd(copilotBiz.perSeatMonthly as number)} = {usd(copilotTotal)}/mo{" "}
           <Cite sku={copilotBiz} />. The included {copilotBiz.includedUsage} is stated{" "}
@@ -234,7 +245,9 @@ export default function AiSeatsForTeamsGuide() {
           /seat, {copilotEnt.includedUsage}) <Cite sku={copilotEnt} />.
         </p>
 
-        <h3 className="display-sm mt-5">Devin: the base fee is the small-team trap</h3>
+        <h3 id="devin-base-fee" className="display-sm mt-5 scroll-mt-16">
+          Devin: the base fee is the small-team trap <SectionAnchor id="devin-base-fee" label="Devin base-fee example" />
+        </h3>
         <p className="mt-1 text-sm leading-relaxed text-ink-soft">
           Teams is {usd(devin.baseFee as number)}/mo + {usd(devin.perSeatMonthly as number)} per
           seat <Cite sku={devin} />: {DEVIN_N} seats = {usd(devinTotal)}/mo, but at two seats the
@@ -243,7 +256,9 @@ export default function AiSeatsForTeamsGuide() {
           page snapshot — re-verify before quoting it in a budget.
         </p>
 
-        <h3 className="display-sm mt-5">Cursor: seat class is the usage dial</h3>
+        <h3 id="cursor-seat-class" className="display-sm mt-5 scroll-mt-16">
+          Cursor: seat class is the usage dial <SectionAnchor id="cursor-seat-class" label="Cursor seat-class example" />
+        </h3>
         <p className="mt-1 text-sm leading-relaxed text-ink-soft">
           {CURSOR_N} Teams seats: {usd(cursorStdTotal)}/mo on Standard or {usd(cursorPremTotal)}/mo
           on Premium, which the row defines as 5x Standard Agent limits <Cite sku={cursorStd} />.
@@ -254,7 +269,9 @@ export default function AiSeatsForTeamsGuide() {
       </section>
 
       <section aria-label="Decision rules">
-        <h2 className="display-lg">Decision rules: seats vs pooled API spend</h2>
+        <h2 id="decision-rules" className="display-lg scroll-mt-16">
+          Decision rules: seats vs pooled API spend <SectionAnchor id="decision-rules" label="decision rules" />
+        </h2>
         <ol className="mt-2 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-ink-soft">
           <li>
             <strong className="text-ink">Named humans in apps → seats.</strong> Seats exist to give
@@ -327,7 +344,9 @@ export default function AiSeatsForTeamsGuide() {
       </section>
 
       <section aria-label="Where the data stops">
-        <h2 className="display-lg">Where the data stops</h2>
+        <h2 id="data-limits" className="display-lg scroll-mt-16">
+          Where the data stops <SectionAnchor id="data-limits" label="where the data stops" />
+        </h2>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed text-ink-soft">
           <li>
             <strong className="text-ink">ChatGPT Business: no public per-seat dollar.</strong> The
@@ -362,7 +381,9 @@ export default function AiSeatsForTeamsGuide() {
       </section>
 
       <section aria-label="Prices used in this guide">
-        <h2 className="display-lg">Prices used in this guide</h2>
+        <h2 id="prices-used" className="display-lg scroll-mt-16">
+          Prices used in this guide <SectionAnchor id="prices-used" label="prices used in this guide" />
+        </h2>
         <div className="mt-2 overflow-x-auto rounded-xl border border-line-strong">
           <table className="spec-table min-w-[680px]">
             <caption className="sr-only">
@@ -402,7 +423,9 @@ export default function AiSeatsForTeamsGuide() {
       </section>
 
       <section aria-label="Frequently asked questions">
-        <h2 className="display-lg">FAQ</h2>
+        <h2 id="faq" className="display-lg scroll-mt-16">
+          FAQ <SectionAnchor id="faq" label="FAQ" />
+        </h2>
         <div className="mt-2">
           <Faq id="seats" items={FAQ} />
         </div>
