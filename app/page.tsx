@@ -214,7 +214,7 @@ export default function Home() {
           ? `${paidFloor.r.provider} ${paidFloor.r.plan}`
           : "",
       note: freeMetered
-        ? `metered $0 while it lasts; paid floor ${floorTask != null ? fmtTask(floorTask) : "—"}/task`
+        ? `metered $0 while it lasts; paid floor ${floorTask != null ? fmtTask(floorTask) : "—"}/task · ${SNAPSHOT_DATE}`
         : `across every metered route we track · ${SNAPSHOT_DATE}`,
       href: "/universe/",
     },
