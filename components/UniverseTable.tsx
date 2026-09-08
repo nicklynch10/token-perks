@@ -1,7 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { CATEGORY_LABELS, CATEGORY_ORDER, providerIdOf, type CategoryKey } from "@/lib/universe";
+// Client-safe: constants + pure helpers only, so the ledger JSON stays out of the bundle.
+import { CATEGORY_LABELS, CATEGORY_ORDER, providerIdOf, type CategoryKey } from "@/lib/universe-meta";
 
 export interface UniverseDatum {
   id: string;

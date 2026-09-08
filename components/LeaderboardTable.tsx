@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from "react";
 import { TOKENS_PER_TASK, USE_CASE_LABELS, type UseCaseKey } from "@/lib/valueScore";
-import { CATEGORY_LABELS, CATEGORY_ORDER, type CategoryKey } from "@/lib/universe";
+// Client-safe: constants only, so the ledger JSON stays out of the bundle.
+import { CATEGORY_LABELS, CATEGORY_ORDER, type CategoryKey } from "@/lib/universe-meta";
 import styles from "./LeaderboardTable.module.css";
 
 export interface LeaderboardDatum {
