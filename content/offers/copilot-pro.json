@@ -141,10 +141,10 @@
     },
     {
       "q": "How current is this information?",
-      "a": "A live pass on 2026-09-07 across the plans page and three docs articles. Billing mechanics change often — re-verify at official docs before relying on budget behavior."
+      "a": "A live pass on 2026-09-07 across the plans page and three docs articles. Billing mechanics change often."
     }
   ],
-  "citation": "Token Perks. “GitHub Copilot Pro.” Research snapshot Sep 7 2026. https://token-perks.com/best/copilot-pro/. Re-verify at official terms before paying.",
+  "citation": "Token Perks. “GitHub Copilot Pro.” Research snapshot Sep 7 2026. https://token-perks.com/best/copilot-pro/",
   "slot": "also",
   "rank": 4,
   "jsonld_price": { "price": "10" }

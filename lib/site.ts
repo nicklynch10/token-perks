@@ -74,9 +74,16 @@ export function homeMeta(n: { routes: number; snapshot: string }) {
   };
 }
 
-export const AFFILIATE_NOTICE =
-  "We may earn a commission from some future links.";
 export const AFFILIATE_V0_STATE =
   "This version contains no affiliate links. Every outbound link goes directly to an official provider page.";
+/**
+ * The single per-page affiliate statement (V3.5 hedge pass): the site-wide
+ * footer uses this one sentence — current state, outbound-link behavior, and
+ * the future-commission note — so no page carries the affiliate hedge twice.
+ * AFFILIATE_V0_STATE stays for /how-we-make-money/, which is the
+ * disclosure's home page and may state it as content.
+ */
+export const AFFILIATE_LINE =
+  "This version contains no affiliate links — every outbound link goes directly to an official provider page, and we may earn a commission from some future links.";
 
 export const MONEY_PAGE = "/how-we-make-money/";

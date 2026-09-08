@@ -145,10 +145,10 @@
     },
     {
       "q": "How current is this information?",
-      "a": "All quotes from eight official Cursor pages fetched live 2026-09-07. Note the pricing page's static-render behavior has varied between passes — re-verify the number before paying."
+      "a": "All quotes from eight official Cursor pages fetched live 2026-09-07. Note the pricing page's static-render behavior has varied between passes."
     }
   ],
-  "citation": "Token Perks. “Cursor Pro editor subscription.” Research snapshot Sep 7 2026. https://token-perks.com/best/cursor-pro/. Re-verify at official terms before paying.",
+  "citation": "Token Perks. “Cursor Pro editor subscription.” Research snapshot Sep 7 2026. https://token-perks.com/best/cursor-pro/",
   "slot": "also",
   "rank": 8,
   "jsonld_price": { "price": "20" }

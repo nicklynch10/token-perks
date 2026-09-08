@@ -33,6 +33,17 @@ interface LogEntry {
  */
 const LOG: LogEntry[] = [
   {
+    date: "2026-09-08",
+    title: "Pass 9 — V3.5 interactivity and density pass (full price table, chips, provider index, hedge hygiene)",
+    items: [
+      "Scope: presentation and copy. No prices, renewals, limits, or verified_at values changed; ledger figures untouched — two caveat labels and several route notes were shortened where their text read as fetch narration, and citation strings lost their repeated caution sentences.",
+      "Full price table (/universe/): client-side text search plus Category/Provider/List-price sort chips mirroring the homepage leaderboard controls; the separate mobile card list was replaced by the leaderboard's one-table data-label card reflow (shared as the .table-reflow style). The complete server-rendered ledger remains the default and no-JS view — search, sort, and row anchors behave identically without scripting. Exported page 282,704 → 234,354 bytes.",
+      "Homepage leaderboard: route-type chips with zero matches are no longer rendered — today only API (per token) and Credits / prepaid contain ranked routes.",
+      "Providers index: the cheapest-route cell separates price and plan with a real space (plain text no longer reads “…annual)Claude Pro”), and each company's lowest tracked monthly committed spend carries a start-here tag, explained in the page intro.",
+      "Hedge hygiene: the three recurring caution sentences (verify-before-paying, revenue-status disclosure, never-request-logins) are consolidated to at most one instance per page — the site-wide footer carries them; per-page duplicates were removed from the homepage, offer pages and their data files, guide citations, and the ledger.",
+    ],
+  },
+  {
     date: "2026-09-07",
     title: "Pass 8 — UI/experience confirmation round (presentation, navigation, and gift paths)",
     items: [

@@ -145,10 +145,10 @@
     },
     {
       "q": "How current is this information?",
-      "a": "Live fetches of official Google pages 2026-09-07. Region availability and credit pricing shift often — re-verify before paying."
+      "a": "Live fetches of official Google pages 2026-09-07. Region availability and credit pricing shift often."
     }
   ],
-  "citation": "Token Perks. “Google AI Pro subscription.” Research snapshot Sep 7 2026. https://token-perks.com/best/google-ai-pro/. Re-verify at official terms before paying.",
+  "citation": "Token Perks. “Google AI Pro subscription.” Research snapshot Sep 7 2026. https://token-perks.com/best/google-ai-pro/",
   "slot": "also",
   "rank": 6,
   "jsonld_price": { "price": "19.99" }

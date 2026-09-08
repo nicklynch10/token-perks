@@ -139,10 +139,10 @@
     },
     {
       "q": "How current is this information?",
-      "a": "App Store listing read 2026-09-07; help-article excerpts surfaced 2026-09-07 with content dating back to May 2026. ChatGPT caps change frequently — re-verify in a browser before paying."
+      "a": "App Store listing read 2026-09-07; help-article excerpts surfaced 2026-09-07 with content dating back to May 2026. ChatGPT caps change frequently."
     }
   ],
-  "citation": "Token Perks. “ChatGPT Plus subscription.” Research snapshot Sep 7 2026 (dual-source: official App Store listing + dated help-article excerpts; openai.com 403-blocked). https://token-perks.com/best/chatgpt-plus/. Re-verify at official terms before paying.",
+  "citation": "Token Perks. “ChatGPT Plus subscription.” Research snapshot Sep 7 2026 (dual-source: official App Store listing + dated help-article excerpts; openai.com 403-blocked). https://token-perks.com/best/chatgpt-plus/",
   "slot": "also",
   "rank": 5,
   "jsonld_price": { "price": "19.99" }

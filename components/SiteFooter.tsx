@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AFFILIATE_NOTICE, AFFILIATE_V0_STATE, SNAPSHOT_LINE } from "@/lib/site";
+import { AFFILIATE_LINE, SNAPSHOT_LINE } from "@/lib/site";
 
 export default function SiteFooter() {
   return (
@@ -32,7 +32,7 @@ export default function SiteFooter() {
           </Link>
         </nav>
         <p>
-          {AFFILIATE_V0_STATE} {AFFILIATE_NOTICE}{" "}
+          {AFFILIATE_LINE}{" "}
           <Link className="font-semibold underline" href="/how-we-make-money/">
             See how we make money.
           </Link>
@@ -60,7 +60,7 @@ export default function SiteFooter() {
           </a>
         </p>
         <p>
-          Independent model benchmarks we respect (external, not affiliated):{" "}
+          Independent model benchmarks we respect (external link):{" "}
           <a
             className="font-semibold underline"
             href="https://artificialanalysis.ai"

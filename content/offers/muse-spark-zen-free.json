@@ -21,7 +21,7 @@
     "renewal": "No renewal — this is a limited-time promo, not a plan. When it ends, usage moves to whatever paid terms apply, so confirm before building on it."
   },
   "renewal": "There is no renewal because there is no paid plan here — it is a $0 limited-time promo on input, cache, and output. Treat anything you build on it as rented time: confirm the promo window and the post-promo price before depending on it.",
-  "expiry": "Limited-time promo — end date confirmed only inside the official product; re-verify before relying on it.",
+  "expiry": "Limited-time promo — end date confirmed only inside the official product.",
   "verified_at": "2026-09-07",
   "eligibility": [
     "Users who can reach the Zen section of the official product and see the promo model listed",
@@ -127,10 +127,10 @@
     },
     {
       "q": "How current is this information?",
-      "a": "Research snapshot Sep 6 2026. Promo availability changes fast — re-verify in the official product before paying or planning around it."
+      "a": "Research snapshot Sep 6 2026. Promo availability changes fast."
     }
   ],
-  "citation": "Token Perks. “OpenCode Zen Muse Spark 1.3 free promo.” Research snapshot Sep 7 2026. https://token-perks.com/best/muse-spark-zen-free/. Re-verify at official terms before paying.",
+  "citation": "Token Perks. “OpenCode Zen Muse Spark 1.3 free promo.” Research snapshot Sep 7 2026. https://token-perks.com/best/muse-spark-zen-free/",
   "slot": "top3",
   "rank": 2
 }

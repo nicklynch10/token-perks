@@ -7,7 +7,7 @@ import JsonLd from "@/components/JsonLd";
 import ResearchSnapshot from "@/components/ResearchSnapshot";
 import { ACTIVE_OFFERS, type Offer } from "@/lib/offers";
 import { ALLEGRETTO_ANNUAL_UPFRONT, ALLEGRETTO_MONTHLY } from "@/lib/crossover";
-import { canonical, SNAPSHOT_LINE, SITE_URL, social } from "@/lib/site";
+import { canonical, SNAPSHOT_DATE, SITE_URL, social } from "@/lib/site";
 
 export const dynamic = "force-static";
 
@@ -85,7 +85,7 @@ export default function GiftGuidePage() {
         ]}
       />
       <header>
-        <p className="eyebrow">Practical guide · {SNAPSHOT_LINE}</p>
+        <p className="eyebrow">Practical guide · research snapshot {SNAPSHOT_DATE}</p>
         <h1 className="display-md mt-1">Buying AI access as a gift</h1>
         <p className="lede mt-3">
           The short answer: you usually cannot gift an AI subscription the way you gift a Netflix

@@ -8,7 +8,6 @@ import ParetoChart, { type ParetoDatum } from "@/components/ParetoChart";
 import { ACTIVE_OFFERS } from "@/lib/offers";
 import { aaCitation, getIntel, INTEL } from "@/lib/intelligence";
 import {
-  AFFILIATE_V0_STATE,
   canonical,
   homeMeta,
   MONEY_PAGE,
@@ -278,7 +277,7 @@ export default function Home() {
         </div>
         <p className="mt-2 text-[11px] leading-snug text-ink-mute">
           Every figure above is derived from the dated ledger at render time — per-task values use
-          the 100k-token reference. Re-verify at official terms before paying.
+          the 100k-token reference.
         </p>
       </section>
 
@@ -415,7 +414,7 @@ export default function Home() {
           provider publishes a modifier (a dash means none was published, not zero).
         </p>
         <p className="mt-2 max-w-3xl text-[13px] leading-relaxed text-ink-mute">
-          {AFFILIATE_V0_STATE}{" "}
+          Revenue policy in plain English:{" "}
           <Link href={MONEY_PAGE} className="u-draw text-teal-deep">
             How we make money
           </Link>

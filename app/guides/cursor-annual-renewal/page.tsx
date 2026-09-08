@@ -339,7 +339,7 @@ export default function GuidePage() {
       </p>
 
       <CiteBlock
-        citation={`Token Perks. “Cursor Pro renewal: what you'll actually pay, per the terms.” Research snapshot Sep 6-7 2026. ${url} Re-verify at official terms before paying.`}
+        citation={`Token Perks. “Cursor Pro renewal: what you'll actually pay, per the terms.” Research snapshot Sep 6-7 2026. ${url}`}
       />
       <ResearchSnapshot />
       <JsonLd

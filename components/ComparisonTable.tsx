@@ -174,7 +174,7 @@ export default function ComparisonTable() {
               <td colSpan={7}>
                 Per-100-task figures are illustrative (100k tokens/task reference; PAYG reference
                 $0.80/task = $80 per 100 tasks, full-width bar). Basis per row shown under the
-                figure. Snapshot {SNAPSHOT_ISO}; re-verify at official terms —{" "}
+                figure. Snapshot {SNAPSHOT_ISO} ·{" "}
                 <Link href="/methodology/" className="u-draw text-teal-deep">
                   methodology
                 </Link>

@@ -329,8 +329,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
         {/* First-100-words: price, renewal, verified */}
         <p className="mt-3 text-base text-ink-soft">
           <strong className="data text-ink">{offer.price.now}.</strong> Renewal: {offer.renewal}{" "}
-          All figures verified <strong className="tabular">{offer.verified_at}</strong>. Re-verify at
-          official terms before paying.
+          All figures verified <strong className="tabular">{offer.verified_at}</strong>.
         </p>
       </header>
 
@@ -501,7 +500,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
             <tfoot>
               <tr>
                 <td colSpan={2} className="px-4 py-2.5">
-                  Median-window math · verified {offer.verified_at} · re-verify at official terms
+                  Median-window math · verified {offer.verified_at}
                 </td>
               </tr>
             </tfoot>

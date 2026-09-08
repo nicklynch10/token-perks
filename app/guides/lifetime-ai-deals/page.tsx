@@ -332,7 +332,7 @@ export default function GuidePage() {
       </p>
 
       <CiteBlock
-        citation={`Token Perks. “AI tool lifetime deals: why no real one exists.” Research snapshot Sep 6-7 2026. ${url} Re-verify at official pages before buying.`}
+        citation={`Token Perks. “AI tool lifetime deals: why no real one exists.” Research snapshot Sep 6-7 2026. ${url}`}
       />
       <ResearchSnapshot />
       <JsonLd

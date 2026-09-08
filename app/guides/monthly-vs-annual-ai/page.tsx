@@ -163,7 +163,7 @@ export default function GuidePage() {
       </p>
 
       <CiteBlock
-        citation={`Token Perks. “Monthly vs annual AI plans.” Research snapshot Sep 6 2026. ${url} Re-verify at official terms before paying.`}
+        citation={`Token Perks. “Monthly vs annual AI plans.” Research snapshot Sep 6 2026. ${url}`}
       />
       <ResearchSnapshot />
       <JsonLd

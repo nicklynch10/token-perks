@@ -141,10 +141,10 @@
     },
     {
       "q": "How current is this information?",
-      "a": "This is a research snapshot from Sep 6 2026, not a live checkout feed. Prices, pools, and controls can change — re-verify at the official terms before paying."
+      "a": "This is a research snapshot from Sep 6 2026, not a live checkout feed. Prices, pools, and controls can change."
     }
   ],
-  "citation": "Token Perks. “Kimi K3 core membership.” Research snapshot Sep 6 2026. https://token-perks.com/best/kimi-k3-core/. Re-verify at official terms before paying.",
+  "citation": "Token Perks. “Kimi K3 core membership.” Research snapshot Sep 6 2026. https://token-perks.com/best/kimi-k3-core/",
   "slot": "top3",
   "rank": 1
 }

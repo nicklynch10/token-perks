@@ -341,7 +341,7 @@ export default function GuidePage() {
       </p>
 
       <CiteBlock
-        citation={`Token Perks. “AI student discounts, verified live.” Research snapshot Sep 6-7 2026. ${url} Re-verify at official pages before claiming — promo windows move fast.`}
+        citation={`Token Perks. “AI student discounts, verified live.” Research snapshot Sep 6-7 2026. ${url}`}
       />
       <ResearchSnapshot />
       <JsonLd

@@ -253,7 +253,7 @@ export default function AiSeatsForTeamsGuide() {
           seat <Cite sku={devin} />: {DEVIN_N} seats = {usd(devinTotal)}/mo, but at two seats the
           base fee alone makes it {usd(devinTwoSeatPerSeat)} per seat — the fixed $
           {devin.baseFee} is half the bill. The row&apos;s own caveat says its pricing came from a
-          page snapshot — re-verify before quoting it in a budget.
+          page snapshot.
         </p>
 
         <h3 id="cursor-seat-class" className="display-sm mt-5 scroll-mt-16">
@@ -443,7 +443,7 @@ export default function AiSeatsForTeamsGuide() {
       </p>
 
       <CiteBlock
-        citation={`Token Perks. “AI seats for teams.” Universe snapshot ${UNIVERSE.snapshot}; prices verified per row. ${url} Re-verify at official terms before paying.`}
+        citation={`Token Perks. “AI seats for teams.” Universe snapshot ${UNIVERSE.snapshot}; prices verified per row. ${url}`}
       />
       <ResearchSnapshot extra="Seat totals are list-price multiplication on dated rows — ours, not provider quotes. Re-check seat ranges and included usage before committing a roster." />
       <JsonLd

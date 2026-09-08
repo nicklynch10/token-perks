@@ -118,7 +118,7 @@ export default function GuidePage() {
         <h2 className="display-lg">When it does not apply</h2>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-ink-soft">
           <li>Spiky usage capped by 5-hour or weekly controls (see the Kimi K3 limits).</li>
-          <li>Free promos — $0/task while the promo lasts; re-verify the end date.</li>
+          <li>Free promos — $0/task while the promo lasts.</li>
           <li>
             Mixed fleets where allowances differ by model — some plans split one window budget
             across token and request caps, so one model can run dry while another still has room.
@@ -152,7 +152,7 @@ export default function GuidePage() {
       </p>
 
       <CiteBlock
-        citation={`Token Perks. “Effective cost per task, explained.” Research snapshot Sep 6 2026. ${url} Re-verify at official terms before paying.`}
+        citation={`Token Perks. “Effective cost per task, explained.” Research snapshot Sep 6 2026. ${url}`}
       />
       <ResearchSnapshot />
       <JsonLd

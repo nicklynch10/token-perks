@@ -295,7 +295,7 @@
    "apiIn": null,
    "apiOut": null,
    "unit": "per seat/month",
-   "notes": "Structure verified (flexible credit-based pricing: per-seat limits + shared credit pool; Codex seats closed to NEW Business workspaces from Jun 24 2026) via the help-center article (snapshot 2026-07-29, fetched 2026-09-07) — but no public per-seat dollar; the checkout figure is not published. Consumer tiers are itemized in sibling rows.",
+   "notes": "Flexible credit-based pricing (per-seat limits + shared credit pool); Codex seats closed to NEW Business workspaces from Jun 24 2026. No public per-seat dollar - the checkout figure is unpublished. Consumer tiers are itemized in sibling rows.",
    "caveats": [
     "Per-seat price not published"
    ],
@@ -343,7 +343,7 @@
    "apiIn": null,
    "apiOut": null,
    "unit": "per month",
-   "notes": "5 TB storage (10 TB on some variants); '4x access to Gemini' vs non-subscribers; Gemini in Gmail/Docs, Flow, NotebookLM, Jules, Antigravity, $10/mo Cloud credits. Price read in static text of the Gemini subscriptions page; the One plans pages render prices client-side.",
+   "notes": "5 TB storage (10 TB on some variants); '4x access to Gemini' vs non-subscribers; Gemini in Gmail/Docs, Flow, NotebookLM, Jules, Antigravity, $10/mo Cloud credits. Price from static text of the Gemini subscriptions page; One plans pages render prices client-side.",
    "caveats": [
     "Annual price not published",
     "Limits: 5-hour refresh to a weekly ceiling, per product",
@@ -739,7 +739,7 @@
    "apiIn": null,
    "apiOut": null,
    "unit": "per month",
-   "notes": "12,000 credits per 5-hour / 60,000 weekly. The official checkout is client-gated and the 2026-09-07 Wayback capture of z.ai/subscribe contains zero price strings; docs say only \"Starting at just 18 USD per month, with Pro and Max plans\". Third-party figures conflict and are unverified - not quoted.",
+   "notes": "12,000 credits per 5-hour / 60,000 weekly. Checkout is client-gated (the 2026-09-07 Wayback capture of the subscribe page carries no price strings); docs state only \"Starting at just 18 USD per month, with Pro and Max plans\". Third-party figures conflict - not quoted.",
    "caveats": [
     "Price not published"
    ],
@@ -887,7 +887,7 @@
    "apiIn": null,
    "apiOut": null,
    "unit": "per month/year",
-   "notes": "Verified on the official pricing hub (browser-mode fetch; automated fetcher 403s site-wide) plus five help-center articles. /pro is a JS shell; no official page states an annual Pro price — the '$200/yr' figure is promo-valuation lineage only.",
+   "notes": "Verified on the official pricing hub plus five help-center articles. /pro is a JS shell; no official page states an annual Pro price — the '$200/yr' figure is promo-valuation lineage only.",
    "caveats": [
     "Annual price not published",
     "Caps are 'weekly/monthly limits (average use)' — numbers not published"
@@ -1859,7 +1859,7 @@
    "apiIn": 0.22,
    "apiOut": 0.66,
    "unit": "$/1M tokens",
-   "notes": "1M context, 384K max output; model version DeepSeek-V4-Flash-0731; concurrency limit 2,500. Peak = Mon-Fri 01:00-04:00 and 06:00-10:00 UTC; all other hours off-peak at exactly half peak. Cache-hit input $0.007 off-peak / $0.014 peak. Fetched live from the trailing-slash pricing URL (the no-slash URL serves the wrong doc).",
+   "notes": "1M context, 384K max output; model DeepSeek-V4-Flash-0731; concurrency limit 2,500. Peak = Mon-Fri 01:00-04:00 and 06:00-10:00 UTC; all other hours off-peak at exactly half. Cache-hit input $0.007 off-peak / $0.014 peak.",
    "caveats": [
     "Peak/off-peak split - see hours"
    ],
@@ -2112,7 +2112,7 @@
    "apiIn": 2.0,
    "apiOut": 6.0,
    "unit": "$/1M tokens",
-   "notes": "Singapore-region Model Studio list price, 0<token<=1M tiers. Hong Kong region prices qwen3.8-max at $1.65/$4.951 with night discounts 22:00-08:00 UTC+8. Together resale of qwen3.7-plus ($0.32/$1.28) undercuts Alibaba's own Singapore list. Verified night rate on the same page: qwen3.7-plus (Hong Kong) lists $0.276 with 60% off at night (22:00-08:00 UTC+8) and 20% off daytime.",
+   "notes": "Singapore-region Model Studio list price, 0<token<=1M tiers. Hong Kong prices qwen3.8-max at $1.65/$4.951 with night discounts 22:00-08:00 UTC+8; qwen3.7-plus (HK) lists $0.276 with 60% off at night, 20% off daytime.",
    "caveats": [
     "Region/term tiers - see notes"
    ],
@@ -2307,7 +2307,7 @@
    "apiIn": null,
    "apiOut": null,
    "unit": "$/1M tokens",
-   "notes": "Official console docs table, fetched live. gpt-oss rows at 500-1,000 tok/s with 131,072 context. Flagship/legacy open-weight rows (llama-3.1-8b-instant, llama-3.3-70b-versatile, minimax-m2.7, compound) moved behind \"Enterprise - Contact Sales\". Whisper bills per audio hour; Orpheus TTS per 1M characters.",
+   "notes": "Official console docs table. gpt-oss rows at 500-1,000 tok/s, 131,072 context. Flagship/legacy open-weight rows moved behind \"Enterprise - Contact Sales\". Whisper bills per audio hour; Orpheus TTS per 1M characters.",
    "caveats": [
     "Multi-model row - no single blend",
     "Flagship rows sales-gated"
@@ -2461,7 +2461,7 @@
    "apiIn": null,
    "apiOut": null,
    "unit": "per pass",
-   "notes": "Zeroes per-token cost on included open-weight models via the kimi-k3-fast router; non-production coding use only; experimental; expiration visible in Billing. Full doc re-read 2026-09-07: still no list price and no duration - officially unpublished, invite only.",
+   "notes": "Zeroes per-token cost on included open-weight models via the kimi-k3-fast router; non-production coding use only; experimental; expiration visible in Billing. No list price or duration published - invite only.",
    "caveats": [
     "Invite-only",
     "Non-production only",
@@ -2875,9 +2875,9 @@
    "apiIn": null,
    "apiOut": null,
    "unit": "per month",
-   "notes": "Windsurf rows gone from the pricing page post-merge. Via the Wayback 2026-08-14 capture of the official devin.ai/pricing (the live page still 429s); snapshot fetched 2026-09-07. Pro adds frontier-model quotas and Devin Cloud; extra usage bills at API pricing.",
+   "notes": "Windsurf rows gone from the pricing page post-merge; the live page 429s, so figures come from a dated Wayback capture of devin.ai/pricing. Pro adds frontier-model quotas and Devin Cloud; extra usage bills at API pricing.",
    "caveats": [
-    "Via official-page snapshot - re-verify live"
+    "Via official-page snapshot"
    ],
    "sourceUrl": "https://web.archive.org/web/20260814065709/https://devin.ai/pricing",
    "label": "EXCERPT",
@@ -2925,7 +2925,7 @@
    "apiIn": null,
    "apiOut": null,
    "unit": "n/a",
-   "notes": "Free: 15 tasks/day, 3 concurrent. Jules in Pro: 100/day, 15 concurrent; in Ultra: 300/day, 60 concurrent. No standalone Jules price - paid tiers are benefits of Google AI Pro/Ultra. Free tier runs Gemini 2.5 Pro; paid runs the latest model (from Gemini 3 Pro).",
+   "notes": "Free: 15 tasks/day, 3 concurrent (Gemini 2.5 Pro). Jules in Pro: 100/day, 15 concurrent; in Ultra: 300/day, 60 concurrent (latest model). No standalone Jules price - paid tiers are benefits of Google AI Pro/Ultra.",
    "caveats": [
     "No standalone price - bundled"
    ],
@@ -2950,9 +2950,9 @@
    "apiIn": null,
    "apiOut": null,
    "unit": "n/a",
-   "notes": "Rate card: \"GPT-6 Pro, powered by GPT-6 Astra, is rolling out in ChatGPT for Pro $100, Pro $200, Business and Enterprise plans; Plus plans include GPT-6 Astra in ChatGPT Work and Codex as it rolls out.\" Codex seats closed to NEW Business workspaces from Jun 24 2026. Credit rates: Sol 10/message (Instant unlimited), Agent mode 30, Deep Research 50, Images 5, Voice 5/min. Via the 2026-09-06 help-center rate-card snapshot.",
+   "notes": "Rate card: GPT-6 Pro \"rolling out in ChatGPT for Pro $100, Pro $200, Business and Enterprise plans\"; Plus gets GPT-6 Astra in Work and Codex as it rolls out. Codex seats closed to NEW Business workspaces from Jun 24 2026. Credit rates: Sol 10/message (Instant unlimited), Agent 30, Deep Research 50, Images 5, Voice 5/min.",
    "caveats": [
-    "Availability rolling out - re-verify"
+    "Availability rolling out"
    ],
    "sourceUrl": "https://web.archive.org/web/20260906/https://help.openai.com/en/articles/11481834-chatgpt-rate-card-business-enterpriseedu-credit-based-pricing",
    "label": "EXCERPT",

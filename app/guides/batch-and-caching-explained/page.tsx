@@ -573,7 +573,7 @@ export default function GuidePage() {
       </p>
 
       <CiteBlock
-        citation={`Token Perks. “Batch and caching, explained.” Research snapshot Sep 7 2026. ${url} Re-verify at official provider pages before building on these rates.`}
+        citation={`Token Perks. “Batch and caching, explained.” Research snapshot Sep 7 2026. ${url}`}
       />
       <ResearchSnapshot />
       <JsonLd

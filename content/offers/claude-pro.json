@@ -153,10 +153,10 @@
     },
     {
       "q": "How current is this information?",
-      "a": "Live reads of claude.com/pricing plus nine official help-center articles on 2026-09-07 (some pages 403 the automated fetcher and were re-read via browser-mode request the same day). Caps and pricing are explicitly 'subject to change' — re-verify before paying."
+      "a": "Live reads of claude.com/pricing plus nine official help-center articles on 2026-09-07 (some pages 403 the automated fetcher and were re-read via browser-mode request the same day). Caps and pricing are explicitly 'subject to change'."
     }
   ],
-  "citation": "Token Perks. “Claude Pro subscription.” Research snapshot Sep 7 2026. https://token-perks.com/best/claude-pro/. Re-verify at official terms before paying.",
+  "citation": "Token Perks. “Claude Pro subscription.” Research snapshot Sep 7 2026. https://token-perks.com/best/claude-pro/",
   "slot": "also",
   "rank": 7,
   "jsonld_price": { "price": "20" }

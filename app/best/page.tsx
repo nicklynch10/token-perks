@@ -114,7 +114,7 @@ export default function BestIndex() {
           <Link href="/cost-calculator/#seat-mode" className="u-draw text-teal-deep">
             seat calculator
           </Link>
-          . Every figure is a dated snapshot: re-verify at official terms before paying.
+          .
         </p>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-mute">
           Buying as a gift? None of the tracked offers sells a gift card or a transferable
