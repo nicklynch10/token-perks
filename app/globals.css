@@ -1,4 +1,13 @@
-@import "tailwindcss";
+/* Light-only is the brand (V3.4): paper identity, forced-dark suppressed below
+   via color-scheme. Tailwind v4's automatic content detection scans every
+   non-ignored file in the repo — including scratch/harvested provider HTML
+   under scripts/tmp/ that ships its own `dark:` utility classes — and emitted
+   orphaned @media (prefers-color-scheme: dark) blocks into the shipped sheet,
+   contradicting the `color-scheme: light` meta in layout.tsx. Scope detection
+   to the real sources; the hand-written reduced-motion blocks are unaffected. */
+@import "tailwindcss" source(none);
+@source "../app";
+@source "../components";
 
 /* Touch-input variant: raise compact controls to ≥40px only on touch devices,
    keeping the dense pointer:fine look judges approved for desktop. */
