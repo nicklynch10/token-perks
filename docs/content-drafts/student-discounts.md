@@ -1,8 +1,8 @@
 ---
 title: "AI Student Discounts, Verified Live (Sep 2026): Who Still Offers One"
-slug: /ai-student-discounts/
+slug: /guides/ai-student-discounts/
 intent_keyword: "cursor pro student discount"
-status: DRAFT — NOT PUBLISHED
+status: PROMOTED 2026-09-07 -> /guides/ai-student-discounts/
 wave: 2
 sources:
   - "Cursor student program end + legacy auto-bill: cursor.com/students (status page) + cursor.com/pricing — access 2026-09-06 (per wave-2 fact base; fact-base file not found in repo at draft time — reconfirm capture notes before promotion)"

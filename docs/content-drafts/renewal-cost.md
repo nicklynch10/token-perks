@@ -1,8 +1,8 @@
 ---
 title: "Cursor Pro Renewal: What $20/mo Renews At, Per the Terms (Sep 2026)"
-slug: /cursor-annual-renewal/
+slug: /guides/cursor-annual-renewal/
 intent_keyword: "cursor pro annual renewal price"
-status: DRAFT — NOT PUBLISHED
+status: PROMOTED 2026-09-07 -> /guides/cursor-annual-renewal/
 wave: 2
 slug_decision: >
   Chose /cursor-annual-renewal/ over /ai-subscription-renewal-costs/. The target query

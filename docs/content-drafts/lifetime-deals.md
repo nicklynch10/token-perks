@@ -1,8 +1,8 @@
 ---
 title: "AI Tool Lifetime Deals: Why No Real One Exists (Sep 2026)"
-slug: /lifetime-ai-deals/
+slug: /guides/lifetime-ai-deals/
 intent_keyword: "AI tool lifetime deal"
-status: DRAFT — NOT PUBLISHED
+status: PROMOTED 2026-09-07 -> /guides/lifetime-ai-deals/
 wave: 2
 sources:
   - "Vendor pricing pages checked for lifetime/one-time plans: cursor.com/pricing, github.com/features/copilot, claude.com/pricing, openai.com/chatgpt/pricing, gemini.google.com (plans), kimi.com coding plans (api.kimi.com/coding/), windsurf.com/pricing — access 2026-09-06 (per wave-2 fact base; fact-base file not found in repo at draft time — reconfirm exact capture notes before promotion)"

@@ -8,12 +8,12 @@ import { canonical, SITE_URL } from "@/lib/site";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "AI Pricing Guides (Verified Sep 6 2026) | Token Perks",
+  title: "AI Pricing Guides (Verified Sep 6 2026)",
   description:
-    "Two practical guides: effective cost per task and monthly vs annual AI plans. Worked examples, checklists, verified Sep 6 2026.",
+    "Six practical guides: effective cost per task, monthly vs annual, batch and caching, renewal terms, student discounts, and lifetime deals. Worked examples, checklists, verified Sep 6-7 2026.",
   alternates: { canonical: canonical("/guides/") },
   openGraph: {
-    title: "AI Pricing Guides (Verified Sep 6 2026) | Token Perks",
+    title: "AI Pricing Guides (Verified Sep 6 2026)",
     description: "Cost per task and monthly-vs-annual guides with worked examples.",
     url: canonical("/guides/"),
     type: "website",
@@ -31,6 +31,26 @@ const GUIDES = [
     title: "Monthly vs annual AI plans",
     text: "Annual saves ~20% but only for stable volume. Allegretto (the $39/month middle tier) $39 vs ~$31 effective, with a prepay checklist.",
   },
+  {
+    href: "/guides/batch-and-caching-explained/",
+    title: "Batch and caching, explained",
+    text: "The -50% batch family, DeepSeek's exact off-peak hours, cache write/read economics, and the >200k repricing traps — all cited to Sep 7 2026.",
+  },
+  {
+    href: "/guides/cursor-annual-renewal/",
+    title: "Cursor Pro renewal: what you'll actually pay",
+    text: "No annual rate is published and renewal is not price-protected — the exact terms quotes, plus Copilot, Claude, OpenAI, and Kimi for contrast.",
+  },
+  {
+    href: "/guides/ai-student-discounts/",
+    title: "AI student discounts, verified live",
+    text: "Cursor's student program closed June 25, 2026. Who still offers one, what each offer does at expiry, and where no student ID is needed.",
+  },
+  {
+    href: "/guides/lifetime-ai-deals/",
+    title: "AI tool lifetime deals: why no real one exists",
+    text: "Seven vendor sweeps, the 30/60-day redemption clocks, refund asymmetry, and the annual-prepay alternative that actually exists.",
+  },
 ];
 
 export default function GuidesIndex() {
@@ -42,7 +62,8 @@ export default function GuidesIndex() {
           Guides
         </h1>
         <p className="mt-2 max-w-2xl text-ink-soft">
-          Two short guides with worked examples and stated assumptions. Research snapshot Sep 6 2026.
+          Six short guides with worked examples and stated assumptions. Research snapshot Sep 6-7
+          2026.
           Throughout, a &ldquo;task&rdquo; means one finished piece of work — a draft, a summary, a
           fix. The definition and the math are in{" "}
           <Link href="/guides/effective-cost-per-task-explained/" className="font-bold underline">
