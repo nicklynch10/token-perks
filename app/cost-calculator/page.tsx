@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import BreakEvenCalc from "@/components/BreakEvenCalc";
+import SeatCalc from "@/app/cost-calculator/SeatCalc";
 import CiteBlock from "@/components/CiteBlock";
 import JsonLd from "@/components/JsonLd";
 import OneTaskCost, { type TaskRouteDatum } from "@/components/OneTaskCost";
@@ -31,14 +32,14 @@ import {
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "AI cost calculators — break-even, cost per task, monthly vs annual",
+  title: "AI cost calculators — break-even, team seats, cost per task, monthly vs annual",
   description:
-    "Every interactive calculator in one place: flat-vs-metered break-even (shareable via URL), cost of one finished task per API route, monthly-vs-annual prepay math, and a 12-month view of the tracked offers.",
+    "Every interactive calculator in one place: flat-vs-metered break-even (shareable via URL), team-seat totals from verified per-seat rows, cost of one finished task per API route, monthly-vs-annual prepay math, and a 12-month view of the tracked offers.",
   alternates: { canonical: canonical("/cost-calculator/") },
   openGraph: {
-    title: "AI cost calculators — break-even, cost per task, monthly vs annual",
+    title: "AI cost calculators — break-even, team seats, cost per task, monthly vs annual",
     description:
-      "Break-even, one-task cost per route, prepay math, and 12-month comparisons — all on dated snapshot data.",
+      "Break-even, team-seat totals, one-task cost per route, prepay math, and 12-month comparisons — all on dated snapshot data.",
     url: canonical("/cost-calculator/"),
     type: "website",
   },
@@ -122,7 +123,29 @@ export default function CostCalculatorPage() {
         </div>
       </section>
 
-      {/* 2 · One finished task on each API route */}
+      {/* 2 · Team seats: pick a seat SKU, set headcount */}
+      <section id="seat-mode" aria-label="Team seat calculator" className="scroll-mt-16">
+        <h2 className="display-lg">Team seats: what a headcount costs</h2>
+        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
+          The break-even panel above answers &ldquo;seats vs metered&rdquo; for an estimated task
+          volume; this one answers &ldquo;I picked a Team plan — what do N seats cost, and what
+          happens as they fill.&rdquo; Every option mirrors a dated row in the{" "}
+          <Link href="/providers/" className="u-draw text-teal-deep">
+            provider universe
+          </Link>{" "}
+          (seat-priced rows only; single-user consumer tiers stay on the offers side). Inputs live
+          in the URL (<code className="data text-xs">?tsku=claude-team-standard&amp;theads=5</code>
+          ), so a headcount result is shareable like the rest. Decision rules for seats vs pooled
+          API spend: <Link href="/guides/ai-seats-for-teams/" className="u-draw text-teal-deep">
+            AI seats for teams
+          </Link>.
+        </p>
+        <div className="mt-4">
+          <SeatCalc />
+        </div>
+      </section>
+
+      {/* 3 · One finished task on each API route */}
       <section id="one-task" aria-label="Cost of one task" className="scroll-mt-16">
         <h2 className="display-lg">Cost of one task, per route</h2>
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
@@ -140,7 +163,7 @@ export default function CostCalculatorPage() {
         </div>
       </section>
 
-      {/* 3 · Monthly vs annual prepay math (verified Kimi Allegretto figures) */}
+      {/* 4 · Monthly vs annual prepay math (verified Kimi Allegretto figures) */}
       <section id="prepay" aria-label="Monthly versus annual prepay" className="scroll-mt-16">
         <h2 className="display-lg">Monthly vs annual: the prepay decision</h2>
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
@@ -200,7 +223,7 @@ export default function CostCalculatorPage() {
         </div>
       </section>
 
-      {/* 4 · Twelve-month view of every tracked offer */}
+      {/* 5 · Twelve-month view of every tracked offer */}
       <section id="twelve-month" aria-label="Twelve-month view of tracked offers" className="scroll-mt-16">
         <h2 className="display-lg">12 months on each tracked offer</h2>
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
@@ -243,7 +266,7 @@ export default function CostCalculatorPage() {
         </div>
       </section>
 
-      {/* 5 · Cross-links */}
+      {/* 6 · Cross-links */}
       <section aria-label="More tools" className="rounded-xl border border-line bg-card p-5 text-sm">
         <p className="font-semibold">Not sure what a “task” costs in tokens?</p>
         <p className="mt-1 text-ink-soft">

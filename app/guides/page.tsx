@@ -8,13 +8,14 @@ import { canonical, SITE_URL } from "@/lib/site";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "AI Pricing Guides (Verified Sep 6 2026)",
+  title: "AI Pricing Guides (Verified Sep 6–7 2026)",
   description:
-    "Seven practical guides: buying AI access as a gift, effective cost per task, monthly vs annual, batch and caching, renewal terms, student discounts, and lifetime deals. Worked examples, checklists, verified Sep 6-7 2026.",
+    "Eight practical guides: buying AI access as a gift, effective cost per task, monthly vs annual, seats for teams, batch and caching, renewal terms, student discounts, and lifetime deals. Worked examples, checklists, verified Sep 6-7 2026.",
   alternates: { canonical: canonical("/guides/") },
   openGraph: {
-    title: "AI Pricing Guides (Verified Sep 6 2026)",
-    description: "Cost per task and monthly-vs-annual guides with worked examples.",
+    title: "AI Pricing Guides (Verified Sep 6–7 2026)",
+    description:
+      "Cost per task, monthly-vs-annual, and team-seat guides with worked examples.",
     url: canonical("/guides/"),
     type: "website",
   },
@@ -35,6 +36,11 @@ const GUIDES = [
     href: "/guides/monthly-vs-annual-ai/",
     title: "Monthly vs annual AI plans",
     text: "Annual saves ~20% but only for stable volume. Allegretto (the $39/month middle tier) $39 vs ~$31 effective, with a prepay checklist.",
+  },
+  {
+    href: "/guides/ai-seats-for-teams/",
+    title: "AI seats for teams",
+    text: "When per-seat plans beat pooled API spend: mixed Claude Team seats (2 Standard + 1 Premium = $140/mo annual), Copilot's per-user credit buckets, Devin's base fee, and what breaks when seats fill.",
   },
   {
     href: "/guides/batch-and-caching-explained/",
@@ -67,7 +73,7 @@ export default function GuidesIndex() {
           Guides
         </h1>
         <p className="mt-2 max-w-2xl text-ink-soft">
-          Seven short guides with worked examples and stated assumptions. Research snapshot Sep 6-7
+          Eight short guides with worked examples and stated assumptions. Research snapshot Sep 6-7
           2026.
           Throughout, a &ldquo;task&rdquo; means one finished piece of work — a draft, a summary, a
           fix. The definition and the math are in{" "}
