@@ -63,7 +63,15 @@ export default function OfferCard({
           </Link>
         </h2>
         <p className="data mt-1 text-base">{offer.price.now}</p>
-        <p className="data text-xs text-ink-soft">{taskNote}</p>
+        {taskNote ? (
+          <p className="data text-xs text-ink-soft">{taskNote}</p>
+        ) : offer.price.now.startsWith("$0") ? (
+          // Audit item 8: a $0 route with no computable per-task figure used
+          // to render a blank line. "—" + tooltip says WHY it's empty.
+          <p className="data text-xs" title="no token metering; free promo">
+            <span className="cursor-help text-ink-mute">—</span>
+          </p>
+        ) : null}
         <p className="mt-1 text-xs font-medium text-ink-mute">
           {RENEWAL_LINE[offer.id] ?? offer.price.renewal}
         </p>

@@ -196,11 +196,24 @@ export default function BestIndex() {
                   </th>
                   <td className="data align-top text-[12.5px]">{s.listPrice}</td>
                   <td className="align-top text-ink-soft">
-                    {seatStructureLines(s).map((l, i) => (
-                      <p key={i} className="text-[12.5px] leading-snug">
-                        {l}
+                    {seatStructureLines(s).length > 0 ? (
+                      seatStructureLines(s).map((l, i) => (
+                        <p key={i} className="text-[12.5px] leading-snug">
+                          {l}
+                        </p>
+                      ))
+                    ) : (
+                      // Audit item 8 (no blank cells): the verified row carries a
+                      // price but no seat-structure fields — say so, don't lie empty.
+                      <p className="text-[12.5px] leading-snug">
+                        <span
+                          className="cursor-help text-ink-mute"
+                          title="seat structure fields (ranges, included usage, mix rules) not stated in the verified row"
+                        >
+                          —
+                        </span>
                       </p>
-                    ))}
+                    )}
                   </td>
                   <td className="align-top text-ink-soft">
                     {seatBreaksLines(s).map((l, i) => (
