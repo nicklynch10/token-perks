@@ -48,7 +48,12 @@ export default function ProvidersIndex() {
           {groups.length} providers, {UNIVERSE.rows.length} tracked access routes as of{" "}
           <strong className="data">{UNIVERSE.snapshot}</strong>. Each provider page lists every
           route we track — what it costs on paper, the caveats attached, and how well verified it
-          is — with cross-links into the cost leaderboard and any tracked offer.
+          is — with cross-links into the cost leaderboard and any tracked offer. Every row from
+          every provider also sits in one filterable ledger on the{" "}
+          <Link href="/universe/" className="u-draw text-teal-deep">
+            universe page
+          </Link>
+          .
         </p>
         <p className="mt-3 max-w-3xl text-sm text-ink-mute">
           Evidence mix below counts every route by label: DIRECT = read on the provider&apos;s own

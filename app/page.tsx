@@ -2,20 +2,21 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import BreakEvenCalc from "@/components/BreakEvenCalc";
 import ComparisonTable from "@/components/ComparisonTable";
-import CrossoverSection from "@/components/CrossoverSection";
 import JsonLd from "@/components/JsonLd";
 import LeaderboardTable, { type LeaderboardDatum } from "@/components/LeaderboardTable";
 import ParetoChart, { type ParetoDatum } from "@/components/ParetoChart";
-import UniverseTable, { type UniverseDatum } from "@/components/UniverseTable";
 import { ACTIVE_OFFERS } from "@/lib/offers";
 import { aaCitation, getIntel, INTEL } from "@/lib/intelligence";
 import { canonical, SITE_URL } from "@/lib/site";
 import {
   batchPerM,
   blendedPerM,
+  CATEGORY_LABELS,
   pricedApiRows,
   providerIdOf,
+  providerGroups,
   UNIVERSE,
+  type CategoryKey,
   type UniverseRow,
 } from "@/lib/universe";
 import { paretoFrontier } from "@/lib/valueScore";
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Token Perks — AI cost leaderboard",
     description:
-      "Cost-side ranking of AI access routes, a cost-vs-intelligence frontier chart, and the full universe table. Snapshot Sep 7 2026.",
+      "Cost-side ranking of AI access routes, a cost-vs-intelligence frontier chart, and the full route ledger. Snapshot Sep 7 2026.",
     url: canonical("/"),
     type: "website",
     images: [
@@ -144,25 +145,16 @@ export default function Home() {
     paretoPoints.map((p) => ({ id: p.id, label: p.label, cost: p.cost, intelligence: p.intelligence, free: p.free })),
   );
 
-  const universeRows: UniverseDatum[] = UNIVERSE.rows.map((r) => ({
-    id: r.id,
-    provider: r.provider,
-    category: r.category,
-    plan: r.plan,
-    listPrice: r.listPrice,
-    notes: r.notes,
-    caveats: r.caveats,
-    sourceUrl: r.sourceUrl,
-    label: r.label,
-    offer: r.offer,
-    accessed: r.accessed,
-  }));
-
   const cheapest = lbRows.slice(0, 12);
+  const catCounts = (Object.keys(CATEGORY_LABELS) as CategoryKey[]).map((k) => ({
+    k,
+    n: UNIVERSE.rows.filter((r) => r.category === k).length,
+  }));
+  const providerCount = providerGroups().length;
 
   return (
     <div>
-      {/* 1 · First screen: promise, in plain English, above anything else */}
+      {/* 1 · First screen: value line, two ways in, and a compact entry into the tables */}
       <section aria-label="About this site" className="mx-auto max-w-6xl px-4 pb-8 pt-4 sm:px-6 sm:pt-6">
         <h1 className="display-xl max-w-4xl">The cost side of AI access, ranked</h1>
         <p className="lede mt-2 max-w-3xl">
@@ -175,74 +167,45 @@ export default function Home() {
           pay-as-you-go API, credit systems, coding-tool plans, and free tiers, and ranks what can
           be ranked on effective cost. Intelligence scores are quoted from Artificial Analysis with
           a citation on every number; our own weighted ranking is documented but deliberately
-          withheld. Verified{" "}
+          withheld. The full ledger lives on the{" "}
+          <Link href="/universe/" className="u-draw text-teal-deep">
+            universe page
+          </Link>
+          . Verified{" "}
           <strong className="data">Sep 6–7 2026</strong>.
         </p>
-      </section>
-
-      {/* 1b · Entry card: what a normal person should tap first */}
-      <section aria-label="Where to start" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
-        <div className="card p-5 sm:p-6">
-          <p className="eyebrow">Where to start</p>
-          <h2 className="display-lg mt-1">Just buying a subscription?</h2>
-          <div className="mt-4 grid gap-x-6 gap-y-4 md:grid-cols-3">
-            <div>
-              <p className="text-sm font-semibold">Buying for someone else, or not deep in APIs</p>
-              <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-                Start with the {ACTIVE_OFFERS.length} tracked consumer offers and the gift guide —
-                what each fee includes, when it renews, and how gifting and refunds actually work.
-              </p>
-              <p className="mt-2 flex flex-wrap gap-x-4 text-sm">
-                <Link href="/best/" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">
-                  Tracked offers
-                </Link>{" "}
-                <Link
-                  href="/guides/buying-ai-access-as-a-gift/"
-                  className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]"
-                >
-                  Gift guide
-                </Link>{" "}
-                <Link
-                  href="/guides/monthly-vs-annual-ai/"
-                  className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]"
-                >
-                  Monthly vs annual
-                </Link>
-              </p>
-            </div>
-            <div>
-              <p className="text-sm font-semibold">Building on AI APIs</p>
-              <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-                The leaderboard ranks every pay-per-token route on blended cost per million tokens,
-                with batch and cache terms where providers publish them; providers list the same
-                data per company.
-              </p>
-              <p className="mt-2 flex flex-wrap gap-x-4 text-sm">
-                <Link href="#leaderboard" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">
-                  Cost leaderboard
-                </Link>{" "}
-                <Link href="/providers/" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">
-                  Providers
-                </Link>
-              </p>
-            </div>
-            <div>
-              <p className="text-sm font-semibold">Optimizing batch jobs</p>
-              <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-                The Batch $/M column shows the discounted arithmetic side by side — only where the
-                provider publishes a batch modifier; a dash means none was published, not zero.
-              </p>
-              <p className="mt-2 flex flex-wrap gap-x-4 text-sm">
-                <Link href="#leaderboard" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">
-                  Batch data
-                </Link>{" "}
-                <Link href="/cost-calculator/" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">
-                  Calculators
-                </Link>
-              </p>
-            </div>
-          </div>
+        <div className="mt-5 flex flex-wrap items-center gap-3">
+          <Link
+            href="/best/"
+            className="inline-flex min-h-[44px] items-center rounded-full bg-teal px-5 text-sm font-semibold text-white hover:bg-teal-deep"
+          >
+            Compare tracked offers
+          </Link>
+          <Link
+            href="/cost-calculator/"
+            className="inline-flex min-h-[44px] items-center rounded-full border border-teal bg-card px-5 text-sm font-semibold text-teal-deep hover:bg-teal-wash"
+          >
+            Open the calculators
+          </Link>
         </div>
+        <nav aria-label="Jump to a section" className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+          <span className="eyebrow mr-1">On this page</span>
+          <Link href="#compare" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">Tracked offers</Link>
+          <Link href="#break-even" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">Break-even calculator</Link>
+          <Link href="#frontier" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">Frontier chart</Link>
+          <Link href="#leaderboard" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">Cost leaderboard</Link>
+          <Link href="/universe/" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">Full route list →</Link>
+        </nav>
+        <p className="mt-3 max-w-3xl text-[13px] leading-relaxed text-ink-mute">
+          Not sure which is you: buying for someone else or not deep in APIs — start with the{" "}
+          {ACTIVE_OFFERS.length} tracked consumer offers and the{" "}
+          <Link href="/guides/buying-ai-access-as-a-gift/" className="u-draw text-teal-deep">gift guide</Link>;
+          building on AI APIs — the <a href="#leaderboard" className="u-draw">leaderboard</a> ranks every
+          pay-per-token route, and <Link href="/providers/" className="u-draw text-teal-deep">providers</Link> list the same
+          data per company;
+          optimizing batch jobs — the Batch $/M column shows discounted arithmetic only where the
+          provider publishes a modifier (a dash means none was published, not zero).
+        </p>
       </section>
 
       {/* 2 · Tracked offers (v1 comparison) — the money decision, first table */}
@@ -263,10 +226,13 @@ export default function Home() {
             <h2 className="display-lg">Break-even calculator</h2>
             <p className="mt-2 text-sm leading-relaxed text-ink-soft">
               Set your monthly task count and tokens per task to see whether pay-as-you-go or a
-              flat subscription costs less at your volume, against the $0.80/task reference rate.
-              The flat-plan price is an input too — it defaults to the $39/mo Kimi Allegretto tier,
-              so the crossover here matches the ≈49-task figure in the chart below. The full method
-              is documented in{" "}
+              flat subscription costs less at your volume. The flat-plan price is an input too — it
+              defaults to the $39/mo Kimi Allegretto tier, so the crossover here matches the
+              ≈49-task figure in the{" "}
+              <Link href="/crossover/" className="u-draw text-teal-deep">
+                crossover story
+              </Link>
+              . The full method is documented in{" "}
               <Link href="/guides/effective-cost-per-task-explained/" className="u-draw text-teal-deep">
                 effective cost per task, explained
               </Link>
@@ -274,8 +240,8 @@ export default function Home() {
             </p>
             <p className="mt-2 text-sm leading-relaxed text-ink-soft">
               For writing work, count your drafts per month and enter the number here: about 24
-              drafts clears the $19 Moderato month, about 49 clears the $39 Allegretto month (at
-              the $0.80 reference) — pick the cheapest tier your count clears. Tier details:{" "}
+              drafts clears the $19 Moderato month, about 49 clears the $39 Allegretto month —
+              pick the cheapest tier your count clears. Tier details:{" "}
               <Link href="/best/kimi-k3-core/" className="u-draw text-teal-deep">
                 Kimi K3 membership
               </Link>
@@ -290,8 +256,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4 · Crossover story: watch flat beat metered (wow moment, self-contained) */}
-      <CrossoverSection />
+      {/* 4 · Crossover teaser — the full scroll story moved to its own page */}
+      <section
+        aria-label="Crossover story"
+        className="mx-auto max-w-6xl px-4 pb-12 sm:px-6"
+      >
+        <div className="card p-5 sm:p-6">
+          <p className="eyebrow">Break-even, in one chart</p>
+          <h2 className="display-lg mt-1">Where flat beats metered</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
+            Metered billing climbs with every task (about $0.80 each at the reference rate); the
+            $39 Allegretto month holds its price. The lines cross at ≈49 tasks/mo — annual billing
+            moves the crossing to ≈39. The full four-step chart, ledger, and your-own-volume
+            slider are on the{" "}
+            <Link href="/crossover/" className="u-draw text-teal-deep">
+              crossover page
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
 
       {/* 5 · Cost–intelligence frontier chart */}
       <section id="frontier" aria-label="Cost versus intelligence frontier" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
@@ -325,15 +309,32 @@ export default function Home() {
         <LeaderboardTable rows={lbRows} />
       </section>
 
-      {/* 7 · Full universe table (every route, including unverified) */}
-      <section id="universe" aria-label="Full universe of access routes" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
-        <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
-          <h2 className="display-lg">Every tracked route</h2>
-          <p className="data text-xs text-ink-mute">
-            subscriptions · api · credits · coding tools · free tiers — unverified rows included and labeled
+      {/* 7 · Pointer to the full route ledger (the table itself lives on /universe/) */}
+      <section
+        id="universe"
+        aria-label="Full universe of access routes"
+        className="mx-auto max-w-6xl px-4 pb-12 sm:px-6"
+      >
+        <div className="card p-5 sm:p-6">
+          <div className="flex flex-wrap items-baseline justify-between gap-2">
+            <h2 className="display-lg">Every tracked route</h2>
+            <p className="data text-xs text-ink-mute">
+              {UNIVERSE.rows.length} routes · {providerCount} providers — {catCounts.map((c) => `${c.n} ${CATEGORY_LABELS[c.k].toLowerCase()}`).join(" · ")}
+            </p>
+          </div>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
+            The raw ledger behind every ranking on this site — including rows we could not verify,
+            labeled UNCERTAIN rather than priced from memory. Browse it filterable on the{" "}
+            <Link href="/universe/" className="u-draw text-teal-deep font-semibold">
+              full route list
+            </Link>
+            , or go company by company via the{" "}
+            <Link href="/providers/" className="u-draw text-teal-deep">
+              provider pages
+            </Link>
+            .
           </p>
         </div>
-        <UniverseTable rows={universeRows} />
       </section>
 
       {/* 8 · Guides, providers, methodology */}

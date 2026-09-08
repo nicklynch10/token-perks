@@ -9,12 +9,15 @@ export const dynamic = "force-static";
  *  static pages use the last pass date that touched them. */
 const STATIC_PAGES: { path: string; lastModified: string }[] = [
   { path: "/", lastModified: "2026-09-07" },
+  { path: "/universe/", lastModified: "2026-09-07" },
+  { path: "/crossover/", lastModified: "2026-09-07" },
   { path: "/best/", lastModified: "2026-09-07" },
   { path: "/providers/", lastModified: UNIVERSE.snapshot },
   { path: "/guides/", lastModified: SNAPSHOT_ISO },
   { path: "/guides/buying-ai-access-as-a-gift/", lastModified: "2026-09-07" },
   { path: "/guides/effective-cost-per-task-explained/", lastModified: "2026-09-07" },
   { path: "/guides/monthly-vs-annual-ai/", lastModified: "2026-09-07" },
+  { path: "/guides/ai-seats-for-teams/", lastModified: "2026-09-07" },
   { path: "/guides/batch-and-caching-explained/", lastModified: "2026-09-07" },
   { path: "/guides/cursor-annual-renewal/", lastModified: "2026-09-07" },
   { path: "/guides/ai-student-discounts/", lastModified: "2026-09-07" },

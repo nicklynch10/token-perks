@@ -180,7 +180,7 @@ function Inner({
                     the tracked offer
                   </Link>{" "}
                   or the{" "}
-                  <Link href="/#crossover" className="u-draw text-teal-deep">
+                  <Link href="/crossover/" className="u-draw text-teal-deep">
                     crossover story
                   </Link>
                   .
