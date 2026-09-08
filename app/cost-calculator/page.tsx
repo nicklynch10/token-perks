@@ -23,6 +23,7 @@ import { INTEL } from "@/lib/intelligence";
 import { canonical, SITE_URL, social } from "@/lib/site";
 import {
   batchPerM,
+  blendPresets,
   blendedPerM,
   pricedApiRows,
   UNIVERSE,
@@ -117,8 +118,11 @@ export default function CostCalculatorPage() {
           the crossover here matches the <span className="data">≈{Math.round(CROSS_MONTHLY)}</span>
           -task figure on the homepage.
         </p>
+        {/* Same server-derived preset chips as the homepage copy — the
+            calculator footnote tells readers to "pick a preset chip above",
+            so the chips must actually render here too (V3.4 audit item 5). */}
         <div className="mt-4">
-          <BreakEvenCalc />
+          <BreakEvenCalc blendPresets={blendPresets()} />
         </div>
       </section>
 
