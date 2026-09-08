@@ -184,7 +184,11 @@ body {
 .u-draw:focus-visible { text-decoration: underline; }
 .btn {
   border: 1px solid transparent;
-  transition: background-color 0.12s, border-color 0.12s;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn {
+    transition: background-color 0.12s, border-color 0.12s;
+  }
 }
 .btn:hover { filter: brightness(0.96); }
 

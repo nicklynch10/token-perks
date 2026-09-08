@@ -215,7 +215,7 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
                         <span className="block text-[11px] text-ink-mute">~{fmtTask(batchTask)}/task</span>
                       </>
                     ) : (
-                      <span className="text-ink-mute" title="No published batch discount for this route">
+                      <span className="cursor-help text-ink-mute" title="No published batch discount for this route">
                         —
                       </span>
                     )}
