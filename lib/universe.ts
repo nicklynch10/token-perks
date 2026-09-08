@@ -36,6 +36,59 @@ export function providerGroups(): ProviderGroup[] {
   return [...map.values()].sort((a, b) => a.name.localeCompare(b.name));
 }
 
+/**
+ * Break-even calculator preset chips (design audit item 7). The $0.80/task
+ * default silently equals an $8/M premium blend; a K3-class or flash-class
+ * user's metered math is 5x–70x cheaper, which skews the crossover toward
+ * "flat wins". These chips let the visitor pull the lever with one click.
+ *
+ * Blends are DERIVED here from ledger rows — (3 x in + 1 x output) / 4 at
+ * each row's current published price — never hardcoded. The "premium" entry
+ * is the illustrative $8/M reference (the only non-row preset) so the
+ * default state is also reachable. Server-only scalars: the calculator
+ * receives just these numbers, not rows.
+ */
+export interface BlendPreset {
+  id: string;
+  label: string;
+  blendPerM: number;
+  /** $/task at the 100k-token reference — chip sub-label. */
+  perTask100k: number;
+  /** "derived from ledger row …, read YYYY-MM-DD" note; null for the illustrative reference. */
+  derivation: string | null;
+}
+
+export function blendPresets(): BlendPreset[] {
+  const byId = (id: string) => UNIVERSE.rows.find((r) => r.id === id);
+  const out: BlendPreset[] = [
+    {
+      id: "premium",
+      label: "Premium ref",
+      blendPerM: 8,
+      perTask100k: (8 * 100_000) / 1_000_000,
+      derivation: null,
+    },
+  ];
+  const named: [string, string, string][] = [
+    ["k3", "moonshot--api--kimi-k3", "K3-class API"],
+    ["flash", "zai--api--glm-5-3-flash", "GLM-5.3-Flash (promo)"],
+  ];
+  for (const [id, rowId, label] of named) {
+    const r = byId(rowId);
+    const b = r ? blendedPerM(r) : null;
+    if (r && b != null) {
+      out.push({
+        id,
+        label,
+        blendPerM: b,
+        perTask100k: (b * 100_000) / 1_000_000,
+        derivation: `${r.provider} ${r.plan} · blend (3×in+out)/4 of ${r.listPrice} · read ${r.accessed}`,
+      });
+    }
+  }
+  return out;
+}
+
 export function getProvider(slug: string): ProviderGroup | undefined {
   return providerGroups().find((g) => g.slug === slug);
 }

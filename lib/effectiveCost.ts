@@ -58,9 +58,10 @@ export function cheapestRoute(
   tasks: number,
   tokensPerTask: number,
   subPrice: number = FLAT_PLAN_DEFAULT,
+  blendPerM: number = BLENDED_PER_MTOK,
 ): RouteComparison {
   const t = Number.isFinite(tasks) ? Math.max(0, Math.round(tasks)) : 0;
-  const perTask = paygPerTask(tokensPerTask);
+  const perTask = paygPerTask(tokensPerTask, blendPerM);
   const paygMonthly = t * perTask;
   const crossover = breakEvenTasks(subPrice, perTask);
   const cheapest: RouteId = paygMonthly <= subPrice ? "payg" : "sub";
@@ -198,10 +199,11 @@ export function compareTeamOptions(
   teamTasks: number,
   tokensPerTask: number,
   seats: number,
+  blendPerM: number = BLENDED_PER_MTOK,
 ): TeamComparison {
   const s = clampSeats(seats);
   const t = Number.isFinite(teamTasks) ? Math.max(0, Math.round(teamTasks)) : 0;
-  const perTask = paygPerTask(tokensPerTask);
+  const perTask = paygPerTask(tokensPerTask, blendPerM);
   const paygMonthly = t * perTask;
   const options: TeamOption[] = [
     {

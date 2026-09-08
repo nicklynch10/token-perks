@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  BLENDED_PER_MTOK,
   BASELINE_PAYG_PER_TASK,
   FLAT_PLAN_DEFAULT,
   FLAT_PLAN_DEFAULT_HINT,
@@ -17,6 +18,8 @@ import {
   fmtUSD,
 } from "@/lib/effectiveCost";
 import { SNAPSHOT_DATE } from "@/lib/site";
+import { fmtPerM, fmtTask } from "@/lib/universe-meta";
+import type { BlendPreset } from "@/lib/universe";
 
 /**
  * Break-even calculator. Prerenders with default inputs (no useSearchParams
@@ -31,18 +34,43 @@ import { SNAPSHOT_DATE } from "@/lib/site";
  * Tasks and tokens are team totals; the seats slider (1–50) multiplies
  * per-seat plan math and recommends the cheapest multi-seat-compliant setup.
  */
+/** $/task for a task size at a blended $/M rate. */
+function paygTaskAt(blendPerM: number, tokensPerTask: number): number {
+  return (tokensPerTask / 1_000_000) * blendPerM;
+}
+
+/** Dated provenance line under the preset chips (audit item 7 honesty note). */
+function activePresetNote(presets: BlendPreset[], blend: number, tokens: number): string {
+  const p = presets.find((x) => Math.abs(x.blendPerM - blend) < 1e-9);
+  const per = fmtTask(paygTaskAt(blend, tokens));
+  if (!p) return `Custom ${fmtPerM(blend)}/M blend — ${per}/task at your token size (not a ledger row).`;
+  if (p.derivation == null)
+    return `${p.label} is the illustrative reference blend the calculator defaults to — ${per}/task at your token size; a premium frontier API typically costs this much.`;
+  return `Derived from the ledger: ${p.derivation} — ${per}/task at your token size.`;
+}
+
 function Inner({
   defaultTasks = 120,
   defaultTokens = 100_000,
+  blendPresets,
 }: {
   defaultTasks?: number;
   defaultTokens?: number;
+  /**
+   * Data-derived reference-blend chips (design audit item 7): the $0.80/task
+   * default silently assumes a premium $8/M blend, which mislabels a K3- or
+   * flash-class user's metered math. The presets are server-computed scalars
+   * from the ledger (see blendPresets() in lib/universe.ts) so no row data
+   * reaches the client bundle.
+   */
+  blendPresets?: BlendPreset[];
 }) {
   const pathname = usePathname();
   const [tasks, setTasks] = useState(defaultTasks);
   const [tokens, setTokens] = useState(defaultTokens);
   const [seats, setSeats] = useState(1);
   const [subPrice, setSubPrice] = useState(FLAT_PLAN_DEFAULT);
+  const [blend, setBlend] = useState(BLENDED_PER_MTOK);
 
   // Adopt shared URLs (?tasks=500&tokens=200000&seats=10&sub=49) after hydration.
   useEffect(() => {
@@ -51,6 +79,7 @@ function Inner({
     const k = Number(sp.get("tokens"));
     const s = Number(sp.get("seats"));
     const u = Number(sp.get("sub"));
+    const b = Number(sp.get("blend"));
     // Intentional post-hydration adoption of URL params: initializing state
     // from window.location would mismatch the static prerender.
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -61,22 +90,28 @@ function Inner({
     if (s) setSeats(clampSeats(s));
     // eslint-disable-next-line react-hooks/set-state-in-effect
     if (u) setSubPrice(clampSubPrice(u));
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (b && Number.isFinite(b) && b > 0) setBlend(Math.min(100, b));
   }, []);
 
-  function set(key: "tasks" | "tokens" | "seats" | "sub", value: number) {
+  function set(key: "tasks" | "tokens" | "seats" | "sub" | "blend", value: number) {
     const next = new URLSearchParams(window.location.search);
     next.set(key, String(value));
     window.history.replaceState(null, "", `${pathname}?${next.toString()}`);
     if (key === "tasks") setTasks(value);
     else if (key === "tokens") setTokens(value);
     else if (key === "seats") setSeats(value);
+    else if (key === "blend") setBlend(value);
     else setSubPrice(clampSubPrice(value));
   }
 
-  const r = useMemo(() => cheapestRoute(tasks, tokens, subPrice), [tasks, tokens, subPrice]);
+  const r = useMemo(
+    () => cheapestRoute(tasks, tokens, subPrice, blend),
+    [tasks, tokens, subPrice, blend],
+  );
   const team = useMemo(
-    () => compareTeamOptions(tasks, tokens, seats),
-    [tasks, tokens, seats],
+    () => compareTeamOptions(tasks, tokens, seats, blend),
+    [tasks, tokens, seats, blend],
   );
   const maxCost = Math.max(r.paygMonthly, r.subMonthly, 1);
   const paygW = Math.max(0.5, (r.paygMonthly / maxCost) * 100);
@@ -119,6 +154,45 @@ function Inner({
             className="mt-2 min-h-[44px] w-full accent-teal"
           />
         </div>
+        {blendPresets && blendPresets.length > 0 && (
+          <div>
+            <p className="flex justify-between text-sm font-semibold" id="be-blend-label">
+              <span>Reference token blend (metered side)</span>
+              <span className="data">{fmtPerM(blend)}/M · {fmtTask(paygTaskAt(blend, tokens))}/task</span>
+            </p>
+            <div
+              role="group"
+              aria-labelledby="be-blend-label"
+              className="no-scrollbar mt-2 flex flex-wrap items-center gap-2 overflow-x-auto md:flex-nowrap"
+            >
+              {blendPresets.map((p) => {
+                const on = Math.abs(blend - p.blendPerM) < 1e-9;
+                return (
+                  <button
+                    key={p.id}
+                    type="button"
+                    aria-pressed={on}
+                    title={p.derivation ?? "Illustrative $8/M premium reference (the default)"}
+                    onClick={() => set("blend", p.blendPerM)}
+                    className={`inline-flex touch:min-h-[44px] min-h-[40px] items-center gap-1.5 whitespace-nowrap rounded-lg border px-3 py-1.5 text-[12.5px] transition-colors ${
+                      on
+                        ? "border-teal bg-teal-wash text-teal-deep"
+                        : "border-line-strong bg-card text-ink-soft hover:border-teal"
+                    }`}
+                  >
+                    {p.label} {fmtPerM(p.blendPerM)}/M
+                    <span className="data text-[11px]">
+                      {fmtTask(p.perTask100k)}/task @100k
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+            <p className="mt-1 text-[11px] leading-snug text-ink-mute" aria-live="polite">
+              {activePresetNote(blendPresets, blend, tokens)}
+            </p>
+          </div>
+        )}
         <div>
           <label htmlFor="be-sub" className="flex justify-between text-sm font-semibold">
             <span>
@@ -306,8 +380,11 @@ function Inner({
       <p className="mt-3 text-[11px] leading-snug text-ink-mute">
         Defaults: the {fmtUSD(FLAT_PLAN_DEFAULT, 0)}/mo Allegretto tier vs{" "}
         {fmtUSD(BASELINE_PAYG_PER_TASK)}/task pay-as-you-go crosses over at ≈49 tasks/mo (100k
-        tokens/task). The per-task rate scales with the tokens slider at an illustrative $8 per 1M
-        blended tokens — your mix will differ. {REFERENCE_BASKET_NOTE}
+        tokens/task). That default {fmtUSD(BASELINE_PAYG_PER_TASK)}/task equals a premium-class{" "}
+        {fmtUSD(BLENDED_PER_MTOK, 0)} per 1M blended-token rate — pick a preset chip above if your
+        traffic is K3- or flash-class, where metered cost per task is much lower and break-even
+        moves accordingly. The per-task rate scales with the tokens slider at the selected{" "}
+        {fmtPerM(blend)} per 1M blend — your mix will differ. {REFERENCE_BASKET_NOTE}
         {seats > 1 &&
           " Team seat totals multiply verified list prices; credit overages, quota caps, and annual-prepay discounts differ per plan. The $39/mo Kimi Allegretto tier is the cheapest verified consumer tier — solo consumer plans stay listed, not hidden, where consumer tiering applies."}
       </p>
@@ -315,6 +392,10 @@ function Inner({
   );
 }
 
-export default function BreakEvenCalc(props: { defaultTasks?: number; defaultTokens?: number }) {
+export default function BreakEvenCalc(props: {
+  defaultTasks?: number;
+  defaultTokens?: number;
+  blendPresets?: BlendPreset[];
+}) {
   return <Inner {...props} />;
 }

@@ -19,6 +19,7 @@ import {
 } from "@/lib/site";
 import {
   batchPerM,
+  blendPresets,
   blendedPerM,
   CATEGORY_LABELS,
   fmtPerM,
@@ -37,6 +38,10 @@ export const dynamic = "force-static";
 // Counts come from the live ledger so meta strings can never lag the data
 // (the 2026-09-07 audit caught stale hardcoded counts here and in /feed.xml).
 const HOME = homeMeta({ routes: UNIVERSE.rows.length, snapshot: UNIVERSE.snapshot });
+
+// Server-derived scalars for the calculator's blend-preset chips — row ids
+// and read dates only leave the server, never the full ledger (item 6/7).
+const BLEND_PRESETS = blendPresets();
 
 export const metadata: Metadata = {
   title: HOME.pageTitle,
@@ -347,7 +352,7 @@ export default function Home() {
               .
             </p>
           </div>
-          <BreakEvenCalc />
+          <BreakEvenCalc blendPresets={BLEND_PRESETS} />
         </div>
       </section>
 
