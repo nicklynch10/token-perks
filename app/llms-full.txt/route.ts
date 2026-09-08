@@ -34,7 +34,7 @@ export async function GET() {
   }
 
   parts.push(
-    `## Cost universe (${UNIVERSE.rows.length} routes, snapshot ${UNIVERSE.snapshot})`,
+    `## Full price table (${UNIVERSE.rows.length} ways to buy tokens, snapshot ${UNIVERSE.snapshot})`,
     "Every tracked access route follows. Blended $/M = (3 x input + 1 x output) / 4 where both rates are published. Evidence labels: DIRECT = read on the provider's own page; EXCERPT = official copy via snapshot or search index; UNCERTAIN = not verified this pass.",
     "",
   );

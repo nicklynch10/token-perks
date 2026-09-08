@@ -54,7 +54,7 @@ export default function UniverseTable({ rows }: { rows: UniverseDatum[] }) {
       <div className="mt-4 hidden md:block overflow-x-auto rounded-xl border border-line-strong">
         <table className="spec-table">
           <caption className="sr-only">
-            The full universe of tracked access routes, including routes whose prices could not be verified. Labels: DIRECT read on the provider page; EXCERPT official copy via snapshot; UNCERTAIN not verified.
+            The full price table — every tracked access route, including routes whose prices could not be verified. Labels: DIRECT read on the provider page; EXCERPT official copy via snapshot; UNCERTAIN not verified.
           </caption>
           <thead>
             <tr>

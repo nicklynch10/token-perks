@@ -249,7 +249,7 @@ export default function Home() {
           <Link href="#compare" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">Tracked offers</Link>
           <Link href="#break-even" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">Break-even calculator</Link>
           <Link href="#leaderboard" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">Cost leaderboard</Link>
-          <Link href="/universe/" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">Full route list →</Link>
+          <Link href="/universe/" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">Full price table →</Link>
         </nav>
       </section>
 
@@ -388,13 +388,13 @@ export default function Home() {
       <section aria-label="Notes and caveats" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
         <p className="max-w-3xl text-sm leading-relaxed text-ink-soft">
           Token Perks tracks <strong className="data">{UNIVERSE.rows.length}</strong> ways to buy
-          frontier-model tokens — the small units AI providers bill by — across subscriptions,
-          pay-as-you-go API, credit systems, coding-tool plans, and free tiers, and ranks what can
-          be ranked on effective cost. Intelligence scores are quoted from Artificial Analysis with
-          a citation on every number; our own weighted ranking is documented but deliberately
-          withheld. The full ledger lives on the{" "}
+          tokens — the small units AI providers bill by — across subscriptions, pay-as-you-go API,
+          credit systems, coding-tool plans, and free tiers, and ranks what can be ranked on
+          effective cost. Intelligence scores are quoted from Artificial Analysis with a citation
+          on every number; our own weighted ranking is documented but deliberately withheld. The
+          full ledger lives on the{" "}
           <Link href="/universe/" className="u-draw text-teal-deep">
-            universe page
+            full price table
           </Link>
           . Verified{" "}
           <strong className="data">{SNAPSHOT_DATE}</strong>.
@@ -426,21 +426,21 @@ export default function Home() {
       {/* 9 · Pointer to the full route ledger (the table itself lives on /universe/) */}
       <section
         id="universe"
-        aria-label="Full universe of access routes"
+        aria-label="Full price table"
         className="mx-auto max-w-6xl px-4 pb-12 sm:px-6"
       >
         <div className="card p-5 sm:p-6">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h2 className="display-lg">Every tracked route</h2>
+            <h2 className="display-lg">Full price table</h2>
             <p className="data text-xs text-ink-mute">
-              {UNIVERSE.rows.length} routes · {providerCount} providers — {catCounts.map((c) => `${c.n} ${CATEGORY_LABELS[c.k].toLowerCase()}`).join(" · ")}
+              {UNIVERSE.rows.length} ways to buy tokens · {providerCount} providers — {catCounts.map((c) => `${c.n} ${CATEGORY_LABELS[c.k].toLowerCase()}`).join(" · ")}
             </p>
           </div>
           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
             The raw ledger behind every ranking on this site — including rows we could not verify,
             labeled UNCERTAIN rather than priced from memory. Browse it filterable on the{" "}
             <Link href="/universe/" className="u-draw text-teal-deep font-semibold">
-              full route list
+              full price table
             </Link>
             , or go company by company via the{" "}
             <Link href="/providers/" className="u-draw text-teal-deep">

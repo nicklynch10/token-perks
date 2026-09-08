@@ -44,13 +44,13 @@ export default function ProvidersIndex() {
       <section aria-label="About provider pages" className="mx-auto max-w-6xl px-4 pb-8 pt-2 sm:px-6">
         <h1 className="display-xl max-w-4xl">Providers</h1>
         <p className="lede mt-4 max-w-3xl">
-          {groups.length} providers, {UNIVERSE.rows.length} tracked access routes as of{" "}
+          {groups.length} providers, {UNIVERSE.rows.length} ways to buy tokens as of{" "}
           <strong className="data">{UNIVERSE.snapshot}</strong>. Each provider page lists every
           route we track — what it costs on paper, the caveats attached, and how well verified it
           is — with cross-links into the cost leaderboard and any tracked offer. Every row from
           every provider also sits in one filterable ledger on the{" "}
           <Link href="/universe/" className="u-draw text-teal-deep">
-            universe page
+            full price table
           </Link>
           .
         </p>

@@ -33,7 +33,7 @@ export async function GET() {
       pubDate: rfc822(SNAPSHOT_ISO),
     },
     {
-      title: `AI cost leaderboard — ${UNIVERSE.rows.length} access routes, ranked on blended $/M`,
+      title: `AI cost leaderboard — ${UNIVERSE.rows.length} ways to buy tokens, ranked on blended $/M`,
       link: `${SITE_URL}/`,
       desc: "Cost-side ranking of subscriptions, API pricing, credits, coding tools, and free tiers, with a cost-vs-intelligence frontier chart. Intelligence scores quoted from Artificial Analysis with per-datum citations; machine feed: /api/leaderboard.json (cost side only).",
       pubDate: rfc822(UNIVERSE.snapshot),

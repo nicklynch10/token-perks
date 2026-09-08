@@ -16,7 +16,7 @@ export default function SiteFooter() {
             Providers
           </Link>
           <Link className="inline-flex min-h-[44px] items-center hover:underline" href="/universe/">
-            Full route list
+            Full price table
           </Link>
           <Link className="inline-flex min-h-[44px] items-center hover:underline" href="/guides/">
             Guides

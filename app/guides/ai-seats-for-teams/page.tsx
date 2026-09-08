@@ -133,7 +133,7 @@ export default function AiSeatsForTeamsGuide() {
             beats a headcount you can&apos;t keep busy.
           </strong>{" "}
           Mixed teams split the difference with more than one seat class. Every figure below comes
-          from a dated row in the tracked universe; totals are Token Perks arithmetic on published
+          from a dated row in the full price table; totals are Token Perks arithmetic on published
           rates, not provider quotes.
         </p>
       </header>
@@ -361,7 +361,7 @@ export default function AiSeatsForTeamsGuide() {
             current terms.
           </li>
           <li>
-            <strong className="text-ink">Google seats aren&apos;t in the tracked universe.</strong>{" "}
+            <strong className="text-ink">Google seats aren&apos;t in the full price table.</strong>{" "}
             The closest Google row is the consumer AI&nbsp;Pro plan at {usd(googleProRow?.priceMonthly ?? 0)}/mo
             (accessed {googleProRow?.accessed}); we don&apos;t restate a consumer price as a seat
             price, so no Google entry appears in the seat calculator.
@@ -417,8 +417,8 @@ export default function AiSeatsForTeamsGuide() {
           </table>
         </div>
         <p className="mt-2 text-[11px] text-ink-mute">
-          Row sources are the provider pages linked from each provider&apos;s page; universe
-          snapshot {UNIVERSE.snapshot}.
+          Row sources are the provider pages linked from each provider&apos;s page; full price
+          table snapshot {UNIVERSE.snapshot}.
         </p>
       </section>
 

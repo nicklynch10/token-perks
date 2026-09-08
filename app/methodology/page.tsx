@@ -70,7 +70,7 @@ export default function MethodologyPage() {
           We publish <strong className="text-ink">point-in-time research snapshots</strong>, not
           live prices. Every figure carries a verification date; every page tells you to re-verify
           at official terms before paying. Version 2 extends the v0.1 verification rules with the
-          cost-universe data model and a strict policy for quoting third-party benchmark scores.
+          cost-ledger data model and a strict policy for quoting third-party benchmark scores.
         </p>
       </header>
 
@@ -100,7 +100,7 @@ export default function MethodologyPage() {
       <section aria-label="Evidence labels">
         <h2 className="display-lg">Evidence labels</h2>
         <p className="mt-2 text-sm text-ink-soft">
-          Every row in the universe table carries one of three labels:
+          Every row in the full price table carries one of three labels:
         </p>
         <dl className="mt-3 space-y-2 text-sm text-ink-soft">
           <div>
@@ -119,7 +119,7 @@ export default function MethodologyPage() {
             <dd>
               Not verified this pass. The row appears with the price field marked
               &ldquo;not fetched&rdquo; — never a figure from memory. UNCERTAIN rows are included in
-              the full-universe table on purpose: gaps are data.
+              the full price table on purpose: gaps are data.
             </dd>
           </div>
         </dl>
@@ -160,7 +160,7 @@ export default function MethodologyPage() {
       <section aria-label="Overage and cache terms">
         <h2 className="display-lg">Overage and cache terms</h2>
         <p className="mt-2 text-sm text-ink-soft">
-          Two optional field groups extend the universe rows beyond list prices. Both are quoted
+          Two optional field groups extend the ledger rows beyond list prices. Both are quoted
           from official provider docs — never inferred, never filled from memory:
         </p>
         <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-ink-soft">

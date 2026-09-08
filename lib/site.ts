@@ -65,7 +65,7 @@ export function social(opts: {
  */
 export function homeMeta(n: { routes: number; snapshot: string }) {
   const title = "Token Perks — AI cost leaderboard";
-  const description = `${n.routes} tracked AI access routes — subscriptions, API per-token pricing, credits, coding tools, and free tiers — ranked on effective cost, with a cost-vs-intelligence frontier chart and cited Artificial Analysis scores. Snapshot ${n.snapshot}.`;
+  const description = `${n.routes} ways to buy tokens — subscriptions, API per-token pricing, credits, coding tools, and free tiers — ranked on effective cost, with a cost-vs-intelligence frontier chart and cited Artificial Analysis scores. Snapshot ${n.snapshot}.`;
   return {
     /** <title> content (TITLE_TEMPLATE appends the site name). */
     pageTitle: "AI cost leaderboard — every access route, priced and ranked",

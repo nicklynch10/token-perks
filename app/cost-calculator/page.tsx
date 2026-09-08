@@ -130,7 +130,7 @@ export default function CostCalculatorPage() {
           volume; this one answers &ldquo;I picked a Team plan — what do N seats cost, and what
           happens as they fill.&rdquo; Every option mirrors a dated row in the{" "}
           <Link href="/providers/" className="u-draw text-teal-deep">
-            provider universe
+            provider pages
           </Link>{" "}
           (seat-priced rows only; single-user consumer tiers stay on the offers side). Inputs live
           in the URL (<code className="data text-xs">?tsku=claude-team-standard&amp;theads=5</code>
@@ -284,7 +284,7 @@ export default function CostCalculatorPage() {
       </section>
 
       <CiteBlock
-        citation={`Token Perks. "Cost calculators." Universe snapshot ${UNIVERSE.snapshot}; prices verified per row. ${url}`}
+        citation={`Token Perks. "Cost calculators." Full price table snapshot ${UNIVERSE.snapshot}; prices verified per row. ${url}`}
       />
       <ResearchSnapshot extra="Calculator arithmetic is first-party; every input defaults to a verified figure, and changing an input makes the result yours, not the site's." />
       <JsonLd

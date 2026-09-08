@@ -155,7 +155,7 @@ export default function BestIndex() {
       <section id="for-teams" aria-label="Team and seat-based plans" className="scroll-mt-16">
         <h2 className="display-lg">For teams — seat-based plans we track</h2>
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
-          Every Team/seat SKU in the tracked universe, listed from the same dated rows as the
+          Every Team/seat SKU in the full price table, listed from the same dated rows as the
           consumer cards above. Per-user consumer tool plans (Copilot Pro, Cursor Pro)
           are not seat products and stay out of this table. Multiply a rate by headcount in the{" "}
           <Link href="/cost-calculator/#seat-mode" className="u-draw text-teal-deep">
