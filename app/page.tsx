@@ -8,8 +8,10 @@ import ParetoChart, { type ParetoDatum } from "@/components/ParetoChart";
 import { ACTIVE_OFFERS } from "@/lib/offers";
 import { aaCitation, getIntel, INTEL } from "@/lib/intelligence";
 import {
+  AFFILIATE_V0_STATE,
   canonical,
   homeMeta,
+  MONEY_PAGE,
   OG_HOME_IMAGE,
   SITE_URL,
   SNAPSHOT_DATE,
@@ -220,30 +222,12 @@ export default function Home() {
 
   return (
     <div>
-      {/* 1 · First screen: value line, two ways in, and a compact entry into the tables */}
-      <section aria-label="About this site" className="mx-auto max-w-6xl px-4 pb-8 pt-4 sm:px-6 sm:pt-6">
+      {/* 1 · First screen: promise, two ways in — no fine print before the data */}
+      <section aria-label="About this site" className="mx-auto max-w-6xl px-4 pb-6 pt-4 sm:px-6 sm:pt-6">
         <h1 className="display-xl max-w-4xl">The cost side of AI access, ranked</h1>
         <p className="lede mt-2 max-w-3xl">
           Flat subscriptions can undercut pay-per-token pricing once you clear break-even — this
           ranks how, with the math shown.
-        </p>
-        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-ink-soft">
-          Token Perks tracks <strong className="data">{UNIVERSE.rows.length}</strong> ways to buy
-          frontier-model tokens — the small units AI providers bill by — across subscriptions,
-          pay-as-you-go API, credit systems, coding-tool plans, and free tiers, and ranks what can
-          be ranked on effective cost. Intelligence scores are quoted from Artificial Analysis with
-          a citation on every number; our own weighted ranking is documented but deliberately
-          withheld. The full ledger lives on the{" "}
-          <Link href="/universe/" className="u-draw text-teal-deep">
-            universe page
-          </Link>
-          . Verified{" "}
-          <strong className="data">{SNAPSHOT_DATE}</strong>.
-        </p>
-        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
-          Every per-task figure below uses one illustrative reference rate: <strong className="data">$0.80 per
-          finished task</strong> — about 100,000 tokens at the $8-per-million reference blend; your
-          real tasks will cost more or less.
         </p>
         <div className="mt-5 flex flex-wrap items-center gap-3">
           <Link
@@ -261,26 +245,16 @@ export default function Home() {
         </div>
         <nav aria-label="Jump to a section" className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
           <span className="eyebrow mr-1">On this page</span>
+          <Link href="#frontier" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">Frontier chart</Link>
           <Link href="#compare" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">Tracked offers</Link>
           <Link href="#break-even" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">Break-even calculator</Link>
-          <Link href="#frontier" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">Frontier chart</Link>
           <Link href="#leaderboard" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">Cost leaderboard</Link>
           <Link href="/universe/" className="u-draw min-h-[40px] inline-flex items-center text-teal-deep touch:min-h-[44px]">Full route list →</Link>
         </nav>
-        <p className="mt-3 max-w-3xl text-[13px] leading-relaxed text-ink-mute">
-          Not sure which is you: buying for someone else or not deep in APIs — start with the{" "}
-          {ACTIVE_OFFERS.length} tracked consumer offers and the{" "}
-          <Link href="/guides/buying-ai-access-as-a-gift/" className="u-draw text-teal-deep">gift guide</Link>;
-          building on AI APIs — the <a href="#leaderboard" className="u-draw">leaderboard</a> ranks every
-          pay-per-token route, and <Link href="/providers/" className="u-draw text-teal-deep">providers</Link> list the same
-          data per company;
-          optimizing batch jobs — the Batch $/M column shows discounted arithmetic only where the
-          provider publishes a modifier (a dash means none was published, not zero).
-        </p>
       </section>
 
-      {/* 1b · One-glance verdict band — each figure computed from the dated ledger at render */}
-      <section aria-label="One-glance verdict" className="mx-auto max-w-6xl px-4 pb-10 sm:px-6">
+      {/* 2 · One-glance verdict band — each figure computed from the dated ledger at render */}
+      <section aria-label="One-glance verdict" className="mx-auto max-w-6xl px-4 pb-8 sm:px-6">
         <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
           {digest.map((d) => (
             <div key={d.label} className="card p-4">
@@ -308,7 +282,22 @@ export default function Home() {
         </p>
       </section>
 
-      {/* 2 · Tracked offers (v1 comparison) — the money decision, first table */}
+      {/* 3 · Cost–intelligence frontier chart — first screen ends with the data, not fine print */}
+      <section id="frontier" aria-label="Cost versus intelligence frontier" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
+        <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
+          <h2 className="display-lg">Cost vs intelligence frontier</h2>
+          <p className="data text-xs text-ink-mute">
+            {paretoPoints.length} routes with both a token price and a cited score · {frontier.length} on the frontier
+          </p>
+        </div>
+        <ParetoChart
+          points={paretoPoints}
+          frontierIds={frontier.map((f) => f.id)}
+          dominatedBy={dominatedBy}
+        />
+      </section>
+
+      {/* 4 · Tracked offers (v1 comparison) — the money decision, first table */}
       <section id="compare" aria-label="Offer comparison" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
         <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
           <h2 className="display-lg">Tracked offers</h2>
@@ -319,7 +308,7 @@ export default function Home() {
         <ComparisonTable />
       </section>
 
-      {/* 3 · Break-even calculator: one hop from the first screen */}
+      {/* 5 · Break-even calculator: one hop from the first screen */}
       <section id="break-even" aria-label="Break-even calculator" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
           <div>
@@ -356,7 +345,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4 · Crossover teaser — the full scroll story moved to its own page */}
+      {/* 6 · Crossover teaser — the full scroll story moved to its own page */}
       <section
         aria-label="Crossover story"
         className="mx-auto max-w-6xl px-4 pb-12 sm:px-6"
@@ -377,22 +366,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5 · Cost–intelligence frontier chart */}
-      <section id="frontier" aria-label="Cost versus intelligence frontier" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
-        <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
-          <h2 className="display-lg">Cost vs intelligence frontier</h2>
-          <p className="data text-xs text-ink-mute">
-            {paretoPoints.length} routes with both a token price and a cited score · {frontier.length} on the frontier
-          </p>
-        </div>
-        <ParetoChart
-          points={paretoPoints}
-          frontierIds={frontier.map((f) => f.id)}
-          dominatedBy={dominatedBy}
-        />
-      </section>
-
-      {/* 6 · Leaderboard: API-priced routes ranked by blended effective cost */}
+      {/* 7 · Leaderboard: API-priced routes ranked by blended effective cost */}
       <section id="leaderboard" aria-label="API cost leaderboard" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
         <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
           <h2 className="display-lg">API cost leaderboard</h2>
@@ -409,7 +383,47 @@ export default function Home() {
         <LeaderboardTable rows={lbRows} />
       </section>
 
-      {/* 7 · Pointer to the full route ledger (the table itself lives on /universe/) */}
+      {/* 8 · Fine print, kept below the tables per the V3.4 fold audit: what we track,
+         the reference-rate caveat, audience pointers, and the sells-nothing note. */}
+      <section aria-label="Notes and caveats" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
+        <p className="max-w-3xl text-sm leading-relaxed text-ink-soft">
+          Token Perks tracks <strong className="data">{UNIVERSE.rows.length}</strong> ways to buy
+          frontier-model tokens — the small units AI providers bill by — across subscriptions,
+          pay-as-you-go API, credit systems, coding-tool plans, and free tiers, and ranks what can
+          be ranked on effective cost. Intelligence scores are quoted from Artificial Analysis with
+          a citation on every number; our own weighted ranking is documented but deliberately
+          withheld. The full ledger lives on the{" "}
+          <Link href="/universe/" className="u-draw text-teal-deep">
+            universe page
+          </Link>
+          . Verified{" "}
+          <strong className="data">{SNAPSHOT_DATE}</strong>.
+        </p>
+        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
+          Every per-task figure on this page uses one illustrative reference rate: <strong className="data">$0.80 per
+          finished task</strong> — about 100,000 tokens at the $8-per-million reference blend; your
+          real tasks will cost more or less.
+        </p>
+        <p className="mt-2 max-w-3xl text-[13px] leading-relaxed text-ink-mute">
+          Not sure which is you: buying for someone else or not deep in APIs — start with the{" "}
+          {ACTIVE_OFFERS.length} tracked consumer offers and the{" "}
+          <Link href="/guides/buying-ai-access-as-a-gift/" className="u-draw text-teal-deep">gift guide</Link>;
+          building on AI APIs — the <a href="#leaderboard" className="u-draw">leaderboard</a> ranks every
+          pay-per-token route, and <Link href="/providers/" className="u-draw text-teal-deep">providers</Link> list the same
+          data per company;
+          optimizing batch jobs — the Batch $/M column shows discounted arithmetic only where the
+          provider publishes a modifier (a dash means none was published, not zero).
+        </p>
+        <p className="mt-2 max-w-3xl text-[13px] leading-relaxed text-ink-mute">
+          {AFFILIATE_V0_STATE}{" "}
+          <Link href={MONEY_PAGE} className="u-draw text-teal-deep">
+            How we make money
+          </Link>
+          .
+        </p>
+      </section>
+
+      {/* 9 · Pointer to the full route ledger (the table itself lives on /universe/) */}
       <section
         id="universe"
         aria-label="Full universe of access routes"
@@ -437,7 +451,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8 · Guides, providers, methodology */}
+      {/* 10 · Guides, providers, methodology */}
       <section aria-label="Guides and methodology" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
         <h2 className="display-lg">Guides and methodology</h2>
         <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -460,7 +474,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 9 · Quiet verification line */}
+      {/* 11 · Quiet verification line */}
       <div className="mx-auto max-w-6xl border-t border-line px-4 py-5 sm:px-6">
         <p className="data text-xs text-ink-mute">
           Cost data verified {SNAPSHOT_DATE} · intelligence scores quoted from Artificial Analysis,
