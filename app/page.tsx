@@ -21,6 +21,8 @@ import {
   batchPerM,
   blendedPerM,
   CATEGORY_LABELS,
+  fmtPerM,
+  fmtTask,
   pricedApiRows,
   providerIdOf,
   providerGroups,
@@ -156,6 +158,61 @@ export default function Home() {
   }));
   const providerCount = providerGroups().length;
 
+  // One-glance verdict band — every figure derived from the ledger at render.
+  const paidFloor = pricedApiRows().reduce<{ r: UniverseRow; b: number } | null>(
+    (best, r) => {
+      const b = blendedPerM(r) as number;
+      return best == null || b < best.b ? { r, b } : best;
+    },
+    null,
+  );
+  const freeMetered =
+    UNIVERSE.rows.find((r) => /^\$0\b.*\binput\b/i.test(r.listPrice)) ??
+    UNIVERSE.rows.find((r) => r.priceMonthly === 0);
+  const floorTask = paidFloor ? ((paidFloor.b * 100_000) / 1_000_000) : null;
+  const digest = [
+    {
+      label: "Cheapest free route",
+      value: freeMetered ? "$0.0000" : "—",
+      route: freeMetered
+        ? freeMetered.plan.replace(/\s*\(.*\)\s*$/, "")
+        : "none with a $0 token meter",
+      note: freeMetered
+        ? `$0 metering ${/promo/i.test(freeMetered.id) ? "while the promo lasts" : "at account limits"} · read ${freeMetered.accessed}`
+        : "",
+      href: freeMetered ? `/providers/${providerIdOf(freeMetered)}/` : null,
+    },
+    {
+      label: "Cheapest paid, per million tokens",
+      value: paidFloor ? `${fmtPerM(paidFloor.b)} /M` : "—",
+      route: paidFloor ? paidFloor.r.plan.replace(/\s*\(.*\)\s*$/, "") : "",
+      note: paidFloor
+        ? `blended (3×in+out)/4 · ${/promo/i.test(paidFloor.r.listPrice) ? "promo-priced; " : ""}read ${paidFloor.r.accessed}`
+        : "",
+      href: paidFloor ? `/providers/${providerIdOf(paidFloor.r)}/` : null,
+    },
+    {
+      label: "Cheapest paid, per finished task",
+      value: floorTask != null ? `${fmtTask(floorTask)}` : "—",
+      route: paidFloor ? `${paidFloor.r.provider} ${paidFloor.r.plan.replace(/\s*\(.*\)\s*$/, "")}` : "",
+      note: `100k-token reference task — your mix will differ · ${SNAPSHOT_DATE}`,
+      href: "/guides/effective-cost-per-task-explained/",
+    },
+    {
+      label: "Best per task, overall right now",
+      value: freeMetered ? "$0.0000" : (floorTask != null ? fmtTask(floorTask) : "—"),
+      route: freeMetered
+        ? `${freeMetered.plan.replace(/\s*\(.*\)\s*$/, "")} (free promo)`
+        : paidFloor
+          ? `${paidFloor.r.provider} ${paidFloor.r.plan}`
+          : "",
+      note: freeMetered
+        ? `metered $0 while it lasts; paid floor ${floorTask != null ? fmtTask(floorTask) : "—"}/task`
+        : `across every metered route we track · ${SNAPSHOT_DATE}`,
+      href: "/universe/",
+    },
+  ];
+
   return (
     <div>
       {/* 1 · First screen: value line, two ways in, and a compact entry into the tables */}
@@ -214,6 +271,35 @@ export default function Home() {
           data per company;
           optimizing batch jobs — the Batch $/M column shows discounted arithmetic only where the
           provider publishes a modifier (a dash means none was published, not zero).
+        </p>
+      </section>
+
+      {/* 1b · One-glance verdict band — each figure computed from the dated ledger at render */}
+      <section aria-label="One-glance verdict" className="mx-auto max-w-6xl px-4 pb-10 sm:px-6">
+        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+          {digest.map((d) => (
+            <div key={d.label} className="card p-4">
+              <p className="eyebrow">{d.label}</p>
+              <p className="data mt-1.5 text-2xl font-semibold text-ink">{d.value}</p>
+              {d.route ? (
+                d.href ? (
+                  <Link
+                    href={d.href}
+                    className="u-draw mt-1 inline-flex min-h-[40px] items-center text-sm font-semibold text-teal-deep touch:min-h-[44px]"
+                  >
+                    {d.route}
+                  </Link>
+                ) : (
+                  <p className="mt-1 text-sm font-semibold">{d.route}</p>
+                )
+              ) : null}
+              {d.note && <p className="mt-1 text-[11px] leading-snug text-ink-mute">{d.note}</p>}
+            </div>
+          ))}
+        </div>
+        <p className="mt-2 text-[11px] leading-snug text-ink-mute">
+          Every figure above is derived from the dated ledger at render time — per-task values use
+          the 100k-token reference. Re-verify at official terms before paying.
         </p>
       </section>
 
