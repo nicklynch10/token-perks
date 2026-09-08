@@ -149,6 +149,112 @@
    ],
    "added_on": "2026-09-08",
    "notes": "Deliberate promo-expiry tripwire: the 50% promo ends 2026-09-09 24:00 UTC+8 (16:00 UTC). After that, \"0.075\" disappears and this source MUST report DRIFT — that is the signal to flip content/leaderboard rows-b.json + universe.json glm-5.3-flash rows to list $0.15/$0.50 (blend $0.2375), update accessed dates, and then re-register this entry expecting list prices. Universe-row tripwire added 2026-09-08 per ops verification (offer-scoped registry previously had no coverage of this row)."
+  },
+  {
+   "id": "chatgpt-plus-help",
+   "offer_id": "chatgpt-plus",
+   "provider": "OpenAI",
+   "label": "ChatGPT Plus official article",
+   "url": "https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus",
+   "kind": "pricing-page",
+   "expect": [
+    "chatgpt"
+   ],
+   "min_hits": 1,
+   "soft": [
+    "20",
+    "monthly"
+   ],
+   "added_on": "2026-09-08",
+   "notes": "Help article states the $20/mo price; verify-prices UA gets 200. App Store $19.99 (offer basis) is outside this page's scope."
+  },
+  {
+   "id": "claude-pro-pricing",
+   "offer_id": "claude-pro",
+   "provider": "Anthropic",
+   "label": "Claude pricing page",
+   "url": "https://claude.com/pricing",
+   "kind": "pricing-page",
+   "expect": [
+    "pro"
+   ],
+   "min_hits": 1,
+   "soft": [
+    "20",
+    "monthly"
+   ],
+   "added_on": "2026-09-08",
+   "notes": "Pro tier and $20 are static page text; client-rendered variants vary by plan/currency — soft strings are informational."
+  },
+  {
+   "id": "copilot-pro-plans",
+   "offer_id": "copilot-pro",
+   "provider": "GitHub",
+   "label": "Copilot plans page",
+   "url": "https://github.com/features/copilot/plans",
+   "kind": "pricing-page",
+   "expect": [
+    "copilot pro",
+    "10"
+   ],
+   "min_hits": 2,
+   "soft": [
+    "300"
+   ],
+   "added_on": "2026-09-08",
+   "notes": "Copilot Pro $10/mo, 300 premium requests — all static on this page. A third Copilot tier appeared during research (unverified name/price) — if the page changes tier structure, re-check the offer's 'not a full lineup' framing."
+  },
+  {
+   "id": "cursor-pro-pricing",
+   "offer_id": "cursor-pro",
+   "provider": "Anysphere (Cursor)",
+   "label": "Cursor pricing page",
+   "url": "https://cursor.com/pricing",
+   "kind": "pricing-page",
+   "expect": [
+    "pro"
+   ],
+   "min_hits": 1,
+   "soft": [
+    "20",
+    "month-to-month"
+   ],
+   "added_on": "2026-09-08",
+   "notes": "Pro $20 and month-to-month language are client-rendered; absence may be render, not drift — eyeball in a browser on DRIFT."
+  },
+  {
+   "id": "google-ai-pro-subs",
+   "offer_id": "google-ai-pro",
+   "provider": "Google",
+   "label": "Google AI subscriptions page",
+   "url": "https://gemini.google/subscriptions/",
+   "kind": "pricing-page",
+   "expect": [
+    "19.99"
+   ],
+   "min_hits": 1,
+   "soft": [
+    "ai pro",
+    "5tb",
+    "2024"
+   ],
+   "added_on": "2026-09-08",
+   "notes": "Pricing is static server-side text (probed with plain urllib); the 2024-era product wording (Gemini Advanced/Gemma) is vendor staleness, not drift."
+  },
+  {
+   "id": "perplexity-pro-manual",
+   "offer_id": "perplexity-pro",
+   "provider": "Perplexity",
+   "label": "Perplexity Pro/hub pricing (manual — bot-blocked)",
+   "url": null,
+   "kind": "in-product",
+   "manual": true,
+   "expect": [],
+   "min_hits": 0,
+   "soft": [],
+   "added_on": "2026-09-08",
+   "manual_reason": "perplexity.ai returns 403 to every automated fetcher tried (verifier and browser UAs). Verifier cannot watch this page.",
+   "how_to_verify": "Open https://www.perplexity.ai/hub/pricing and https://www.perplexity.ai/pro in a browser; confirm Pro is $20/mo with a 7-day trial. Re-snapshot the offer if changed. Promo in-app copy may differ from web."
   }
  ]
 }
