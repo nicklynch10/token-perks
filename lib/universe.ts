@@ -54,6 +54,8 @@ export interface BlendPreset {
   blendPerM: number;
   /** $/task at the 100k-token reference — chip sub-label. */
   perTask100k: number;
+  /** Ledger row id this blend was derived from — the #anchor on /universe/; null for the illustrative reference. */
+  rowId: string | null;
   /** "derived from ledger row …, read YYYY-MM-DD" note; null for the illustrative reference. */
   derivation: string | null;
 }
@@ -66,6 +68,7 @@ export function blendPresets(): BlendPreset[] {
       label: "Premium ref",
       blendPerM: 8,
       perTask100k: (8 * 100_000) / 1_000_000,
+      rowId: null,
       derivation: null,
     },
   ];
@@ -82,6 +85,7 @@ export function blendPresets(): BlendPreset[] {
         label,
         blendPerM: b,
         perTask100k: (b * 100_000) / 1_000_000,
+        rowId,
         derivation: `${r.provider} ${r.plan} · blend (3×in+out)/4 of ${r.listPrice} · read ${r.accessed}`,
       });
     }

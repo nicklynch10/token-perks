@@ -68,7 +68,7 @@ export default function UniverseTable({ rows }: { rows: UniverseDatum[] }) {
           </thead>
           <tbody>
             {filtered.map((r) => (
-              <tr key={r.id}>
+              <tr key={r.id} id={r.id}>
                 <td className="text-ink-mute text-[12px]">{CATEGORY_LABELS[r.category]}</td>
                 <th scope="row" className="font-normal font-medium">
                   {r.provider}
@@ -113,7 +113,8 @@ export default function UniverseTable({ rows }: { rows: UniverseDatum[] }) {
 
       <ul className="mt-4 space-y-2 md:hidden">
         {filtered.map((r) => (
-          <li key={r.id} className="card p-3 text-sm">
+          // "m-" prefix keeps ids unique against the desktop table's row anchors.
+          <li key={r.id} id={`m-${r.id}`} className="card p-3 text-sm">
             <p className="font-medium">
               <a className="u-draw hover:underline" href={`/providers/${providerIdOf(r)}/`} aria-label={`All tracked routes from ${r.provider}`}>
                 {r.provider}

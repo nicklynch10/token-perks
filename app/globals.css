@@ -176,6 +176,14 @@ body {
   }
 }
 
+/* Deep-linked ledger rows (/universe/#<row-id>, e.g. from the break-even
+   calculator's provenance note): mark the target with the teal wash. The
+   global [id] scroll-margin already clears the sticky header. */
+.spec-table tr[id]:target,
+li.card[id]:target {
+  background-color: var(--color-teal-wash);
+}
+
 /* Deltas: the only green/red on any page */
 .delta-down { color: var(--color-down); }
 .delta-up { color: var(--color-up); }

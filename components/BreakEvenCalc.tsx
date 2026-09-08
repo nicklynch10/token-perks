@@ -39,14 +39,41 @@ function paygTaskAt(blendPerM: number, tokensPerTask: number): number {
   return (tokensPerTask / 1_000_000) * blendPerM;
 }
 
-/** Dated provenance line under the preset chips (audit item 7 honesty note). */
-function activePresetNote(presets: BlendPreset[], blend: number, tokens: number): string {
+/**
+ * Dated provenance line under the preset chips (audit item 7 honesty note).
+ * The ledger reference is a real anchor into /universe/ (the full price
+ * table), not a title-only tooltip — V3.4 audit item: the source must be
+ * clickable on touch devices where tooltips never appear.
+ */
+function ActivePresetNote({ presets, blend, tokens }: { presets: BlendPreset[]; blend: number; tokens: number }) {
   const p = presets.find((x) => Math.abs(x.blendPerM - blend) < 1e-9);
   const per = fmtTask(paygTaskAt(blend, tokens));
-  if (!p) return `Custom ${fmtPerM(blend)}/M blend — ${per}/task at your token size (not a ledger row).`;
-  if (p.derivation == null)
-    return `${p.label} is the illustrative reference blend the calculator defaults to — ${per}/task at your token size; a premium frontier API typically costs this much.`;
-  return `Derived from the ledger: ${p.derivation} — ${per}/task at your token size.`;
+  if (!p)
+    return (
+      <>
+        Custom {fmtPerM(blend)}/M blend — {per}/task at your token size (not a{" "}
+        <a href="/universe/" className="u-draw text-teal-deep">
+          ledger row
+        </a>
+        ).
+      </>
+    );
+  if (p.derivation == null || p.rowId == null)
+    return (
+      <>
+        {p.label} is the illustrative reference blend the calculator defaults to — {per}/task at
+        your token size; a premium frontier API typically costs this much.
+      </>
+    );
+  return (
+    <>
+      Derived from the ledger:{" "}
+      <a href={`/universe/#${p.rowId}`} className="u-draw text-teal-deep">
+        {p.derivation}
+      </a>{" "}
+      — {per}/task at your token size.
+    </>
+  );
 }
 
 function Inner({
@@ -189,7 +216,7 @@ function Inner({
               })}
             </div>
             <p className="mt-1 text-[11px] leading-snug text-ink-mute" aria-live="polite">
-              {activePresetNote(blendPresets, blend, tokens)}
+              <ActivePresetNote presets={blendPresets} blend={blend} tokens={tokens} />
             </p>
           </div>
         )}
