@@ -1,0 +1,313 @@
+
+== MOBILE (390x844, touch) ==
+{
+ "pointerCoarse": true,
+ "header": {
+  "top": 0,
+  "height": 194,
+  "width": 390
+ },
+ "headerPosition": "static",
+ "h1Top": 246,
+ "chips": [
+  {
+   "label": "Chat 12k",
+   "h": 32.8
+  },
+  {
+   "label": "Coding 60k",
+   "h": 32.8
+  },
+  {
+   "label": "Reasoning 120k",
+   "h": 32.8
+  },
+  {
+   "label": "Agentic 200k",
+   "h": 32.8
+  },
+  {
+   "label": "Baseline 100k 100k",
+   "h": 32.8
+  },
+  {
+   "label": "All 129",
+   "h": 32.8
+  },
+  {
+   "label": "Subscriptions 39",
+   "h": 32.8
+  },
+  {
+   "label": "API (per token) 48",
+   "h": 32.8
+  },
+  {
+   "label": "Credits / prepaid 10",
+   "h": 32.8
+  },
+  {
+   "label": "Coding tools 18",
+   "h": 32.8
+  },
+  {
+   "label": "Free / promos 14",
+   "h": 32.8
+  }
+ ],
+ "sortBtns": [],
+ "sub40": [
+  {
+   "tag": "a",
+   "label": "Skip to content",
+   "h": 1
+  },
+  {
+   "tag": "a",
+   "label": "Token Perks — home",
+   "h": 28
+  },
+  {
+   "tag": "button",
+   "label": "Chat 12k",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "Coding 60k",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "Reasoning 120k",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "Agentic 200k",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "Baseline 100k 100k",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "All 129",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "Subscriptions 39",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "API (per token) 48",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "Credits / prepaid 10",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "Coding tools 18",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "Free / promos 14",
+   "h": 32.8
+  },
+  {
+   "tag": "a",
+   "label": "Effective cost per task, explained",
+   "h": 20
+  },
+  {
+   "tag": "a",
+   "label": "Monthly vs annual AI plans",
+   "h": 20
+  },
+  {
+   "tag": "a",
+   "label": "Provider pages",
+   "h": 20
+  },
+  {
+   "tag": "a",
+   "label": "Methodology v2",
+   "h": 20
+  }
+ ]
+}
+
+== DESKTOP (1440x900) ==
+{
+ "pointerCoarse": false,
+ "header": {
+  "top": 0,
+  "height": 77,
+  "width": 1440
+ },
+ "headerPosition": "static",
+ "h1Top": 129,
+ "chips": [
+  {
+   "label": "Chat 12k",
+   "h": 32.8
+  },
+  {
+   "label": "Coding 60k",
+   "h": 32.8
+  },
+  {
+   "label": "Reasoning 120k",
+   "h": 32.8
+  },
+  {
+   "label": "Agentic 200k",
+   "h": 32.8
+  },
+  {
+   "label": "Baseline 100k 100k",
+   "h": 32.8
+  },
+  {
+   "label": "All 129",
+   "h": 32.8
+  },
+  {
+   "label": "Subscriptions 39",
+   "h": 32.8
+  },
+  {
+   "label": "API (per token) 48",
+   "h": 32.8
+  },
+  {
+   "label": "Credits / prepaid 10",
+   "h": 32.8
+  },
+  {
+   "label": "Coding tools 18",
+   "h": 32.8
+  },
+  {
+   "label": "Free / promos 14",
+   "h": 32.8
+  }
+ ],
+ "sortBtns": [
+  {
+   "label": "Route",
+   "h": 14.7,
+   "visible": true
+  },
+  {
+   "label": "Blended $/M ▲",
+   "h": 14.7,
+   "visible": true
+  },
+  {
+   "label": "AA II v4.3",
+   "h": 14.7,
+   "visible": true
+  }
+ ],
+ "sub40": [
+  {
+   "tag": "a",
+   "label": "Skip to content",
+   "h": 1
+  },
+  {
+   "tag": "button",
+   "label": "Chat 12k",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "Coding 60k",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "Reasoning 120k",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "Agentic 200k",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "Baseline 100k 100k",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "Sort by route name",
+   "h": 14.7
+  },
+  {
+   "tag": "button",
+   "label": "Sort by blended cost per million tokens",
+   "h": 14.7
+  },
+  {
+   "tag": "button",
+   "label": "Sort by Artificial Analysis Intelligence",
+   "h": 14.7
+  },
+  {
+   "tag": "button",
+   "label": "All 129",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "Subscriptions 39",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "API (per token) 48",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "Credits / prepaid 10",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "Coding tools 18",
+   "h": 32.8
+  },
+  {
+   "tag": "button",
+   "label": "Free / promos 14",
+   "h": 32.8
+  },
+  {
+   "tag": "a",
+   "label": "Monthly vs annual AI plans",
+   "h": 20
+  },
+  {
+   "tag": "a",
+   "label": "Provider pages",
+   "h": 20
+  },
+  {
+   "tag": "a",
+   "label": "Methodology v2",
+   "h": 20
+  }
+ ]
+}
