@@ -27,6 +27,7 @@ export default function UniversePage() {
     category: r.category,
     plan: r.plan,
     listPrice: r.listPrice,
+    priceMonthly: r.priceMonthly,
     notes: r.notes,
     caveats: r.caveats,
     sourceUrl: r.sourceUrl,

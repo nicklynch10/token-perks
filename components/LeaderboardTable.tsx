@@ -150,8 +150,8 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
         </fieldset>
       </div>
 
-      {/* one table for every breakpoint — stacks into cards below md via CSS */}
-      <div className={`${styles.reflow} mt-4 overflow-x-auto rounded-xl border border-line-strong`}>
+      {/* one table for every breakpoint — stacks into cards below md via .table-reflow (globals.css) */}
+      <div className="table-reflow mt-4 overflow-x-auto rounded-xl border border-line-strong">
         <table className="spec-table">
           <caption className="sr-only">
             Token access routes ranked by blended effective cost per million tokens, filterable by route type.

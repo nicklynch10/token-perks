@@ -286,6 +286,60 @@ li.card[id]:target {
   color: var(--color-ink-mute);
   border-bottom: 0;
 }
+
+/* ── Mobile card reflow (leaderboard + full price table, one table per
+   breakpoint) — below md each row stacks into a card; every cell carries
+   its column name via data-label, the row-header cell leads the card. ── */
+@media (max-width: 767.98px) {
+  .table-reflow table {
+    font-size: 0.8125rem;
+  }
+
+  .table-reflow thead {
+    display: none;
+  }
+
+  .table-reflow tbody tr {
+    display: block;
+    margin: 0.75rem;
+    padding: 0.25rem 0 0.25rem 0.75rem;
+    border: 1px solid var(--color-line-strong);
+    border-radius: 0.75rem;
+    background: var(--color-card);
+  }
+
+  .table-reflow tbody th,
+  .table-reflow tbody td {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.75rem;
+    border-bottom: none;
+    padding: 0.3rem 0.75rem 0.3rem 0;
+    text-align: left;
+  }
+
+  .table-reflow tbody th {
+    display: block;
+    padding-right: 0.75rem;
+    border-bottom: 1px solid var(--color-line);
+    margin-bottom: 0.35rem;
+  }
+
+  .table-reflow tbody td::before {
+    content: attr(data-label);
+    flex: 0 0 7.5rem;
+    font: 500 10px/1.4 var(--font-mono);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--color-ink-mute);
+  }
+
+  .table-reflow tbody td.num {
+    text-align: left;
+    white-space: normal;
+  }
+}
 /* Inline to-scale bar for the $-per-100-tasks column */
 .meter {
   display: block;
