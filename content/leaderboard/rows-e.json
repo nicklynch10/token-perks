@@ -39,7 +39,7 @@
  },
  {
   "id": "muse-spark--promo--contributor-free",
-  "provider": "Muse Spark (via Zen)",
+  "provider": "Meta Muse Spark via OpenCode Zen",
   "category": "e",
   "plan": "Muse Spark 1.3 Contributor Free",
   "listPrice": "$0 for input, cache, and output",
@@ -52,7 +52,7 @@
    "In-product activation",
    "End date unpublished"
   ],
-  "sourceUrl": "https://zen.baidu.com/",
+  "sourceUrl": "https://opencode.ai/docs/zen/",
   "label": "EXCERPT",
   "offer": "/best/muse-spark-zen-free/",
   "modelId": "muse-spark-1-3"

@@ -1,19 +1,19 @@
 {
   "id": "muse-spark-zen-free",
   "status": "active",
-  "provider": "Muse Spark (via Zen)",
+  "provider": "Meta Muse Spark via OpenCode Zen",
   "plan": "Muse Spark 1.3 Contributor Free — limited-time promo",
-  "title": "Zen Muse Spark 1.3 free promo",
+  "title": "OpenCode Zen Muse Spark 1.3 free promo",
   "shortTitle": "Muse Spark 1.3 Free",
   "badge": "$0 promo route",
   "catchSummary": "$0 in, cache, and out — but it is a limited-time promo. When the window closes, the meter starts.",
   "canonical_url": "/best/muse-spark-zen-free/",
-  "official_terms_url": null,
+  "official_terms_url": "https://opencode.ai/docs/zen/",
   "official_links": [
     {
-      "label": "Promo access path",
-      "url": null,
-      "note": "In-product route only: /connect → Zen → /models, then select the exact string “Muse Spark 1.3 Contributor Free”. No standalone checkout URL is published — navigate from the official product."
+      "label": "OpenCode Zen docs — promo listing",
+      "url": "https://opencode.ai/docs/zen/",
+      "note": "Official Zen documentation confirming the limited-time $0 Contributor Free promo, checked Sep 7 2026. Activation still happens in-product: /connect → Zen → /models, then select the exact string “Muse Spark 1.3 Contributor Free”."
     }
   ],
   "price": {
@@ -22,7 +22,7 @@
   },
   "renewal": "There is no renewal because there is no paid plan here — it is a $0 limited-time promo on input, cache, and output. Treat anything you build on it as rented time: confirm the promo window and the post-promo price before depending on it.",
   "expiry": "Limited-time promo — end date confirmed only inside the official product; re-verify before relying on it.",
-  "verified_at": "2026-09-06",
+  "verified_at": "2026-09-07",
   "eligibility": [
     "Users who can reach the Zen section of the official product and see the promo model listed",
     "Must select the exact string “Muse Spark 1.3 Contributor Free” — similarly named paid entries bill normally",
@@ -93,9 +93,9 @@
   ],
   "evidence": [
     {
-      "point": "$0 input/cache/output and the /connect → Zen → /models access path with the exact promo string come from the Sep 6 2026 research snapshot.",
+      "point": "$0 input/cache/output and the /connect → Zen → /models access path with the exact promo string are stated on the official OpenCode Zen docs page; the in-product listing was captured Sep 6 2026.",
       "confidence": "high",
-      "source": "Official in-product listing, captured Sep 6 2026"
+      "source": "OpenCode Zen docs (opencode.ai/docs/zen/), accessed Sep 7 2026; in-product snapshot Sep 6 2026"
     },
     {
       "point": "The promo is limited-time, but the end date is confirmed only inside the official product — this page states the limit without inventing a date.",
@@ -130,7 +130,7 @@
       "a": "Research snapshot Sep 6 2026. Promo availability changes fast — re-verify in the official product before paying or planning around it."
     }
   ],
-  "citation": "Token Perks. “Zen Muse Spark 1.3 free promo.” Research snapshot Sep 6 2026. https://token-perks.com/best/muse-spark-zen-free/. Re-verify at official terms before paying.",
+  "citation": "Token Perks. “OpenCode Zen Muse Spark 1.3 free promo.” Research snapshot Sep 7 2026. https://token-perks.com/best/muse-spark-zen-free/. Re-verify at official terms before paying.",
   "slot": "top3",
   "rank": 2
 }
