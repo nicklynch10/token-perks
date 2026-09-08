@@ -106,7 +106,8 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
           <button type="button" aria-pressed={cat === "all"} onClick={() => setCat("all")} className={chip(cat === "all")}>
             All <span className="data text-[11px]">{rows.length}</span>
           </button>
-          {CATEGORY_ORDER.map((k) => {
+          {/* a chip whose count is zero is a dead end — hidden rather than shown empty */}
+          {CATEGORY_ORDER.filter((k) => rows.some((r) => r.category === k)).map((k) => {
             const n = rows.filter((r) => r.category === k).length;
             return (
               <button key={k} type="button" aria-pressed={cat === k} onClick={() => setCat(k)} className={chip(cat === k)}>
