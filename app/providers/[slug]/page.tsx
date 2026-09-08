@@ -3,9 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
+import { getOffer } from "@/lib/offers";
 import { aaCitation, getIntel, INTEL } from "@/lib/intelligence";
 import { canonical, SITE_URL } from "@/lib/site";
-import { CATEGORY_LABELS, getProvider, providerGroups, UNIVERSE } from "@/lib/universe";
+import { blendedPerM, CATEGORY_LABELS, fmtPerM, getProvider, providerGroups, UNIVERSE } from "@/lib/universe";
 
 export const dynamic = "force-static";
 
@@ -23,7 +24,7 @@ export async function generateMetadata({
   if (!g) return {};
   return {
     title: `${g.name} — routes, list prices, and evidence`,
-    description: `${g.rows.length} tracked ${g.name} access routes — subscriptions, API pricing, credits, coding tools, free tiers — with list prices, caveats, and evidence labels. Snapshot ${g.rows[0] ? "2026-09-07" : ""}.`,
+    description: `${g.rows.length} tracked ${g.name} access routes — subscriptions, API pricing, credits, coding tools, free tiers — with list prices, caveats, and evidence labels. Snapshot ${UNIVERSE.snapshot}.`,
     alternates: { canonical: canonical(`/providers/${g.slug}/`) },
     openGraph: {
       title: `Token Perks — ${g.name}`,
@@ -57,9 +58,32 @@ export default async function ProviderPage({ params }: { params: Promise<{ slug:
   const offers = g.rows.filter((r) => r.offer);
   const cats = [...new Set(g.rows.map((r) => r.category))];
   const unverified = g.rows.filter((r) => r.label === "UNCERTAIN").length;
+  const excerpt = g.rows.filter((r) => r.label === "EXCERPT").length;
+  const direct = g.rows.filter((r) => r.label === "DIRECT").length;
   const cheapest = g.rows
     .filter((r) => r.apiIn != null && r.apiIn > 0 && r.apiOut != null)
     .sort((a, b) => (3 * (a.apiIn as number) + (a.apiOut as number)) / 4 - (3 * (b.apiIn as number) + (b.apiOut as number)) / 4)[0];
+
+  // Economics summary — assembled from the verified rows above, no new data.
+  const paid = g.rows.filter((r) => r.priceMonthly != null && r.priceMonthly > 0);
+  const cheapestPaid = [...paid].sort((a, b) => (a.priceMonthly as number) - (b.priceMonthly as number))[0];
+  const subs = g.rows.filter((r) => r.category === "a");
+  const cheapestSub = subs
+    .filter((r) => r.priceMonthly != null && r.priceMonthly > 0)
+    .sort((a, b) => (a.priceMonthly as number) - (b.priceMonthly as number))[0];
+  const freeRoutes = g.rows.filter((r) => r.priceMonthly === 0);
+  const batchRows = g.rows.filter((r) => r.batchDiscount != null);
+  const overageRows = g.rows.filter((r) => r.overage && r.overage.rate !== "not published");
+  const apiRows = g.rows.filter((r) => blendedPerM(r) != null);
+  const apiRange = apiRows.length
+    ? `${fmtPerM(Math.min(...apiRows.map((r) => blendedPerM(r) as number)))}–${fmtPerM(Math.max(...apiRows.map((r) => blendedPerM(r) as number)))}`
+    : null;
+  const accessedDates = [...new Set(g.rows.map((r) => r.accessed))].sort();
+  const firstAccessed = accessedDates[0] ?? UNIVERSE.snapshot;
+  const lastAccessed = accessedDates[accessedDates.length - 1] ?? UNIVERSE.snapshot;
+  const offerObjs = offers
+    .map((r) => ({ row: r, offer: getOffer((r.offer as string).replace(/^\/best\/|\/$/g, "")) }))
+    .filter((e): e is { row: (typeof g.rows)[number]; offer: NonNullable<ReturnType<typeof getOffer>> } => e.offer != null);
 
   // Quoted benchmark scores for this provider's models (one citation per
   // datum, linked to the exact AA source row — never a republished table).
@@ -87,9 +111,12 @@ export default async function ProviderPage({ params }: { params: Promise<{ slug:
             ? ` Cheapest verified per-token route: ${cheapest.plan} at $${((3 * (cheapest.apiIn as number) + (cheapest.apiOut as number)) / 4).toFixed(2)}/M blended.`
             : ""}{" "}
           {unverified > 0
-            ? `${unverified} route${unverified === 1 ? "" : "s"} could not be verified this pass and are labeled UNCERTAIN rather than priced from memory.`
-            : "Every route was verified on its official page this pass."}{" "}
-          Snapshot <strong className="data">2026-09-07</strong>. Rankings live on the{" "}
+            ? ` ${direct} route${direct === 1 ? "" : "s"} verified directly on official pages this pass, ${excerpt} via official snapshot, and ${unverified} could not be verified and are labeled UNCERTAIN rather than priced from memory.`
+            : excerpt > 0
+              ? ` ${direct} route${direct === 1 ? "" : "s"} verified directly on official pages this pass; ${excerpt} via official snapshot rather than a live fetch.`
+              : " Every route was verified directly on its official page this pass."}{" "}
+          Snapshot <strong className="data">{UNIVERSE.snapshot}</strong> (rows accessed {firstAccessed}
+          {lastAccessed !== firstAccessed ? `–${lastAccessed}` : ""}). Rankings live on the{" "}
           <Link href="/" className="u-draw text-teal-deep">
             cost leaderboard
           </Link>
@@ -188,6 +215,140 @@ export default async function ProviderPage({ params }: { params: Promise<{ slug:
           ))}
         </ul>
       </section>
+
+      <section
+        aria-label={`${g.name} route economics at a glance`}
+        className="mx-auto max-w-6xl px-4 pb-12 sm:px-6"
+      >
+        <h2 className="display-lg">Route economics at a glance</h2>
+        <p className="mt-2 max-w-3xl text-sm text-ink-soft">
+          Assembled from the verified rows above — no new data. Each figure links its official
+          source and carries the date it was read.
+        </p>
+        <div className="mt-4 overflow-x-auto rounded-xl border border-line-strong">
+          <table className="spec-table">
+            <caption className="sr-only">
+              {g.name} economics summary computed from tracked rows
+            </caption>
+            <tbody>
+              {cheapestSub && (
+                <tr>
+                  <th scope="row" className="font-normal">
+                    Cheapest paid subscription
+                  </th>
+                  <td className="data text-[12.5px]">{cheapestSub.listPrice}</td>
+                  <td className="text-[12.5px] text-ink-soft">{cheapestSub.plan}</td>
+                  <td>
+                    <a className="u-draw text-[12px] text-teal-deep" href={cheapestSub.sourceUrl} target="_blank" rel="noopener nofollow">src</a>{" "}
+                    <span className="data text-[11px] text-ink-mute">{cheapestSub.accessed}</span>
+                  </td>
+                </tr>
+              )}
+              {cheapestPaid && cheapestPaid !== cheapestSub && (
+                <tr>
+                  <th scope="row" className="font-normal">
+                    Cheapest paid route (any type)
+                  </th>
+                  <td className="data text-[12.5px]">{cheapestPaid.listPrice}</td>
+                  <td className="text-[12.5px] text-ink-soft">{cheapestPaid.plan}</td>
+                  <td>
+                    <a className="u-draw text-[12px] text-teal-deep" href={cheapestPaid.sourceUrl} target="_blank" rel="noopener nofollow">src</a>{" "}
+                    <span className="data text-[11px] text-ink-mute">{cheapestPaid.accessed}</span>
+                  </td>
+                </tr>
+              )}
+              <tr>
+                <th scope="row" className="font-normal">
+                  Free / promo routes
+                </th>
+                <td className="data text-[12.5px]">{freeRoutes.length}</td>
+                <td className="text-[12.5px] text-ink-soft" colSpan={2}>
+                  {freeRoutes.length > 0
+                    ? freeRoutes.map((r) => r.plan).join(" · ")
+                    : "None tracked for this provider this pass."}
+                </td>
+              </tr>
+              {apiRange && (
+                <tr>
+                  <th scope="row" className="font-normal">
+                    API per-token range (blended)
+                  </th>
+                  <td className="data text-[12.5px]">{apiRange}/M</td>
+                  <td className="text-[12.5px] text-ink-soft" colSpan={2}>
+                    Across {apiRows.length} priced API route{apiRows.length === 1 ? "" : "s"};
+                    blended = (3 x input + output) / 4 — see{" "}
+                    <a className="u-draw" href="/methodology/">methodology</a>.
+                  </td>
+                </tr>
+              )}
+              <tr>
+                <th scope="row" className="font-normal">
+                  Batch / off-peak discounts
+                </th>
+                <td className="data text-[12.5px]">{batchRows.length}</td>
+                <td className="text-[12.5px] text-ink-soft" colSpan={2}>
+                  {batchRows.length > 0
+                    ? batchRows
+                        .map(
+                          (r) =>
+                            `${r.plan} −${Math.round((r.batchDiscount as number) * 100)}%${r.batchApprox ? " (approx)" : ""}`,
+                        )
+                        .join(" · ")
+                    : "None published on tracked routes."}
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" className="font-normal">
+                  Published overage terms
+                </th>
+                <td className="data text-[12.5px]">
+                  {overageRows.length} of {g.rows.filter((r) => r.overage).length} routes
+                </td>
+                <td className="text-[12.5px] text-ink-soft" colSpan={2}>
+                  {overageRows.length > 0
+                    ? overageRows.slice(0, 3).map((r) => `${r.plan}: ${r.overage?.rate}`).join(" · ")
+                    : overageRows.length === 0 && g.rows.some((r) => r.overage)
+                      ? "Checked — no per-unit figure published on tracked routes."
+                      : "Not applicable to tracked routes."}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {offerObjs.length > 0 && (
+        <section
+          aria-label={`Tracked offers from ${g.name}`}
+          className="mx-auto max-w-6xl px-4 pb-12 sm:px-6"
+        >
+          <h2 className="display-lg">Tracked offers with full breakdowns</h2>
+          <ul className="mt-4 space-y-3">
+            {offerObjs.map(({ row, offer }) => (
+              <li key={offer.id} className="card p-4 sm:p-5">
+                <p className="eyebrow">
+                  {offer.provider} · {row.plan}
+                </p>
+                <h3 className="display-sm mt-1">
+                  <Link href={offer.canonical_url} className="u-draw text-teal-deep">
+                    {offer.title}
+                  </Link>
+                </h3>
+                <p className="data mt-1 text-[13px]">{offer.price.now}</p>
+                <p className="mt-1 text-sm text-ink-soft">{offer.catchSummary}</p>
+                <p className="mt-2 text-xs text-ink-mute">
+                  Verified <span className="data">{offer.verified_at}</span> — catches, limits,
+                  break-even math, and dated evidence on the{" "}
+                  <Link href={offer.canonical_url} className="u-draw text-teal-deep">
+                    offer page
+                  </Link>
+                  .
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {intelEntries.length > 0 && (
         <section
@@ -329,14 +490,15 @@ export default async function ProviderPage({ params }: { params: Promise<{ slug:
           {
             "@context": "https://schema.org",
             "@type": "Dataset",
-            name: `${g.name} — tracked access routes and list prices (${g.rows.length} routes, 2026-09-07)`,
+            name: `${g.name} — tracked access routes and list prices (${g.rows.length} routes, snapshot ${UNIVERSE.snapshot})`,
             description: `First-party snapshot of ${g.rows.length} ${g.name} access routes across subscriptions, API per-token pricing, credits, coding-tool plans, and free tiers. Each row carries its list price, caveats, evidence label (DIRECT / EXCERPT / UNCERTAIN), source URL, and access date.`,
             creator: { "@type": "Organization", name: "Token Perks", url: SITE_URL },
             license: "https://creativecommons.org/licenses/by/4.0/",
-            citation: `Token Perks. ${g.name} route snapshot, accessed 2026-09-06/07. Re-verify at official terms before paying.`,
-            temporalCoverage: "2026-09-06/2026-09-07",
-            datePublished: "2026-09-07",
-            dateModified: "2026-09-07",
+            citation: `Token Perks. ${g.name} route snapshot, accessed ${firstAccessed}${lastAccessed !== firstAccessed ? `–${lastAccessed}` : ""}. Re-verify at official terms before paying.`,
+            temporalCoverage:
+              lastAccessed !== firstAccessed ? `${firstAccessed}/${lastAccessed}` : firstAccessed,
+            datePublished: UNIVERSE.snapshot,
+            dateModified: UNIVERSE.snapshot,
             url,
             variableMeasured: ["listPrice", "apiInPerM", "apiOutPerM", "blendedPerM", "evidence label", "accessed"],
             distribution: [

@@ -1,0 +1,149 @@
+{
+  "id": "chatgpt-plus",
+  "status": "active",
+  "provider": "OpenAI",
+  "plan": "ChatGPT Plus",
+  "title": "ChatGPT Plus subscription",
+  "shortTitle": "ChatGPT Plus",
+  "badge": "Official pages not fetchable — dual-sourced",
+  "catchSummary": "OpenAI's own pricing pages block automated reads (403) and render prices client-side, so every figure here rests on the official US App Store listing plus dated excerpts of official help articles — strong, but not a live terms read; verify in a browser before paying.",
+  "canonical_url": "/best/chatgpt-plus/",
+  "official_terms_url": "https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus",
+  "official_links": [
+    {
+      "label": "ChatGPT Plus help article (official)",
+      "url": "https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus",
+      "note": "The canonical Plus article. Every OpenAI/help.openai.com URL returned 403 to our fetcher on 2026-09-07; quotes attributed to it via the search index are labeled as excerpts, not live reads."
+    },
+    {
+      "label": "ChatGPT listing — In-App Purchases (official Apple list)",
+      "url": "https://apps.apple.com/us/app/chatgpt/id6448311069",
+      "note": "Apple's server-rendered IAP list for OpenAI's app — read directly by us, prices $19.99 Plus (also Go $8.00, Pro $100/$200)."
+    },
+    {
+      "label": "Using credits for flexible usage (official, excerpt-sourced)",
+      "url": "https://help.openai.com/en/articles/12642688-using-credits-for-flexible-usage-in-chatgpt-freegopluspro-sora",
+      "note": "Existence of credit top-ups on personal plans (Free/Go/Plus/Pro/Sora) comes from this article's indexed text; the page itself was not fetchable this pass."
+    }
+  ],
+  "price": {
+    "now": "$19.99/mo in the official US App Store IAP list; the Plus help article is excerpt-quoted at '$20/month, billed monthly'",
+    "renewal": "Help-center excerpts state Plus 'automatically renews at the standard ChatGPT Plus monthly rate unless canceled' and advise canceling at least 24 hours before renewal. No annual plan: the Plus article is excerpt-quoted saying annual billing or multi-month prepay is not supported."
+  },
+  "renewal": "Monthly auto-renew at the standard rate unless canceled; app-store sign-ups renew through Apple/Google and must be canceled there. A consumer price-change notice policy for Plus: not published in anything retrievable this pass. Refund mechanics exist as a dedicated help article but specific windows were not readable.",
+  "expiry": null,
+  "verified_at": "2026-09-07",
+  "eligibility": [
+    "Anyone who can create a ChatGPT account in a supported country and add payment (web card via Stripe-style localized billing, or in-app purchase)",
+    "Multi-currency localized pricing exists per the billing help article (excerpt) — displayed price varies by region",
+    "App-billed subscriptions (iOS/Android) carry the store's price, which may differ from web"
+  ],
+  "restrictions": [
+    "Usage caps are model- and window-shaped: current framing is 5-hour rolling windows plus weekly allowances, per help release-note excerpts — OpenAI publishes no single consolidated Plus cap table",
+    "Excerpt from release notes: Plus had '3,000 messages/week with GPT-5 Thinking' and a 196k context for that model — account of record (May 2026); may have shifted",
+    "'Plus subscriptions may include usage limits such as message caps, especially during high demand. These limits may vary based on system conditions.' (help excerpt) — caps are explicitly variable",
+    "Feature sub-limits are separate: 'ChatGPT file uploads, image generation, or voice have separate usage limits, reset periods, and banners' (Codex-tied article, excerpt)",
+    "Overage is credit-based: personal plans can buy flexible-usage credits to continue after hitting plan limits, and Plus/Pro can buy instant resets of weekly Work/Codex limits — credit prices: not published"
+  ],
+  "verdict": "ChatGPT Plus remains the category-default $20 subscription: broader model and tool access than Free, Codex and Sora adjacent perks tied to ChatGPT plans, and a credit valve when you hit a cap. The honest caveat is evidentiary, not commercial — OpenAI's pages block automated verification, so this snapshot pairs a direct official App Store price with dated help-article excerpts and flags everything below list-price granularity as unconfirmed. Buy it for breadth at one flat fee; if you need published, stable caps (a fixed messages/day), no consumer chat sub we track publishes them — Plus is the most explicit that caps 'vary based on system conditions'.",
+  "catches": [
+    "Caps vary by system conditions per OpenAI's own wording — the plan does not promise a fixed daily allowance",
+    "No annual discount exists at all for Plus (monthly only), unlike several rivals — steady users cannot prepay to cut cost",
+    "Which exact models Plus includes today is not reliably stated in anything retrievable — the marketing pages render client-side and help articles fragment by model launch",
+    "Credits and instant resets exist but their prices only surface in-product — the bill can meter past $20 in a heavy week"
+  ],
+  "limits": [
+    "Message caps: per 5-hour windows and weekly allowances; the only recent numeric public figure found is the excerpted '3,000 msg/week GPT-5 Thinking' (May 2026 release note)",
+    "Codex, Work, uploads, image gen, voice each carry separate limits/reset periods per excerpts",
+    "Deeper usage tiers exist above Plus: help excerpt — 'Pro $100 unlocks 5x higher usage than Plus… Pro $200 unlocks 20x'",
+    "Free Go tier sits below at $8/mo in the same App Store list — Plus's relative headroom is not numerically published",
+    "Full current Plus feature list: not published in retrievable form this pass"
+  ],
+  "access_route": "Subscribe from chatgpt.com (web billing, localized by country) or in the ChatGPT iOS/Android app (in-app purchase at store prices). After subscribing, watch Settings → Usage for weekly allowance banners and the credit/instant-reset controls.",
+  "claim_steps": [
+    {
+      "step": "Because the pricing page blocks fetchers, confirm the live price in a real browser at chatgpt.com/pricing (or the app) — our snapshot pairs the $19.99 App Store listing with the help article's '$20/month' wording.",
+      "url": "https://apps.apple.com/us/app/chatgpt/id6448311069"
+    },
+    {
+      "step": "Read the Plus help article's usage-limit note (caps vary with demand) before assuming a fixed allowance.",
+      "url": "https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus"
+    },
+    {
+      "step": "Check the flexible-usage credits article so you know the escape hatch and where the price appears (in-product).",
+      "url": "https://help.openai.com/en/articles/12642688-using-credits-for-flexible-usage-in-chatgpt-freegopluspro-sora"
+    },
+    {
+      "step": "If subscribing on mobile, compare the store price against web price first — stores may differ.",
+      "url": "https://apps.apple.com/us/app/chatgpt/id6448311069"
+    }
+  ],
+  "economics_heading": "Flat $20 vs. metered alternatives",
+  "economics": [
+    "Against the $0.80/task illustrative reference, $19.99/mo is parity at ~25 heavy tasks — and since Plus caps vary 'based on system conditions', model your month at the pessimistic end before trusting the flat fee.",
+    "No annual plan exists for Plus (per the help excerpt), so there is no prepay discount to compute — comparison against Claude Pro annual ($17/mo effective) is a real structural difference, not a pricing snapshot artifact.",
+    "Credits shift the plan toward hybrid pricing: the $20 buys a window-capped allowance, anything past it is metered at in-product credit prices we could not retrieve — treat marginal usage as unknown-cost, not free.",
+    "For code-agent workflows, Codex rides on ChatGPT plans with per-plan limits and buyable weekly resets — if you exceed Plus consistently, the excerpted Pro ladder (5x at $100) is the published next step."
+  ],
+  "economics_rows": [
+    { "label": "Monthly price (US)", "value": "$19.99 App Store / '$20' help wording" },
+    { "label": "Annual plan", "value": "Not offered per help excerpt" },
+    { "label": "Weekday cap mechanism", "value": "5-hour windows + weekly allowances" },
+    { "label": "Excerpted numeric cap", "value": "3,000 GPT-5-Thinking msgs/week (May 2026)" },
+    { "label": "Overage", "value": "Flexible-usage credits + instant resets (prices not published)" },
+    { "label": "Above Plus", "value": "Pro $100 = 5x, $200 = 20x Plus usage (excerpt)" },
+    { "label": "Break-even vs $0.80/task", "value": "≈25 tasks/mo (illustrative)" }
+  ],
+  "evidence": [
+    {
+      "point": "Plus priced at $19.99 in the official US App Store In-App Purchases list for OpenAI's ChatGPT app — read directly (server-rendered, Apple-side) 2026-09-07; the same list shows Go $8.00 and Pro $100/$200.",
+      "confidence": "high",
+      "source": "apps.apple.com ChatGPT listing, accessed 2026-09-07"
+    },
+    {
+      "point": "Monthly-only billing, auto-renew at standard rate, and 'broader model and tool access than Free' come from quotes the search index attributes to official help articles (6950777, 12803158, 9275245) — the pages themselves returned 403 to direct fetch; browser re-verification required.",
+      "confidence": "medium",
+      "source": "Search-index excerpts of help.openai.com, surfaced 2026-09-07"
+    },
+    {
+      "point": "The 3,000-messages/week GPT-5-Thinking figure and 196k context are attributed to the release-notes article but date from May 2026 indexing — OpenAI moves caps monthly, so treat as historical, not current.",
+      "confidence": "low",
+      "source": "help.openai.com/6825453 release-note excerpt, surfaced 2026-09-07"
+    },
+    {
+      "point": "Credit top-ups (article 12642688), instant weekly-limit resets (20001507), and localized multi-currency billing (10421635) are excerpt-attributed to official articles; all dollar-level specifics (credit prices, refund windows) were not retrievable.",
+      "confidence": "medium",
+      "source": "help.openai.com article excerpts, surfaced 2026-09-07"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does ChatGPT Plus cost as of the Sep 2026 snapshot?",
+      "a": "$19.99/month per the official US App Store IAP list; OpenAI's own help article (via search-index excerpt) says '$20/month, billed monthly'. OpenAI's web pages block automated fetching, so confirm the live web price in a browser before paying."
+    },
+    {
+      "q": "Is there an annual ChatGPT Plus plan?",
+      "a": "No — the Plus help article is excerpt-quoted stating that annual billing or multi-month prepay is not supported. That means no prepay discount exists, unlike some $20 competitors."
+    },
+    {
+      "q": "What usage limits apply on Plus?",
+      "a": "5-hour rolling windows plus weekly allowances, with limits 'varying based on system conditions' per OpenAI's own wording. The only recent public number found in retrievable form is an excerpted '3,000 messages/week with GPT-5 Thinking' (May 2026). There is no consolidated published Plus cap table."
+    },
+    {
+      "q": "What happens when I hit a limit?",
+      "a": "Wait for the window to roll, buy flexible-usage credits (personal plans article 12642688), or — for weekly Work/Codex limits — buy an instant reset from Usage settings. Credit and reset prices appear in-product; they are not published on help pages we could retrieve."
+    },
+    {
+      "q": "Why is this page more hedged than our other offer pages?",
+      "a": "Because every OpenAI-owned URL returned 403 to our fetcher this pass. Where a fact rests on a search-index excerpt rather than a direct read, the Evidence section and each sentence flag it — that is the site's rule: excerpts labeled, never disguised as live verification."
+    },
+    {
+      "q": "How current is this information?",
+      "a": "App Store listing read 2026-09-07; help-article excerpts surfaced 2026-09-07 with content dating back to May 2026. ChatGPT caps change frequently — re-verify in a browser before paying."
+    }
+  ],
+  "citation": "Token Perks. “ChatGPT Plus subscription.” Research snapshot Sep 7 2026 (dual-source: official App Store listing + dated help-article excerpts; openai.com 403-blocked). https://token-perks.com/best/chatgpt-plus/. Re-verify at official terms before paying.",
+  "slot": "also",
+  "rank": 5,
+  "jsonld_price": { "price": "19.99" }
+}

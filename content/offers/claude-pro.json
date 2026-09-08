@@ -1,0 +1,163 @@
+{
+  "id": "claude-pro",
+  "status": "active",
+  "provider": "Anthropic",
+  "plan": "Claude Pro",
+  "title": "Claude Pro subscription",
+  "shortTitle": "Claude Pro",
+  "badge": "Full pricing ladder published",
+  "catchSummary": "Usage is capped per rolling 5-hour session and per week — hitting a cap needs usage credits (plain-English: pay-as-you-go top-ups at standard API rates), and the flagship Fable models run on those credits for every plan below Max.",
+  "canonical_url": "/best/claude-pro/",
+  "official_terms_url": "https://claude.com/pricing",
+  "official_links": [
+    {
+      "label": "Claude pricing page (official)",
+      "url": "https://claude.com/pricing",
+      "note": "Fetched live 2026-09-07 (WebFetch, then re-verified against raw HTML via browser-UA request): Pro '$17 Per month with annual subscription discount ($200 billed up front). $20 if billed monthly'; plan matrix; FAQ wording."
+    },
+    {
+      "label": "What is the Pro plan? (official help)",
+      "url": "https://support.claude.com/en/articles/8325606",
+      "note": "Fetched live 2026-09-07: '$20 per month (US)', annual billed once yearly at a discounted rate, 5x Free per session, weekly limits, reset mechanics, 'Price and plans are subject to change at Anthropic's discretion.'"
+    },
+    {
+      "label": "Manage usage credits (official help)",
+      "url": "https://support.claude.com/en/articles/12429409",
+      "note": "Fetched live 2026-09-07: credits billed at standard API pricing, separate line on the bill, $2,000 daily redemption limit, monthly spend cap + optional auto-reload, Japan expiry rule."
+    },
+    {
+      "label": "Claude Fable models on your plan (official help)",
+      "url": "https://support.claude.com/en/articles/15424964",
+      "note": "Fetched live 2026-09-07: on Pro plans Fable 5/5.1 'run on pay-as-you-go usage credits'; Max includes Fable up to 50% of weekly limits; the free-Fable promotion ended July 19, 2026."
+    }
+  ],
+  "price": {
+    "now": "$20/mo billed monthly; annual is $200 billed up front ('$17 per month with annual subscription discount', pricing-page card)",
+    "renewal": "Renews automatically to the payment method on file. Cancel any time and keep access until the current billing period ends — 'to avoid the next charge, cancel at least 24 hours before your renewal date.' Payments are generally non-refundable except where Consumer Terms or local law say otherwise; EEA/UK buyers get a prorated 14-day refund window."
+  },
+  "renewal": "Auto-renews monthly (or yearly on annual, which 'is billed once up front for the year'). Switching monthly to annual credits any unused monthly time against the first annual invoice and resets the next billing date one year out. App Store/Google Play subscriptions are billed and refunded by the store ('Refunds for App Store purchases are granted at Apple's discretion' — and a refund request does not cancel the subscription). Beyond the 12-month upfront structure, annual early-exit terms: not published.",
+  "expiry": null,
+  "verified_at": "2026-09-07",
+  "eligibility": [
+    "Pro is available in Anthropic's supported locations (the supported-countries list spans roughly 190 countries; some regions excluded) and 'pricing in your local currency where supported'",
+    "Web sign-up bills directly; iOS/Android sign-ups are billed through Apple/Google",
+    "Team products require 2+ seats; Pro does not include Claude Console (API) usage",
+    "Mobile-app subscribers can only enable usage credits on the web version of Claude"
+  ],
+  "restrictions": [
+    "Caps are window-shaped: 'Pro gives you at least 5x more usage per 5-hour session than Free', the session limit 'resets every five hours', and paid plans add a weekly all-model cap that resets at a fixed time assigned to your account (visible in Settings > Usage)",
+    "No fixed message count: usage depends on conversation length/complexity, model, and features; Anthropic 'may limit your usage in other ways… at our discretion'",
+    "Fable 5/5.1 (flagship tier) are not inside Pro's included limits — on Pro they 'run on pay-as-you-go usage credits' at standard API rates; Max seats include Fable up to 50% of weekly limits",
+    "Claude Code shares one pool with chat: 'All Claude Code activity counts toward your weekly limits — web, desktop, mobile, and terminal draw from the same pool'",
+    "Model training on consumer plans (Free/Pro/Max) is 'Opt-out' per the pricing matrix — check the setting rather than assuming a default",
+    "'Price and plans are subject to change at Anthropic's discretion.'"
+  ],
+  "verdict": "Claude Pro is the standard $20 seat for the Claude apps plus Claude Code: Opus-class usage is included (Free is locked out of Opus), the 200k-context models share a 5-hour session + weekly cap system, and everything beyond the caps has a published valve — usage credits at standard API rates with a $2,000/day redemption ceiling and an optional monthly spend cap. Two details decide fit: if you want Fable-class models, Pro meters them per-token from the start; and if you live in Claude Code, terminal and chat drain one pool, so plan weekly capacity, not daily. Annual prepay ($200) trims the effective rate to $17/mo and credits a mid-year switch — the best deal for steady users who can commit 12 months.",
+  "catches": [
+    "The flagship Fable models cost extra-usage credits on Pro — the flat fee covers Opus/Sonnet/Haiku-class limits, not the top of the ladder",
+    "One pool for everything: a long Claude Code agent session eats the chat allowance for the same 5-hour window (and the same weekly cap)",
+    "Weekly caps reset on an account-assigned schedule, not the calendar — plan around Settings > Usage, not Mondays",
+    "Credits are real money at API rates with a $2,000/day redemption limit — heavy metered weeks can dwarf the $20 base",
+    "App-store sign-ups inherit store billing: refunds at Apple's discretion, and requesting one does not cancel the subscription"
+  ],
+  "limits": [
+    "Session: 'at least 5x' Free usage per rolling 5-hour window (exact token thresholds per model: not published)",
+    "Weekly: an all-model weekly limit layered on top; discretion caps 'such as weekly and monthly caps and model and feature usage' possible",
+    "Included models: Opus (Pro 'Yes' vs Free 'No'), Sonnet and Haiku on all plans; 200k context window per the matrix",
+    "Usage credits: standard API rates, billed separately, $2,000/day redemption limit, optional auto-reload; Japan: credits expire six months after purchase starting September 10, 2026",
+    "Pro does not include Claude Console API usage; an ANTHROPIC_API_KEY in the environment routes Claude Code to API billing instead of the plan",
+    "App Store vs web price deltas: not published"
+  ],
+  "access_route": "Subscribe at claude.com/pricing (web billing, local currency where supported); Claude Code then runs on the same account and pool. When a cap bites, enable usage credits in settings (web) at standard API rates or wait for the 5-hour/weekly reset.",
+  "claim_steps": [
+    {
+      "step": "Confirm the $20 monthly / $200 annual figures on the official pricing page (the card states both).",
+      "url": "https://claude.com/pricing"
+    },
+    {
+      "step": "Read the Pro plan article for the 5-hour/weekly mechanics and the 'subject to change' notice before committing to annual.",
+      "url": "https://support.claude.com/en/articles/8325606"
+    },
+    {
+      "step": "If you expect Fable-class usage, price it: the Fable-on-your-plan article states Pro runs Fable 5/5.1 on pay-as-you-go credits.",
+      "url": "https://support.claude.com/en/articles/15424964"
+    },
+    {
+      "step": "Set a monthly spend cap (and decide on auto-reload) when enabling usage credits; note the $2,000/day redemption limit.",
+      "url": "https://support.claude.com/en/articles/12429409"
+    }
+  ],
+  "economics_heading": "Pro vs Max vs credits: where the $20 line sits",
+  "economics": [
+    "Against the site's illustrative $0.80/task reference, $20/mo is parity at ~25 heavy tasks/month and annual ($200) at ~21 — below that, Free's throttled usage or raw API pay-as-you-go costs less; above it, the flat fee wins as long as the weekly cap never binds.",
+    "Annual switch math is stated officially: billed $200 up front, unused monthly time credited to the first annual invoice — mid-year upgrades do not double-pay.",
+    "The credits valve converts overage into API-rate spend: if your metered weeks average over ~$80 of credits at API rates, the article's own ladder (Max 5x at $100/mo, itemized in the Max-plan help article) is the cheaper seat — the pricing page's advice is to move up 'if you find yourself hitting usage limits'.",
+    "Fable-on-credits means the flagship model is never flat-rate below Max: a steady Fable workload is an API bill wearing a subscription."
+  ],
+  "economics_rows": [
+    { "label": "Monthly price", "value": "$20" },
+    { "label": "Annual", "value": "$200 upfront ≈ $17/mo effective" },
+    { "label": "Session allowance", "value": "≥5x Free per rolling 5 hours" },
+    { "label": "Weekly cap", "value": "All-model, account-assigned reset" },
+    { "label": "Fable 5/5.1", "value": "Pay-as-you-go credits on Pro" },
+    { "label": "Overage rate", "value": "Standard API rates; $2,000/day redemption limit" },
+    { "label": "Claude Code", "value": "Included; shares the plan pool" },
+    { "label": "Break-even vs $0.80/task", "value": "≈25 tasks/mo (monthly) · ≈21 (annual)" }
+  ],
+  "evidence": [
+    {
+      "point": "Prices ($20/mo; $200/yr '$17 per month' card), the Opus/Sonnet/Haiku/Fable matrix rows, the 5-hour/weekly cap FAQ wording, 'cancel 24 hours before renewal', annual upfront billing, and the 'Model training: Opt-out' row were read on claude.com/pricing and re-verified against saved raw HTML the same day.",
+      "confidence": "high",
+      "source": "claude.com/pricing, accessed 2026-09-07"
+    },
+    {
+      "point": "Weekly-limit mechanics (account-assigned reset, Settings > Usage), the ≥5x framing, discretion caps, local-currency/multi-region pricing, 'no Console API on Pro', and 'subject to change at Anthropic's discretion' come from official support articles (8325606, 11647753, 11049762).",
+      "confidence": "high",
+      "source": "support.claude.com articles, accessed 2026-09-07"
+    },
+    {
+      "point": "Usage-credit terms — standard API rates, separate bill line, $2,000/day redemption limit, monthly cap + auto-reload, mobile-enable-on-web-only, Japan 6-month expiry — are quoted from the manage-usage-credits article; Fable-on-credits for Pro and the July 19, 2026 free-Fable promo end from article 15424964.",
+      "confidence": "high",
+      "source": "support.claude.com/en/articles/12429409 + /15424964, accessed 2026-09-07"
+    },
+    {
+      "point": "Exact token thresholds behind session/weekly caps, annual early-exit terms, and App Store vs web price deltas: checked across pricing page and eight help articles — not published.",
+      "confidence": "medium",
+      "source": "Absence check across claude.com/pricing + support.claude.com, 2026-09-07"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does Claude Pro cost as of the Sep 2026 snapshot?",
+      "a": "$20/month billed monthly, or $200/year billed upfront — the pricing-page card states '$17 Per month with annual subscription discount ($200 billed up front).' Verified live on claude.com/pricing 2026-09-07; displayed prices vary by region and may include tax."
+    },
+    {
+      "q": "What are the usage limits on Pro?",
+      "a": "'At least 5x more usage per 5-hour session than Free,' with the session limit resetting every five hours, plus an all-model weekly cap that resets at a fixed, account-assigned time. No fixed message count is published — the official position is that usage depends on conversation size, model, and features."
+    },
+    {
+      "q": "Is Claude Code included?",
+      "a": "Yes — 'Claude Code is included in all paid plans,' and it shares one pool with chat: terminal and web activity both draw on the same 5-hour session and weekly limits. A separate ANTHROPIC_API_KEY routes Claude Code to Console API billing instead, outside the subscription."
+    },
+    {
+      "q": "Can I use the Fable models on Pro?",
+      "a": "Only on metered credits: official docs state that on Pro plans, Fable 5/5.1 'run on pay-as-you-go usage credits' at standard API rates (Max includes Fable up to 50% of weekly limits). The free-Fable promo ended July 19, 2026."
+    },
+    {
+      "q": "What happens when I hit a limit?",
+      "a": "Officially: wait for the reset, upgrade to Max, or enable usage credits (billed at standard API rates, separate on your bill, capped at $2,000/day redemption with an optional monthly spend cap and auto-reload). Note mobile-app subscribers can only enable credits on the web."
+    },
+    {
+      "q": "How do cancellation and refunds work?",
+      "a": "Cancel anytime; access runs to the period end; cancel ≥24 hours before renewal to avoid the next charge. Payments are generally non-refundable except under Consumer Terms or local law — EEA/UK buyers get a prorated 14-day window; App Store refunds are Apple's call and don't cancel the subscription. Annual early-exit terms beyond upfront billing: not published."
+    },
+    {
+      "q": "How current is this information?",
+      "a": "Live reads of claude.com/pricing plus nine official help-center articles on 2026-09-07 (some pages 403 the automated fetcher and were re-read via browser-mode request the same day). Caps and pricing are explicitly 'subject to change' — re-verify before paying."
+    }
+  ],
+  "citation": "Token Perks. “Claude Pro subscription.” Research snapshot Sep 7 2026. https://token-perks.com/best/claude-pro/. Re-verify at official terms before paying.",
+  "slot": "also",
+  "rank": 7,
+  "jsonld_price": { "price": "20" }
+}

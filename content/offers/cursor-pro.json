@@ -1,0 +1,155 @@
+{
+  "id": "cursor-pro",
+  "status": "active",
+  "provider": "Cursor",
+  "plan": "Cursor Pro",
+  "title": "Cursor Pro editor subscription",
+  "shortTitle": "Cursor Pro",
+  "badge": "Live pricing verified this pass",
+  "catchSummary": "The $20 includes a usage pool, not unlimited frontier models: after it, on-demand billing at raw API rates runs in arrears — and Cursor does not publish the dollar size of the included pool.",
+  "canonical_url": "/best/cursor-pro/",
+  "official_terms_url": "https://cursor.com/pricing",
+  "official_links": [
+    {
+      "label": "Cursor pricing page (official)",
+      "url": "https://cursor.com/pricing",
+      "note": "Fetched live 2026-09-07 with dollar strings visible in static text (Pro $20/mo; Hobby Free; 'on-demand usage… billed in arrears'). A prior 2026-09-06 pass found this page client-rendered — fetchability varies, so we re-read it each pass."
+    },
+    {
+      "label": "Help center pricing table (official)",
+      "url": "https://cursor.com/help/account-and-billing/pricing",
+      "note": "Read live 2026-09-07: Hobby Free · Start (India only) ₹649/mo · Pro $20 · Pro+ $60 · Ultra $200 · Teams $40/$120 per user/mo."
+    },
+    {
+      "label": "Usage limits (official docs)",
+      "url": "https://cursor.com/help/models-and-usage/usage-limits",
+      "note": "Read live 2026-09-07: two usage pools, on-demand at API rates, unlimited tab completions on Pro and above."
+    },
+    {
+      "label": "Refund policy (official docs)",
+      "url": "https://cursor.com/help/account-and-billing/refunds",
+      "note": "Read live 2026-09-07: 14-day + not-used window; consumed on-demand charges non-refundable."
+    }
+  ],
+  "price": {
+    "now": "$20/mo (annual USD price not published; a Monthly/Yearly toggle exists in-app but yearly amounts are not on official pages fetched)",
+    "renewal": "'Your cycle starts on the date you subscribe. It renews monthly or yearly based on your plan.' (billing doc, quoted). Canceling keeps paid features to the end of the current period with no further charges."
+  },
+  "renewal": "Auto-renews monthly (or yearly where chosen — the yearly dollar figure is not published) from the subscription date. Refunds: eligible only if the charge is under 14 days old AND the subscription was unused in the period; consumed on-demand/fast-request charges are never refundable. Plan-change credit is computed from unused included usage, not days remaining.",
+  "expiry": null,
+  "verified_at": "2026-09-07",
+  "eligibility": [
+    "Any individual with a supported card ('all major credit and debit cards'); invoice/wire billing exists for larger accounts",
+    "All prices exclude applicable taxes; tax details are managed in the Stripe billing portal",
+    "India-only 'Start' tier (₹649/mo tax-inclusive) is the regional alternative to Pro",
+    "The legacy free-Pro student offer closed to new sign-ups on June 25 2026 — existing redeemers keep their rate until expiry"
+  ],
+  "restrictions": [
+    "Included usage: 'Every plan includes a set amount of model usage' — the dollar size of Pro's pool is not published anywhere on official pages fetched",
+    "On-demand usage (plain-English: pay-as-you-go at raw model prices once the pool is gone) must be enabled and is billed in arrears 'at the same API rates'",
+    "Auto mode bills 'at the list price of the model each request is routed to'; a named third-party model draws the Other Models pool at its API rate — so 'Auto' is not a cheap default for long agent runs",
+    "Two separate pools exist (Agent and bonus/other); Pro/Pro+/Ultra include both",
+    "Upgrading credits only the unused included usage of the old plan, not time left on it"
+  ],
+  "verdict": "Cursor Pro is the $20 entry to the editor most agents use: unlimited tab completions, a real Agent allowance, and a hard-but-published escalation path (on-demand at API rates, or Pro+ at 3x limits for $60). The unforgiving part is opacity — the included pool's dollar size is not published, so 'included usage' can feel larger than it is on frontier models, and the refund rule (14 days AND unused) means a single heavy afternoon can make the month non-refundable. For completion-heavy coding it is excellent value; for long autonomous agent sessions, read your monthly usage dashboard, not the marketing tab.",
+  "catches": [
+    "Included-usage pool size: not published — only 'a set amount' — so break-even math vs raw API use requires your own dashboard numbers",
+    "On-demand is opt-in but silent about totals until the invoice: billed in arrears at API rates",
+    "Refunds require the period to be essentially unused — trying the plan hard for one day forfeits the 14-day refund right",
+    "Prices exclude tax; India users get a different SKU (Start ₹649) — regional pricing is thin (one tier), not broad"
+  ],
+  "limits": [
+    "Hobby (free): 'Limited Agent requests', no card, Access to Composer — exact request counts not published",
+    "Pro: unlimited tab completions; Agent pool + bonus pool included (sizes unpublished)",
+    "Pro+ = '3x Pro limits on Agent'; Ultra = '20x Pro limits on Agent' + priority features (help table $60/$200)",
+    "On-demand enabled: usage continues at per-model API list prices, monthly in arrears",
+    "Throughput/rate caps beyond the pools: not published"
+  ],
+  "access_route": "Install Cursor, subscribe Pro from cursor.com/pricing (or in-app), decide explicitly whether to enable on-demand usage in dashboard billing settings, and check cursor.com/dashboard for pool consumption.",
+  "claim_steps": [
+    {
+      "step": "Confirm Pro at $20/mo on the live pricing page — its static availability varies by pass, so screenshot the price.",
+      "url": "https://cursor.com/pricing"
+    },
+    {
+      "step": "Read the usage-limits doc to understand the two pools and the on-demand toggle before your first big agent run.",
+      "url": "https://cursor.com/help/models-and-usage/usage-limits"
+    },
+    {
+      "step": "Decide your on-demand stance on day one: leave it off to hard-stop at included usage, or set it on and watch the dashboard.",
+      "url": "https://cursor.com/help/account-and-billing/billing"
+    },
+    {
+      "step": "If you expected the old free student Pro: it closed June 25 2026 for new sign-ups; campus events carry credits/discounts instead.",
+      "url": "https://cursor.com/help/account-and-billing/student-discount"
+    }
+  ],
+  "economics_heading": "$20 flat vs. raw API: the pool you cannot see",
+  "economics": [
+    "Because the included pool's dollar size is unpublished, the only honest break-even is empirical: run your normal month with on-demand off, read included-usage consumption, and only then judge whether $20 covered it.",
+    "Reference point: at the site's illustrative $0.80/task PAYG figure, $20 covers ~25 heavy tasks — but Cursor bills on-demand at true API list prices, so frontier-model tasks above the pool cost what the model costs, not what the plan implies.",
+    "Pro+ ($60, 3x Agent limits) vs three months of Pro + modest on-demand: if on-demand charges run over ~$40/mo consistently, Pro+ is the ladder step the docs themselves point to ('upgrade to a higher plan').",
+    "Ultra at $200 buys 20x Pro Agent limits — a per-task price that only makes sense above ~150+ heavy agent tasks/mo against the $0.80 reference; below that the pool ceiling rarely binds on Pro."
+  ],
+  "economics_rows": [
+    { "label": "Pro price", "value": "$20/mo (no annual figure published)" },
+    { "label": "Included pool", "value": "'A set amount' — size not published" },
+    { "label": "On-demand rate", "value": "Same API list rates, billed in arrears" },
+    { "label": "Tab completions", "value": "Unlimited on Pro+" },
+    { "label": "Pro+ / Ultra", "value": "$60 (3x) / $200 (20x) Agent limits" },
+    { "label": "Refund rule", "value": "≤14 days AND period unused" },
+    { "label": "Break-even vs $0.80/task", "value": "≈25 tasks/mo (illustrative; pool size unknown)" }
+  ],
+  "evidence": [
+    {
+      "point": "Pro $20/mo, the ladder (Hobby Free, Pro+ $60, Ultra $200, Teams $40/$120, Start ₹649 India), 'on-demand usage… billed in arrears', unlimited tab completions on Pro/Ultra, and Auto-mode list-price billing were read live on cursor.com pricing and docs pages.",
+      "confidence": "high",
+      "source": "cursor.com/pricing + /help/account-and-billing/pricing + /docs/models-and-pricing + /help/models-and-usage/usage-limits, accessed 2026-09-07"
+    },
+    {
+      "point": "Renewal-from-subscribe-date, cancel-keeps-access, and the 14-day-and-unused refund rule with non-refundable consumed usage are verbatim from the billing/cancel/refunds docs.",
+      "confidence": "high",
+      "source": "cursor.com/help/account-and-billing/{billing,cancel,refunds}, accessed 2026-09-07"
+    },
+    {
+      "point": "The student free-Pro discontinuation (June 25 2026 for new sign-ups; existing redeemers honored until expiry) is stated on the official student-discount page.",
+      "confidence": "high",
+      "source": "cursor.com/help/account-and-billing/student-discount, accessed 2026-09-07"
+    },
+    {
+      "point": "Dollar size of Pro's included usage pool: not published on official pages; third-party figures ($20/$70/$400 pools) exist but are unverified and are NOT quoted as fact.",
+      "confidence": "low",
+      "source": "Absence across cursor.com docs, 2026-09-07"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does Cursor Pro cost as of the Sep 2026 snapshot?",
+      "a": "$20/month, verified in live static text on both the pricing page and the help-center table on 2026-09-07. Yearly billing exists in-app but no yearly dollar amount is published on official pages."
+    },
+    {
+      "q": "How much usage is actually included?",
+      "a": "Cursor states 'a set amount of model usage' across two pools (Agent and bonus/other) but does not publish the dollar size — check your dashboard after a typical week. Beyond the pool, on-demand usage bills at raw API list rates in arrears if enabled."
+    },
+    {
+      "q": "Can I get a refund?",
+      "a": "Only within 14 days of the charge AND if you have not used the subscription during the period; consumed on-demand/fast-request charges are never refundable. In practice, trial the plan lightly or not at all if you want the refund to remain possible."
+    },
+    {
+      "q": "Is the student offer still free Pro?",
+      "a": "No — the legacy free-Pro student discount stopped new sign-ups on June 25, 2026. Students who already redeemed keep their rate until it expires; Cursor now points to credits/discounts at campus events instead."
+    },
+    {
+      "q": "What is the difference between Pro, Pro+, and Ultra?",
+      "a": "Official framing is multiples of Pro's Agent limits: Pro+ = 3x, Ultra = 20x (plus priority access to new features). Tab completions are unlimited on all three. Teams tiers ($40/$120) add per-user admin pricing with Premium at 5x Standard."
+    },
+    {
+      "q": "How current is this information?",
+      "a": "All quotes from eight official Cursor pages fetched live 2026-09-07. Note the pricing page's static-render behavior has varied between passes — re-verify the number before paying."
+    }
+  ],
+  "citation": "Token Perks. “Cursor Pro editor subscription.” Research snapshot Sep 7 2026. https://token-perks.com/best/cursor-pro/. Re-verify at official terms before paying.",
+  "slot": "also",
+  "rank": 8,
+  "jsonld_price": { "price": "20" }
+}

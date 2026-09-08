@@ -31,13 +31,14 @@
   "apiIn": null,
   "apiOut": null,
   "unit": "per month",
-  "notes": "Extended Agent limits; on-demand usage billed in arrears.",
+  "notes": "Extended Agent limits; on-demand usage billed in arrears at API rates. Included pool stated only as 'a set amount' — dollar size not published.",
   "caveats": [
-   "On-demand usage billed in arrears"
+   "On-demand usage billed in arrears",
+   "Included pool size not published"
   ],
   "sourceUrl": "https://cursor.com/pricing",
   "label": "DIRECT",
-  "offer": null,
+  "offer": "/best/cursor-pro/",
   "modelId": null,
   "overage": {
    "rate": "not published",
@@ -151,7 +152,7 @@
   ],
   "sourceUrl": "https://github.com/features/copilot/plans",
   "label": "DIRECT",
-  "offer": null,
+  "offer": "/best/copilot-pro/",
   "modelId": null,
   "overage": {
    "rate": "$0.01 per AI credit; $15/mo total credits ($10 base + $5 flex)",

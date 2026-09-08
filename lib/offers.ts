@@ -1,6 +1,12 @@
+import chatgptPlus from "@/content/offers/chatgpt-plus.json";
+import claudePro from "@/content/offers/claude-pro.json";
+import copilotPro from "@/content/offers/copilot-pro.json";
+import cursorPro from "@/content/offers/cursor-pro.json";
+import googleAiPro from "@/content/offers/google-ai-pro.json";
 import kimiK3Core from "@/content/offers/kimi-k3-core.json";
 import museSparkZenFree from "@/content/offers/muse-spark-zen-free.json";
 import nvidiaK3Free from "@/content/offers/nvidia-k3-free.json";
+import perplexityPro from "@/content/offers/perplexity-pro.json";
 
 export interface OfficialLink {
   label: string;
@@ -60,6 +66,9 @@ export interface Offer {
   citation: string;
   slot: "top3" | "also";
   rank: number;
+  /** Optional explicit schema.org price for /best/<slug>/ JSON-LD.
+   *  Single figure -> { price }; tier ladder -> { lowPrice, highPrice }. USD default. */
+  jsonld_price?: { price?: string; lowPrice?: string; highPrice?: string; currency?: string };
 }
 
 const REQUIRED = [
@@ -114,6 +123,12 @@ export const OFFERS: Offer[] = [
   parse(kimiK3Core, "kimi-k3-core.json"),
   parse(museSparkZenFree, "muse-spark-zen-free.json"),
   parse(nvidiaK3Free, "nvidia-k3-free.json"),
+  parse(copilotPro, "copilot-pro.json"),
+  parse(chatgptPlus, "chatgpt-plus.json"),
+  parse(googleAiPro, "google-ai-pro.json"),
+  parse(claudePro, "claude-pro.json"),
+  parse(cursorPro, "cursor-pro.json"),
+  parse(perplexityPro, "perplexity-pro.json"),
 ];
 
 export const ACTIVE_OFFERS = OFFERS.filter((o) => o.status === "active").sort(

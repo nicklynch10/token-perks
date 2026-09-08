@@ -1,0 +1,156 @@
+{
+  "id": "perplexity-pro",
+  "status": "active",
+  "provider": "Perplexity",
+  "plan": "Perplexity Pro",
+  "title": "Perplexity Pro subscription",
+  "shortTitle": "Perplexity Pro",
+  "badge": "Verified on official pricing hub",
+  "catchSummary": "Pro answers are capped by unstated weekly/monthly numbers — 'average use' is the published unit — and the annual price never appears on official pages; only a $20/mo figure and an expired promo's '$200 value' line anchor the sticker.",
+  "canonical_url": "/best/perplexity-pro/",
+  "official_terms_url": "https://www.perplexity.ai/hub/pricing",
+  "official_links": [
+    {
+      "label": "Perplexity pricing hub (official)",
+      "url": "https://www.perplexity.ai/hub/pricing",
+      "note": "Fetched live 2026-09-07 (via browser-UA request; the automated fetcher 403s site-wide): $20/mo Pro, feature matrix, '4,000 bonus credits' one-time, premium data-sources FAQ."
+    },
+    {
+      "label": "What is Perplexity Pro? (official help)",
+      "url": "https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro.html",
+      "note": "Read live 2026-09-07 (page says updated Jul 21 2026): model list, file caps, Pro Search 'weekly limits (average use)', Deep Research 'monthly limits (average use)'."
+    },
+    {
+      "label": "Billing FAQ for Pro subscribers (official help)",
+      "url": "https://www.perplexity.ai/help-center/en/articles/10353002-billing-faq-for-pro-plan-subscribers.html",
+      "note": "Read live 2026-09-07: auto-renew wording, no pause, annual-to-monthly switching; no annual dollar price."
+    },
+    {
+      "label": "Refunds (official help)",
+      "url": "https://www.perplexity.ai/help-center/en/articles/10354288-refunds.html",
+      "note": "Read live 2026-09-07: regional windows — EU/UK/Turkey 14 days, South Korea/Brazil 7 days, monthly 24 hours, annual 72 hours."
+    }
+  ],
+  "price": {
+    "now": "$20/mo; annual billing exists but its price is not published on any official page fetched (the 'about $200/yr' figure rests on an expired India promo's dollar-value line, not a listed annual price)",
+    "renewal": "'Unless you cancel before the trial ends, your subscription will auto-renew at the standard rate for the plan you selected (monthly or annual).' Canceling ends service at the billing-cycle close; no pause option exists."
+  },
+  "renewal": "Monthly auto-renew at the standard rate unless canceled; annual subscriptions renew at the annual rate (figure not published). Account → Subscription → Manage Plan → Cancel Subscription; cancellations and downgrades take effect at the end of the billing cycle. Regional refund windows: EU/UK/Turkey 14 days; South Korea/Brazil 7 days; elsewhere monthly up to 24 hours, annual 72 hours (one official Max article says 48 — see evidence).",
+  "expiry": null,
+  "verified_at": "2026-09-07",
+  "eligibility": [
+    "Any individual with a supported payment method (App Store and Google Play also sell Pro)",
+    "Students: Education Pro at $10/mo with SheerID verification (half price, per the which-plan article)",
+    "Max at $200/mo or $2,000/yr — annual Max is web-only; Enterprise Pro from $40/seat/mo, edu/NPO $30/seat",
+    "Old promo routes are closed: the Airtel 12-month offer ended January 16 2026"
+  ],
+  "restrictions": [
+    "Pro Search: Free gets 3/day; Pro gets 'weekly limits (average use)' — no numeric cap published, and access 'may be limited during weeks of especially heavy usage'",
+    "Deep Research on Pro: 'monthly limits (average use)', no figure (Max's 50/month is stated by contrast)",
+    "Credits (plain-English: prepaid units for agentic 'Computer' tasks, 100 credits = $1): consumer Pro does not start with a fixed monthly pool — Pro shows only a one-time 4,000 bonus credit grant that expires after 30 days; Max carries 10,000/mo",
+    "The official model-list help article that the Pro page links is 404 — 'which models, exactly, today' has no single current canonical page",
+    "Agentic features (Labs, Comet agent work) may consume credits beyond the flat fee"
+  ],
+  "verdict": "Perplexity Pro is the answer-engine subscription: every frontier chat model in one tab plus search-native citations, at $20/mo with no hard published message counter — limits are 'average use' bands that tighten only in extreme weeks. The trade-offs are opacity (no numeric caps, a broken canonical model list) and thin agent economics (no standing monthly credit pool on consumer Pro). If your workflow is research-and-cite, it is the most natural $20; if it is long agentic runs, the credit math quietly pushes you toward Max or a metered API.",
+  "catches": [
+    "'Weekly limits (average use)' is the official wording — the cap exists but its number does not, and heavy weeks can throttle",
+    "The annual price is invisible on official pages: you see it only at checkout, and the $200/yr figure in third-party listings is promo-valuation lineage",
+    "One-time 4,000 bonus credits expire after 30 days — an onboarding grant, not an allowance",
+    "Refund windows are short and regional (24 h standard, 72 h annual) — and one official page disagrees with another on the annual window (72 vs 48 hours)"
+  ],
+  "limits": [
+    "Pro Search: numeric Pro cap not published (Free = 3/day)",
+    "Research queries: Pro = monthly 'average use' limit, number not published; Max = 50/month",
+    "Files: up to 50 uploads per project; PDFs/CSV/audio/video/images; higher upload rate limits",
+    "Media: 'enhanced image generation', 'limited access to video generation' — counts not published",
+    "Computer credits: no set monthly amount on consumer Pro; Max 10,000/mo"
+  ],
+  "access_route": "Subscribe from the Pro page or in the Perplexity app (web checkout shows the annual toggle price in-account); then track credit burn under Settings → Billing if you use agentic features.",
+  "claim_steps": [
+    {
+      "step": "Confirm $20/mo on the official pricing hub — the /pro page itself renders client-side, the hub page carries the static figures.",
+      "url": "https://www.perplexity.ai/hub/pricing"
+    },
+    {
+      "step": "Read the Pro help article's limits wording ('weekly/monthly limits — average use') so the throttle behavior is unsurprising.",
+      "url": "https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro.html"
+    },
+    {
+      "step": "If you want annual, open checkout to read the actual yearly price — it appears nowhere on the public pages we fetched.",
+      "url": "https://www.perplexity.ai/hub/pricing"
+    },
+    {
+      "step": "Students: verify via SheerID for Education Pro at $10/mo before paying full price.",
+      "url": "https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you.html"
+    }
+  ],
+  "economics_heading": "What $20 buys when the caps are invisible",
+  "economics": [
+    "Perplexity prices breadth (all frontier models + premium data sources PitchBook/Statista/S&P per the hub FAQ) rather than volume — against the $0.80/task illustrative reference, $20 is parity at ~25 heavy tasks, but no published cap tells you whether 30 tasks is allowed or throttled.",
+    "The student $10/mo Education Pro halves the entry price and is the only officially priced discount path we found for individuals.",
+    "Agent usage is the hidden variable: 100 credits = $1, Pro has no standing pool, so a week of agentic work is billed by credit purchase, not by the plan — Max's $200 with 10,000/mo credits is the pooled alternative (~$100 of credit face value monthly).",
+    "Annual prepay cannot be evaluated on price-per-month because the annual figure is not published — treat any '$200/yr' claim as unverified until checkout shows it."
+  ],
+  "economics_rows": [
+    { "label": "Monthly price", "value": "$20" },
+    { "label": "Annual price", "value": "Not published on official pages" },
+    { "label": "Education Pro", "value": "$10/mo (SheerID)" },
+    { "label": "Max", "value": "$200/mo or $2,000/yr (annual web-only)" },
+    { "label": "Pro Search cap", "value": "Weekly 'average use' — number not published" },
+    { "label": "Research cap", "value": "Monthly 'average use' (Max: 50/mo)" },
+    { "label": "Credits", "value": "100 = $1; Pro: one-time 4,000 bonus (30-day expiry)" },
+    { "label": "Break-even vs $0.80/task", "value": "≈25 tasks/mo (illustrative)" }
+  ],
+  "evidence": [
+    {
+      "point": "$20/mo Pro, the Free/Pro/Max feature matrix, 4,000 one-time bonus credits, and premium data sources (PitchBook, Statista, S&P Capital IQ) were read from the official pricing hub's server-rendered text via browser-UA fetch (the automated fetcher is 403-blocked site-wide).",
+      "confidence": "high",
+      "source": "perplexity.ai/hub/pricing, accessed 2026-09-07"
+    },
+    {
+      "point": "Limits wording ('Pro Search: weekly limits (average use)', 'Research Queries: monthly limits (average use)', Free '3/day', 50 files/project), the model examples (GPT-5.2, Claude Sonnet 4.6, Gemini 3.1 Pro, Grok 4, Sonar), and auto-renew/no-pause mechanics come from five official help-center articles dated Jul 16–Sep 2 2026.",
+      "confidence": "high",
+      "source": "perplexity.ai/help-center articles 10352901/11187416/10353002/10354288/13838041, accessed 2026-09-07"
+    },
+    {
+      "point": "Annual Pro price: the billing FAQ proves annual billing exists ('switching from annual to monthly'), but no fetched official page states its USD amount; the search snippet '$17/month billed annually' was not visible on the JS-shell /pro page and is treated as unconfirmed.",
+      "confidence": "medium",
+      "source": "Billing FAQ + absence check across hub/pricing, 2026-09-07"
+    },
+    {
+      "point": "Refund windows (14d EU/UK/TR, 7d KR/BR, 24h monthly, 72h annual) are from the Refunds article; the Max article states a 48-hour annual window — an unresolved internal conflict between two official pages both dated Jul 16 2026.",
+      "confidence": "medium",
+      "source": "help-center 10354288 vs 11680686, accessed 2026-09-07"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does Perplexity Pro cost as of the Sep 2026 snapshot?",
+      "a": "$20/month, read on the official pricing hub 2026-09-07. Annual billing exists but its price is not published on official pages — read the real figure at checkout before prepaying."
+    },
+    {
+      "q": "What are Pro's usage limits?",
+      "a": "Officially numeric limits are not published: Pro Search carries 'weekly limits (average use)' (Free gets 3/day), Deep Research 'monthly limits (average use)' (Max gets 50/month). Throttling can tighten 'during weeks of especially heavy usage'."
+    },
+    {
+      "q": "Do Pro credits roll over or reset?",
+      "a": "Consumer Pro has no standing monthly credit pool — the 4,000-credit grant is one-time and expires after 30 days. Credits (100 = $1) are prepaid units for agentic tasks; Max is the tier with a monthly 10,000-credit allowance."
+    },
+    {
+      "q": "Can I get a refund?",
+      "a": "Regionally: EU/UK/Turkey within 14 days, South Korea/Brazil within 7, elsewhere 24 hours for monthly and 72 hours for annual purchases (one official page says 48 for annual — the pages conflict). Canceled plans keep access until the cycle ends; there is no pause option."
+    },
+    {
+      "q": "Is there a cheaper official route?",
+      "a": "Education Pro at $10/mo with SheerID verification. The Airtel India 12-month promo (valued at $200) ended January 16 2026 and is not a current path."
+    },
+    {
+      "q": "How current is this information?",
+      "a": "Pricing hub and five help-center articles fetched 2026-09-07 (help pages self-date July 16–Sep 2 2026). The site 403-blocks standard crawlers, so re-verification needs a browser pass — which is also why the annual figure stays 'not published' here."
+    }
+  ],
+  "citation": "Token Perks. “Perplexity Pro subscription.” Research snapshot Sep 7 2026. https://token-perks.com/best/perplexity-pro/. Re-verify at official terms before paying.",
+  "slot": "also",
+  "rank": 9,
+  "jsonld_price": { "price": "20" }
+}

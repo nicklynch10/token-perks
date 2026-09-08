@@ -10,13 +10,11 @@ export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "AI offers compared — price, annual effective, cost per task",
-  description:
-    "All 3 tracked AI offers: Kimi K3 membership $19–$199/mo plus two $0 routes, with caveats, limits, and renewal terms. Verified Sep 6 2026.",
+  description: `All ${ACTIVE_OFFERS.length} tracked AI offers — subscriptions and $0 routes, each with verified prices, caveats, limits, and renewal terms. Snapshots Sep 6–7 2026.`,
   alternates: { canonical: canonical("/best/") },
   openGraph: {
     title: "AI offers compared — price, annual effective, cost per task",
-    description:
-      "Kimi K3 membership $19–$199/mo plus two $0 routes, with caveats and limits. Verified Sep 6 2026.",
+    description: `${ACTIVE_OFFERS.length} tracked AI offers with caveats, limits, and dated verification.`,
     url: canonical("/best/"),
     type: "website",
     images: [
@@ -34,19 +32,40 @@ const TASK_NOTES: Record<string, string> = {
   "kimi-k3-core": "≈ $0.33/task at 120 tasks/mo",
   "muse-spark-zen-free": "$0.00/task while promo lasts",
   "nvidia-k3-free": "$0.00/task for dev use",
+  "copilot-pro": "$10/mo ≈ 13 PAYG tasks · $15 credit pool ≈ 19 (reference)",
+  "chatgpt-plus": "break-even ≈ 25 tasks/mo vs $0.80 PAYG reference",
+  "google-ai-pro": "≈ 25 tasks/mo AI-side (reference) + bundle value",
+  "claude-pro": "≈ 25 tasks/mo; annual ≈ 21 (vs $0.80 reference)",
+  "cursor-pro": "≈ 25 tasks/mo (reference); included pool unpublished",
+  "perplexity-pro": "≈ 25 tasks/mo (reference); caps not numeric",
 };
+
+/** First dollar amount in a price string (e.g. "$19–$199/mo…" -> 19). Data-derived only. */
+function firstUsd(s: string): number | null {
+  const m = s.match(/\$\s?([\d,]+(?:\.\d+)?)/);
+  return m ? parseFloat(m[1].replace(/,/g, "")) : null;
+}
 
 export default function BestIndex() {
   const url = canonical("/best/");
+  const paid = ACTIVE_OFFERS.map((o) => firstUsd(o.price.now)).filter(
+    (v): v is number => v != null && v > 0,
+  );
+  const freeCount = ACTIVE_OFFERS.filter((o) => (firstUsd(o.price.now) ?? 0) === 0).length;
+  const fmt = (v: number) => `$${v.toFixed(2).replace(/\.00$/, "")}`;
+  const priceSpan = paid.length
+    ? `${fmt(Math.min(...paid))}/mo to ${fmt(Math.max(...paid))}/mo tiers`
+    : "no paid offers yet";
   return (
     <div className="mx-auto max-w-5xl space-y-6 px-4 py-8 sm:px-6">
       <Breadcrumbs trail={[{ label: "Home", href: "/" }, { label: "Offers" }]} />
       <header>
         <h1 className="display-md">All tracked offers</h1>
         <p className="mt-2 max-w-2xl text-ink-soft">
-          Three routes tracked: Kimi K3 membership ($19–$199/mo, renews at list price, annual
-          effective ≈$15–$159/mo) and two $0 routes with stated limits. Cards list price, estimated
-          cost per task, and the caveats for each offer.
+          {ACTIVE_OFFERS.length} offers tracked — consumer subscriptions from {priceSpan}
+          {freeCount > 0 ? `, plus ${freeCount} $0 routes with stated limits` : ""}. Cards list
+          price, estimated cost per task, and the caveats for each offer. Every figure is a dated
+          snapshot: re-verify at official terms before paying.
         </p>
         <p className="mt-2 max-w-2xl text-sm text-ink-mute">
           Gifting, where offered, is handled by the provider directly — this site sells nothing.

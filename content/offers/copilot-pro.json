@@ -1,0 +1,151 @@
+{
+  "id": "copilot-pro",
+  "status": "active",
+  "provider": "GitHub",
+  "plan": "Copilot Pro (individual)",
+  "title": "GitHub Copilot Pro",
+  "shortTitle": "Copilot Pro",
+  "badge": "Credit economics fully verified live",
+  "catchSummary": "Completions are unlimited on paid plans, but chat, agents, and code review draw a $15/mo AI-credit pool — premium models drain it fast, and unused credits are forfeited at month end.",
+  "canonical_url": "/best/copilot-pro/",
+  "official_terms_url": "https://github.com/features/copilot/plans",
+  "official_links": [
+    {
+      "label": "Copilot plans comparison (official)",
+      "url": "https://github.com/features/copilot/plans",
+      "note": "Read live 2026-09-07: Pro $10/user/mo; per-tier credit table ($15/mo total for Pro = $10 base + $5 flex)."
+    },
+    {
+      "label": "Usage-based billing for individuals (official docs)",
+      "url": "https://docs.github.com/copilot/concepts/billing/usage-based-billing-for-individuals",
+      "note": "Read live 2026-09-07: credit reset/rollover, budget mechanics, cap rules."
+    },
+    {
+      "label": "Models and pricing reference (official docs)",
+      "url": "https://docs.github.com/copilot/reference/copilot-billing/models-and-pricing",
+      "note": "Read live 2026-09-07: per-model token rates behind credit draw-down."
+    }
+  ],
+  "price": {
+    "now": "$10/user/mo (monthly billing; annual price for Pro not published)",
+    "renewal": "Monthly per-user charge. No auto-renew terms page was found in this pass — the docs describe cancellation and proration but not renewal notice, so treat renewal mechanics as unverified."
+  },
+  "renewal": "Billed monthly per user. Canceling keeps access until the end of the current billing cycle with no proration; upgrades prorate immediately, downgrades take effect next cycle. A personal plan is automatically canceled (with prorated refund) if a company seat overlaps it. Whether the price is locked between renewals: not published.",
+  "expiry": null,
+  "verified_at": "2026-09-07",
+  "eligibility": [
+    "Any individual GitHub account with a supported payment method ($10/user/mo)",
+    "Free alternative exists: Copilot Free (2,000 completions + 50 chat requests/mo) and a Student plan for verified students at $0",
+    "Teachers and maintainers of popular open-source projects: docs state access at no cost (eligibility mechanics beyond 'verified' not published)",
+    "Additional-credit purchase is unavailable for iOS/Android in-app subscriptions per the plans table"
+  ],
+  "restrictions": [
+    "AI credits (plain-English: monthly usage dollars converted to points — 1 credit = $0.01) gate chat, agent mode, code review, cloud agent, CLI, and Apps; code completions and next-edit suggestions do not use credits and stay unlimited on paid plans",
+    "Pro carries $15/mo total credits = $10 base (1,000) + $5 flex (500); unused credits do not carry over — reset 00:00 UTC on the 1st of each month",
+    "Premium models (e.g. Claude Opus/Fable, GPT-5.5/5.6 Sol, GPT-6 Astra) are listed as Pro+/Max access in the docs tier table — Pro's own roster covers Sonnet 4.6/Haiku 4.5, GPT-5.4/5.6 Luna/Terra, Gemini 3.5 Flash, Grok 4.5/4.6, Kimi K2.7/K3, MAI-Code",
+    "Continuing past included credits requires setting a dollar budget; GitHub notes additional usage 'may be capped'",
+    "Code review also bills GitHub Actions minutes"
+  ],
+  "verdict": "At $10/mo Copilot Pro is the cheapest tracked coding-tool subscription, and completions-only users effectively get unlimited service — the credit pool only matters if you lean on chat, agents, or premium models. Roughly $0.15 of metered usage is included daily on a 30-day month; a few Opus-class agent sessions can consume the pool, which is why the budget-and-alert mechanism exists. If your workflow is completion-first, Pro is strong value; if it is agent-first, budget for on-demand spend or price Pro+ ($39, $70/mo credits) alongside it.",
+  "catches": [
+    "The $10 sticker price buys $10 of base credits + $5 flex — not unlimited premium usage; chat/agent/model calls meter against it",
+    "Credits reset monthly with no rollover: a light January does not subsidize a heavy February",
+    "The plans page's static model table looks identical across tiers — the docs comparison table, not the marketing page, is the reliable tier mapping",
+    "Overage requires an explicitly set budget ('budgets do not stop license charges') and may still be capped mid-cycle"
+  ],
+  "limits": [
+    "Included usage: $15/mo total credits on Pro (1,500 credits at $0.01)",
+    "Completions: unlimited on paid plans; Free is 2,000 completions + 50 chats/mo",
+    "Premium-model access: excluded at Pro tier per docs table; model options may vary by feature",
+    "Per-model token rates (what actually drains credits) live in the models-and-pricing reference, not the plans page",
+    "Exact daily caps beyond credits: not published"
+  ],
+  "access_route": "Subscribe from the Copilot plans page with a personal GitHub account, install the extension in VS Code/JetBrains, then check Settings → Copilot → Usage for your credit budget and alerts.",
+  "claim_steps": [
+    {
+      "step": "Open the plans comparison and confirm the Pro column's credit figures ($15 total = $10 base + $5 flex) before subscribing.",
+      "url": "https://github.com/features/copilot/plans"
+    },
+    {
+      "step": "Check the docs tier table for which models are on Pro vs. locked to Pro+/Max — do not rely on the marketing card.",
+      "url": "https://docs.github.com/en/copilot/get-started/plans"
+    },
+    {
+      "step": "After subscribing, set a personal usage budget early; email alerts fire at 75/90/100% of it.",
+      "url": "https://docs.github.com/copilot/concepts/billing/usage-based-billing-for-individuals"
+    },
+    {
+      "step": "If you are a student, test the free Student plan before paying — verified students get Copilot at no cost.",
+      "url": "https://github.com/features/copilot/plans"
+    }
+  ],
+  "economics_heading": "What $10 actually buys: credits vs. completions",
+  "economics": [
+    "Split the value: completions and next-edit suggestions are unmetered, so completion-only users get the full plan for $10 and never touch the credit pool.",
+    "Everything metered (chat, agents, review, CLI) draws credits at per-token model rates; $15/mo of credits is $0.50/day of model calls — one long Opus-class agent session can approach the whole base pool, which is why Pro's roster stops below the premium models.",
+    "Break-even framing against the $0.80/task illustrative reference: $10/mo covers roughly 12 metered tasks before on-demand is cheaper-or-dearer parity; below ~12 tasks/mo of chat/agent work, a budget-only setup on Free + occasional usage may cost less — but Free caps chats at 50/mo, so heavy users cross to Pro quickly.",
+    "Overage is opt-in: with no budget set you stop at the pool; with a budget you pay $0.01/credit in arrears. Model the pool as a ceiling you must consciously lift, not a soft cap."
+  ],
+  "economics_rows": [
+    { "label": "Pro price", "value": "$10/user/mo" },
+    { "label": "Total credits / mo", "value": "$15 ($10 base + $5 flex)" },
+    { "label": "Credit unit", "value": "1 credit = $0.01" },
+    { "label": "Rollover", "value": "None — resets 00:00 UTC day 1" },
+    { "label": "Overage", "value": "Budget-based, billed in arrears; may be capped" },
+    { "label": "Completions", "value": "Unlimited (paid plans)" },
+    { "label": "Free tier", "value": "2,000 completions + 50 chats/mo" },
+    { "label": "Student plan", "value": "$0 with verification" }
+  ],
+  "evidence": [
+    {
+      "point": "Pro $10/user/mo and the $15/$10+$5 credit split were read live on the official plans comparison page (2026-09-07), and the dollar and credit framings agree across plans page, billing docs, and usage-based-billing docs.",
+      "confidence": "high",
+      "source": "github.com/features/copilot/plans + docs.github.com, accessed 2026-09-07"
+    },
+    {
+      "point": "No-rollover, monthly reset at 00:00 UTC, budget mechanics (alerts at 75/90/100%, 'budgets do not stop license charges'), and possible capping of additional usage are stated in the official usage-based-billing doc.",
+      "confidence": "high",
+      "source": "docs.github.com usage-based-billing-for-individuals, accessed 2026-09-07"
+    },
+    {
+      "point": "Tier-to-model mapping (premium models gated to Pro+/Max) comes from the docs plans table; the features page static table renders an identical roster across tiers, so the docs version is authoritative here.",
+      "confidence": "medium",
+      "source": "docs.github.com/en/copilot/get-started/plans, accessed 2026-09-07"
+    },
+    {
+      "point": "Annual Pro pricing and auto-renewal notice terms were not found on any page fetched this pass — recorded as not published, not guessed.",
+      "confidence": "low",
+      "source": "Absence across plans page + billing docs, 2026-09-07"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does GitHub Copilot Pro cost as of the Sep 2026 snapshot?",
+      "a": "$10/user/mo, billed monthly. The plans page and billing docs both state it; no annual Pro price is published. Prices verified live 2026-09-07 — re-check before paying."
+    },
+    {
+      "q": "What are AI credits and how many does Pro include?",
+      "a": "Credits are GitHub's metered usage unit at $0.01 each. Pro includes $15/mo total: a $10 base allotment (1,000 credits) plus a $5 flex allotment (500). Completions don't use credits; chat, agents, code review, cloud agents, CLI, and Apps do. Unused credits are forfeited at the monthly reset."
+    },
+    {
+      "q": "What happens when Pro credits run out?",
+      "a": "Officially you can wait for the next cycle, switch to cheaper models, or set a dollar budget for additional usage billed in arrears at per-token model rates. GitHub notes additional usage may be capped, and budgets do not stop license charges."
+    },
+    {
+      "q": "Can I use frontier premium models on Pro?",
+      "a": "Not according to the docs tier table, which lists Opus/Fable-class and GPT-5.5/5.6-Sol-class models under Pro+ and Max. Pro's own roster still includes Claude Sonnet 4.6/Haiku 4.5, GPT-5.4/5.6 Terra/Luna, Gemini 3.5 Flash, Grok 4.5/4.6, and Kimi K3. Model options may vary by feature."
+    },
+    {
+      "q": "Is there a free path?",
+      "a": "Yes — Copilot Free (2,000 completions + 50 chat requests/mo, no credit card) and a Student plan at no cost for verified students; teachers and popular-OSS maintainers are also stated free. The Student plan is auto-model-selection only and excludes third-party agents."
+    },
+    {
+      "q": "How current is this information?",
+      "a": "A live pass on 2026-09-07 across the plans page and three docs articles. Billing mechanics change often — re-verify at official docs before relying on budget behavior."
+    }
+  ],
+  "citation": "Token Perks. “GitHub Copilot Pro.” Research snapshot Sep 7 2026. https://token-perks.com/best/copilot-pro/. Re-verify at official terms before paying.",
+  "slot": "also",
+  "rank": 4,
+  "jsonld_price": { "price": "10" }
+}

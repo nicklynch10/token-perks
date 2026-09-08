@@ -41,7 +41,7 @@
   ],
   "sourceUrl": "https://claude.com/pricing",
   "label": "DIRECT",
-  "offer": null,
+  "offer": "/best/claude-pro/",
   "modelId": null,
   "overage": {
    "rate": "Usage credits at standard API rates (no flat per-unit overage published)",
@@ -176,17 +176,19 @@
   "apiIn": null,
   "apiOut": null,
   "unit": "per month",
-  "notes": "Itemized in the official US App Store In-App Purchases list.",
+  "notes": "Itemized in the official US App Store In-App Purchases list. Web pricing page 403s automated fetches; help-article excerpt states '$20/month, billed monthly' and no annual plan for Plus.",
   "caveats": [
-   "App Store price; web may differ"
+   "App Store price; web may differ",
+   "No annual plan (help excerpt)",
+   "Caps 'vary based on system conditions'"
   ],
   "sourceUrl": "https://apps.apple.com/us/app/chatgpt/id6448311069",
   "label": "DIRECT",
-  "offer": null,
+  "offer": "/best/chatgpt-plus/",
   "modelId": null,
   "overage": {
-   "rate": "not published",
-   "sourceUrl": "https://openai.com/chatgpt/pricing/",
+   "rate": "not published (flexible-usage credits exist per help-center excerpt; credit prices in-product only)",
+   "sourceUrl": "https://help.openai.com/en/articles/12642688-using-credits-for-flexible-usage-in-chatgpt-freegopluspro-sora",
    "accessed": "2026-09-07"
   }
  },
@@ -312,15 +314,19 @@
   "apiIn": null,
   "apiOut": null,
   "unit": "per month",
-  "notes": "5 TB storage; about 4x free Gemini usage; Gemini in Gmail and Docs.",
-  "caveats": [],
-  "sourceUrl": "https://one.google.com/intl/en_us/about/google-ai-plans/",
-  "label": "EXCERPT",
-  "offer": null,
+  "notes": "5 TB storage (10 TB on some variants); '4x access to Gemini' vs non-subscribers; Gemini in Gmail/Docs, Flow, NotebookLM, Jules, Antigravity, $10/mo Cloud credits. Price read in static text of the Gemini subscriptions page; the One plans pages render prices client-side.",
+  "caveats": [
+   "Annual price not published",
+   "Limits: 5-hour refresh to a weekly ceiling, per product",
+   "Family sharing up to 5 others"
+  ],
+  "sourceUrl": "https://gemini.google/subscriptions/",
+  "label": "DIRECT",
+  "offer": "/best/google-ai-pro/",
   "modelId": null,
   "overage": {
-   "rate": "not published",
-   "sourceUrl": "https://one.google.com/intl/en_us/about/google-ai-plans/",
+   "rate": "AI credit packs (Pro/Ultra can buy; plan manager only; pack prices not published)",
+   "sourceUrl": "https://support.google.com/googleone/answer/16287445",
    "accessed": "2026-09-07"
   }
  },
@@ -825,20 +831,23 @@
   "provider": "Perplexity",
   "category": "a",
   "plan": "Perplexity Pro",
-  "listPrice": "$20/mo or $200/yr",
+  "listPrice": "$20/mo (annual not published)",
   "priceMonthly": 20,
   "apiIn": null,
   "apiOut": null,
   "unit": "per month/year",
-  "notes": "Frontier models plus extended Deep Research; direct page fetch 403.",
-  "caveats": [],
+  "notes": "Verified on the official pricing hub (browser-mode fetch; automated fetcher 403s site-wide) plus five help-center articles. /pro is a JS shell; no official page states an annual Pro price — the '$200/yr' figure is promo-valuation lineage only.",
+  "caveats": [
+   "Annual price not published",
+   "Caps are 'weekly/monthly limits (average use)' — numbers not published"
+  ],
   "sourceUrl": "https://www.perplexity.ai/pro",
-  "label": "EXCERPT",
-  "offer": null,
+  "label": "DIRECT",
+  "offer": "/best/perplexity-pro/",
   "modelId": null,
   "overage": {
-   "rate": "not published",
-   "sourceUrl": "https://www.perplexity.ai/pro",
+   "rate": "Credits at 100 = $1; no standing monthly pool on Pro (one-time 4,000 bonus, 30-day expiry)",
+   "sourceUrl": "https://www.perplexity.ai/help-center/en/articles/13838041-how-credits-work-on-perplexity.html",
    "accessed": "2026-09-07"
   }
  },

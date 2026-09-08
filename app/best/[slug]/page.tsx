@@ -7,7 +7,7 @@ import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import ResearchSnapshot from "@/components/ResearchSnapshot";
 import VerifyBadge from "@/components/VerifyBadge";
-import { getOffer, offerSlugs, type Offer } from "@/lib/offers";
+import { ACTIVE_OFFERS, getOffer, offerSlugs, type Offer } from "@/lib/offers";
 import { canonical, SITE_URL } from "@/lib/site";
 
 export const dynamic = "force-static";
@@ -33,6 +33,36 @@ const META: Record<string, { title: string; description: string }> = {
     description:
       "Kimi K3 free for development and prototyping on NVIDIA Build, reasoning and tool calls preserved; limits vary by account. Verified Sep 6 2026.",
   },
+  "copilot-pro": {
+    title: "GitHub Copilot Pro — $10/mo price, AI-credit economics, model access",
+    description:
+      "Copilot Pro $10/user/mo; completions unlimited, chat/agents draw $15/mo AI credits ($10 base + $5 flex at $0.01/credit, no rollover); budget-based overage. Verified live Sep 7 2026.",
+  },
+  "chatgpt-plus": {
+    title: "ChatGPT Plus — $19.99/mo price, usage windows, credits",
+    description:
+      "ChatGPT Plus $19.99/mo (US App Store list; help article states $20/mo, no annual plan). Caps run 5-hour windows plus weekly allowances and vary with system conditions. Verified Sep 7 2026.",
+  },
+  "google-ai-pro": {
+    title: "Google AI Pro — $19.99/mo price, limits, bundle contents",
+    description:
+      "Google AI Pro $19.99/mo: 5 TB storage, ~4x Gemini usage with 5-hour/weekly limits, family sharing, buyable AI credits. Annual price not published. Verified Sep 7 2026.",
+  },
+  "claude-pro": {
+    title: "Claude Pro — $20/mo ($17 annual) price, session caps, usage credits",
+    description:
+      "Claude Pro $20/mo or $200/yr upfront. At least 5x Free usage per 5-hour session plus a weekly cap; Claude Code shares the pool; Fable models run on pay-as-you-go credits. Verified Sep 7 2026.",
+  },
+  "cursor-pro": {
+    title: "Cursor Pro — $20/mo price, included usage pools, on-demand billing",
+    description:
+      "Cursor Pro $20/mo: unlimited tab completions, Agent + bonus pools of unpublished size, on-demand usage at API rates billed in arrears. Verified live Sep 7 2026.",
+  },
+  "perplexity-pro": {
+    title: "Perplexity Pro — $20/mo price, unstated caps, credit mechanics",
+    description:
+      "Perplexity Pro $20/mo (annual price not published). Search/Deep Research caps are 'average use' without numbers; credits at 100 = $1 with no standing Pro pool. Verified Sep 7 2026.",
+  },
 };
 
 /** Spec-like H1: what this page documents. */
@@ -40,6 +70,12 @@ const PAGE_H1: Record<string, string> = {
   "kimi-k3-core": "Kimi K3 Membership — prices, limits, effective cost per task",
   "muse-spark-zen-free": "Zen Muse Spark 1.3 Free promo — price, limits, access route",
   "nvidia-k3-free": "NVIDIA Build Kimi K3 Free — price, limits, access route",
+  "copilot-pro": "GitHub Copilot Pro — price, AI credits, model access",
+  "chatgpt-plus": "ChatGPT Plus — price, usage windows, credits",
+  "google-ai-pro": "Google AI Pro — price, limits, bundle contents",
+  "claude-pro": "Claude Pro — price, session caps, usage credits",
+  "cursor-pro": "Cursor Pro — price, included pools, on-demand billing",
+  "perplexity-pro": "Perplexity Pro — price, limits, credit mechanics",
 };
 
 /** Lead spec table rows, per offer: figures first, then limits and renewal. */
@@ -68,12 +104,79 @@ const SPEC_ROWS: Record<string, { label: string; value: string }[]> = {
     { label: "Renewal", value: "None — account limits govern" },
     { label: "Verified", value: "2026-09-06" },
   ],
+  "copilot-pro": [
+    { label: "Monthly price", value: "$10/user/mo (annual price not published)" },
+    { label: "Included credits", value: "$15/mo total — $10 base (1,000) + $5 flex (500) at $0.01/credit" },
+    { label: "Rollover", value: "None — reset 00:00 UTC, first day of each month" },
+    { label: "Unlimited?", value: "Completions and next-edit: unlimited; chat/agents/review/CLI: credit-metered" },
+    { label: "Overage", value: "Opt-in dollar budget, billed in arrears at per-token model rates; may be capped" },
+    { label: "Pool per task", value: "≈19 tasks at the $0.80/task reference before on-demand starts (illustrative)" },
+    { label: "Key limits", value: "Premium models (Opus/Fable/GPT-5.5+/Sol) are Pro+/Max per docs table" },
+    { label: "Verified", value: "2026-09-07" },
+  ],
+  "chatgpt-plus": [
+    { label: "Monthly price", value: "$19.99 (US App Store list); '$20/month' per help-article excerpt" },
+    { label: "Annual price", value: "Not offered — Plus is monthly-only per help-article excerpt" },
+    { label: "Limit mechanism", value: "5-hour rolling windows + weekly allowances; vary with system conditions" },
+    { label: "Excerpted number", value: "3,000 GPT-5-Thinking msgs/week (May 2026 release-note excerpt)" },
+    { label: "Overage", value: "Flexible-usage credits + instant weekly resets (prices in-product only)" },
+    { label: "Above Plus", value: "Pro $100 = 5x usage; Pro $200 = 20x (help excerpt)" },
+    { label: "Verification caveat", value: "openai.com 403s automated fetches — dual-sourced, browser re-check advised" },
+    { label: "Verified", value: "2026-09-07" },
+  ],
+  "google-ai-pro": [
+    { label: "Monthly price", value: "$19.99/mo (static text, official Gemini subscriptions page)" },
+    { label: "Annual price", value: "Offered — figure not published on official pages this pass" },
+    { label: "Storage", value: "5 TB (10 TB on some plan variants)" },
+    { label: "Usage vs free", value: "≈4x Gemini access; 'limit refreshes every 5 hours until you reach your weekly limit'" },
+    { label: "Bundle", value: "Gemini in Gmail/Docs, Flow, NotebookLM, Jules, Antigravity, YouTube Premium Lite, $10/mo Cloud credits" },
+    { label: "Overage", value: "Buyable AI credits — pack prices not published; plan manager only" },
+    { label: "Extras", value: "Family sharing (5 others); students 1 year free (SheerID); 150+ countries" },
+    { label: "Verified", value: "2026-09-07" },
+  ],
+  "claude-pro": [
+    { label: "Monthly price", value: "$20/mo" },
+    { label: "Annual", value: "$200 upfront ≈ $17/mo effective (pricing-page card)" },
+    { label: "Session allowance", value: "≥5x Free per rolling 5-hour session; resets every 5 hours" },
+    { label: "Weekly cap", value: "All-model weekly limit; resets at an account-assigned time (Settings > Usage)" },
+    { label: "Included models", value: "Opus, Sonnet, Haiku (200k context); Fable 5/5.1 = pay-as-you-go credits" },
+    { label: "Overage", value: "Usage credits at standard API rates; $2,000/day redemption limit; optional spend cap + auto-reload" },
+    { label: "Claude Code", value: "Included — shares one pool with chat" },
+    { label: "Verified", value: "2026-09-07" },
+  ],
+  "cursor-pro": [
+    { label: "Monthly price", value: "$20/mo (verified in live static text, pricing page + help table)" },
+    { label: "Annual price", value: "Toggle exists in-app — yearly USD figure not published" },
+    { label: "Included usage", value: "'A set amount' across Agent + bonus pools — dollar size not published" },
+    { label: "Unlimited?", value: "Tab completions unlimited on Pro and above" },
+    { label: "Overage", value: "On-demand at raw API list rates, billed in arrears (opt-in)" },
+    { label: "Ladder", value: "Pro+ $60 = 3x Agent limits; Ultra $200 = 20x; Teams $40/$120 per user" },
+    { label: "Refunds", value: "≤14 days AND period unused; consumed on-demand never refundable" },
+    { label: "Verified", value: "2026-09-07" },
+  ],
+  "perplexity-pro": [
+    { label: "Monthly price", value: "$20/mo (official pricing hub, browser-mode fetch)" },
+    { label: "Annual price", value: "Not published on any official page fetched — read it at checkout" },
+    { label: "Models", value: "One sub across GPT-5.2, Claude Sonnet 4.6, Gemini 3.1 Pro, Grok 4, Sonar (per Pro help article)" },
+    { label: "Caps", value: "Pro Search: weekly 'average use' (no number); Deep Research: monthly 'average use' (Max = 50/mo)" },
+    { label: "Credits", value: "100 = $1; no standing Pro pool — one-time 4,000 bonus credits expire after 30 days" },
+    { label: "Refunds", value: "EU/UK/TR 14d; KR/BR 7d; else 24h monthly / 72h annual (a second official page says 48h — conflict noted)" },
+    { label: "Student", value: "Education Pro $10/mo (SheerID)" },
+    { label: "Verified", value: "2026-09-07" },
+  ],
+};
+
+/** OG image per offer; anything unshipped falls back to the site card. */
+const OG_IMAGE: Record<string, string> = {
+  "kimi-k3-core": "/img/og/og-kimi.png",
+  "muse-spark-zen-free": "/img/og/og-muse-zen.png",
+  "nvidia-k3-free": "/img/og/og-nvidia.png",
 };
 
 /**
  * schema.org/Offer per snapshot. priceValidUntil = verified_at + 7 days
- * (the stated weekly re-verification cadence). Tiered pricing uses
- * AggregateOffer lowPrice/highPrice from the snapshot ($19/$199).
+ * (the stated weekly re-verification cadence). Prices come from the offer's
+ * own jsonld_price field (single price -> Offer; ladder -> AggregateOffer).
  * $0 routes use isAccessibleForFree instead of availability.
  */
 function offerJsonLd(offer: Offer, url: string) {
@@ -93,12 +196,24 @@ function offerJsonLd(offer: Offer, url: string) {
       isAccessibleForFree: true,
     };
   }
+  const jp = offer.jsonld_price ?? { lowPrice: "19", highPrice: "199" };
+  if (jp.price != null) {
+    return {
+      "@context": "https://schema.org",
+      "@type": "Offer",
+      price: jp.price,
+      priceCurrency: jp.currency ?? "USD",
+      priceValidUntil: validUntil,
+      url,
+      availability: "https://schema.org/InStock",
+    };
+  }
   return {
     "@context": "https://schema.org",
     "@type": "AggregateOffer",
-    lowPrice: "19",
-    highPrice: "199",
-    priceCurrency: "USD",
+    lowPrice: jp.lowPrice,
+    highPrice: jp.highPrice,
+    priceCurrency: jp.currency ?? "USD",
     priceValidUntil: validUntil,
     url,
     availability: "https://schema.org/InStock",
@@ -128,7 +243,7 @@ export async function generateMetadata({
       type: "article",
       images: [
         {
-          url: `/img/og/og-${slug === "kimi-k3-core" ? "kimi" : slug === "muse-spark-zen-free" ? "muse-zen" : "nvidia"}.png`,
+          url: OG_IMAGE[slug] ?? "/img/og/og-home.png",
           width: 1200,
           height: 630,
           alt: "Token Perks — AI subscription offers, compared on effective cost per task",
@@ -403,7 +518,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
         <h2 className="display-lg">Compare</h2>
         <p className="mt-2 text-sm text-ink-soft">
           <Link href="/best/" className="font-semibold underline">
-            All 3 offers side by side
+            All {ACTIVE_OFFERS.length} offers side by side
           </Link>{" "}
           ·{" "}
           <Link href="/guides/monthly-vs-annual-ai/" className="font-semibold underline">
@@ -439,7 +554,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
           {
             "@context": "https://schema.org",
             "@type": "Dataset",
-            name: `Token Perks snapshot: ${offer.shortTitle} — Sep 6 2026`,
+            name: `Token Perks snapshot: ${offer.shortTitle} — verified ${offer.verified_at}`,
             description: `First-party research snapshot of ${offer.provider} ${offer.plan} pricing, renewal, and limits. Official sources only.`,
             creator: { "@type": "Organization", name: "Token Perks", url: SITE_URL },
             license: "https://creativecommons.org/licenses/by/4.0/",

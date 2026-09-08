@@ -20,9 +20,21 @@ export const metadata: Metadata = {
   },
 };
 
+function evidenceMix(rows: { label: string }[]): string {
+  const direct = rows.filter((r) => r.label === "DIRECT").length;
+  const excerpt = rows.filter((r) => r.label === "EXCERPT").length;
+  const uncertain = rows.filter((r) => r.label === "UNCERTAIN").length;
+  const parts: string[] = [];
+  if (direct) parts.push(`${direct} direct`);
+  if (excerpt) parts.push(`${excerpt} snapshot`);
+  if (uncertain) parts.push(`${uncertain} uncertain`);
+  return parts.join(" · ");
+}
+
 export default function ProvidersIndex() {
   const url = canonical("/providers/");
   const groups = providerGroups();
+  const totalOffers = new Set(UNIVERSE.rows.map((r) => r.offer).filter(Boolean)).size;
 
   return (
     <div>
@@ -38,17 +50,27 @@ export default function ProvidersIndex() {
           route we track — what it costs on paper, the caveats attached, and how well verified it
           is — with cross-links into the cost leaderboard and any tracked offer.
         </p>
+        <p className="mt-3 max-w-3xl text-sm text-ink-mute">
+          Evidence mix below counts every route by label: DIRECT = read on the provider&apos;s own
+          page this pass; EXCERPT = official copy obtained via snapshot or search index; UNCERTAIN =
+          not verified this pass, shown as-is.
+        </p>
       </section>
 
       <section aria-label="Provider list" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
         <div className="hidden md:block overflow-x-auto rounded-xl border border-line-strong">
           <table className="spec-table">
-            <caption className="sr-only">Providers with tracked route counts and categories</caption>
+            <caption className="sr-only">
+              Providers with tracked route counts, categories, verification mix, entry prices, and offer coverage
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Provider</th>
                 <th scope="col" className="num">Routes</th>
                 <th scope="col">Categories covered</th>
+                <th scope="col">Evidence mix</th>
+                <th scope="col">Cheapest paid route</th>
+                <th scope="col">Tracked offers</th>
                 <th scope="col" className="num">Unverified rows</th>
               </tr>
             </thead>
@@ -56,6 +78,10 @@ export default function ProvidersIndex() {
               {groups.map((g) => {
                 const cats = [...new Set(g.rows.map((r) => r.category))];
                 const unverified = g.rows.filter((r) => r.label === "UNCERTAIN").length;
+                const cheapestPaid = g.rows
+                  .filter((r) => r.priceMonthly != null && r.priceMonthly > 0)
+                  .sort((a, b) => (a.priceMonthly as number) - (b.priceMonthly as number))[0];
+                const offerCount = new Set(g.rows.map((r) => r.offer).filter(Boolean)).size;
                 return (
                   <tr key={g.slug}>
                     <th scope="row" className="font-normal font-medium">
@@ -65,6 +91,20 @@ export default function ProvidersIndex() {
                     </th>
                     <td className="num">{g.rows.length}</td>
                     <td className="text-ink-soft text-[12.5px]">{cats.map((c) => CATEGORY_LABELS[c]).join(" · ")}</td>
+                    <td className="text-[12px] text-ink-soft">{evidenceMix(g.rows)}</td>
+                    <td className="data text-[12.5px]">
+                      {cheapestPaid ? (
+                        <>
+                          {cheapestPaid.listPrice}
+                          <span className="block text-[11px] text-ink-mute">{cheapestPaid.plan}</span>
+                        </>
+                      ) : (
+                        <span className="text-ink-mute">
+                          {g.rows.some((r) => r.priceMonthly === 0) ? "free only" : "n/a"}
+                        </span>
+                      )}
+                    </td>
+                    <td className="text-[12.5px]">{offerCount > 0 ? `${offerCount} tracked` : "—"}</td>
                     <td className="num text-ink-mute">{unverified}</td>
                   </tr>
                 );

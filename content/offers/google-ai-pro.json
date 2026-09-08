@@ -1,0 +1,155 @@
+{
+  "id": "google-ai-pro",
+  "status": "active",
+  "provider": "Google",
+  "plan": "Google AI Pro",
+  "title": "Google AI Pro subscription",
+  "shortTitle": "Google AI Pro",
+  "badge": "Price verified on official subscriptions page",
+  "catchSummary": "The $19.99 fee bundles a lot (5 TB storage, 4x Gemini usage, apps) but the AI limits are window-shaped — a 5-hour refresh that stops at a weekly ceiling — and the annual price is never shown on official pages.",
+  "canonical_url": "/best/google-ai-pro/",
+  "official_terms_url": "https://gemini.google/subscriptions/",
+  "official_links": [
+    {
+      "label": "Google AI subscription plans (official)",
+      "url": "https://gemini.google/subscriptions/",
+      "note": "Read live 2026-09-07 — the only fetched official page whose static text carries the dollar price ($19.99/mo), the 5-hour/weekly limit mechanism, and the no-partial-refund line."
+    },
+    {
+      "label": "Get a Google AI Pro membership (official help)",
+      "url": "https://support.google.com/googleone/answer/16476811",
+      "note": "Monthly-or-annual billing choice, 5 TB or 10 TB storage by plan variant, signup exclusions (third-party billing, Pixel Pass, personal accounts)."
+    },
+    {
+      "label": "Manage your AI credits (official help)",
+      "url": "https://support.google.com/googleone/answer/16287445",
+      "note": "Overage route: Pro/Ultra members can buy AI credits for Gemini, Flow, and Antigravity; plan manager only; family-pooled; pack prices not published."
+    },
+    {
+      "label": "Cancel your Google One membership (official help)",
+      "url": "https://support.google.com/googleone/answer/9056360",
+      "note": "Cancel anytime, benefits to cycle end, then storage reverts to 15 GB; purchases non-refundable in most regions."
+    }
+  ],
+  "price": {
+    "now": "$19.99/mo (annual billing is offered but the annual price is not published on official pages fetched)",
+    "renewal": "Auto-renews at the start of each billing cycle until you unsubscribe; price increases require at least 30 days' prior notice applied after the current period; a failed renewal gets a seven-day grace period."
+  },
+  "renewal": "Charged at the beginning of each billing cycle; renews automatically unless canceled. Google may change prices with at least 30 days' notice before your next charge. Cancellations keep benefits until the cycle ends; storage purchases are non-refundable in most countries (Apple-billed purchases go through Apple; Israel has a 14-day pro-rata rule).",
+  "expiry": null,
+  "verified_at": "2026-09-07",
+  "eligibility": [
+    "Available in over 150 countries and territories; personal Google accounts only (not while billed via a third-party partner or Pixel Pass)",
+    "Some benefits are age-gated to 18+",
+    "Students: Google AI Pro free for 1 year with SheerID verification — offer auto-renews at $19.99/mo when student status concludes; not available on school-issued accounts",
+    "Family sharing: up to five other members get AI benefits at no extra cost (with carve-outs, e.g. YouTube Premium Lite not shareable)"
+  ],
+  "restrictions": [
+    "Limits are per-window: 'Your limit refreshes every 5 hours until you reach your weekly limit' — and each product (Gemini, Flow, Antigravity…) has its own limits",
+    "Exact prompts/day or gens/week figures: not published on fetched official pages",
+    "Buying more usage exists (AI credits) but pack prices and per-feature credit costs are not published in the help article and 'Google reserves the right to modify the credit cost'",
+    "Feature flags are region-limited: auto-browse in Chrome and Photos Remix are US-only per the plans page",
+    "The one.google.com plans pages render prices client-side — dollar figures were confirmed only on gemini.google/subscriptions"
+  ],
+  "verdict": "Google AI Pro is less an AI subscription than a bundle: $19.99/mo buys 5 TB of storage, roughly 4x Gemini usage vs non-subscribers, Gemini across Gmail/Docs, Flow, NotebookLM, Jules, Antigravity, Home Premium, and $10/mo of Cloud credits. For anyone already inside Google Workspace for personal life, it is the best value-per-dollar of the $20 class even if you rarely prompt. For AI-first power users the ceiling is real: a weekly cap over each product, no published numbers, and a credits top-up whose price you discover at checkout. Students get a free year — that alone flips the comparison for eligible users.",
+  "catches": [
+    "The weekly limit sits above the 5-hour window: bursty days are survivable, sustained weeks are the actual ceiling",
+    "Annual billing exists but its price is never shown on official pages fetched this pass — you discover it at checkout",
+    "AI-credit packs: mechanism official, pricing unpublished, and per-feature costs are stated to be modifiable by Google",
+    "Cancel means you keep AI until cycle end, then storage drops to the 15 GB free tier — if your data lives on the 5 TB, downgrading is a migration project"
+  ],
+  "limits": [
+    "Usage vs free tier: '4x access to Gemini' (footnoted 'in comparison to non-AI subscribers'); higher caps for Gemini 3.1 Pro, Deep Research, 1M-token context, ~1,500-page uploads",
+    "No published per-day counts for prompts, Deep Research runs, or Flow generations — only the 5-hour-refresh/weekly-limit mechanism",
+    "Only the plan manager can purchase AI credits; credits are family-pooled and may expire after a period",
+    "Exact credit costs per feature: not published (vary by feature)"
+  ],
+  "access_route": "Subscribe from gemini.google/subscriptions (or one.google.com) with a personal Google account in a supported country; manage seat, family members, and AI credits from the Google One dashboard.",
+  "claim_steps": [
+    {
+      "step": "Confirm the $19.99/mo figure on the official subscriptions page before checking out.",
+      "url": "https://gemini.google/subscriptions/"
+    },
+    {
+      "step": "If eligible (18+, student status via SheerID), claim the 1-year student offer first — note it auto-renews at $19.99/mo after.",
+      "url": "https://one.google.com/about/google-ai-plans/"
+    },
+    {
+      "step": "Check your country's availability and the third-party/Pixel Pass signup exclusions in the membership article.",
+      "url": "https://support.google.com/googleone/answer/16476811"
+    },
+    {
+      "step": "After subscribing, review AI-credit purchases only if you actually hit a limit — pack prices appear at checkout, not in docs.",
+      "url": "https://support.google.com/googleone/answer/16287445"
+    }
+  ],
+  "economics_heading": "Bundle value vs. pure-AI value",
+  "economics": [
+    "Two ways to read the $19.99: as an AI plan it must beat Claude Pro/ChatGPT Plus on model access per dollar; as a bundle it competes with a storage plan plus several app subscriptions. The page's own extras (5 TB ≈ standalone paid storage tier, YouTube Premium Lite, Home Premium at '$10/mo value', $10/mo Cloud credits) are what make the sub-$20 sticker defensible.",
+    "Against the $0.80/task illustrative reference, $19.99 is parity at ~25 heavy AI tasks/mo — but unlike pure chat subs, part of the fee is storage and apps you may pay for separately anyway; assign that share before comparing AI-only.",
+    "Student free year makes marginal cost $0 for a year — the break-even logic only matters from month 13.",
+    "The unpublished annual price and credit-pack prices mean true cost comparison against annual-priced rivals (Claude $17/mo annual) cannot be done from official pages this pass."
+  ],
+  "economics_rows": [
+    { "label": "Monthly price", "value": "$19.99" },
+    { "label": "Annual price", "value": "Offered — figure not published" },
+    { "label": "Storage", "value": "5 TB (10 TB on some plan variants)" },
+    { "label": "Usage vs free", "value": "≈4x Gemini access (non-AI subscriber baseline)" },
+    { "label": "Limit mechanism", "value": "5-hour refresh, weekly ceiling, per-product" },
+    { "label": "Overage", "value": "AI credit packs — prices not published" },
+    { "label": "Family sharing", "value": "Up to 5 others" },
+    { "label": "Student offer", "value": "1 year free (SheerID), then $19.99/mo" }
+  ],
+  "evidence": [
+    {
+      "point": "The $19.99/mo price, '4x higher usage limits', the 5-hour/weekly limit wording, and 'No refunds for partial billing periods, except as required by law' are in the static text of the official Gemini subscriptions page fetched live.",
+      "confidence": "high",
+      "source": "gemini.google/subscriptions/, accessed 2026-09-07"
+    },
+    {
+      "point": "Renewal (charge at cycle start, auto-renew), 30-day price-increase notice, seven-day failed-renewal grace, and family/billing mechanics come from Google One's official terms and help articles.",
+      "confidence": "high",
+      "source": "one.google.com/terms-of-service + support.google.com/googleone answers 2736362/9056360/16476811, accessed 2026-09-07"
+    },
+    {
+      "point": "AI credits as the overage path (Pro/Ultra only, plan-manager purchase, family-pooled, expiring, modifiable costs) is documented officially; pack prices are absent from the doc itself.",
+      "confidence": "high",
+      "source": "support.google.com/googleone/answer/16287445, accessed 2026-09-07"
+    },
+    {
+      "point": "150+ country availability, student 1-year offer terms (SheerID; renews at $19.99; no school accounts), and the 5 TB / 4x / feature lists are from the official AI-plans pages; third-party claims of a ~$49.99 10 TB tier were NOT confirmed on official pages and are not quoted.",
+      "confidence": "medium",
+      "source": "one.google.com/about/google-ai-plans/ + intl/en_us variant, accessed 2026-09-07"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does Google AI Pro cost as of the Sep 2026 snapshot?",
+      "a": "$19.99/month — verified in the static text of gemini.google/subscriptions on 2026-09-07. Annual billing is offered but no annual price appears on any official page fetched this pass."
+    },
+    {
+      "q": "What usage limits does the plan actually state?",
+      "a": "'4x access to Gemini' vs non-subscribers, and the published mechanism: a limit that refreshes every 5 hours until you reach a weekly limit, applied per product. Exact prompt or generation counts are not published."
+    },
+    {
+      "q": "Can I buy more usage when I hit the limit?",
+      "a": "Yes via Google's AI credits (plain-English: prepaid usage packs for Gemini, Flow, and Antigravity). Only the plan manager can buy them, they pool across the family, they may expire, and per-feature credit costs are unpublished and changeable by Google."
+    },
+    {
+      "q": "What's in the bundle beyond chat?",
+      "a": "5 TB storage (10 TB on some variants), Gemini in Gmail/Docs/Vids, Deep Research and 1M-context access, Flow/Flow Music, NotebookLM, Jules, Antigravity, Colab/AI Studio, Android Studio integration, Chrome auto-browse (US), YouTube Premium Lite, Google Home Premium Standard, and $10/mo Cloud credits — all per the official plans/help pages."
+    },
+    {
+      "q": "How do cancellation and refunds work?",
+      "a": "Cancel anytime; benefits run to the end of the billing cycle, then storage reverts to 15 GB. Purchases are non-refundable in most regions (partial periods included); Apple-billed subscriptions refund through Apple; a seven-day grace period applies to failed renewals."
+    },
+    {
+      "q": "How current is this information?",
+      "a": "Live fetches of official Google pages 2026-09-07. Region availability and credit pricing shift often — re-verify before paying."
+    }
+  ],
+  "citation": "Token Perks. “Google AI Pro subscription.” Research snapshot Sep 7 2026. https://token-perks.com/best/google-ai-pro/. Re-verify at official terms before paying.",
+  "slot": "also",
+  "rank": 6,
+  "jsonld_price": { "price": "19.99" }
+}
