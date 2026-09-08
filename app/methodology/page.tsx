@@ -30,7 +30,11 @@ const FAQ = [
   },
   {
     q: "What does 'blended $/M' mean?",
-    a: "A single per-million-token figure computed as (3 x input price + 1 x output price) / 4. The 3:1 ratio mirrors a write-heavy workload. It is Token Perks arithmetic, not a provider figure, and it uses list prices — cache discounts, off-peak windows, and long-context surcharges are documented per row but not baked into the blend. Batch discounts get their own computed column instead: batch $/M = blended $/M x (1 - published batch discount), shown only where the provider publishes a batch rate; rows without one show a dash, never a guess.",
+    a: "A single per-million-token figure computed as (3 x input price + 1 x output price) / 4. The 3:1 ratio mirrors a write-heavy workload. It is Token Perks arithmetic, not a provider figure, and it prices each input and output at the route's current published rate — normally list, but a launch-promo price while a promo is live (rows priced at a promo caption their list-price blend in their caveats, e.g. Z.ai GLM-5.3-Flash: $0.119/M at the promo, $0.2375/M at list). Cache discounts, off-peak windows, and long-context surcharges are documented per row but not baked into the blend. Batch discounts get their own computed column instead: batch $/M = blended $/M x (1 - published batch discount), shown only where the provider publishes a batch rate; rows without one show a dash, never a guess.",
+  },
+  {
+    q: "Can AI subscriptions be gifted?",
+    a: "It depends on the offer, and we state it per offer rather than generically. Consumer AI subscriptions are tied to the account that buys them — none of our tracked offers sells a gift card or a transferable subscription — so a gift means either a $0 route the recipient activates themselves, a credit/top-up pack where the provider sells one, or paying for (or starting) the account with the recipient's consent. Refund and cancellation windows decide how safe a prepaid gift is, and they differ by offer: some refund recent unused charges, others end access at the billing-cycle close with no proration. Each offer page carries its verified refund row; the gift guide reads them side by side.",
   },
   {
     q: "Are the intelligence scores yours?",

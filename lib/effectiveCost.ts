@@ -1,9 +1,18 @@
 /**
  * Effective-cost math. All figures are illustrative estimates, not guarantees.
- * Reference model: a $40/mo subscription vs pay-as-you-go billed per task.
+ * Working default: the actual Kimi Allegretto tier ($39/mo) vs pay-as-you-go
+ * billed per task. The $40 figure survives only as a clearly labeled
+ * illustrative reference basket (see REFERENCE_BASKET_NOTE).
  */
 
-export const COMPARE_SUB_PRICE = 40; // $/mo flat reference subscription
+import { ALLEGRETTO_MONTHLY } from "@/lib/crossover";
+
+/** $/mo default for the calculator's flat-plan input — the actual Kimi Allegretto tier. */
+export const FLAT_PLAN_DEFAULT = ALLEGRETTO_MONTHLY; // 39
+export const FLAT_PLAN_DEFAULT_HINT = "Kimi Allegretto";
+
+/** @deprecated Illustrative reference basket only — the calculator defaults to FLAT_PLAN_DEFAULT. */
+export const COMPARE_SUB_PRICE = 40; // $/mo flat reference subscription (illustrative basket)
 export const BLENDED_PER_MTOK = 8; // $ per 1M tokens, illustrative blended in+out
 export const BASELINE_TOKENS_PER_TASK = 100_000; // baseline that yields $0.80/task
 export const BASELINE_PAYG_PER_TASK = 0.8; // $/task at baseline
@@ -48,7 +57,7 @@ export interface RouteComparison {
 export function cheapestRoute(
   tasks: number,
   tokensPerTask: number,
-  subPrice: number = COMPARE_SUB_PRICE,
+  subPrice: number = FLAT_PLAN_DEFAULT,
 ): RouteComparison {
   const t = Number.isFinite(tasks) ? Math.max(0, Math.round(tasks)) : 0;
   const perTask = paygPerTask(tokensPerTask);
@@ -173,6 +182,15 @@ export interface TeamComparison {
 export function clampSeats(n: number): number {
   if (!Number.isFinite(n)) return 1;
   return Math.min(MAX_SEATS, Math.max(1, Math.round(n)));
+}
+
+/** Bounds for the calculator's flat-plan price input ($/mo). */
+export const SUB_PRICE_MIN = 5;
+export const SUB_PRICE_MAX = 200;
+
+export function clampSubPrice(n: number): number {
+  if (!Number.isFinite(n)) return FLAT_PLAN_DEFAULT;
+  return Math.min(SUB_PRICE_MAX, Math.max(SUB_PRICE_MIN, Math.round(n)));
 }
 
 /** Cheapest compliant team setup: team PAYG total vs each seat plan x seats. */

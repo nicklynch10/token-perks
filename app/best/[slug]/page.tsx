@@ -404,6 +404,31 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
         </dl>
       </section>
 
+      <section id="gift" aria-label="Gift readiness" className="scroll-mt-16">
+        <h2 className="display-lg">Gifting this offer</h2>
+        <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+          {/^\$0\b/.test(offer.price.now.trim()) ? (
+            <>
+              Free route — there is nothing to buy. The gift is the introduction: the recipient
+              activates it on their own account, where quotas are account-variable, so they should
+              measure it in their first session.
+            </>
+          ) : (
+            <>
+              Paid plan tied to the buying account — the verified terms show no gift card or
+              transfer path. If you want to cover someone&apos;s first month, do it on an account
+              they own and control, and start monthly rather than annual — prepaid money is the
+              exposed part (renewal behavior is quoted in the block above). Full per-offer
+              reasoning:{" "}
+              <Link href="/guides/buying-ai-access-as-a-gift/" className="u-draw text-teal-deep">
+                buying AI access as a gift
+              </Link>
+              .
+            </>
+          )}
+        </p>
+      </section>
+
       <section aria-label="Eligibility and access">
         <h2 className="display-lg">Eligibility and access route</h2>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-ink-soft">

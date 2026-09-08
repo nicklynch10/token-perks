@@ -306,6 +306,14 @@ export default function CrossoverSection() {
         </Link>
         .
       </p>
+      <p className="mt-3">
+        <Link
+          href="/best/kimi-k3-core/#economics"
+          className="inline-flex min-h-[44px] items-center rounded-full bg-teal px-4 text-sm font-semibold text-white hover:bg-teal-deep"
+        >
+          See the matching tier — Kimi K3 plans →
+        </Link>
+      </p>
     </section>
   );
 }

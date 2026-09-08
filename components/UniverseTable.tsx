@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { CATEGORY_LABELS, CATEGORY_ORDER, type CategoryKey } from "@/lib/universe";
+import { CATEGORY_LABELS, CATEGORY_ORDER, providerIdOf, type CategoryKey } from "@/lib/universe";
 
 export interface UniverseDatum {
   id: string;
@@ -13,6 +13,8 @@ export interface UniverseDatum {
   caveats: string[];
   sourceUrl: string;
   label: "DIRECT" | "EXCERPT" | "UNCERTAIN";
+  /** Date this row was read from its source — travels with the figure. */
+  accessed: string;
   offer: string | null;
 }
 
@@ -27,31 +29,21 @@ export default function UniverseTable({ rows }: { rows: UniverseDatum[] }) {
 
   const filtered = useMemo(() => (cat === "all" ? rows : rows.filter((r) => r.category === cat)), [rows, cat]);
 
+  const chip = (on: boolean) =>
+    `inline-flex touch:min-h-[44px] min-h-[40px] items-center gap-1.5 whitespace-nowrap rounded-lg border px-3 py-1.5 text-[12.5px] ${
+      on ? "border-teal bg-teal-wash text-teal-deep" : "border-line-strong bg-card text-ink-soft hover:border-teal"
+    }`;
+
   return (
     <div>
       <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Filter by access-route category">
-        <button
-          type="button"
-          aria-pressed={cat === "all"}
-          onClick={() => setCat("all")}
-          className={`rounded-lg border px-3 py-1.5 text-[12.5px] ${
-            cat === "all" ? "border-teal bg-teal-wash text-teal-deep" : "border-line-strong bg-card text-ink-soft hover:border-teal"
-          }`}
-        >
+        <button type="button" aria-pressed={cat === "all"} onClick={() => setCat("all")} className={chip(cat === "all")}>
           All <span className="data text-[11px]">{rows.length}</span>
         </button>
         {CATEGORY_ORDER.map((k) => {
           const n = rows.filter((r) => r.category === k).length;
           return (
-            <button
-              key={k}
-              type="button"
-              aria-pressed={cat === k}
-              onClick={() => setCat(k)}
-              className={`rounded-lg border px-3 py-1.5 text-[12.5px] ${
-                cat === k ? "border-teal bg-teal-wash text-teal-deep" : "border-line-strong bg-card text-ink-soft hover:border-teal"
-              }`}
-            >
+            <button key={k} type="button" aria-pressed={cat === k} onClick={() => setCat(k)} className={chip(cat === k)}>
               {CATEGORY_LABELS[k]} <span className="data text-[11px]">{n}</span>
             </button>
           );
@@ -81,7 +73,9 @@ export default function UniverseTable({ rows }: { rows: UniverseDatum[] }) {
                   {r.provider}
                 </th>
                 <td>
-                  <span className="text-ink-soft">{r.plan}</span>
+                  <a className="u-draw text-ink-soft hover:text-ink" href={`/providers/${providerIdOf(r)}/`} aria-label={`All tracked routes from ${r.provider}`}>
+                    {r.plan}
+                  </a>
                   {r.offer && (
                     <>
                       {" "}
@@ -92,13 +86,23 @@ export default function UniverseTable({ rows }: { rows: UniverseDatum[] }) {
                   )}
                   <span className="block text-[11.5px] text-ink-mute">{r.notes}</span>
                 </td>
-                <td className="data text-[12.5px]">{r.listPrice}</td>
+                <td className="data text-[12.5px]">
+                  {r.listPrice}
+                  <span className="block text-[10.5px] font-normal text-ink-mute">read {r.accessed}</span>
+                </td>
                 <td className="text-ink-mute text-[12px]">{r.caveats.length}</td>
                 <td>
                   <a className="u-draw text-ink-mute text-[12px]" href={r.sourceUrl} target="_blank" rel="noopener nofollow" aria-label={`Source for ${r.provider} ${r.plan} (${r.label})`}>
                     src
                   </a>
                   <span className={`ml-1 text-[10.5px] ${LABEL_STYLES[r.label]}`}>{r.label}</span>
+                  {r.offer && (
+                    <span className="block">
+                      <a className="u-draw inline-flex min-h-[28px] items-center rounded-full bg-teal-wash px-2 text-[11px] font-semibold text-teal-deep touch:min-h-[40px]" href={r.offer}>
+                        offer page
+                      </a>
+                    </span>
+                  )}
                 </td>
               </tr>
             ))}
@@ -110,13 +114,23 @@ export default function UniverseTable({ rows }: { rows: UniverseDatum[] }) {
         {filtered.map((r) => (
           <li key={r.id} className="card p-3 text-sm">
             <p className="font-medium">
-              {r.provider} <span className="text-ink-soft">{r.plan}</span>
+              <a className="u-draw hover:underline" href={`/providers/${providerIdOf(r)}/`} aria-label={`All tracked routes from ${r.provider}`}>
+                {r.provider}
+              </a>{" "}
+              <span className="text-ink-soft">{r.plan}</span>
             </p>
             <p className="data mt-1 text-[13px] text-ink-soft">{r.listPrice}</p>
             <p className="mt-1 text-[11.5px] text-ink-mute">
-              {CATEGORY_LABELS[r.category]} · {r.label}
+              {CATEGORY_LABELS[r.category]} · {r.label} · price read {r.accessed}
               {r.caveats.length > 0 ? ` · ${r.caveats[0]}` : ""}
             </p>
+            {r.offer && (
+              <p className="mt-1">
+                <a className="u-draw inline-flex min-h-[40px] items-center rounded-full bg-teal-wash px-3 text-[12px] font-semibold text-teal-deep touch:min-h-[44px]" href={r.offer}>
+                  Offer page →
+                </a>
+              </p>
+            )}
           </li>
         ))}
       </ul>

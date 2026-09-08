@@ -61,18 +61,39 @@ function rowFor(o: Offer): Row {
       verified: o.verified_at,
     };
   }
+  if (o.id === "nvidia-k3-free") {
+    return {
+      id: o.id,
+      name: o.shortTitle,
+      provider: o.provider,
+      href: o.canonical_url,
+      price: "$0 (dev / prototyping)",
+      annual: "n/a — free tier",
+      per100: 0,
+      per100Note: "$0 for dev use",
+      deltaPct: -100,
+      limit: "Account-variable quota; dev/prototyping scope only",
+      renewal: "None — account limits govern",
+      verified: o.verified_at,
+    };
+  }
+  // Every other tracked offer: figures are taken verbatim from the offer's own
+  // verified fields — never inferred here. Cost-per-100-tasks is computed on
+  // /best/<slug>/ pages, not in this index.
+  const clip = (s: string, n = 96) => (s.length > n ? `${s.slice(0, n - 1)}. …` : s);
+  const firstClause = (s: string) => clip(s.split(/[;.]/)[0].trim());
   return {
     id: o.id,
     name: o.shortTitle,
     provider: o.provider,
     href: o.canonical_url,
-    price: "$0 (dev / prototyping)",
-    annual: "n/a — free tier",
-    per100: 0,
-    per100Note: "$0 for dev use",
-    deltaPct: -100,
-    limit: "Account-variable quota; dev/prototyping scope only",
-    renewal: "None — account limits govern",
+    price: clip(o.price.now, 60),
+    annual: "see offer page",
+    per100: null,
+    per100Note: "",
+    deltaPct: null,
+    limit: firstClause(o.limits[0] ?? o.catchSummary),
+    renewal: firstClause(o.renewal),
     verified: o.verified_at,
   };
 }

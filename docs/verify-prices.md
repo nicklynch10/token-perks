@@ -93,8 +93,12 @@ the run step if you ever prefer red builds.
   and consent redirects can produce honest DRIFT/ERROR noise. That noise is the
   tripwire working; the escalation path exists precisely so a human resolves it.
 - **Cadence gap, stated plainly.** V1 automates the weekly check for all sources. The
-  editorial promise of *daily* re-verification for active promos is covered by humans
-  today (the only active promo, Muse Spark, is MANUAL anyway). To automate it, add a
+  editorial promise of *daily* re-verification for active promos is still covered by
+  humans — but both active promos now carry fetchable tripwires: Muse Spark via the
+  OpenCode Zen docs page (re-pointed 2026-09-08; no longer MANUAL) and Z.ai
+  GLM-5.3-Flash via a deliberate expiry sentinel (`zai-glm-53-flash-promo`, promo ends
+  2026-09-09 24:00 UTC+8 — the run after expiry MUST report DRIFT, which is the signal
+  to flip rows-b/universe to list $0.15/$0.50). To automate the daily cadence, add a
   second schedule entry to the workflow (e.g. `cron: "41 13 * * *"`) — the registry and
   log need no change.
 - **Issue filing is not local-by-default.** Outside GitHub Actions the bot prints the

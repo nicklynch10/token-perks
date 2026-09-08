@@ -10,7 +10,7 @@ export const dynamic = "force-static";
 export const metadata: Metadata = {
   title: "AI Pricing Guides (Verified Sep 6 2026)",
   description:
-    "Six practical guides: effective cost per task, monthly vs annual, batch and caching, renewal terms, student discounts, and lifetime deals. Worked examples, checklists, verified Sep 6-7 2026.",
+    "Seven practical guides: buying AI access as a gift, effective cost per task, monthly vs annual, batch and caching, renewal terms, student discounts, and lifetime deals. Worked examples, checklists, verified Sep 6-7 2026.",
   alternates: { canonical: canonical("/guides/") },
   openGraph: {
     title: "AI Pricing Guides (Verified Sep 6 2026)",
@@ -21,6 +21,11 @@ export const metadata: Metadata = {
 };
 
 const GUIDES = [
+  {
+    href: "/guides/buying-ai-access-as-a-gift/",
+    title: "Buying AI access as a gift",
+    text: "No tracked offer sells a gift card or a transferable plan — what activation, refund windows, and quota reality mean instead.",
+  },
   {
     href: "/guides/effective-cost-per-task-explained/",
     title: "Effective cost per task, explained",
@@ -62,7 +67,7 @@ export default function GuidesIndex() {
           Guides
         </h1>
         <p className="mt-2 max-w-2xl text-ink-soft">
-          Six short guides with worked examples and stated assumptions. Research snapshot Sep 6-7
+          Seven short guides with worked examples and stated assumptions. Research snapshot Sep 6-7
           2026.
           Throughout, a &ldquo;task&rdquo; means one finished piece of work — a draft, a summary, a
           fix. The definition and the math are in{" "}

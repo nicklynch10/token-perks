@@ -55,6 +55,16 @@ export default function ProvidersIndex() {
           page this pass; EXCERPT = official copy obtained via snapshot or search index; UNCERTAIN =
           not verified this pass, shown as-is.
         </p>
+        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-ink-mute">
+          Buying as a gift? No provider page here lists a gift-card or transfer mechanism in its
+          verified terms — subscriptions are billed to, and capped on, the paying account. What
+          gifting actually means per offer (activation, refund windows, when to give a month
+          instead of a login):{" "}
+          <Link href="/guides/buying-ai-access-as-a-gift/" className="u-draw text-teal-deep">
+            buying AI access as a gift
+          </Link>
+          .
+        </p>
       </section>
 
       <section aria-label="Provider list" className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">

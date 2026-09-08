@@ -2,22 +2,27 @@
 
 import { useMemo, useState } from "react";
 import { TOKENS_PER_TASK, USE_CASE_LABELS, type UseCaseKey } from "@/lib/valueScore";
+import { CATEGORY_LABELS, CATEGORY_ORDER, type CategoryKey } from "@/lib/universe";
 
 export interface LeaderboardDatum {
   id: string;
   provider: string;
   plan: string;
+  category: CategoryKey;
   listPrice: string;
   apiIn: number;
   apiOut: number;
   blended: number; // $/M tokens
   batch: number | null; // computed batch $/M, null when no published modifier
   batchApprox: boolean;
+  /** Short published cache-read note, when the provider has one. */
+  cacheNote: string | null;
   offer: string | null;
   caveats: string[];
   label: "DIRECT" | "EXCERPT" | "UNCERTAIN";
   sourceUrl: string;
-  intel: { index: number; estimate: boolean; citation: string; sourceUrl: string } | null;
+  accessed: string;
+  intel: { index: number; estimate: boolean; citation: string; sourceUrl: string; accessed: string } | null;
 }
 
 type SortKey = "blended" | "intel" | "name";
@@ -38,10 +43,16 @@ const LABEL_STYLES: Record<LeaderboardDatum["label"], string> = {
 
 export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] }) {
   const [preset, setPreset] = useState<UseCaseKey>("baseline");
+  const [cat, setCat] = useState<CategoryKey | "all">("all");
   const [sort, setSort] = useState<{ key: SortKey; dir: "asc" | "desc" }>({ key: "blended", dir: "asc" });
 
+  const filtered = useMemo(
+    () => (cat === "all" ? rows : rows.filter((r) => r.category === cat)),
+    [rows, cat],
+  );
+
   const sorted = useMemo(() => {
-    const copy = [...rows];
+    const copy = [...filtered];
     copy.sort((a, b) => {
       let d = 0;
       if (sort.key === "blended") d = a.blended - b.blended;
@@ -50,7 +61,7 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
       return sort.dir === "asc" ? d : -d;
     });
     return copy;
-  }, [rows, sort]);
+  }, [filtered, sort]);
 
   const tokens = TOKENS_PER_TASK[preset];
 
@@ -72,10 +83,35 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
     return sort.dir === "asc" ? " ▲" : " ▼";
   }
 
+  const chip = (on: boolean) =>
+    `inline-flex touch:min-h-[44px] min-h-[40px] items-center gap-1.5 whitespace-nowrap rounded-lg border px-3 py-1.5 text-[12.5px] transition-colors ${
+      on ? "border-teal bg-teal-wash text-teal-deep" : "border-line-strong bg-card text-ink-soft hover:border-teal"
+    }`;
+
   return (
     <div>
+      {/* route-type filter — present from the first screen of the table */}
+      <div className="flex flex-wrap items-center gap-2">
+        <p className="eyebrow mr-1" id="lb-type-label">
+          Route type
+        </p>
+        <div role="group" aria-labelledby="lb-type-label" className="no-scrollbar flex flex-wrap items-center gap-2 overflow-x-auto md:flex-nowrap">
+          <button type="button" aria-pressed={cat === "all"} onClick={() => setCat("all")} className={chip(cat === "all")}>
+            All <span className="data text-[11px]">{rows.length}</span>
+          </button>
+          {CATEGORY_ORDER.map((k) => {
+            const n = rows.filter((r) => r.category === k).length;
+            return (
+              <button key={k} type="button" aria-pressed={cat === k} onClick={() => setCat(k)} className={chip(cat === k)}>
+                {CATEGORY_LABELS[k]} <span className="data text-[11px]">{n}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
       {/* task-size preset — the ranking column responds to this */}
-      <fieldset className="flex flex-wrap items-center gap-2" aria-label="Tokens per task preset">
+      <fieldset className="mt-3 flex flex-wrap items-center gap-2" aria-label="Tokens per task preset">
         <legend className="sr-only">Task size preset (tokens per task)</legend>
         {PRESETS.map((k) => (
           <button
@@ -83,9 +119,7 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
             type="button"
             aria-pressed={preset === k}
             onClick={() => setPreset(k)}
-            className={`rounded-lg border px-3 py-1.5 text-[12.5px] transition-colors ${
-              preset === k ? "border-teal bg-teal-wash text-teal-deep" : "border-line-strong bg-card text-ink-soft hover:border-teal"
-            }`}
+            className={chip(preset === k)}
           >
             {USE_CASE_LABELS[k]} <span className="data text-[11px]">{(TOKENS_PER_TASK[k] / 1000).toFixed(0)}k</span>
           </button>
@@ -96,26 +130,30 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
       <div className="mt-4 hidden md:block overflow-x-auto rounded-xl border border-line-strong">
         <table className="spec-table">
           <caption className="sr-only">
-            Token access routes ranked by blended effective cost per million tokens. Intelligence scores are quoted from Artificial Analysis with per-row citations. Batch cost per million is shown only where the provider publishes a batch discount; a dash means no published batch modifier.
+            Token access routes ranked by blended effective cost per million tokens, filterable by route type.
+            Intelligence scores are quoted from Artificial Analysis with per-row citations. Batch cost per
+            million is shown only where the provider publishes a batch discount; a dash means no published
+            batch modifier.
           </caption>
           <thead>
             <tr>
               <th scope="col" className="w-10">#</th>
               <th scope="col">
-                <button type="button" onClick={() => toggleSort("name")} className="uppercase tracking-wider" aria-label="Sort by route name">
+                <button type="button" onClick={() => toggleSort("name")} className="inline-flex touch:min-h-[44px] items-center uppercase tracking-wider" aria-label="Sort by route name">
                   Route{arrowFor("name")}
                 </button>
               </th>
+              <th scope="col" className="num">Type</th>
               <th scope="col" className="num">List in / out, $/M</th>
               <th scope="col" className="num" aria-sort={ariaSortFor("blended")}>
-                <button type="button" onClick={() => toggleSort("blended")} aria-label="Sort by blended cost per million tokens">
+                <button type="button" onClick={() => toggleSort("blended")} className="inline-flex touch:min-h-[44px] items-center justify-end w-full" aria-label="Sort by blended cost per million tokens">
                   Blended $/M{arrowFor("blended")}
                 </button>
               </th>
               <th scope="col" className="num">Batch $/M</th>
               <th scope="col" className="num">Est. $/task @ {USE_CASE_LABELS[preset]}</th>
               <th scope="col" className="num" aria-sort={ariaSortFor("intel")}>
-                <button type="button" onClick={() => toggleSort("intel")} aria-label="Sort by Artificial Analysis Intelligence Index">
+                <button type="button" onClick={() => toggleSort("intel")} className="inline-flex touch:min-h-[44px] items-center justify-end w-full" aria-label="Sort by Artificial Analysis Intelligence Index">
                   AA II v4.3{arrowFor("intel")}
                 </button>
               </th>
@@ -148,6 +186,7 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
                       </span>
                     )}
                   </th>
+                  <td className="text-ink-mute text-[12px]">{CATEGORY_LABELS[r.category]}</td>
                   <td className="num text-ink-soft">
                     ${r.apiIn.toFixed(2)} / ${r.apiOut.toFixed(2)}
                   </td>
@@ -194,7 +233,7 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
         </table>
       </div>
 
-      {/* mobile cards */}
+      {/* mobile cards — every figure carries its attribution inline */}
       <ul className="mt-4 space-y-2 md:hidden">
         {sorted.map((r, i) => {
           const perTask = (r.blended * tokens) / 1_000_000;
@@ -204,10 +243,26 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
               <p className="font-medium">
                 {i + 1}. {r.provider} <span className="text-ink-soft">{r.plan}</span>
               </p>
+              <p className="mt-0.5 text-[11.5px] text-ink-mute">
+                {CATEGORY_LABELS[r.category]} · price read {r.accessed}
+              </p>
               <p className="data mt-1 text-[13px] text-ink-soft">
                 {fmtPerM(r.blended)}/M · ~{perTask < 0.01 ? `$${perTask.toFixed(4)}` : `$${perTask.toFixed(3)}`}/task
-                {r.intel ? ` · ${r.intel.index} II` : ""}
               </p>
+              {r.intel && (
+                <p className="data mt-1 text-[12px] text-ink-soft">
+                  <a
+                    className="u-draw"
+                    href={r.intel.sourceUrl}
+                    target="_blank"
+                    rel="noopener nofollow"
+                    title={r.intel.citation}
+                  >
+                    {r.intel.index}
+                    {r.intel.estimate ? "*" : ""} II · AA, accessed {r.intel.accessed}
+                  </a>
+                </p>
+              )}
               {r.batch != null && batchTask != null ? (
                 <p className="data mt-1 text-[13px] text-ink-soft">
                   Batch {r.batchApprox ? "~" : ""}
@@ -217,6 +272,9 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
               ) : (
                 <p className="mt-1 text-[11.5px] text-ink-mute">Batch price: not published</p>
               )}
+              {r.cacheNote && (
+                <p className="mt-1 text-[11.5px] text-ink-mute">Cache: {r.cacheNote}</p>
+              )}
               {r.caveats.length > 0 && <p className="mt-1 text-[11.5px] text-ink-mute">{r.caveats[0]}</p>}
             </li>
           );
@@ -224,14 +282,17 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
       </ul>
 
       <p className="mt-3 text-[12px] text-ink-mute">
-        Blended $/M = (3 x input + 1 x output) / 4 at list price — our arithmetic, not a provider figure. The $/task
-        column estimates a {tokens.toLocaleString("en-US")}-token task on that blended rate. Batch $/M = blended $/M
-        x (1 − the provider&apos;s published batch discount) — −50% halves the blend — with batch $/task at the same
-        task size; it appears only where the provider publishes a batch rate, and a dash means no published batch
-        modifier, not zero. Cache, off-peak, and residency adjustments stay out of both figures. AA Intelligence Index
-        v4.3 values are quoted, not measured, by us: every cell links its exact source row on artificialanalysis.ai
-        (accessed 2026-09-07); * marks AA&apos;s own estimate flag. A dash means no public score. Our own weighted
-        ranking is deliberately not shown — see{" "}
+        Blended $/M = (3 x input + 1 x output) / 4 at the route&apos;s current published price —
+        list, or launch-promo price while a promo runs, with promo-priced rows captioning their
+        list-price blend. Our arithmetic, not a provider figure. The $/task column estimates a{" "}
+        {tokens.toLocaleString("en-US")}-token task on that blended rate. Batch $/M = blended $/M
+        x (1 − the provider&apos;s published batch discount) — −50% halves the blend — with batch
+        $/task at the same task size; it appears only where the provider publishes a batch rate,
+        and a dash means no published batch modifier, not zero. Cache, off-peak, and residency
+        adjustments stay out of both figures and are noted per row. AA Intelligence Index v4.3
+        values are quoted, not measured, by us: every cell links its exact source row on
+        artificialanalysis.ai (accessed 2026-09-07); * marks AA&apos;s own estimate flag. A dash
+        means no public score. Our own weighted ranking is deliberately not shown — see{" "}
         <a className="u-draw" href="/methodology/">
           methodology
         </a>

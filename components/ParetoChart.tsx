@@ -11,6 +11,8 @@ export interface ParetoDatum {
   estimate: boolean;
   citation: string;
   sourceUrl: string;
+  /** Date the quoted AA score was accessed — travels with the figure. */
+  accessed: string;
   offer: string | null;
   free: boolean;
 }
@@ -151,7 +153,7 @@ export default function ParetoChart({ points, frontierIds, dominatedBy }: Props)
             </g>
           ))}
           <text x={(W + M.left) / 2} y={H - 8} textAnchor="middle" fontSize="11" fill="var(--color-ink-soft)">
-            Blended effective cost, $/M tokens — (3 x in + 1 x out) / 4, list prices
+            Blended effective cost, $/M tokens — (3 x in + 1 x out) / 4, published prices
           </text>
           <text x={16} y={(H - M.bottom + M.top) / 2} textAnchor="middle" fontSize="11" fill="var(--color-ink-soft)" transform={`rotate(-90 16 ${(H - M.bottom + M.top) / 2})`}>
             AA Intelligence Index v4.3
@@ -242,7 +244,7 @@ export default function ParetoChart({ points, frontierIds, dominatedBy }: Props)
         </div>
       )}
 
-      {/* mobile frontier list */}
+      {/* mobile frontier list — the quoted score carries its attribution inline */}
       <ul className="md:hidden space-y-2">
         {points
           .filter((p) => frontierIds.includes(p.id))
@@ -250,7 +252,17 @@ export default function ParetoChart({ points, frontierIds, dominatedBy }: Props)
             <li key={p.id} className="card p-3 text-sm">
               <p className="font-medium">{p.label}</p>
               <p className="data text-[13px] text-ink-soft">
-                {p.intelligence} II · {p.free ? "free" : `$${p.cost.toFixed(2)}/M`}
+                {p.free ? "free" : `$${p.cost.toFixed(2)}/M`} ·{" "}
+                <a
+                  className="u-draw"
+                  href={p.sourceUrl}
+                  target="_blank"
+                  rel="noopener nofollow"
+                  title={p.citation}
+                >
+                  {p.intelligence}
+                  {p.estimate ? "*" : ""} II · AA, accessed {p.accessed}
+                </a>
               </p>
             </li>
           ))}

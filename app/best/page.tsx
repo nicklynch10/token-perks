@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import OfferCard from "@/components/OfferCard";
@@ -67,8 +68,23 @@ export default function BestIndex() {
           price, estimated cost per task, and the caveats for each offer. Every figure is a dated
           snapshot: re-verify at official terms before paying.
         </p>
-        <p className="mt-2 max-w-2xl text-sm text-ink-mute">
-          Gifting, where offered, is handled by the provider directly — this site sells nothing.
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-mute">
+          Buying as a gift? None of the tracked offers sells a gift card or a transferable
+          subscription in its verified terms — gifting, where offered at all, is handled by the
+          provider directly, and this site sells nothing. What to weigh instead: who activates the
+          route, which refund windows make a prepay safe,{" "}
+          <Link href="/guides/buying-ai-access-as-a-gift/" className="u-draw text-teal-deep">
+            the gift guide
+          </Link>
+          ,{" "}
+          <Link href="/guides/monthly-vs-annual-ai/" className="u-draw text-teal-deep">
+            monthly vs annual
+          </Link>
+          , and the{" "}
+          <Link href="/cost-calculator/" className="u-draw text-teal-deep">
+            calculators
+          </Link>
+          .
         </p>
       </header>
       <div className="grid gap-5 md:grid-cols-3">

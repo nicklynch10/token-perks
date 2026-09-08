@@ -22,7 +22,7 @@ export async function GET() {
     {
       title: "Effective cost per task, explained",
       link: `${SITE_URL}/guides/effective-cost-per-task-explained/`,
-      desc: "$40/120-task/$0.80 example breaks even at 50 tasks.",
+      desc: "Illustrative $40 basket / 120-task / $0.80 example breaks even at 50 tasks; the calculator defaults to the actual $39 Allegretto tier (≈49).",
       pubDate: rfc822(SNAPSHOT_ISO),
     },
     {

@@ -3,6 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import CiteBlock from "@/components/CiteBlock";
 import JsonLd from "@/components/JsonLd";
 import ResearchSnapshot from "@/components/ResearchSnapshot";
+import { ACTIVE_OFFERS } from "@/lib/offers";
 import { canonical, SITE_URL } from "@/lib/site";
 
 export const dynamic = "force-static";
@@ -33,6 +34,18 @@ interface LogEntry {
  * "re-verified weekly" claim is provable, not aspirational.
  */
 const LOG: LogEntry[] = [
+  {
+    date: "2026-09-07",
+    title: "Pass 8 — UI/experience confirmation round (presentation, navigation, and gift paths)",
+    items: [
+      "Scope: presentation, navigation, and copy only. No prices, renewals, limits, or verified_at values changed — every verified_at remains 2026-09-06. The Z.ai GLM-5.3-Flash row's caveat wording now states both blends explicitly ($0.119 at the live promo, $0.2375 at list); the row's underlying promo/list figures are unchanged.",
+      "Consistency fix: the break-even calculator's flat-plan price is now an input defaulting to the actual Kimi Allegretto tier ($39/mo, crossover ≈49), matching the homepage and crossover chart; the $40/50-task figure survives only where it is captioned as the illustrative reference basket.",
+      "Mobile AA-score attribution: leaderboard and frontier mobile cards now carry source + access date with every quoted Intelligence Index figure, per the citation policy.",
+      "Header compacted to a 56px sticky bar (wordmark, nav, CTA) with a <dialog> hamburger menu on mobile; filter chips and small controls raised to touch targets; sticky table headers now clear the site header.",
+      "Gift path: new /guides/buying-ai-access-as-a-gift/ guide, gift-readiness blocks on the tracked-offer pages and the offers hub, a buying-as-a-gift block on the providers hub, and a plain-English entry card at the top of the homepage.",
+      "New /cost-calculator/ page gathers the calculators: break-even (with ?tasks/&tokens/&seats/&sub= deep links), cost of one task per route, monthly-vs-annual prepay math, and a per-12-months comparison for tracked offers.",
+    ],
+  },
   {
     date: "2026-09-07",
     title: "Pass 7 — coverage-gap merge, citation drill-down, team-size math",
@@ -111,8 +124,63 @@ const LOG: LogEntry[] = [
   },
 ];
 
+/** Exact phrases that appear in the log and have a tracked-offer page. */
+const OFFER_ALIASES: { name: string; href: string }[] = ACTIVE_OFFERS.flatMap((o) => [
+  { name: `${o.provider} ${o.shortTitle}`, href: o.canonical_url },
+  { name: `${o.provider} ${o.plan}`, href: o.canonical_url },
+  { name: o.shortTitle, href: o.canonical_url },
+]).concat(
+  // hand-mapped phrases used in older entries
+  [
+    { name: "Kimi K3 membership", href: "/best/kimi-k3-core/" },
+    { name: "Zen Muse Spark 1.3 Contributor Free", href: "/best/muse-spark-zen-free/" },
+    { name: "NVIDIA Build Kimi K3", href: "/best/nvidia-k3-free/" },
+  ],
+)
+  .filter((a) => a.name.trim().length > 5)
+  .sort((a, b) => b.name.length - a.name.length);
+
+const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const NAME_RE = new RegExp(`(${OFFER_ALIASES.map((a) => esc(a.name)).join("|")})`, "g");
+
+/** Turn offer-name mentions inside a log sentence into links (first match wins). */
+function linkify(text: string, keyBase: number): React.ReactNode {
+  const seen = new Set<string>();
+  const parts = text.split(NAME_RE);
+  return parts.map((p, i) => {
+    const hit = OFFER_ALIASES.find((a) => a.name === p);
+    if (hit && !seen.has(hit.href)) {
+      seen.add(hit.href);
+      return (
+        <a key={`${keyBase}-${i}`} href={hit.href} className="u-draw text-teal-deep">
+          {p}
+        </a>
+      );
+    }
+    return p;
+  });
+}
+
+const MONTH_NAMES = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+];
+
+function monthLabel(iso: string): string {
+  const [y, m] = iso.split("-");
+  return `${MONTH_NAMES[Number(m) - 1]} ${y}`;
+}
+
 export default function ChangesPage() {
   const url = canonical("/changes/");
+  // Newest-first month groups (LOG is maintained newest-first).
+  const groups: { month: string; entries: LogEntry[] }[] = [];
+  for (const e of LOG) {
+    const m = monthLabel(e.date);
+    const g = groups.find((x) => x.month === m);
+    if (g) g.entries.push(e);
+    else groups.push({ month: m, entries: [e] });
+  }
   return (
     <div className="mx-auto max-w-3xl space-y-7 px-4 py-8 sm:px-6">
       <Breadcrumbs
@@ -135,23 +203,29 @@ export default function ChangesPage() {
         </p>
       </header>
 
-      <ol className="space-y-6">
-        {LOG.map((e) => (
-          <li key={`${e.date}-${e.title}`} className="rounded-xl border border-line bg-card p-5 sm:p-6">
-            <p className="flex flex-wrap items-baseline gap-x-3">
-              <span className="tabular rounded-full bg-teal-wash px-3 py-0.5 text-xs font-bold text-teal-deep">
-                {e.date}
-              </span>
-              <span className="text-lg font-bold tracking-tight">{e.title}</span>
-            </p>
-            <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm text-ink-soft">
-              {e.items.map((it) => (
-                <li key={it}>{it}</li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ol>
+      {groups.map((g) => (
+        <section key={g.month} aria-label={`Verification entries from ${g.month}`}>
+          <h2 className="display-lg">{g.month}</h2>
+          <ol className="mt-3 space-y-5">
+            {g.entries.map((e) => (
+              <li key={`${e.date}-${e.title}`} className="rounded-xl border border-line bg-card p-4 sm:p-6">
+                <time
+                  dateTime={e.date}
+                  className="data inline-block rounded-full bg-teal-wash px-3 py-1 text-xs font-bold text-teal-deep"
+                >
+                  {e.date}
+                </time>
+                <p className="mt-2 text-lg font-bold leading-snug tracking-tight sm:text-xl">{e.title}</p>
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-ink-soft sm:text-[15px]">
+                  {e.items.map((it, i) => (
+                    <li key={it}>{linkify(it, i)}</li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
 
       <CiteBlock
         citation={`Token Perks. “Verification log.” Entries dated by pass, starting Sep 6 2026. ${url}`}

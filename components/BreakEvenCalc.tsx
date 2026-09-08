@@ -5,11 +5,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   BASELINE_PAYG_PER_TASK,
-  COMPARE_SUB_PRICE,
+  FLAT_PLAN_DEFAULT,
+  FLAT_PLAN_DEFAULT_HINT,
   MAX_SEATS,
   REFERENCE_BASKET_NOTE,
   cheapestRoute,
   clampSeats,
+  clampSubPrice,
   compareTeamOptions,
   fmtTasks,
   fmtUSD,
@@ -18,8 +20,13 @@ import { SNAPSHOT_DATE } from "@/lib/site";
 
 /**
  * Break-even calculator. Prerenders with default inputs (no useSearchParams
- * → no Suspense shell), then adopts ?tasks= & ?tokens= & ?seats= after mount;
- * the URL updates as you drag so results stay shareable.
+ * → no Suspense shell), then adopts ?tasks= & ?tokens= & ?seats= & ?sub= after
+ * mount; the URL updates as you drag so results stay shareable.
+ *
+ * The flat-plan price is itself an input, defaulting to the actual Kimi
+ * Allegretto tier ($39/mo) so the calculator agrees with the homepage
+ * crossover figures. The $40 figure lives on only as the labeled
+ * illustrative reference basket in the explanatory footnote.
  *
  * Tasks and tokens are team totals; the seats slider (1–50) multiplies
  * per-seat plan math and recommends the cheapest multi-seat-compliant setup.
@@ -35,13 +42,15 @@ function Inner({
   const [tasks, setTasks] = useState(defaultTasks);
   const [tokens, setTokens] = useState(defaultTokens);
   const [seats, setSeats] = useState(1);
+  const [subPrice, setSubPrice] = useState(FLAT_PLAN_DEFAULT);
 
-  // Adopt shared URLs (?tasks=500&tokens=200000&seats=10) after hydration.
+  // Adopt shared URLs (?tasks=500&tokens=200000&seats=10&sub=49) after hydration.
   useEffect(() => {
     const sp = new URLSearchParams(window.location.search);
     const t = Number(sp.get("tasks"));
     const k = Number(sp.get("tokens"));
     const s = Number(sp.get("seats"));
+    const u = Number(sp.get("sub"));
     // Intentional post-hydration adoption of URL params: initializing state
     // from window.location would mismatch the static prerender.
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -50,18 +59,21 @@ function Inner({
     if (k) setTokens(Math.min(500_000, Math.max(1000, Math.round(k))));
     // eslint-disable-next-line react-hooks/set-state-in-effect
     if (s) setSeats(clampSeats(s));
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (u) setSubPrice(clampSubPrice(u));
   }, []);
 
-  function set(key: "tasks" | "tokens" | "seats", value: number) {
+  function set(key: "tasks" | "tokens" | "seats" | "sub", value: number) {
     const next = new URLSearchParams(window.location.search);
     next.set(key, String(value));
     window.history.replaceState(null, "", `${pathname}?${next.toString()}`);
     if (key === "tasks") setTasks(value);
     else if (key === "tokens") setTokens(value);
-    else setSeats(value);
+    else if (key === "seats") setSeats(value);
+    else setSubPrice(clampSubPrice(value));
   }
 
-  const r = useMemo(() => cheapestRoute(tasks, tokens), [tasks, tokens]);
+  const r = useMemo(() => cheapestRoute(tasks, tokens, subPrice), [tasks, tokens, subPrice]);
   const team = useMemo(
     () => compareTeamOptions(tasks, tokens, seats),
     [tasks, tokens, seats],
@@ -108,6 +120,27 @@ function Inner({
           />
         </div>
         <div>
+          <label htmlFor="be-sub" className="flex justify-between text-sm font-semibold">
+            <span>
+              Flat plan price, $/mo{" "}
+              <span className="font-normal text-ink-mute">
+                {subPrice === FLAT_PLAN_DEFAULT ? `(default: ${FLAT_PLAN_DEFAULT_HINT})` : "(your plan)"}
+              </span>
+            </span>
+            <span className="data">${subPrice}</span>
+          </label>
+          <input
+            id="be-sub"
+            type="range"
+            min={5}
+            max={200}
+            step={1}
+            value={subPrice}
+            onChange={(e) => set("sub", Number(e.target.value))}
+            className="mt-2 min-h-[44px] w-full accent-teal"
+          />
+        </div>
+        <div>
           <label htmlFor="be-seats" className="flex justify-between text-sm font-semibold">
             <span>Team size (seats)</span>
             <span className="data">{seats === 1 ? "1 (solo)" : seats}</span>
@@ -132,12 +165,36 @@ function Inner({
             <p className="data mt-1.5 text-xl font-semibold">
               {r.cheapest === "payg"
                 ? `Pay-as-you-go — about ${fmtUSD(r.paygMonthly)}/mo`
-                : `Flat subscription — $${COMPARE_SUB_PRICE}/mo`}
+                : `Flat subscription — ${fmtUSD(subPrice, 0)}/mo`}
             </p>
             <p className="data mt-1 text-sm text-ink-soft">
               {fmtUSD(r.paygMonthly)}/mo pay-as-you-go vs {fmtUSD(r.subMonthly)}/mo flat · crossover{" "}
               {fmtTasks(r.crossover)}
               {r.savings > 0 && <> · {fmtUSD(r.savings)}/mo difference</>}
+            </p>
+            <p className="mt-1 text-[11px] leading-snug text-ink-mute">
+              {subPrice === FLAT_PLAN_DEFAULT ? (
+                <>
+                  The ${subPrice} default is the Kimi Allegretto tier — details in{" "}
+                  <Link href="/best/kimi-k3-core/" className="u-draw text-teal-deep">
+                    the tracked offer
+                  </Link>{" "}
+                  or the{" "}
+                  <Link href="/#crossover" className="u-draw text-teal-deep">
+                    crossover story
+                  </Link>
+                  .
+                </>
+              ) : (
+                <>
+                  At ${subPrice}/mo you are pricing your own plan; the verified ${FLAT_PLAN_DEFAULT}
+                  /mo Allegretto tier is in{" "}
+                  <Link href="/best/kimi-k3-core/" className="u-draw text-teal-deep">
+                    the tracked offer
+                  </Link>
+                  .
+                </>
+              )}
             </p>
           </>
         ) : (
@@ -230,7 +287,7 @@ function Inner({
             <span>
               {seats > 1
                 ? `${team.cheapest.name} × ${seats} seats`
-                : `$${COMPARE_SUB_PRICE} flat subscription`}
+                : `${fmtUSD(subPrice, 0)} flat plan${subPrice === FLAT_PLAN_DEFAULT ? ` (${FLAT_PLAN_DEFAULT_HINT})` : ""}`}
             </span>
             <span className="data">
               {fmtUSD(seats > 1 ? team.cheapest.monthly : r.subMonthly)}/mo
@@ -247,11 +304,12 @@ function Inner({
         </div>
       </div>
       <p className="mt-3 text-[11px] leading-snug text-ink-mute">
-        Reference: ${COMPARE_SUB_PRICE} sub vs {fmtUSD(BASELINE_PAYG_PER_TASK)}/task pay-as-you-go
-        breaks even at 50 tasks. The per-task rate scales with the tokens slider at an illustrative
-        $8 per 1M blended tokens — your mix will differ. {REFERENCE_BASKET_NOTE}
+        Defaults: the {fmtUSD(FLAT_PLAN_DEFAULT, 0)}/mo Allegretto tier vs{" "}
+        {fmtUSD(BASELINE_PAYG_PER_TASK)}/task pay-as-you-go crosses over at ≈49 tasks/mo (100k
+        tokens/task). The per-task rate scales with the tokens slider at an illustrative $8 per 1M
+        blended tokens — your mix will differ. {REFERENCE_BASKET_NOTE}
         {seats > 1 &&
-          " Team seat totals multiply verified list prices; credit overages, quota caps, and annual-prepay discounts differ per plan."}
+          " Team seat totals multiply verified list prices; credit overages, quota caps, and annual-prepay discounts differ per plan. The $39/mo Kimi Allegretto tier is the cheapest verified consumer tier — solo consumer plans stay listed, not hidden, where consumer tiering applies."}
       </p>
     </div>
   );
