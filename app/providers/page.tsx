@@ -57,7 +57,9 @@ export default function ProvidersIndex() {
         <p className="mt-3 max-w-3xl text-sm text-ink-mute">
           Evidence mix below counts every route by label: DIRECT = read on the provider&apos;s own
           page this pass; EXCERPT = official copy obtained via snapshot or search index; UNCERTAIN =
-          not verified this pass, shown as-is.
+          not verified this pass, shown as-is. Providers are listed A&ndash;Z; each row&apos;s
+          cheapest paid route carries a start-here marker &mdash; the lowest monthly committed
+          spend tracked at that company (free-only rows say so instead).
         </p>
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-ink-mute">
           Buying as a gift? No provider page here lists a gift-card or transfer mechanism in its
@@ -109,8 +111,14 @@ export default function ProvidersIndex() {
                     <td className="data text-[12.5px]">
                       {cheapestPaid ? (
                         <>
-                          {cheapestPaid.listPrice}
-                          <span className="block text-[11px] text-ink-mute">{cheapestPaid.plan}</span>
+                          {cheapestPaid.listPrice}{" "}
+                          <span className="font-normal text-[11px] text-ink-mute">{cheapestPaid.plan}</span>
+                          <span
+                            aria-hidden="true"
+                            className="mt-1 block font-mono text-[9.5px] font-medium uppercase tracking-[0.14em] text-teal-deep"
+                          >
+                            Start here
+                          </span>
                         </>
                       ) : (
                         <span className="text-ink-mute">
