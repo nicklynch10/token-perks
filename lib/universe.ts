@@ -199,6 +199,47 @@ export function pricedApiRows(): UniverseRow[] {
   return UNIVERSE.rows.filter((r) => blendedPerM(r) != null && r.apiIn != null && r.apiIn > 0);
 }
 
+/** Display name for a seller/provider slug (falls back to the slug itself). */
+export function providerDisplayName(slug: string): string {
+  return PROVIDER_NAMES[slug] ?? slug;
+}
+
+/** A free/promo route that carries one of the provider's models but is sold by someone else. */
+export interface HostedFreeRoute {
+  row: UniverseRow;
+  hostSlug: string;
+  hostName: string;
+}
+
+/**
+ * Free ($0) / promo routes, tracked under OTHER sellers, that serve the models
+ * present in `ownRows` (the provider's own tracked rows). Uses the existing
+ * model→row mapping (row.modelId) — no new data, no guessing.
+ *
+ * Why: a provider page that counts only its own rows can say "no free routes"
+ * while a third party hosts the same model for $0 (e.g. NVIDIA Build's free
+ * Kimi K3 dev route vs Moonshot's own page). These are clearly labeled as
+ * third-party hosting wherever they are shown.
+ *
+ * "Free" here mirrors the on-page rollup definition: priceMonthly === 0.
+ */
+export function hostedFreeRoutes(slug: string, ownRows: UniverseRow[]): HostedFreeRoute[] {
+  const modelIds = new Set(ownRows.map((r) => r.modelId).filter((m): m is string => m != null));
+  if (modelIds.size === 0) return [];
+  return UNIVERSE.rows
+    .filter(
+      (r) =>
+        providerIdOf(r) !== slug &&
+        r.modelId != null &&
+        modelIds.has(r.modelId) &&
+        r.priceMonthly === 0,
+    )
+    .map((r) => {
+      const hostSlug = providerIdOf(r);
+      return { row: r, hostSlug, hostName: providerDisplayName(hostSlug) };
+    });
+}
+
 export function fmtPerM(v: number): string {
   if (v === 0) return "0";
   if (v < 0.01) return `$${v.toFixed(4)}`;

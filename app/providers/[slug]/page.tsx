@@ -6,7 +6,15 @@ import JsonLd from "@/components/JsonLd";
 import { getOffer } from "@/lib/offers";
 import { aaCitation, getIntel, INTEL } from "@/lib/intelligence";
 import { canonical, SITE_URL } from "@/lib/site";
-import { blendedPerM, CATEGORY_LABELS, fmtPerM, getProvider, providerGroups, UNIVERSE } from "@/lib/universe";
+import {
+  blendedPerM,
+  CATEGORY_LABELS,
+  fmtPerM,
+  getProvider,
+  hostedFreeRoutes,
+  providerGroups,
+  UNIVERSE,
+} from "@/lib/universe";
 
 export const dynamic = "force-static";
 
@@ -72,6 +80,10 @@ export default async function ProviderPage({ params }: { params: Promise<{ slug:
     .filter((r) => r.priceMonthly != null && r.priceMonthly > 0)
     .sort((a, b) => (a.priceMonthly as number) - (b.priceMonthly as number))[0];
   const freeRoutes = g.rows.filter((r) => r.priceMonthly === 0);
+  // Free routes for THIS provider's models sold by OTHER hosts (model→route mapping,
+  // existing verified rows only — e.g. NVIDIA Build's $0 Kimi K3 dev route on Moonshot's page).
+  const hostedFree = hostedFreeRoutes(g.slug, g.rows);
+  const freeTotal = freeRoutes.length + hostedFree.length;
   const batchRows = g.rows.filter((r) => r.batchDiscount != null);
   const overageRows = g.rows.filter((r) => r.overage && r.overage.rate !== "not published");
   const apiRows = g.rows.filter((r) => blendedPerM(r) != null);
@@ -261,11 +273,22 @@ export default async function ProviderPage({ params }: { params: Promise<{ slug:
                 <th scope="row" className="font-normal">
                   Free / promo routes
                 </th>
-                <td className="data text-[12.5px]">{freeRoutes.length}</td>
+                <td className="data text-[12.5px]">{freeTotal}</td>
                 <td className="text-[12.5px] text-ink-soft" colSpan={2}>
                   {freeRoutes.length > 0
-                    ? freeRoutes.map((r) => r.plan).join(" · ")
-                    : "None tracked for this provider this pass."}
+                    ? `${freeRoutes.length} sold by ${g.name} (${freeRoutes.map((r) => r.plan).join(" · ")})`
+                    : `None sold by ${g.name} directly`}
+                  {hostedFree.length > 0 && (
+                    <>
+                      {" · "}
+                      {hostedFree.length} more free {hostedFree.length === 1 ? "route" : "routes"}{" "}
+                      for {g.name}&apos;s models hosted by other sellers —{" "}
+                      <a className="u-draw text-teal-deep" href="#hosted-free">
+                        see below
+                      </a>
+                    </>
+                  )}
+                  .
                 </td>
               </tr>
               {apiRange && (
@@ -316,6 +339,85 @@ export default async function ProviderPage({ params }: { params: Promise<{ slug:
           </table>
         </div>
       </section>
+
+      {hostedFree.length > 0 && (
+        <section
+          id="hosted-free"
+          aria-label={`Free and promo routes for ${g.name} models, hosted by other sellers`}
+          className="mx-auto max-w-6xl px-4 pb-12 sm:px-6"
+        >
+          <h2 className="display-lg">Free routes for {g.name} models — third-party hosting</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
+            {g.name} is the model vendor here, not the seller: each route below is $0 on its
+            host&apos;s terms and links the host&apos;s own official page — worth re-checking there
+            before relying on it. These rows come from the same tracked data as the table above
+            (model→route mapping); each route stays counted on its host&apos;s provider page.
+          </p>
+          <div className="mt-4 overflow-x-auto rounded-xl border border-line-strong">
+            <table className="spec-table">
+              <caption className="sr-only">
+                Free and promo routes for {g.name} models sold by other providers
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Hosted by</th>
+                  <th scope="col">Route</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Model (vendor)</th>
+                  <th scope="col">Notes and caveats</th>
+                  <th scope="col" className="w-24">Evidence</th>
+                </tr>
+              </thead>
+              <tbody>
+                {hostedFree.map(({ row, hostSlug, hostName }) => (
+                  <tr key={row.id}>
+                    <th scope="row" className="font-normal font-medium">
+                      <Link className="u-draw" href={`/providers/${hostSlug}/`}>
+                        {hostName}
+                      </Link>
+                    </th>
+                    <td className="text-[12.5px]">
+                      {row.plan}
+                      <span className="data block text-[11px] text-ink-mute">{row.id}</span>
+                    </td>
+                    <td className="data text-[12.5px]">{row.listPrice}</td>
+                    <td className="text-[12.5px] text-ink-soft">
+                      {getIntel(row.modelId)?.aaName ?? row.modelId}
+                      <span className="block text-[11px] text-ink-mute">vendor: {g.name}</span>
+                    </td>
+                    <td className="text-ink-soft text-[12.5px]">
+                      {row.notes}
+                      {row.caveats.length > 0 && (
+                        <span className="mt-1 block text-ink-mute">
+                          {row.caveats.map((c) => (
+                            <span key={c} className="mr-2 inline-block">
+                              · {c}
+                            </span>
+                          ))}
+                        </span>
+                      )}
+                    </td>
+                    <td>
+                      <a
+                        className="u-draw text-ink-mute text-[12px]"
+                        href={row.sourceUrl}
+                        target="_blank"
+                        rel="noopener nofollow"
+                        aria-label={`Source for ${hostName} ${row.plan} (${row.label})`}
+                      >
+                        src
+                      </a>
+                      <span className={`ml-1 text-[10.5px] ${LABEL_STYLES[row.label]}`}>
+                        {row.label}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )}
 
       {offerObjs.length > 0 && (
         <section
