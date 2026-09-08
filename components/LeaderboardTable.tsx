@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { TOKENS_PER_TASK, USE_CASE_LABELS, type UseCaseKey } from "@/lib/valueScore";
 import { CATEGORY_LABELS, CATEGORY_ORDER, type CategoryKey } from "@/lib/universe";
+import styles from "./LeaderboardTable.module.css";
 
 export interface LeaderboardDatum {
   id: string;
@@ -29,10 +30,20 @@ type SortKey = "blended" | "intel" | "name";
 
 const PRESETS: UseCaseKey[] = ["chat", "coding", "reasoning", "agentic", "baseline"];
 
+const SORTS: { key: SortKey; label: string }[] = [
+  { key: "blended", label: "Blended cost" },
+  { key: "intel", label: "AA score" },
+  { key: "name", label: "Name" },
+];
+
 function fmtPerM(v: number): string {
   if (v < 0.01) return `$${v.toFixed(4)}`;
   if (v < 1) return `$${v.toFixed(3)}`;
   return `$${v.toFixed(2)}`;
+}
+
+function fmtTask(v: number): string {
+  return v < 0.01 ? `$${v.toFixed(4)}` : `$${v.toFixed(3)}`;
 }
 
 const LABEL_STYLES: Record<LeaderboardDatum["label"], string> = {
@@ -78,11 +89,6 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
     return sort.dir === "asc" ? "ascending" : "descending";
   }
 
-  function arrowFor(key: SortKey): string {
-    if (sort.key !== key) return "";
-    return sort.dir === "asc" ? " ▲" : " ▼";
-  }
-
   const chip = (on: boolean) =>
     `inline-flex touch:min-h-[44px] min-h-[40px] items-center gap-1.5 whitespace-nowrap rounded-lg border px-3 py-1.5 text-[12.5px] transition-colors ${
       on ? "border-teal bg-teal-wash text-teal-deep" : "border-line-strong bg-card text-ink-soft hover:border-teal"
@@ -110,24 +116,41 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
         </div>
       </div>
 
-      {/* task-size preset — the ranking column responds to this */}
-      <fieldset className="mt-3 flex flex-wrap items-center gap-2" aria-label="Tokens per task preset">
-        <legend className="sr-only">Task size preset (tokens per task)</legend>
-        {PRESETS.map((k) => (
-          <button
-            key={k}
-            type="button"
-            aria-pressed={preset === k}
-            onClick={() => setPreset(k)}
-            className={chip(preset === k)}
-          >
-            {USE_CASE_LABELS[k]} <span className="data text-[11px]">{(TOKENS_PER_TASK[k] / 1000).toFixed(0)}k</span>
-          </button>
-        ))}
-      </fieldset>
+      {/* sort + task-size presets — one row of controls, all breakpoints */}
+      <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-3">
+        <fieldset className="flex flex-wrap items-center gap-2" aria-label="Sort routes">
+          <legend className="sr-only">Sort routes</legend>
+          {SORTS.map(({ key, label }) => (
+            <button
+              key={key}
+              type="button"
+              aria-pressed={sort.key === key}
+              onClick={() => toggleSort(key)}
+              className={chip(sort.key === key)}
+            >
+              {label}
+              {sort.key === key ? (sort.dir === "asc" ? " ▲" : " ▼") : ""}
+            </button>
+          ))}
+        </fieldset>
+        <fieldset className="no-scrollbar flex flex-wrap items-center gap-2 overflow-x-auto md:flex-nowrap" aria-label="Task size preset (tokens per task)">
+          <legend className="sr-only">Task size preset (tokens per task)</legend>
+          {PRESETS.map((k) => (
+            <button
+              key={k}
+              type="button"
+              aria-pressed={preset === k}
+              onClick={() => setPreset(k)}
+              className={chip(preset === k)}
+            >
+              {USE_CASE_LABELS[k]} <span className="data text-[11px]">{(TOKENS_PER_TASK[k] / 1000).toFixed(0)}k</span>
+            </button>
+          ))}
+        </fieldset>
+      </div>
 
-      {/* desktop table */}
-      <div className="mt-4 hidden md:block overflow-x-auto rounded-xl border border-line-strong">
+      {/* one table for every breakpoint — stacks into cards below md via CSS */}
+      <div className={`${styles.reflow} mt-4 overflow-x-auto rounded-xl border border-line-strong`}>
         <table className="spec-table">
           <caption className="sr-only">
             Token access routes ranked by blended effective cost per million tokens, filterable by route type.
@@ -138,27 +161,14 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
           <thead>
             <tr>
               <th scope="col" className="w-10">#</th>
-              <th scope="col">
-                <button type="button" onClick={() => toggleSort("name")} className="inline-flex touch:min-h-[44px] items-center uppercase tracking-wider" aria-label="Sort by route name">
-                  Route{arrowFor("name")}
-                </button>
-              </th>
-              <th scope="col" className="num">Type</th>
-              <th scope="col" className="num">List in / out, $/M</th>
-              <th scope="col" className="num" aria-sort={ariaSortFor("blended")}>
-                <button type="button" onClick={() => toggleSort("blended")} className="inline-flex touch:min-h-[44px] items-center justify-end w-full" aria-label="Sort by blended cost per million tokens">
-                  Blended $/M{arrowFor("blended")}
-                </button>
-              </th>
-              <th scope="col" className="num">Batch $/M</th>
-              <th scope="col" className="num">Est. $/task @ {USE_CASE_LABELS[preset]}</th>
-              <th scope="col" className="num" aria-sort={ariaSortFor("intel")}>
-                <button type="button" onClick={() => toggleSort("intel")} className="inline-flex touch:min-h-[44px] items-center justify-end w-full" aria-label="Sort by Artificial Analysis Intelligence Index">
-                  AA II v4.3{arrowFor("intel")}
-                </button>
-              </th>
-              <th scope="col">Caveats</th>
-              <th scope="col" className="w-14">Src</th>
+              <th scope="col">Route</th>
+              <th scope="col">Type</th>
+              <th scope="col">List in / out, $/M</th>
+              <th scope="col" aria-sort={ariaSortFor("blended")}>Blended $/M</th>
+              <th scope="col">Batch $/M</th>
+              <th scope="col">Est. $/task @ {USE_CASE_LABELS[preset]}</th>
+              <th scope="col" aria-sort={ariaSortFor("intel")}>AA II v4.3</th>
+              <th scope="col">Src</th>
             </tr>
           </thead>
           <tbody>
@@ -185,20 +195,24 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
                         {r.caveats.length > 2 ? ` · +${r.caveats.length - 2} more` : ""}
                       </span>
                     )}
+                    <span className="block text-[11px] text-ink-mute">
+                      {CATEGORY_LABELS[r.category]} · {r.caveats.length} caveat{r.caveats.length === 1 ? "" : "s"}
+                    </span>
                   </th>
-                  <td className="text-ink-mute text-[12px]">{CATEGORY_LABELS[r.category]}</td>
-                  <td className="num text-ink-soft">
+                  <td data-label="List in / out, $/M" className="text-ink-soft">
                     ${r.apiIn.toFixed(2)} / ${r.apiOut.toFixed(2)}
                   </td>
-                  <td className="num">{fmtPerM(r.blended)}</td>
-                  <td className="num">
+                  <td data-label="Blended $/M" className="num">
+                    {fmtPerM(r.blended)}
+                    <span className="block text-[11px] text-ink-soft">{fmtTask(perTask)}/task</span>
+                    {r.cacheNote && <span className="block text-[11px] text-ink-mute">cache: {r.cacheNote}</span>}
+                  </td>
+                  <td data-label="Batch $/M" className="num">
                     {r.batch != null && batchTask != null ? (
                       <>
                         {r.batchApprox ? "~" : ""}
                         {fmtPerM(r.batch)}
-                        <span className="block text-[11px] text-ink-mute">
-                          ~{batchTask < 0.01 ? `$${batchTask.toFixed(4)}` : `$${batchTask.toFixed(3)}`}/task
-                        </span>
+                        <span className="block text-[11px] text-ink-mute">~{fmtTask(batchTask)}/task</span>
                       </>
                     ) : (
                       <span className="text-ink-mute" title="No published batch discount for this route">
@@ -206,10 +220,7 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
                       </span>
                     )}
                   </td>
-                  <td className="num text-ink-soft">
-                    {perTask < 0.01 ? `$${perTask.toFixed(4)}` : `$${perTask.toFixed(3)}`}
-                  </td>
-                  <td className="num">
+                  <td data-label="AA II v4.3" className="num">
                     {r.intel ? (
                       <a className="u-draw" href={r.intel.sourceUrl} target="_blank" rel="noopener nofollow" title={r.intel.citation}>
                         {r.intel.index}
@@ -219,12 +230,12 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
                       <span className="text-ink-mute">—</span>
                     )}
                   </td>
-                  <td className="text-ink-mute text-[12px]">{r.caveats.length}</td>
-                  <td>
+                  <td data-label="Source" className={styles.src}>
                     <a className="u-draw text-ink-mute text-[12px]" href={r.sourceUrl} target="_blank" rel="noopener nofollow" aria-label={`Source for ${r.provider} ${r.plan} (${r.label})`}>
                       src
                     </a>
                     <span className={`ml-1 text-[10.5px] ${LABEL_STYLES[r.label]}`}>{r.label}</span>
+                    <span className="block text-[10.5px] text-ink-mute">read {r.accessed}</span>
                   </td>
                 </tr>
               );
@@ -232,54 +243,6 @@ export default function LeaderboardTable({ rows }: { rows: LeaderboardDatum[] })
           </tbody>
         </table>
       </div>
-
-      {/* mobile cards — every figure carries its attribution inline */}
-      <ul className="mt-4 space-y-2 md:hidden">
-        {sorted.map((r, i) => {
-          const perTask = (r.blended * tokens) / 1_000_000;
-          const batchTask = r.batch != null ? (r.batch * tokens) / 1_000_000 : null;
-          return (
-            <li key={r.id} className="card p-3 text-sm">
-              <p className="font-medium">
-                {i + 1}. {r.provider} <span className="text-ink-soft">{r.plan}</span>
-              </p>
-              <p className="mt-0.5 text-[11.5px] text-ink-mute">
-                {CATEGORY_LABELS[r.category]} · price read {r.accessed}
-              </p>
-              <p className="data mt-1 text-[13px] text-ink-soft">
-                {fmtPerM(r.blended)}/M · ~{perTask < 0.01 ? `$${perTask.toFixed(4)}` : `$${perTask.toFixed(3)}`}/task
-              </p>
-              {r.intel && (
-                <p className="data mt-1 text-[12px] text-ink-soft">
-                  <a
-                    className="u-draw"
-                    href={r.intel.sourceUrl}
-                    target="_blank"
-                    rel="noopener nofollow"
-                    title={r.intel.citation}
-                  >
-                    {r.intel.index}
-                    {r.intel.estimate ? "*" : ""} II · AA, accessed {r.intel.accessed}
-                  </a>
-                </p>
-              )}
-              {r.batch != null && batchTask != null ? (
-                <p className="data mt-1 text-[13px] text-ink-soft">
-                  Batch {r.batchApprox ? "~" : ""}
-                  {fmtPerM(r.batch)}/M · ~
-                  {batchTask < 0.01 ? `$${batchTask.toFixed(4)}` : `$${batchTask.toFixed(3)}`}/task
-                </p>
-              ) : (
-                <p className="mt-1 text-[11.5px] text-ink-mute">Batch price: not published</p>
-              )}
-              {r.cacheNote && (
-                <p className="mt-1 text-[11.5px] text-ink-mute">Cache: {r.cacheNote}</p>
-              )}
-              {r.caveats.length > 0 && <p className="mt-1 text-[11.5px] text-ink-mute">{r.caveats[0]}</p>}
-            </li>
-          );
-        })}
-      </ul>
 
       <p className="mt-3 text-[12px] text-ink-mute">
         Blended $/M = (3 x input + 1 x output) / 4 at the route&apos;s current published price —
