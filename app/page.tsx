@@ -174,6 +174,11 @@ export default function Home() {
           . Verified{" "}
           <strong className="data">Sep 6–7 2026</strong>.
         </p>
+        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
+          Every per-task figure below uses one illustrative reference rate: <strong className="data">$0.80 per
+          finished task</strong> — about 100,000 tokens at the $8-per-million reference blend; your
+          real tasks will cost more or less.
+        </p>
         <div className="mt-5 flex flex-wrap items-center gap-3">
           <Link
             href="/best/"
