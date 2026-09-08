@@ -2,21 +2,19 @@ import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CrossoverSection from "@/components/CrossoverSection";
 import JsonLd from "@/components/JsonLd";
-import { canonical } from "@/lib/site";
+import { canonical, SNAPSHOT_DATE, social } from "@/lib/site";
 
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "Where flat beats metered — the break-even crossover, step by step",
-  description:
-    "The $0.80/task pay-as-you-go reference against the $39/mo Kimi Allegretto flat tier: the crossover chart, the four-step story, and the ledger at three volumes. Snapshot Sep 6–7 2026.",
+  description: `The $0.80/task pay-as-you-go reference against the $39/mo Kimi Allegretto flat tier: the crossover chart, the four-step story, and the ledger at three volumes. Snapshot ${SNAPSHOT_DATE}.`,
   alternates: { canonical: canonical("/crossover/") },
-  openGraph: {
+  ...social({
     title: "Token Perks — flat vs metered crossover",
-    description: "Watch metered billing cross a flat subscription price, with the arithmetic shown.",
-    url: canonical("/crossover/"),
-    type: "website",
-  },
+    description: `Watch metered billing cross a flat subscription price, with the arithmetic shown. Snapshot ${SNAPSHOT_DATE}.`,
+    path: "/crossover/",
+  }),
 };
 
 export default function CrossoverPage() {

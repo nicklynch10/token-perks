@@ -5,7 +5,7 @@ import CiteBlock from "@/components/CiteBlock";
 import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import ResearchSnapshot from "@/components/ResearchSnapshot";
-import { canonical, SITE_URL } from "@/lib/site";
+import { canonical, SITE_URL, social } from "@/lib/site";
 
 export const dynamic = "force-static";
 
@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   description:
     "Cursor's student program closed June 25, 2026. The live offers, their verification cycles, and exactly what happens when each free period ends — dated to Sep 6-7 2026.",
   alternates: { canonical: canonical("/guides/ai-student-discounts/") },
-  openGraph: {
+  ...social({
     title: "AI Student Discounts, Verified Live (Sep 2026)",
     description:
       "Which student offers actually exist right now, and what each one does when it ends — re-verify, downgrade, or auto-bill.",
-    url: canonical("/guides/ai-student-discounts/"),
+    path: "/guides/ai-student-discounts/",
     type: "article",
-  },
+  }),
 };
 
 const FAQ = [

@@ -5,7 +5,7 @@ import CiteBlock from "@/components/CiteBlock";
 import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import ResearchSnapshot from "@/components/ResearchSnapshot";
-import { canonical, SITE_URL } from "@/lib/site";
+import { canonical, SITE_URL, social } from "@/lib/site";
 
 export const dynamic = "force-static";
 
@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   description:
     "We checked the pricing pages of Cursor, Copilot, Claude, ChatGPT, Gemini, Kimi, and Windsurf: none sells lifetime. What marketplaces actually sell, with dated terms. Sep 2026.",
   alternates: { canonical: canonical("/guides/lifetime-ai-deals/") },
-  openGraph: {
+  ...social({
     title: "AI Tool Lifetime Deals: Why No Real One Exists (Sep 2026)",
     description:
       "First-party vendors sell subscriptions. 'Lifetime' means marketplace credits on a redemption clock — the exact windows, refund asymmetry, and the honest annual-prepay alternative.",
-    url: canonical("/guides/lifetime-ai-deals/"),
+    path: "/guides/lifetime-ai-deals/",
     type: "article",
-  },
+  }),
 };
 
 const FAQ = [

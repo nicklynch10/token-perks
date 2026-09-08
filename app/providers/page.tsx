@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
-import { canonical, SITE_URL } from "@/lib/site";
+import { canonical, SITE_URL, social } from "@/lib/site";
 import { CATEGORY_LABELS, providerGroups, UNIVERSE } from "@/lib/universe";
 
 export const dynamic = "force-static";
@@ -12,12 +12,11 @@ export const metadata: Metadata = {
   description:
     "One page per provider: subscriptions, API pricing, credit systems, coding-tool plans, and free tiers we track, each with its price, caveats count, and evidence label.",
   alternates: { canonical: canonical("/providers/") },
-  openGraph: {
+  ...social({
     title: "Token Perks — Providers",
-    description: "Every tracked AI access route, grouped by provider, with evidence labels.",
-    url: canonical("/providers/"),
-    type: "website",
-  },
+    description: `Every tracked AI access route (${UNIVERSE.rows.length} routes across ${providerGroups().length} providers), grouped by company, with evidence labels.`,
+    path: "/providers/",
+  }),
 };
 
 function evidenceMix(rows: { label: string }[]): string {

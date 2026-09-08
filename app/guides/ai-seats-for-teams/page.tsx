@@ -7,7 +7,7 @@ import JsonLd from "@/components/JsonLd";
 import ResearchSnapshot from "@/components/ResearchSnapshot";
 import { skuById, type TeamSeatSku } from "@/app/cost-calculator/team-seats";
 import { BASELINE_PAYG_PER_TASK } from "@/lib/effectiveCost";
-import { canonical, SITE_URL } from "@/lib/site";
+import { canonical, SITE_URL, social } from "@/lib/site";
 import { UNIVERSE, type UniverseRow } from "@/lib/universe";
 
 export const dynamic = "force-static";
@@ -17,13 +17,13 @@ export const metadata: Metadata = {
   description:
     "Seat math for managers: mixed Claude Team seats (2 Standard + 1 Premium = $140/mo annual), Copilot credit buckets, Devin's base fee, and the rules for choosing seats vs pooled API spend. Every price dated.",
   alternates: { canonical: canonical("/guides/ai-seats-for-teams/") },
-  openGraph: {
+  ...social({
     title: "AI Seats for Teams: When Per-Seat Plans Beat Pooled API Spend (Sep 2026)",
     description:
       "Per-seat totals, mixed-seat math, and seats-vs-API decision rules on dated, tracked prices.",
-    url: canonical("/guides/ai-seats-for-teams/"),
+    path: "/guides/ai-seats-for-teams/",
     type: "article",
-  },
+  }),
 };
 
 /** Dated universe lookup for consumer rows the text may reference. */

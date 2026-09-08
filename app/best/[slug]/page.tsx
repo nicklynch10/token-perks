@@ -8,7 +8,7 @@ import JsonLd from "@/components/JsonLd";
 import ResearchSnapshot from "@/components/ResearchSnapshot";
 import VerifyBadge from "@/components/VerifyBadge";
 import { ACTIVE_OFFERS, getOffer, offerSlugs, type Offer } from "@/lib/offers";
-import { canonical, SITE_URL } from "@/lib/site";
+import { canonical, SITE_URL, SNAPSHOT_DATE, social } from "@/lib/site";
 
 export const dynamic = "force-static";
 
@@ -228,7 +228,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const m = META[slug] ?? {
     title: "AI offer — price, renewal, limits",
-    description: "Price, renewal, and caveats verified Sep 6 2026. Re-verify at official terms.",
+    description: `Price, renewal, and caveats verified ${SNAPSHOT_DATE}. Re-verify at official terms.`,
   };
   const offer = getOffer(slug);
   const ended = offer != null && offer.status !== "active";
@@ -236,20 +236,14 @@ export async function generateMetadata({
     title: ended ? `Ended: ${m.title}` : m.title,
     description: m.description,
     alternates: { canonical: canonical(`/best/${slug}/`) },
-    openGraph: {
+    ...social({
       title: m.title,
       description: m.description,
-      url: canonical(`/best/${slug}/`),
+      path: `/best/${slug}/`,
       type: "article",
-      images: [
-        {
-          url: OG_IMAGE[slug] ?? "/img/og/og-home.png",
-          width: 1200,
-          height: 630,
-          alt: "Token Perks — AI subscription offers, compared on effective cost per task",
-        },
-      ],
-    },
+      image: OG_IMAGE[slug] ?? "/img/og/og-home.png",
+      imageAlt: "Token Perks — AI subscription offers, compared on effective cost per task",
+    }),
     ...(ended ? { robots: { index: false, follow: true } } : {}),
   };
 }

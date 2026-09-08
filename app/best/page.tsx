@@ -6,28 +6,21 @@ import OfferCard from "@/components/OfferCard";
 import ResearchSnapshot from "@/components/ResearchSnapshot";
 import { TEAM_SEAT_SKUS, type TeamSeatSku } from "@/app/cost-calculator/team-seats";
 import { ACTIVE_OFFERS } from "@/lib/offers";
-import { canonical, SITE_URL } from "@/lib/site";
+import { canonical, OG_HOME_IMAGE, SITE_URL, SNAPSHOT_DATE, social } from "@/lib/site";
 
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "AI offers compared — consumer plans, team seats, cost per task",
-  description: `All ${ACTIVE_OFFERS.length} tracked AI offers plus every tracked Team/seat plan — verified prices, caveats, limits, and renewal terms, with team totals in the seat calculator. Snapshots Sep 6–7 2026.`,
+  description: `All ${ACTIVE_OFFERS.length} tracked AI offers plus every tracked Team/seat plan — verified prices, caveats, limits, and renewal terms, with team totals in the seat calculator. Snapshots ${SNAPSHOT_DATE}.`,
   alternates: { canonical: canonical("/best/") },
-  openGraph: {
+  ...social({
     title: "AI offers compared — consumer plans, team seats, cost per task",
-    description: `${ACTIVE_OFFERS.length} tracked AI offers plus tracked Team/seat plans — caveats, limits, and dated verification.`,
-    url: canonical("/best/"),
-    type: "website",
-    images: [
-      {
-        url: "/img/og/og-home.png",
-        width: 1200,
-        height: 630,
-        alt: "Token Perks — AI subscription offers, compared on effective cost per task.",
-      },
-    ],
-  },
+    description: `${ACTIVE_OFFERS.length} tracked AI offers plus tracked Team/seat plans — caveats, limits, and dated verification (${SNAPSHOT_DATE}).`,
+    path: "/best/",
+    image: OG_HOME_IMAGE,
+    imageAlt: "Token Perks — AI subscription offers, compared on effective cost per task.",
+  }),
 };
 
 const TASK_NOTES: Record<string, string> = {

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import UniverseTable, { type UniverseDatum } from "@/components/UniverseTable";
-import { canonical, SITE_URL } from "@/lib/site";
+import { canonical, SITE_URL, social } from "@/lib/site";
 import { providerGroups, UNIVERSE } from "@/lib/universe";
 
 export const dynamic = "force-static";
@@ -12,12 +12,11 @@ export const metadata: Metadata = {
   title: "Every tracked route — the full access universe",
   description: `The complete ${UNIVERSE.rows.length}-route table of AI access we track — subscriptions, API per-token pricing, credits, coding tools, and free tiers — including rows we could not verify, labeled UNCERTAIN rather than estimated. Snapshot ${UNIVERSE.snapshot}.`,
   alternates: { canonical: canonical("/universe/") },
-  openGraph: {
+  ...social({
     title: "Token Perks — every tracked route",
-    description: `The full ${UNIVERSE.rows.length}-route universe table with list prices, caveats, and evidence labels.`,
-    url: canonical("/universe/"),
-    type: "website",
-  },
+    description: `The full ${UNIVERSE.rows.length}-route universe table with list prices, caveats, and evidence labels (snapshot ${UNIVERSE.snapshot}).`,
+    path: "/universe/",
+  }),
 };
 
 export default function UniversePage() {

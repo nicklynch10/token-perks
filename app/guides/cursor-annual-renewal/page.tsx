@@ -5,7 +5,7 @@ import CiteBlock from "@/components/CiteBlock";
 import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import ResearchSnapshot from "@/components/ResearchSnapshot";
-import { canonical, SITE_URL } from "@/lib/site";
+import { canonical, SITE_URL, social } from "@/lib/site";
 
 export const dynamic = "force-static";
 
@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   description:
     "Cursor Pro renews at the then-current price — no rate guarantee, no published annual price. Exact ToS quotes for Cursor, Copilot, and Claude, plus verified refund terms. Sep 2026.",
   alternates: { canonical: canonical("/guides/cursor-annual-renewal/") },
-  openGraph: {
+  ...social({
     title: "Cursor Pro Annual Renewal Price — What $20/mo Renews At (Sep 2026)",
     description:
       "Renewal is not price-protected: the continued-use clause, the missing annual rate, and the same questions answered per vendor with dated terms quotes.",
-    url: canonical("/guides/cursor-annual-renewal/"),
+    path: "/guides/cursor-annual-renewal/",
     type: "article",
-  },
+  }),
 };
 
 const FAQ = [

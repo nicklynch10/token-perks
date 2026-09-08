@@ -1,14 +1,14 @@
 import { OFFERS } from "@/lib/offers";
-import { SITE_URL, SNAPSHOT_LINE } from "@/lib/site";
+import { SITE_NAME, SITE_URL, SNAPSHOT_LINE } from "@/lib/site";
 import { CATEGORY_LABELS, blendedPerM, providerGroups, UNIVERSE } from "@/lib/universe";
 
 export const dynamic = "force-static";
 
 export async function GET() {
   const parts: string[] = [
-    "# Token Perks — full text",
+    `# ${SITE_NAME} — full text`,
     SNAPSHOT_LINE,
-    "Methodology v2 (Sep 7 2026): blended $/M = (3 x input + 1 x output) / 4 at each route's current published price (list, or launch-promo price while a promo runs — promo-priced rows caption their list-price blend); official sources only; uncertainty labels on every row; benchmarks quoted per datum with attribution, never republished as tables or feeds.",
+    `Methodology v2 (${UNIVERSE.snapshot}): blended $/M = (3 x input + 1 x output) / 4 at each route's current published price (list, or launch-promo price while a promo runs — promo-priced rows caption their list-price blend); official sources only; uncertainty labels on every row; benchmarks quoted per datum with attribution, never republished as tables or feeds.`,
     "",
   ];
   for (const o of OFFERS) {

@@ -5,7 +5,7 @@ import CiteBlock from "@/components/CiteBlock";
 import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import ResearchSnapshot from "@/components/ResearchSnapshot";
-import { canonical, SITE_URL } from "@/lib/site";
+import { canonical, SITE_URL, social } from "@/lib/site";
 import { STALENESS_DAYS, AA_INDEX_VERSION } from "@/lib/intelligence";
 
 export const dynamic = "force-static";
@@ -15,12 +15,12 @@ export const metadata: Metadata = {
   description:
     "Methodology v2: blended $/M arithmetic, evidence labels, the quoted-score citation policy for Artificial Analysis data, the withheld weighted ranking, staleness gates, and the data schema.",
   alternates: { canonical: canonical("/methodology/") },
-  openGraph: {
+  ...social({
     title: "Token Perks Methodology v2",
     description: "Cost arithmetic, quoted-score citation policy, staleness gates, data schema.",
-    url: canonical("/methodology/"),
+    path: "/methodology/",
     type: "article",
-  },
+  }),
 };
 
 const FAQ = [

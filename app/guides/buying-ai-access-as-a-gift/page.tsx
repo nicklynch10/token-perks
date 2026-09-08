@@ -7,7 +7,7 @@ import JsonLd from "@/components/JsonLd";
 import ResearchSnapshot from "@/components/ResearchSnapshot";
 import { ACTIVE_OFFERS, type Offer } from "@/lib/offers";
 import { ALLEGRETTO_ANNUAL_UPFRONT, ALLEGRETTO_MONTHLY } from "@/lib/crossover";
-import { canonical, SNAPSHOT_LINE, SITE_URL } from "@/lib/site";
+import { canonical, SNAPSHOT_LINE, SITE_URL, social } from "@/lib/site";
 
 export const dynamic = "force-static";
 
@@ -16,13 +16,13 @@ export const metadata: Metadata = {
   description:
     "Can you gift a ChatGPT, Claude, Kimi, Copilot, or Cursor subscription? No gift cards on our tracked offers — so here is what gifting AI access actually means: activation, first month, refund windows, and quota reality, per verified offer.",
   alternates: { canonical: canonical("/guides/buying-ai-access-as-a-gift/") },
-  openGraph: {
+  ...social({
     title: "Buying AI access as a gift",
     description:
       "Gift cards, transferability, refund windows, and the practical gift for each tracked AI offer. Dated snapshot — re-verify at official terms.",
-    url: canonical("/guides/buying-ai-access-as-a-gift/"),
+    path: "/guides/buying-ai-access-as-a-gift/",
     type: "article",
-  },
+  }),
 };
 
 /** Is the price a $0 route (by the verified string, not by guess)? */

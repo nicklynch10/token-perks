@@ -7,7 +7,16 @@ import LeaderboardTable, { type LeaderboardDatum } from "@/components/Leaderboar
 import ParetoChart, { type ParetoDatum } from "@/components/ParetoChart";
 import { ACTIVE_OFFERS } from "@/lib/offers";
 import { aaCitation, getIntel, INTEL } from "@/lib/intelligence";
-import { canonical, SITE_URL } from "@/lib/site";
+import {
+  canonical,
+  homeMeta,
+  OG_HOME_IMAGE,
+  SITE_URL,
+  SNAPSHOT_DATE,
+  SNAPSHOT_ISO,
+  SNAPSHOT_LINE,
+  social,
+} from "@/lib/site";
 import {
   batchPerM,
   blendedPerM,
@@ -23,26 +32,21 @@ import { paretoFrontier } from "@/lib/valueScore";
 
 export const dynamic = "force-static";
 
+// Counts come from the live ledger so meta strings can never lag the data
+// (the 2026-09-07 audit caught stale hardcoded counts here and in /feed.xml).
+const HOME = homeMeta({ routes: UNIVERSE.rows.length, snapshot: UNIVERSE.snapshot });
+
 export const metadata: Metadata = {
-  title: "AI cost leaderboard — every access route, priced and ranked",
-  description:
-    "129 tracked AI access routes — subscriptions, API per-token pricing, credits, coding tools, and free tiers — ranked on effective cost with cited Artificial Analysis intelligence scores and an interactive cost-intelligence frontier chart.",
+  title: HOME.pageTitle,
+  description: HOME.description,
   alternates: { canonical: canonical("/") },
-  openGraph: {
-    title: "Token Perks — AI cost leaderboard",
-    description:
-      "Cost-side ranking of AI access routes, a cost-vs-intelligence frontier chart, and the full route ledger. Snapshot Sep 7 2026.",
-    url: canonical("/"),
-    type: "website",
-    images: [
-      {
-        url: "/img/og/og-home.png",
-        width: 1200,
-        height: 630,
-        alt: "Token Perks — AI access routes ranked on effective cost, with cited intelligence scores.",
-      },
-    ],
-  },
+  ...social({
+    title: HOME.title,
+    description: HOME.description,
+    path: "/",
+    image: OG_HOME_IMAGE,
+    imageAlt: "Token Perks — AI access routes ranked on effective cost, with cited intelligence scores.",
+  }),
 };
 
 const GUIDES = [
@@ -172,7 +176,7 @@ export default function Home() {
             universe page
           </Link>
           . Verified{" "}
-          <strong className="data">Sep 6–7 2026</strong>.
+          <strong className="data">{SNAPSHOT_DATE}</strong>.
         </p>
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-soft">
           Every per-task figure below uses one illustrative reference rate: <strong className="data">$0.80 per
@@ -368,8 +372,8 @@ export default function Home() {
       {/* 9 · Quiet verification line */}
       <div className="mx-auto max-w-6xl border-t border-line px-4 py-5 sm:px-6">
         <p className="data text-xs text-ink-mute">
-          Cost data verified 2026-09-06/07 · intelligence scores quoted from Artificial Analysis,
-          accessed 2026-09-07 —{" "}
+          Cost data verified {SNAPSHOT_DATE} · intelligence scores quoted from Artificial Analysis,
+          accessed {INTEL.accessed} —{" "}
           <Link href="/changes/" className="font-semibold text-teal-deep hover:underline">
             verification log
           </Link>
@@ -388,7 +392,7 @@ export default function Home() {
           {
             "@context": "https://schema.org",
             "@type": "ItemList",
-            name: "AI API cost leaderboard — Sep 7 2026",
+            name: `AI API cost leaderboard — ${UNIVERSE.snapshot}`,
             description:
               "Pay-per-token AI access routes ranked by blended effective cost per million tokens, (3 x input + 1 x output) / 4 at each route's current published price (list, or promo while a launch promo runs — promo-priced rows say so). Intelligence scores are quoted from Artificial Analysis under brief-citation terms and are not part of this feed.",
             numberOfItems: cheapest.length,
@@ -402,7 +406,7 @@ export default function Home() {
           {
             "@context": "https://schema.org",
             "@type": "Dataset",
-            name: "Token Perks cost–intelligence frontier — Sep 7 2026",
+            name: `Token Perks cost–intelligence frontier — ${UNIVERSE.snapshot}`,
             description: `Cost–intelligence scatter of ${paretoPoints.length} AI access routes: blended effective cost per million tokens (first-party arithmetic from each route's published price) against the Artificial Analysis Intelligence Index v4.3, quoted per datum with source links under AA brief-citation terms.`,
             creator: { "@type": "Organization", name: "Token Perks", url: SITE_URL },
             license: "https://creativecommons.org/licenses/by/4.0/",
@@ -422,16 +426,15 @@ export default function Home() {
           {
             "@context": "https://schema.org",
             "@type": "Dataset",
-            name: "Token Perks effective-cost snapshot — Sep 6 2026",
+            name: `Token Perks effective-cost snapshot — ${SNAPSHOT_DATE}`,
             description:
               "First-party research snapshot of AI offer prices, renewals, limits, and illustrative cost-per-task figures. Official provider pages only; no third-party benchmark data republished.",
             creator: { "@type": "Organization", name: "Token Perks", url: SITE_URL },
             license: "https://creativecommons.org/licenses/by/4.0/",
-            citation:
-              "Token Perks. Research snapshot Sep 6 2026. Re-verify at official terms before paying.",
-            temporalCoverage: "2026-09-06",
-            datePublished: "2026-09-06",
-            dateModified: "2026-09-06",
+            citation: `Token Perks. ${SNAPSHOT_LINE}`,
+            temporalCoverage: SNAPSHOT_ISO,
+            datePublished: SNAPSHOT_ISO,
+            dateModified: SNAPSHOT_ISO,
             url,
             distribution: [
               {

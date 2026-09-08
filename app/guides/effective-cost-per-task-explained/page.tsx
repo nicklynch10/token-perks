@@ -6,7 +6,7 @@ import CiteBlock from "@/components/CiteBlock";
 import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import ResearchSnapshot from "@/components/ResearchSnapshot";
-import { canonical, SITE_URL } from "@/lib/site";
+import { canonical, SITE_URL, social } from "@/lib/site";
 
 export const dynamic = "force-static";
 
@@ -15,12 +15,12 @@ export const metadata: Metadata = {
   description:
     "Cost per task = price ÷ tasks done. $40 sub over 120 tasks ≈ $0.33 vs $0.80 PAYG; break-even at 50. Verified Sep 6 2026.",
   alternates: { canonical: canonical("/guides/effective-cost-per-task-explained/") },
-  openGraph: {
+  ...social({
     title: "Effective Cost Per Task Explained (Verified Sep 2026)",
     description: "$40 sub over 120 tasks ≈ $0.33 vs $0.80 PAYG; break-even at 50 tasks.",
-    url: canonical("/guides/effective-cost-per-task-explained/"),
+    path: "/guides/effective-cost-per-task-explained/",
     type: "article",
-  },
+  }),
 };
 
 const FAQ = [

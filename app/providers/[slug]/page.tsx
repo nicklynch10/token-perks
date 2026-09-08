@@ -5,7 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import { getOffer } from "@/lib/offers";
 import { aaCitation, getIntel, INTEL } from "@/lib/intelligence";
-import { canonical, SITE_URL } from "@/lib/site";
+import { canonical, SITE_URL, social } from "@/lib/site";
 import {
   blendedPerM,
   CATEGORY_LABELS,
@@ -34,12 +34,11 @@ export async function generateMetadata({
     title: `${g.name} — routes, list prices, and evidence`,
     description: `${g.rows.length} tracked ${g.name} access routes — subscriptions, API pricing, credits, coding tools, free tiers — with list prices, caveats, and evidence labels. Snapshot ${UNIVERSE.snapshot}.`,
     alternates: { canonical: canonical(`/providers/${g.slug}/`) },
-    openGraph: {
+    ...social({
       title: `Token Perks — ${g.name}`,
       description: `Every tracked ${g.name} access route, with prices and evidence labels.`,
-      url: canonical(`/providers/${g.slug}/`),
-      type: "website",
-    },
+      path: `/providers/${g.slug}/`,
+    }),
   };
 }
 

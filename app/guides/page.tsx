@@ -3,23 +3,9 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import ResearchSnapshot from "@/components/ResearchSnapshot";
-import { canonical, SITE_URL } from "@/lib/site";
+import { canonical, SITE_URL, SNAPSHOT_DATE, social } from "@/lib/site";
 
 export const dynamic = "force-static";
-
-export const metadata: Metadata = {
-  title: "AI Pricing Guides (Verified Sep 6–7 2026)",
-  description:
-    "Eight practical guides: buying AI access as a gift, effective cost per task, monthly vs annual, seats for teams, batch and caching, renewal terms, student discounts, and lifetime deals. Worked examples, checklists, verified Sep 6-7 2026.",
-  alternates: { canonical: canonical("/guides/") },
-  openGraph: {
-    title: "AI Pricing Guides (Verified Sep 6–7 2026)",
-    description:
-      "Cost per task, monthly-vs-annual, and team-seat guides with worked examples.",
-    url: canonical("/guides/"),
-    type: "website",
-  },
-};
 
 const GUIDES = [
   {
@@ -63,6 +49,19 @@ const GUIDES = [
     text: "Seven vendor sweeps, the 30/60-day redemption clocks, refund asymmetry, and the annual-prepay alternative that actually exists.",
   },
 ];
+
+// Guide count derived from the list itself — the meta string can no longer
+// lag when a guide is added or removed (audit item: hardcoded "Eight").
+export const metadata: Metadata = {
+  title: `AI Pricing Guides (Verified ${SNAPSHOT_DATE})`,
+  description: `${GUIDES.length} practical guides: buying AI access as a gift, effective cost per task, monthly vs annual, seats for teams, batch and caching, renewal terms, student discounts, and lifetime deals. Worked examples, checklists, verified ${SNAPSHOT_DATE}.`,
+  alternates: { canonical: canonical("/guides/") },
+  ...social({
+    title: `AI Pricing Guides (Verified ${SNAPSHOT_DATE})`,
+    description: `Cost per task, monthly-vs-annual, and team-seat guides with worked examples — ${GUIDES.length} guides, verified ${SNAPSHOT_DATE}.`,
+    path: "/guides/",
+  }),
+};
 
 export default function GuidesIndex() {
   return (

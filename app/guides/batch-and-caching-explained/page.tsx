@@ -5,7 +5,7 @@ import CiteBlock from "@/components/CiteBlock";
 import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import ResearchSnapshot from "@/components/ResearchSnapshot";
-import { canonical, SITE_URL } from "@/lib/site";
+import { canonical, SITE_URL, social } from "@/lib/site";
 
 export const dynamic = "force-static";
 
@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   description:
     "How API prices come down: the -50% batch family, DeepSeek's exact off-peak hours, prompt-caching write/read economics, and the >200k-token repricing traps. Verified Sep 7 2026.",
   alternates: { canonical: canonical("/guides/batch-and-caching-explained/") },
-  openGraph: {
+  ...social({
     title: "Batch and Caching, Explained (Verified Sep 2026)",
     description:
       "Batch -50%, off-peak windows, cache write/read economics, and long-context repricing traps — every figure from the Sep 7 2026 snapshot.",
-    url: canonical("/guides/batch-and-caching-explained/"),
+    path: "/guides/batch-and-caching-explained/",
     type: "article",
-  },
+  }),
 };
 
 const FAQ = [

@@ -1,5 +1,5 @@
 import { OFFERS } from "@/lib/offers";
-import { SITE_URL, SNAPSHOT_LINE } from "@/lib/site";
+import { SITE_NAME, SITE_TAGLINE, SITE_URL, SNAPSHOT_LINE } from "@/lib/site";
 import { blendedPerM, providerGroups, UNIVERSE } from "@/lib/universe";
 
 export const dynamic = "force-static";
@@ -13,12 +13,12 @@ export async function GET() {
 
   const groups = providerGroups();
   const lines = [
-    "# Token Perks",
-    "AI subscription offers, compared on effective cost per task.",
+    `# ${SITE_NAME}`,
+    SITE_TAGLINE,
     "",
     SNAPSHOT_LINE,
     `Cost universe: ${UNIVERSE.rows.length} access routes across ${groups.length} providers (subscriptions, API per-token, credits, coding tools, free tiers), snapshot ${UNIVERSE.snapshot}.`,
-    "Methodology v2 (Sep 7 2026): blended $/M = (3 x input + 1 x output) / 4 at each route's current published price (list, or launch-promo price while a promo runs — promo-priced rows caption their list-price blend); uncertainty labels DIRECT / EXCERPT / UNCERTAIN on every row; unverified routes are shown as unverified, never estimated from memory.",
+    `Methodology v2 (${UNIVERSE.snapshot}): blended $/M = (3 x input + 1 x output) / 4 at each route's current published price (list, or launch-promo price while a promo runs — promo-priced rows caption their list-price blend); uncertainty labels DIRECT / EXCERPT / UNCERTAIN on every row; unverified routes are shown as unverified, never estimated from memory.`,
     "Artificial Analysis Intelligence Index values are quoted per datum with source links under AA brief-citation terms; they are absent from this file and all machine feeds by policy.",
     "",
     "## Offers",

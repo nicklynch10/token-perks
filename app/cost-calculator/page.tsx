@@ -20,7 +20,7 @@ import {
 } from "@/lib/crossover";
 import { BASELINE_PAYG_PER_TASK } from "@/lib/effectiveCost";
 import { INTEL } from "@/lib/intelligence";
-import { canonical, SITE_URL } from "@/lib/site";
+import { canonical, SITE_URL, social } from "@/lib/site";
 import {
   batchPerM,
   blendedPerM,
@@ -36,13 +36,12 @@ export const metadata: Metadata = {
   description:
     "Every interactive calculator in one place: flat-vs-metered break-even (shareable via URL), team-seat totals from verified per-seat rows, cost of one finished task per API route, monthly-vs-annual prepay math, and a 12-month view of the tracked offers.",
   alternates: { canonical: canonical("/cost-calculator/") },
-  openGraph: {
+  ...social({
     title: "AI cost calculators — break-even, team seats, cost per task, monthly vs annual",
     description:
       "Break-even, team-seat totals, one-task cost per route, prepay math, and 12-month comparisons — all on dated snapshot data.",
-    url: canonical("/cost-calculator/"),
-    type: "website",
-  },
+    path: "/cost-calculator/",
+  }),
 };
 
 /** First dollar amount in a price string (e.g. "$19–$199/mo…" -> 19). Data-derived only. */

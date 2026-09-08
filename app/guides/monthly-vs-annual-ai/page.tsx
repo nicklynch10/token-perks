@@ -6,7 +6,7 @@ import CiteBlock from "@/components/CiteBlock";
 import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import ResearchSnapshot from "@/components/ResearchSnapshot";
-import { canonical, SITE_URL } from "@/lib/site";
+import { canonical, SITE_URL, social } from "@/lib/site";
 
 export const dynamic = "force-static";
 
@@ -15,12 +15,12 @@ export const metadata: Metadata = {
   description:
     "Kimi Allegretto $39/mo vs ~$31/mo annual (~$372 upfront, ~$96/yr difference). Prepay only stable volume. Verified Sep 6 2026.",
   alternates: { canonical: canonical("/guides/monthly-vs-annual-ai/") },
-  openGraph: {
+  ...social({
     title: "Monthly vs Annual AI Plans — When Prepaying Pays (Sep 2026)",
     description: "Allegretto $39/mo vs ~$31/mo effective annual. Prepay only stable volume.",
-    url: canonical("/guides/monthly-vs-annual-ai/"),
+    path: "/guides/monthly-vs-annual-ai/",
     type: "article",
-  },
+  }),
 };
 
 const FAQ = [

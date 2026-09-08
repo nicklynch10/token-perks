@@ -1,5 +1,6 @@
 import { ACTIVE_OFFERS } from "@/lib/offers";
-import { SITE_URL, SNAPSHOT_ISO } from "@/lib/site";
+import { SITE_URL, SNAPSHOT_DATE, SNAPSHOT_ISO } from "@/lib/site";
+import { UNIVERSE } from "@/lib/universe";
 
 export const dynamic = "force-static";
 
@@ -32,15 +33,15 @@ export async function GET() {
       pubDate: rfc822(SNAPSHOT_ISO),
     },
     {
-      title: "AI cost leaderboard — 129 access routes, ranked on blended $/M",
+      title: `AI cost leaderboard — ${UNIVERSE.rows.length} access routes, ranked on blended $/M`,
       link: `${SITE_URL}/`,
       desc: "Cost-side ranking of subscriptions, API pricing, credits, coding tools, and free tiers, with a cost-vs-intelligence frontier chart. Intelligence scores quoted from Artificial Analysis with per-datum citations; machine feed: /api/leaderboard.json (cost side only).",
-      pubDate: rfc822("2026-09-07"),
+      pubDate: rfc822(UNIVERSE.snapshot),
     },
   ];
   const itemDates = items.map((it) => Date.parse(it.pubDate));
   const buildDate = new Date(Math.max(...itemDates)).toUTCString();
-  const xml = `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Token Perks</title><link>${SITE_URL}/</link><description>AI access routes ranked on effective cost, with cited intelligence scores. Cost snapshot Sep 6-7 2026.</description><language>en</language><lastBuildDate>${buildDate}</lastBuildDate>${items
+  const xml = `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Token Perks</title><link>${SITE_URL}/</link><description>AI access routes ranked on effective cost, with cited intelligence scores. Cost snapshot ${SNAPSHOT_DATE}.</description><language>en</language><lastBuildDate>${buildDate}</lastBuildDate>${items
     .map(
       (it) =>
         `<item><title>${esc(it.title)}</title><link>${esc(it.link)}</link><guid isPermaLink="true">${esc(it.link)}</guid><description>${esc(it.desc)}</description><pubDate>${it.pubDate}</pubDate></item>`,

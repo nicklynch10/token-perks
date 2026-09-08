@@ -2,21 +2,20 @@ import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import ResearchSnapshot from "@/components/ResearchSnapshot";
-import { AFFILIATE_V0_STATE, canonical, SITE_URL } from "@/lib/site";
+import { AFFILIATE_V0_STATE, canonical, SITE_URL, SNAPSHOT_DATE, social } from "@/lib/site";
 
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "How We Make Money (No Affiliate Links Yet) | Token Perks",
-  description:
-    "Plain-English revenue disclosure: v0 has zero affiliate links. Future paid links get rel=sponsored labels. Updated Sep 6 2026.",
+  description: `Plain-English revenue disclosure: v0 has zero affiliate links. Future paid links get rel=sponsored labels. Updated ${SNAPSHOT_DATE}.`,
   alternates: { canonical: canonical("/how-we-make-money/") },
-  openGraph: {
+  ...social({
     title: "How We Make Money (No Affiliate Links Yet) | Token Perks",
     description: "V0 has zero affiliate links. Future paid links get rel=sponsored labels.",
-    url: canonical("/how-we-make-money/"),
+    path: "/how-we-make-money/",
     type: "article",
-  },
+  }),
 };
 
 export default function MoneyPage() {

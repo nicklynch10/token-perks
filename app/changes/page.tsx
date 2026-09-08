@@ -4,22 +4,20 @@ import CiteBlock from "@/components/CiteBlock";
 import JsonLd from "@/components/JsonLd";
 import ResearchSnapshot from "@/components/ResearchSnapshot";
 import { ACTIVE_OFFERS } from "@/lib/offers";
-import { canonical, SITE_URL } from "@/lib/site";
+import { canonical, SITE_URL, SNAPSHOT_DATE, SNAPSHOT_ISO, social } from "@/lib/site";
 
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "Verification Log: What Was Checked, When",
-  description:
-    "Dated log of every verification pass on Token Perks: what was checked, what changed, and what did not. Starting with the Sep 6 2026 snapshot.",
+  description: `Dated log of every verification pass on Token Perks: what was checked, what changed, and what did not. Starting with the ${SNAPSHOT_ISO} snapshot.`,
   alternates: { canonical: canonical("/changes/") },
-  openGraph: {
+  ...social({
     title: "Verification Log: What Was Checked, When",
-    description:
-      "Dated log of every verification pass — what was checked, what changed, what did not.",
-    url: canonical("/changes/"),
+    description: `Dated log of every verification pass — what was checked, what changed, what did not. Snapshot ${SNAPSHOT_DATE}.`,
+    path: "/changes/",
     type: "article",
-  },
+  }),
 };
 
 interface LogEntry {
