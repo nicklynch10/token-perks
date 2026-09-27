@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-09-27T05:36:18.164Z",
+  "updated": "2026-09-27T12:23:01.913Z",
   "seen": {
     "artificial:1w9f5e2": {
       "t": "2026-09-07T03:51:27.282Z",
@@ -16144,6 +16144,334 @@
     },
     "ClaudeAI:1wr64ez": {
       "t": "2026-09-27T05:36:18.164Z",
+      "tier": "high"
+    },
+    "artificial:1wrgqb6": {
+      "t": "2026-09-27T12:14:23.524Z",
+      "tier": "none"
+    },
+    "artificial:1wrfu0l": {
+      "t": "2026-09-27T12:14:23.525Z",
+      "tier": "none"
+    },
+    "artificial:1wrd2l4": {
+      "t": "2026-09-27T12:14:23.525Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wria8b": {
+      "t": "2026-09-27T12:15:26.225Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wrhmdn": {
+      "t": "2026-09-27T12:15:26.226Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wrh7b2": {
+      "t": "2026-09-27T12:15:26.226Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wrgk8z": {
+      "t": "2026-09-27T12:15:26.226Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wrgie2": {
+      "t": "2026-09-27T12:15:26.226Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wrfp50": {
+      "t": "2026-09-27T12:15:26.226Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wrfjnc": {
+      "t": "2026-09-27T12:15:26.226Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wrfe8b": {
+      "t": "2026-09-27T12:15:26.226Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wrf9dx": {
+      "t": "2026-09-27T12:15:26.226Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wrf7ac": {
+      "t": "2026-09-27T12:15:26.226Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wrez7j": {
+      "t": "2026-09-27T12:15:26.226Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wrd1p1": {
+      "t": "2026-09-27T12:15:26.226Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wrcy7x": {
+      "t": "2026-09-27T12:15:26.226Z",
+      "tier": "none"
+    },
+    "ChatGPTCoding:1wri3ux": {
+      "t": "2026-09-27T12:16:29.072Z",
+      "tier": "none"
+    },
+    "ChatGPTCoding:1wrcmgk": {
+      "t": "2026-09-27T12:16:29.072Z",
+      "tier": "none"
+    },
+    "ChatGPTCoding:1wrbuhs": {
+      "t": "2026-09-27T12:16:29.072Z",
+      "tier": "none"
+    },
+    "ChatGPTCoding:1wra0je": {
+      "t": "2026-09-27T12:16:29.072Z",
+      "tier": "none"
+    },
+    "ChatGPTCoding:1wr3z66": {
+      "t": "2026-09-27T12:16:29.072Z",
+      "tier": "none"
+    },
+    "ChatGPTCoding:1wr01tn": {
+      "t": "2026-09-27T12:16:29.072Z",
+      "tier": "none"
+    },
+    "cursor:1wrewe3": {
+      "t": "2026-09-27T12:17:31.887Z",
+      "tier": "none"
+    },
+    "cursor:1wreu9q": {
+      "t": "2026-09-27T12:17:31.887Z",
+      "tier": "none"
+    },
+    "cursor:1wrddz6": {
+      "t": "2026-09-27T12:17:31.887Z",
+      "tier": "none"
+    },
+    "GitHubCopilot:1wre0j7": {
+      "t": "2026-09-27T12:18:34.764Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrhncw": {
+      "t": "2026-09-27T12:19:37.679Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrhlll": {
+      "t": "2026-09-27T12:19:37.679Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrhkkg": {
+      "t": "2026-09-27T12:19:37.679Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrh1yd": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrh0br": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrgle0": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrggih": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrgb7i": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrg87o": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrfwx2": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrfrqm": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrfqnx": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrfj5b": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrffzi": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrezrl": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrezpv": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrep1g": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrek76": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wreiks": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrehry": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wreh71": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wreeyt": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wre3ay": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wre0m3": {
+      "t": "2026-09-27T12:19:37.680Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wri6sn": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrhznz": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrhukk": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrhuea": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrhlj3": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrhieg": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrhdd2": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrh7d0": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrh74k": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrh0tl": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrgvqj": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrgtty": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrgkm8": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrgjpa": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrg1l7": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrg1ib": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrfwf4": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrfj56": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrfhgy": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrf703": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrez59": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrexkh": {
+      "t": "2026-09-27T12:20:40.506Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wrekwi": {
+      "t": "2026-09-27T12:20:40.507Z",
+      "tier": "none"
+    },
+    "SillyTavernAI:1wrh2ns": {
+      "t": "2026-09-27T12:21:43.331Z",
+      "tier": "none"
+    },
+    "SillyTavernAI:1wremcw": {
+      "t": "2026-09-27T12:21:43.331Z",
+      "tier": "none"
+    },
+    "SillyTavernAI:1wreck2": {
+      "t": "2026-09-27T12:21:43.331Z",
+      "tier": "none"
+    },
+    "SillyTavernAI:1wrdznk": {
+      "t": "2026-09-27T12:21:43.331Z",
+      "tier": "none"
+    },
+    "SillyTavernAI:1wrdob5": {
+      "t": "2026-09-27T12:21:43.331Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wrfnwx": {
+      "t": "2026-09-27T12:22:58.468Z",
+      "tier": "high"
+    },
+    "ClaudeAI:1wrihlq": {
+      "t": "2026-09-27T12:22:59.551Z",
+      "tier": "high"
+    },
+    "ClaudeAI:1wrfd0i": {
+      "t": "2026-09-27T12:23:00.668Z",
+      "tier": "high"
+    },
+    "SillyTavernAI:1wrhpwb": {
+      "t": "2026-09-27T12:23:01.913Z",
       "tier": "high"
     }
   }
