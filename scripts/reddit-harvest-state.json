@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-09-28T14:21:13.417Z",
+  "updated": "2026-09-28T23:27:51.874Z",
   "seen": {
     "artificial:1w9f5e2": {
       "t": "2026-09-07T03:51:27.282Z",
@@ -18052,6 +18052,246 @@
     },
     "SillyTavernAI:1ws7eob": {
       "t": "2026-09-28T14:21:13.417Z",
+      "tier": "high"
+    },
+    "artificial:1wst3g5": {
+      "t": "2026-09-28T23:23:30.783Z",
+      "tier": "none"
+    },
+    "artificial:1wssusk": {
+      "t": "2026-09-28T23:23:30.783Z",
+      "tier": "none"
+    },
+    "artificial:1wsspta": {
+      "t": "2026-09-28T23:23:30.783Z",
+      "tier": "none"
+    },
+    "artificial:1wsrppt": {
+      "t": "2026-09-28T23:23:30.783Z",
+      "tier": "none"
+    },
+    "artificial:1wsqv23": {
+      "t": "2026-09-28T23:23:30.783Z",
+      "tier": "none"
+    },
+    "artificial:1wsqf1m": {
+      "t": "2026-09-28T23:23:30.783Z",
+      "tier": "none"
+    },
+    "artificial:1wsmw1d": {
+      "t": "2026-09-28T23:23:30.783Z",
+      "tier": "none"
+    },
+    "artificial:1wsmnv2": {
+      "t": "2026-09-28T23:23:30.783Z",
+      "tier": "none"
+    },
+    "artificial:1wsks3b": {
+      "t": "2026-09-28T23:23:30.783Z",
+      "tier": "none"
+    },
+    "artificial:1wsk9vm": {
+      "t": "2026-09-28T23:23:30.783Z",
+      "tier": "none"
+    },
+    "artificial:1wsij3g": {
+      "t": "2026-09-28T23:23:30.783Z",
+      "tier": "none"
+    },
+    "artificial:1wshrfx": {
+      "t": "2026-09-28T23:23:30.783Z",
+      "tier": "none"
+    },
+    "artificial:1wsh977": {
+      "t": "2026-09-28T23:23:30.783Z",
+      "tier": "none"
+    },
+    "artificial:1wsgryj": {
+      "t": "2026-09-28T23:23:30.783Z",
+      "tier": "none"
+    },
+    "artificial:1wsgh2x": {
+      "t": "2026-09-28T23:23:30.784Z",
+      "tier": "none"
+    },
+    "artificial:1wsgdht": {
+      "t": "2026-09-28T23:23:30.784Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wstv3z": {
+      "t": "2026-09-28T23:24:33.433Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wstjw5": {
+      "t": "2026-09-28T23:24:33.433Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wssv4l": {
+      "t": "2026-09-28T23:24:33.433Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wsscrw": {
+      "t": "2026-09-28T23:24:33.433Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wss84x": {
+      "t": "2026-09-28T23:24:33.433Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wss436": {
+      "t": "2026-09-28T23:24:33.433Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wsrt2c": {
+      "t": "2026-09-28T23:24:33.433Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wsqjku": {
+      "t": "2026-09-28T23:24:33.434Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wsq6r5": {
+      "t": "2026-09-28T23:24:33.434Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wsq0pa": {
+      "t": "2026-09-28T23:24:33.434Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wspn24": {
+      "t": "2026-09-28T23:24:33.434Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wspdhc": {
+      "t": "2026-09-28T23:24:33.434Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wsodqf": {
+      "t": "2026-09-28T23:24:33.434Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wsobzz": {
+      "t": "2026-09-28T23:24:33.434Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wso6gn": {
+      "t": "2026-09-28T23:24:33.434Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wsnjzu": {
+      "t": "2026-09-28T23:24:33.434Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wsmsnx": {
+      "t": "2026-09-28T23:24:33.434Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wslgkw": {
+      "t": "2026-09-28T23:24:33.434Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wslcum": {
+      "t": "2026-09-28T23:24:33.434Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wsjr8n": {
+      "t": "2026-09-28T23:24:33.434Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wsiepp": {
+      "t": "2026-09-28T23:24:33.434Z",
+      "tier": "none"
+    },
+    "ChatGPTCoding:1wsrtii": {
+      "t": "2026-09-28T23:25:36.032Z",
+      "tier": "none"
+    },
+    "ChatGPTCoding:1wsn27j": {
+      "t": "2026-09-28T23:25:36.032Z",
+      "tier": "none"
+    },
+    "cursor:1wsu0ut": {
+      "t": "2026-09-28T23:26:38.718Z",
+      "tier": "none"
+    },
+    "cursor:1wsozyz": {
+      "t": "2026-09-28T23:26:38.718Z",
+      "tier": "none"
+    },
+    "cursor:1wsnonw": {
+      "t": "2026-09-28T23:26:38.718Z",
+      "tier": "none"
+    },
+    "cursor:1wslmzf": {
+      "t": "2026-09-28T23:26:38.718Z",
+      "tier": "none"
+    },
+    "cursor:1wslkl1": {
+      "t": "2026-09-28T23:26:38.718Z",
+      "tier": "none"
+    },
+    "cursor:1wsk5ew": {
+      "t": "2026-09-28T23:26:38.718Z",
+      "tier": "none"
+    },
+    "cursor:1wsk0gl": {
+      "t": "2026-09-28T23:26:38.718Z",
+      "tier": "none"
+    },
+    "cursor:1wsihxw": {
+      "t": "2026-09-28T23:26:38.718Z",
+      "tier": "none"
+    },
+    "cursor:1wshhgy": {
+      "t": "2026-09-28T23:26:38.718Z",
+      "tier": "none"
+    },
+    "GitHubCopilot:1wsnnnr": {
+      "t": "2026-09-28T23:27:41.440Z",
+      "tier": "none"
+    },
+    "GitHubCopilot:1wsmcyj": {
+      "t": "2026-09-28T23:27:41.440Z",
+      "tier": "none"
+    },
+    "artificial:1wstbor": {
+      "t": "2026-09-28T23:27:43.077Z",
+      "tier": "high"
+    },
+    "artificial:1wsrcgh": {
+      "t": "2026-09-28T23:27:44.227Z",
+      "tier": "high"
+    },
+    "artificial:1wspude": {
+      "t": "2026-09-28T23:27:44.982Z",
+      "tier": "high"
+    },
+    "artificial:1wsnsap": {
+      "t": "2026-09-28T23:27:45.977Z",
+      "tier": "high"
+    },
+    "LocalLLaMA:1wspek9": {
+      "t": "2026-09-28T23:27:46.760Z",
+      "tier": "high"
+    },
+    "LocalLLaMA:1wsnynr": {
+      "t": "2026-09-28T23:27:47.875Z",
+      "tier": "high"
+    },
+    "LocalLLaMA:1wsn59w": {
+      "t": "2026-09-28T23:27:49.184Z",
+      "tier": "high"
+    },
+    "LocalLLaMA:1wsmtd4": {
+      "t": "2026-09-28T23:27:50.085Z",
+      "tier": "medium"
+    },
+    "cursor:1wsn0fl": {
+      "t": "2026-09-28T23:27:50.917Z",
+      "tier": "high"
+    },
+    "GitHubCopilot:1wsoybz": {
+      "t": "2026-09-28T23:27:51.874Z",
       "tier": "high"
     }
   }
