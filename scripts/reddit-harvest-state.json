@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-04T12:42:11.027Z",
+  "updated": "2026-10-04T21:48:46.367Z",
   "seen": {
     "artificial:1w9f5e2": {
       "t": "2026-09-07T03:51:27.282Z",
@@ -25308,6 +25308,518 @@
     },
     "ClaudeAI:1wxbrzu": {
       "t": "2026-10-04T12:42:11.027Z",
+      "tier": "high"
+    },
+    "artificial:1wxqvl6": {
+      "t": "2026-10-04T21:40:11.241Z",
+      "tier": "none"
+    },
+    "artificial:1wxqfo0": {
+      "t": "2026-10-04T21:40:11.241Z",
+      "tier": "none"
+    },
+    "artificial:1wxpaus": {
+      "t": "2026-10-04T21:40:11.241Z",
+      "tier": "none"
+    },
+    "artificial:1wxp1u8": {
+      "t": "2026-10-04T21:40:11.241Z",
+      "tier": "none"
+    },
+    "artificial:1wxok9e": {
+      "t": "2026-10-04T21:40:11.241Z",
+      "tier": "none"
+    },
+    "artificial:1wxo85r": {
+      "t": "2026-10-04T21:40:11.241Z",
+      "tier": "none"
+    },
+    "artificial:1wxn3ua": {
+      "t": "2026-10-04T21:40:11.241Z",
+      "tier": "none"
+    },
+    "artificial:1wxmo87": {
+      "t": "2026-10-04T21:40:11.241Z",
+      "tier": "none"
+    },
+    "artificial:1wxm27w": {
+      "t": "2026-10-04T21:40:11.241Z",
+      "tier": "none"
+    },
+    "artificial:1wxm1vq": {
+      "t": "2026-10-04T21:40:11.241Z",
+      "tier": "none"
+    },
+    "artificial:1wxlgsc": {
+      "t": "2026-10-04T21:40:11.241Z",
+      "tier": "none"
+    },
+    "artificial:1wxkzyo": {
+      "t": "2026-10-04T21:40:11.241Z",
+      "tier": "none"
+    },
+    "artificial:1wxkm1l": {
+      "t": "2026-10-04T21:40:11.241Z",
+      "tier": "none"
+    },
+    "artificial:1wxjtgd": {
+      "t": "2026-10-04T21:40:11.241Z",
+      "tier": "none"
+    },
+    "artificial:1wxjf7m": {
+      "t": "2026-10-04T21:40:11.241Z",
+      "tier": "none"
+    },
+    "artificial:1wxj9xp": {
+      "t": "2026-10-04T21:40:11.242Z",
+      "tier": "none"
+    },
+    "artificial:1wxirdb": {
+      "t": "2026-10-04T21:40:11.242Z",
+      "tier": "none"
+    },
+    "artificial:1wxhpjk": {
+      "t": "2026-10-04T21:40:11.242Z",
+      "tier": "none"
+    },
+    "artificial:1wxfgb3": {
+      "t": "2026-10-04T21:40:11.242Z",
+      "tier": "none"
+    },
+    "artificial:1wxfcjp": {
+      "t": "2026-10-04T21:40:11.242Z",
+      "tier": "none"
+    },
+    "artificial:1wxfbpv": {
+      "t": "2026-10-04T21:40:11.242Z",
+      "tier": "none"
+    },
+    "artificial:1wxfaye": {
+      "t": "2026-10-04T21:40:11.242Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxqz4g": {
+      "t": "2026-10-04T21:41:14.021Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxqoa3": {
+      "t": "2026-10-04T21:41:14.021Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxqmaa": {
+      "t": "2026-10-04T21:41:14.021Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxqgh4": {
+      "t": "2026-10-04T21:41:14.021Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxpvys": {
+      "t": "2026-10-04T21:41:14.021Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxp21n": {
+      "t": "2026-10-04T21:41:14.021Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxov05": {
+      "t": "2026-10-04T21:41:14.021Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxoqqp": {
+      "t": "2026-10-04T21:41:14.021Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxomzr": {
+      "t": "2026-10-04T21:41:14.021Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxoiug": {
+      "t": "2026-10-04T21:41:14.021Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxma3a": {
+      "t": "2026-10-04T21:41:14.021Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxm2og": {
+      "t": "2026-10-04T21:41:14.021Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxlytt": {
+      "t": "2026-10-04T21:41:14.021Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxlw2c": {
+      "t": "2026-10-04T21:41:14.021Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxlqu4": {
+      "t": "2026-10-04T21:41:14.021Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxloam": {
+      "t": "2026-10-04T21:41:14.021Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxllvu": {
+      "t": "2026-10-04T21:41:14.021Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxl36c": {
+      "t": "2026-10-04T21:41:14.021Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxkojd": {
+      "t": "2026-10-04T21:41:14.022Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxken1": {
+      "t": "2026-10-04T21:41:14.022Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxjs47": {
+      "t": "2026-10-04T21:41:14.022Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxiy8y": {
+      "t": "2026-10-04T21:41:14.022Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxibor": {
+      "t": "2026-10-04T21:41:14.022Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxgm0h": {
+      "t": "2026-10-04T21:41:14.022Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1wxgccy": {
+      "t": "2026-10-04T21:41:14.022Z",
+      "tier": "none"
+    },
+    "ChatGPTCoding:1wxqhhu": {
+      "t": "2026-10-04T21:42:16.792Z",
+      "tier": "none"
+    },
+    "ChatGPTCoding:1wxhttn": {
+      "t": "2026-10-04T21:42:16.792Z",
+      "tier": "none"
+    },
+    "ChatGPTCoding:1wxf5t7": {
+      "t": "2026-10-04T21:42:16.792Z",
+      "tier": "none"
+    },
+    "cursor:1wxkg3e": {
+      "t": "2026-10-04T21:43:19.662Z",
+      "tier": "none"
+    },
+    "cursor:1wxgy60": {
+      "t": "2026-10-04T21:43:19.662Z",
+      "tier": "none"
+    },
+    "cursor:1wxgqsg": {
+      "t": "2026-10-04T21:43:19.662Z",
+      "tier": "none"
+    },
+    "GitHubCopilot:1wxfx2m": {
+      "t": "2026-10-04T21:44:22.531Z",
+      "tier": "none"
+    },
+    "GitHubCopilot:1wxfp92": {
+      "t": "2026-10-04T21:44:22.531Z",
+      "tier": "none"
+    },
+    "GitHubCopilot:1wxev8f": {
+      "t": "2026-10-04T21:44:22.531Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxr6g9": {
+      "t": "2026-10-04T21:45:25.340Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxr4cs": {
+      "t": "2026-10-04T21:45:25.340Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxqtkc": {
+      "t": "2026-10-04T21:45:25.340Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxqesj": {
+      "t": "2026-10-04T21:45:25.340Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxqaf0": {
+      "t": "2026-10-04T21:45:25.340Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxq8kp": {
+      "t": "2026-10-04T21:45:25.340Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxq5wa": {
+      "t": "2026-10-04T21:45:25.340Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxq47e": {
+      "t": "2026-10-04T21:45:25.340Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxpwq1": {
+      "t": "2026-10-04T21:45:25.340Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxpq3p": {
+      "t": "2026-10-04T21:45:25.340Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxp0gg": {
+      "t": "2026-10-04T21:45:25.340Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxolw6": {
+      "t": "2026-10-04T21:45:25.340Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxo25v": {
+      "t": "2026-10-04T21:45:25.341Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxnzp1": {
+      "t": "2026-10-04T21:45:25.341Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxnz66": {
+      "t": "2026-10-04T21:45:25.341Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxnupr": {
+      "t": "2026-10-04T21:45:25.341Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxnucd": {
+      "t": "2026-10-04T21:45:25.341Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxnhht": {
+      "t": "2026-10-04T21:45:25.341Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxnh7t": {
+      "t": "2026-10-04T21:45:25.341Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxn2kl": {
+      "t": "2026-10-04T21:45:25.341Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxmwe7": {
+      "t": "2026-10-04T21:45:25.341Z",
+      "tier": "none"
+    },
+    "ChatGPT:1wxmrff": {
+      "t": "2026-10-04T21:45:25.341Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxr6n5": {
+      "t": "2026-10-04T21:46:28.265Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxr3mw": {
+      "t": "2026-10-04T21:46:28.265Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxqn1n": {
+      "t": "2026-10-04T21:46:28.265Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxqe5l": {
+      "t": "2026-10-04T21:46:28.265Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxq3q5": {
+      "t": "2026-10-04T21:46:28.265Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxpyql": {
+      "t": "2026-10-04T21:46:28.265Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxpqjx": {
+      "t": "2026-10-04T21:46:28.265Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxpoxv": {
+      "t": "2026-10-04T21:46:28.265Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxphv1": {
+      "t": "2026-10-04T21:46:28.265Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxpgmx": {
+      "t": "2026-10-04T21:46:28.265Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxp9k7": {
+      "t": "2026-10-04T21:46:28.265Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxp7dt": {
+      "t": "2026-10-04T21:46:28.265Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxp2j0": {
+      "t": "2026-10-04T21:46:28.265Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxp1vq": {
+      "t": "2026-10-04T21:46:28.265Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxoqzr": {
+      "t": "2026-10-04T21:46:28.266Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxon4e": {
+      "t": "2026-10-04T21:46:28.266Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxol8t": {
+      "t": "2026-10-04T21:46:28.266Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxo9wm": {
+      "t": "2026-10-04T21:46:28.266Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxntoy": {
+      "t": "2026-10-04T21:46:28.266Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxns6f": {
+      "t": "2026-10-04T21:46:28.266Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxnpal": {
+      "t": "2026-10-04T21:46:28.266Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxnkuc": {
+      "t": "2026-10-04T21:46:28.266Z",
+      "tier": "none"
+    },
+    "ClaudeAI:1wxnait": {
+      "t": "2026-10-04T21:46:28.266Z",
+      "tier": "none"
+    },
+    "SillyTavernAI:1wxrjes": {
+      "t": "2026-10-04T21:47:31.196Z",
+      "tier": "none"
+    },
+    "SillyTavernAI:1wxqtqa": {
+      "t": "2026-10-04T21:47:31.196Z",
+      "tier": "none"
+    },
+    "SillyTavernAI:1wxpvk9": {
+      "t": "2026-10-04T21:47:31.196Z",
+      "tier": "none"
+    },
+    "SillyTavernAI:1wxne1u": {
+      "t": "2026-10-04T21:47:31.196Z",
+      "tier": "none"
+    },
+    "SillyTavernAI:1wxn0qw": {
+      "t": "2026-10-04T21:47:31.196Z",
+      "tier": "none"
+    },
+    "SillyTavernAI:1wxmhl3": {
+      "t": "2026-10-04T21:47:31.196Z",
+      "tier": "none"
+    },
+    "SillyTavernAI:1wxmdmd": {
+      "t": "2026-10-04T21:47:31.196Z",
+      "tier": "none"
+    },
+    "SillyTavernAI:1wxlgk2": {
+      "t": "2026-10-04T21:47:31.196Z",
+      "tier": "none"
+    },
+    "SillyTavernAI:1wxleib": {
+      "t": "2026-10-04T21:47:31.196Z",
+      "tier": "none"
+    },
+    "SillyTavernAI:1wxl9t9": {
+      "t": "2026-10-04T21:47:31.196Z",
+      "tier": "none"
+    },
+    "SillyTavernAI:1wxk5dg": {
+      "t": "2026-10-04T21:47:31.196Z",
+      "tier": "none"
+    },
+    "SillyTavernAI:1wxjcgc": {
+      "t": "2026-10-04T21:47:31.196Z",
+      "tier": "none"
+    },
+    "SillyTavernAI:1wxi5i6": {
+      "t": "2026-10-04T21:47:31.196Z",
+      "tier": "none"
+    },
+    "ollama:1wxngrs": {
+      "t": "2026-10-04T21:48:34.198Z",
+      "tier": "none"
+    },
+    "ollama:1wxk0xi": {
+      "t": "2026-10-04T21:48:34.198Z",
+      "tier": "none"
+    },
+    "ollama:1wxj4n9": {
+      "t": "2026-10-04T21:48:34.198Z",
+      "tier": "none"
+    },
+    "ollama:1wxiqao": {
+      "t": "2026-10-04T21:48:34.198Z",
+      "tier": "none"
+    },
+    "artificial:1wxqy7s": {
+      "t": "2026-10-04T21:48:36.890Z",
+      "tier": "high"
+    },
+    "ChatGPT:1wxof2a": {
+      "t": "2026-10-04T21:48:38.175Z",
+      "tier": "medium"
+    },
+    "ChatGPT:1wxnuhy": {
+      "t": "2026-10-04T21:48:39.315Z",
+      "tier": "high"
+    },
+    "ChatGPT:1wxn3im": {
+      "t": "2026-10-04T21:48:40.429Z",
+      "tier": "medium"
+    },
+    "ClaudeAI:1wxrd6p": {
+      "t": "2026-10-04T21:48:41.448Z",
+      "tier": "high"
+    },
+    "ClaudeAI:1wxqqeo": {
+      "t": "2026-10-04T21:48:42.355Z",
+      "tier": "high"
+    },
+    "SillyTavernAI:1wxrf8r": {
+      "t": "2026-10-04T21:48:43.527Z",
+      "tier": "high"
+    },
+    "ollama:1wxki1u": {
+      "t": "2026-10-04T21:48:44.593Z",
+      "tier": "high"
+    },
+    "ollama:1wxiu59": {
+      "t": "2026-10-04T21:48:45.473Z",
+      "tier": "high"
+    },
+    "ollama:1wxgqir": {
+      "t": "2026-10-04T21:48:46.367Z",
       "tier": "high"
     }
   }
