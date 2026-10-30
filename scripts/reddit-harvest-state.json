@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-30T13:19:35.631Z",
+  "updated": "2026-10-30T22:35:29.594Z",
   "seen": {
     "artificial:1w9f5e2": {
       "t": "2026-09-07T03:51:27.282Z",
@@ -59768,6 +59768,182 @@
     },
     "ClaudeAI:1xjb5m4": {
       "t": "2026-10-30T13:19:35.631Z",
+      "tier": "high"
+    },
+    "artificial:1xjr68w": {
+      "t": "2026-10-30T22:30:06.039Z",
+      "tier": "none"
+    },
+    "artificial:1xjqc40": {
+      "t": "2026-10-30T22:30:06.039Z",
+      "tier": "none"
+    },
+    "artificial:1xjp9ah": {
+      "t": "2026-10-30T22:30:06.039Z",
+      "tier": "none"
+    },
+    "artificial:1xjozdg": {
+      "t": "2026-10-30T22:30:06.039Z",
+      "tier": "none"
+    },
+    "artificial:1xjmtot": {
+      "t": "2026-10-30T22:30:06.039Z",
+      "tier": "none"
+    },
+    "artificial:1xjkjr4": {
+      "t": "2026-10-30T22:30:06.039Z",
+      "tier": "none"
+    },
+    "artificial:1xjjr98": {
+      "t": "2026-10-30T22:30:06.039Z",
+      "tier": "none"
+    },
+    "artificial:1xjilnt": {
+      "t": "2026-10-30T22:30:06.039Z",
+      "tier": "none"
+    },
+    "artificial:1xjiczy": {
+      "t": "2026-10-30T22:30:06.039Z",
+      "tier": "none"
+    },
+    "artificial:1xjgy47": {
+      "t": "2026-10-30T22:30:06.039Z",
+      "tier": "none"
+    },
+    "artificial:1xjfiuz": {
+      "t": "2026-10-30T22:30:06.039Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjte7t": {
+      "t": "2026-10-30T22:31:08.914Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjsjhy": {
+      "t": "2026-10-30T22:31:08.914Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjri5o": {
+      "t": "2026-10-30T22:31:08.914Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjrey3": {
+      "t": "2026-10-30T22:31:08.914Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjrdji": {
+      "t": "2026-10-30T22:31:08.914Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjr54i": {
+      "t": "2026-10-30T22:31:08.914Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjr3th": {
+      "t": "2026-10-30T22:31:08.914Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjqsb4": {
+      "t": "2026-10-30T22:31:08.914Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjqkzg": {
+      "t": "2026-10-30T22:31:08.914Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjqf74": {
+      "t": "2026-10-30T22:31:08.914Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjqdju": {
+      "t": "2026-10-30T22:31:08.914Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjpfvi": {
+      "t": "2026-10-30T22:31:08.914Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjpbcg": {
+      "t": "2026-10-30T22:31:08.914Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjp58z": {
+      "t": "2026-10-30T22:31:08.914Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjp0mi": {
+      "t": "2026-10-30T22:31:08.914Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjowbm": {
+      "t": "2026-10-30T22:31:08.914Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjo7rt": {
+      "t": "2026-10-30T22:31:08.915Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjn911": {
+      "t": "2026-10-30T22:31:08.915Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjmcj7": {
+      "t": "2026-10-30T22:31:08.915Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjltn3": {
+      "t": "2026-10-30T22:31:08.915Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xjlgm4": {
+      "t": "2026-10-30T22:31:08.915Z",
+      "tier": "none"
+    },
+    "ChatGPTCoding:1xjoq1u": {
+      "t": "2026-10-30T22:32:11.700Z",
+      "tier": "none"
+    },
+    "ChatGPTCoding:1xjf5zb": {
+      "t": "2026-10-30T22:32:11.700Z",
+      "tier": "none"
+    },
+    "cursor:1xjnsbi": {
+      "t": "2026-10-30T22:33:14.534Z",
+      "tier": "none"
+    },
+    "cursor:1xjjkab": {
+      "t": "2026-10-30T22:33:14.534Z",
+      "tier": "none"
+    },
+    "cursor:1xjgwdf": {
+      "t": "2026-10-30T22:33:14.534Z",
+      "tier": "none"
+    },
+    "cursor:1xjgt30": {
+      "t": "2026-10-30T22:33:14.534Z",
+      "tier": "none"
+    },
+    "artificial:1xjpdqk": {
+      "t": "2026-10-30T22:35:21.753Z",
+      "tier": "high"
+    },
+    "LocalLLaMA:1xjtflr": {
+      "t": "2026-10-30T22:35:22.975Z",
+      "tier": "high"
+    },
+    "LocalLLaMA:1xjrery": {
+      "t": "2026-10-30T22:35:24.225Z",
+      "tier": "high"
+    },
+    "LocalLLaMA:1xjnlvv": {
+      "t": "2026-10-30T22:35:26.571Z",
+      "tier": "high"
+    },
+    "LocalLLaMA:1xjmfxb": {
+      "t": "2026-10-30T22:35:27.920Z",
+      "tier": "high"
+    },
+    "ChatGPTCoding:1xjfjis": {
+      "t": "2026-10-30T22:35:29.593Z",
       "tier": "high"
     }
   }
