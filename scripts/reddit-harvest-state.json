@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-11T06:57:35.403Z",
+  "updated": "2026-11-11T19:47:36.881Z",
   "seen": {
     "artificial:1w9f5e2": {
       "t": "2026-09-07T03:51:27.282Z",
@@ -71401,6 +71401,242 @@
     "ollama:1xsixj4": {
       "t": "2026-11-11T06:57:35.403Z",
       "tier": "high"
+    },
+    "artificial:1xtr9oc": {
+      "t": "2026-11-11T19:44:15.259Z",
+      "tier": "none"
+    },
+    "artificial:1xtqiah": {
+      "t": "2026-11-11T19:44:15.260Z",
+      "tier": "none"
+    },
+    "artificial:1xtnr0l": {
+      "t": "2026-11-11T19:44:15.260Z",
+      "tier": "none"
+    },
+    "artificial:1xtnl8d": {
+      "t": "2026-11-11T19:44:15.260Z",
+      "tier": "none"
+    },
+    "artificial:1xtmy87": {
+      "t": "2026-11-11T19:44:15.260Z",
+      "tier": "none"
+    },
+    "artificial:1xtk09r": {
+      "t": "2026-11-11T19:44:15.260Z",
+      "tier": "none"
+    },
+    "artificial:1xth5cv": {
+      "t": "2026-11-11T19:44:15.260Z",
+      "tier": "none"
+    },
+    "artificial:1xtgicu": {
+      "t": "2026-11-11T19:44:15.260Z",
+      "tier": "none"
+    },
+    "artificial:1xte828": {
+      "t": "2026-11-11T19:44:15.260Z",
+      "tier": "none"
+    },
+    "artificial:1xtdzxd": {
+      "t": "2026-11-11T19:44:15.260Z",
+      "tier": "none"
+    },
+    "artificial:1xtdgqz": {
+      "t": "2026-11-11T19:44:15.260Z",
+      "tier": "none"
+    },
+    "artificial:1xtcwg3": {
+      "t": "2026-11-11T19:44:15.260Z",
+      "tier": "none"
+    },
+    "artificial:1xtck96": {
+      "t": "2026-11-11T19:44:15.260Z",
+      "tier": "none"
+    },
+    "artificial:1xtbgih": {
+      "t": "2026-11-11T19:44:15.260Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xtqsuu": {
+      "t": "2026-11-11T19:45:18.032Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xtqawn": {
+      "t": "2026-11-11T19:45:18.032Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xtpqxm": {
+      "t": "2026-11-11T19:45:18.032Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xtpc2v": {
+      "t": "2026-11-11T19:45:18.032Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xtp6zr": {
+      "t": "2026-11-11T19:45:18.032Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xtp66d": {
+      "t": "2026-11-11T19:45:18.032Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xtowe4": {
+      "t": "2026-11-11T19:45:18.032Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xto0fa": {
+      "t": "2026-11-11T19:45:18.032Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xtmrii": {
+      "t": "2026-11-11T19:45:18.032Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xtmeif": {
+      "t": "2026-11-11T19:45:18.032Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xtmcoe": {
+      "t": "2026-11-11T19:45:18.032Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xtmbkn": {
+      "t": "2026-11-11T19:45:18.033Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xtlyhe": {
+      "t": "2026-11-11T19:45:18.033Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xtkswo": {
+      "t": "2026-11-11T19:45:18.033Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xtjze2": {
+      "t": "2026-11-11T19:45:18.033Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xtju4x": {
+      "t": "2026-11-11T19:45:18.033Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xtjmhg": {
+      "t": "2026-11-11T19:45:18.033Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xtj1oq": {
+      "t": "2026-11-11T19:45:18.033Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xtizre": {
+      "t": "2026-11-11T19:45:18.033Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xtioaa": {
+      "t": "2026-11-11T19:45:18.033Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xti4bc": {
+      "t": "2026-11-11T19:45:18.033Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xthu1w": {
+      "t": "2026-11-11T19:45:18.033Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xthtwt": {
+      "t": "2026-11-11T19:45:18.033Z",
+      "tier": "none"
+    },
+    "LocalLLaMA:1xthiki": {
+      "t": "2026-11-11T19:45:18.033Z",
+      "tier": "none"
+    },
+    "ChatGPTCoding:1xtnyao": {
+      "t": "2026-11-11T19:46:20.939Z",
+      "tier": "none"
+    },
+    "ChatGPTCoding:1xtmzhi": {
+      "t": "2026-11-11T19:46:20.939Z",
+      "tier": "none"
+    },
+    "ChatGPTCoding:1xtlwh6": {
+      "t": "2026-11-11T19:46:20.939Z",
+      "tier": "none"
+    },
+    "ChatGPTCoding:1xtgdks": {
+      "t": "2026-11-11T19:46:20.939Z",
+      "tier": "none"
+    },
+    "ChatGPTCoding:1xtcrks": {
+      "t": "2026-11-11T19:46:20.939Z",
+      "tier": "none"
+    },
+    "ChatGPTCoding:1xtbsif": {
+      "t": "2026-11-11T19:46:20.939Z",
+      "tier": "none"
+    },
+    "cursor:1xtqdxr": {
+      "t": "2026-11-11T19:47:23.863Z",
+      "tier": "none"
+    },
+    "cursor:1xtn7sv": {
+      "t": "2026-11-11T19:47:23.863Z",
+      "tier": "none"
+    },
+    "cursor:1xtifli": {
+      "t": "2026-11-11T19:47:23.863Z",
+      "tier": "none"
+    },
+    "cursor:1xtgv0a": {
+      "t": "2026-11-11T19:47:23.863Z",
+      "tier": "none"
+    },
+    "cursor:1xtd3gw": {
+      "t": "2026-11-11T19:47:23.863Z",
+      "tier": "none"
+    },
+    "artificial:1xtf1w4": {
+      "t": "2026-11-11T19:47:25.506Z",
+      "tier": "high"
+    },
+    "artificial:1xtccz4": {
+      "t": "2026-11-11T19:47:26.925Z",
+      "tier": "high"
+    },
+    "artificial:1xtbbsx": {
+      "t": "2026-11-11T19:47:28.185Z",
+      "tier": "high"
+    },
+    "LocalLLaMA:1xtocct": {
+      "t": "2026-11-11T19:47:29.400Z",
+      "tier": "medium"
+    },
+    "ChatGPTCoding:1xtlk8o": {
+      "t": "2026-11-11T19:47:30.813Z",
+      "tier": "high"
+    },
+    "ChatGPTCoding:1xtkrod": {
+      "t": "2026-11-11T19:47:32.058Z",
+      "tier": "high"
+    },
+    "ChatGPTCoding:1xthm3v": {
+      "t": "2026-11-11T19:47:33.415Z",
+      "tier": "high"
+    },
+    "cursor:1xtrkh3": {
+      "t": "2026-11-11T19:47:34.584Z",
+      "tier": "medium"
+    },
+    "cursor:1xtr20p": {
+      "t": "2026-11-11T19:47:35.783Z",
+      "tier": "high"
+    },
+    "cursor:1xtphvt": {
+      "t": "2026-11-11T19:47:36.881Z",
+      "tier": "medium"
     }
   }
 }
